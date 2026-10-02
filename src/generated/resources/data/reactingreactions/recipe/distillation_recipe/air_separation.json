@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:mod_loaded",
+        "modid": "createdieselgenerators"
+      }
+    }
+  ],
+  "type": "reactingreactions:distillation_recipe",
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 1000,
+      "tag": "c:compressed_air"
+    }
+  ],
+  "processing_time": 400,
+  "results": [
+    {
+      "amount": 780,
+      "id": "reactingreactions:nitrogen"
+    },
+    {
+      "amount": 210,
+      "id": "reactingreactions:oxygen"
+    },
+    {
+      "amount": 5,
+      "id": "reactingreactions:neon"
+    }
+  ]
+}

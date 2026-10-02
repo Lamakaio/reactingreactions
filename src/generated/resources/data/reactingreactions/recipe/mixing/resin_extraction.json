@@ -1,0 +1,14 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:spruce_log"
+    }
+  ],
+  "results": [
+    {
+      "amount": 100,
+      "id": "reactingreactions:resin"
+    }
+  ]
+}

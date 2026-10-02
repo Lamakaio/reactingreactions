@@ -1,0 +1,27 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:dusts/sulfur"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 500,
+      "tag": "c:oxygen"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 250,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "max_rpm": 64,
+  "min_rpm": 24,
+  "results": [
+    {
+      "amount": 500,
+      "id": "reactingreactions:sulfuric_acid"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "reactingreactions:veridium_dust"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:plantoil"
+    }
+  ],
+  "results": [
+    {
+      "count": 16,
+      "id": "reactingreactions:green_paint"
+    }
+  ]
+}

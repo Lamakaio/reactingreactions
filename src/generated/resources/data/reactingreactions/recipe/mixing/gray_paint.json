@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "reactingreactions:tuff_dust"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:plantoil"
+    }
+  ],
+  "results": [
+    {
+      "count": 16,
+      "id": "reactingreactions:gray_paint"
+    }
+  ]
+}

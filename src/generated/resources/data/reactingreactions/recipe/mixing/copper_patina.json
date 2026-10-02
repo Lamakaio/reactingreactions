@@ -1,0 +1,18 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:storage_blocks/copper"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:white_vinegar"
+    }
+  ],
+  "results": [
+    {
+      "id": "minecraft:oxidized_copper"
+    }
+  ]
+}

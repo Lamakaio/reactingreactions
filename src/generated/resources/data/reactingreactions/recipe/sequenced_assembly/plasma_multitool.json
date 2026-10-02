@@ -1,0 +1,176 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "reactingreactions:titanium_pickaxe"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "reactingreactions:plasma_multitool"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_plasma_multitool"
+        },
+        {
+          "item": "reactingreactions:titanium_axe"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_plasma_multitool"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_plasma_multitool"
+        },
+        {
+          "item": "reactingreactions:titanium_shovel"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_plasma_multitool"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_plasma_multitool"
+        },
+        {
+          "item": "reactingreactions:mineral_drill_head_diamond"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_plasma_multitool"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_plasma_multitool"
+        },
+        {
+          "item": "reactingreactions:servo_actuator"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_plasma_multitool"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_plasma_multitool"
+        },
+        {
+          "item": "reactingreactions:control_unit"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_plasma_multitool"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_plasma_multitool"
+        },
+        {
+          "item": "minecraft:netherite_ingot"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_plasma_multitool"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_plasma_multitool"
+        },
+        {
+          "item": "reactingreactions:circuit_board"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_plasma_multitool"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_plasma_multitool"
+        },
+        {
+          "item": "minecraft:nether_star"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_plasma_multitool"
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_plasma_multitool"
+        },
+        {
+          "type": "neoforge:tag",
+          "amount": 250,
+          "tag": "c:drill_grease"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_plasma_multitool"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_plasma_multitool"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_plasma_multitool"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "reactingreactions:incomplete_plasma_multitool"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "reactingreactions:sulfur_dust",
+    "reactingreactions:salt",
+    "reactingreactions:borax",
+    "reactingreactions:rare_earth_dust",
+    "reactingreactions:alumina_dust",
+    "reactingreactions:iron_oxide",
+    "reactingreactions:chromium_dust",
+    "reactingreactions:silica",
+    "reactingreactions:granite_dust",
+    "reactingreactions:diorite_dust",
+    "reactingreactions:tuff_dust",
+    "reactingreactions:scoria_dust",
+    "reactingreactions:asurine_dust",
+    "reactingreactions:crimsite_dust",
+    "reactingreactions:ochrum_dust",
+    "reactingreactions:veridium_dust"
+  ]
+}

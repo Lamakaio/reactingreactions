@@ -1,0 +1,24 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:titanium_tetrachloride"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:oxygen"
+    }
+  ],
+  "max_rpm": 64,
+  "min_rpm": 24,
+  "results": [
+    {
+      "count": 2,
+      "id": "reactingreactions:titanium_dioxide"
+    }
+  ]
+}

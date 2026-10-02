@@ -1,0 +1,184 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_wall_face_down"
+      },
+      "when": {
+        "outer_down": "true",
+        "window": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_wall_cap_down"
+      },
+      "when": {
+        "outer_down": "true",
+        "window": "middle|bottom|top"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_wall_face_up"
+      },
+      "when": {
+        "outer_up": "true",
+        "window": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_wall_cap_up"
+      },
+      "when": {
+        "outer_up": "true",
+        "window": "middle|bottom|top"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_wall_face_north"
+      },
+      "when": {
+        "outer_north": "true",
+        "window": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_wall_window_middle_north"
+      },
+      "when": {
+        "outer_north": "true",
+        "window": "middle"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_wall_window_bottom_north"
+      },
+      "when": {
+        "outer_north": "true",
+        "window": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_wall_window_top_north"
+      },
+      "when": {
+        "outer_north": "true",
+        "window": "top"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_wall_face_south"
+      },
+      "when": {
+        "outer_south": "true",
+        "window": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_wall_window_middle_south"
+      },
+      "when": {
+        "outer_south": "true",
+        "window": "middle"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_wall_window_bottom_south"
+      },
+      "when": {
+        "outer_south": "true",
+        "window": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_wall_window_top_south"
+      },
+      "when": {
+        "outer_south": "true",
+        "window": "top"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_wall_face_west"
+      },
+      "when": {
+        "outer_west": "true",
+        "window": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_wall_window_middle_west"
+      },
+      "when": {
+        "outer_west": "true",
+        "window": "middle"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_wall_window_bottom_west"
+      },
+      "when": {
+        "outer_west": "true",
+        "window": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_wall_window_top_west"
+      },
+      "when": {
+        "outer_west": "true",
+        "window": "top"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_wall_face_east"
+      },
+      "when": {
+        "outer_east": "true",
+        "window": "none"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_wall_window_middle_east"
+      },
+      "when": {
+        "outer_east": "true",
+        "window": "middle"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_wall_window_bottom_east"
+      },
+      "when": {
+        "outer_east": "true",
+        "window": "bottom"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_wall_window_top_east"
+      },
+      "when": {
+        "outer_east": "true",
+        "window": "top"
+      }
+    }
+  ]
+}

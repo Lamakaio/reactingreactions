@@ -1,0 +1,26 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "reactingreactions:crushed_polymetallic_nodule"
+    }
+  ],
+  "results": [
+    {
+      "id": "reactingreactions:manganese"
+    },
+    {
+      "chance": 0.5,
+      "id": "reactingreactions:nickel_ingot"
+    },
+    {
+      "chance": 0.3,
+      "id": "create:zinc_nugget"
+    },
+    {
+      "chance": 0.3,
+      "id": "reactingreactions:rare_earth_dust"
+    }
+  ]
+}

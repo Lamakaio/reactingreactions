@@ -1,0 +1,20 @@
+{
+  "type": "reactingreactions:electrolysis_recipe",
+  "electrodes": [
+    "reactingreactions:graphite_electrode"
+  ],
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 500,
+      "tag": "c:magnesium_chloride"
+    }
+  ],
+  "min_voltage": 400.0,
+  "processing_time": 200,
+  "results": [
+    {
+      "id": "reactingreactions:magnesium"
+    }
+  ]
+}

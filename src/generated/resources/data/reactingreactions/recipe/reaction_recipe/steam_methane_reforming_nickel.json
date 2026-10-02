@@ -1,0 +1,31 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:methane"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:steam"
+    },
+    {
+      "tag": "c:nuggets/nickel"
+    }
+  ],
+  "max_rpm": 128,
+  "min_rpm": 64,
+  "results": [
+    {
+      "amount": 2000,
+      "id": "reactingreactions:hydrogen"
+    },
+    {
+      "amount": 250,
+      "id": "reactingreactions:carbon_dioxide"
+    }
+  ]
+}

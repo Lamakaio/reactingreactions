@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "tag": "c:ingots/copper"
+    },
+    "W": {
+      "item": "reactingreactions:electrolysis_vat_wall"
+    }
+  },
+  "pattern": [
+    "WC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "reactingreactions:electrolysis_vat_terminal"
+  }
+}

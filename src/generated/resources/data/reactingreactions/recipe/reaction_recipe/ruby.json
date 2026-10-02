@@ -1,0 +1,19 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "item": "reactingreactions:alumina_dust"
+    },
+    {
+      "item": "reactingreactions:chromium_dust"
+    }
+  ],
+  "max_rpm": 128,
+  "min_rpm": 64,
+  "results": [
+    {
+      "id": "reactingreactions:ruby"
+    }
+  ]
+}

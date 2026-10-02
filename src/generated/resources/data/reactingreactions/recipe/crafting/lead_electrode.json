@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "tag": "c:ingots/lead"
+    }
+  },
+  "pattern": [
+    "L",
+    "L"
+  ],
+  "result": {
+    "count": 1,
+    "id": "reactingreactions:lead_electrode"
+  }
+}

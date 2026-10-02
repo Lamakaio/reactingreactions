@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "S": {
+      "tag": "c:ingots/steel"
+    },
+    "T": {
+      "tag": "c:ingots/titanium"
+    }
+  },
+  "pattern": [
+    " T ",
+    "S S",
+    " S "
+  ],
+  "result": {
+    "id": "reactingreactions:digging_ring"
+  }
+}

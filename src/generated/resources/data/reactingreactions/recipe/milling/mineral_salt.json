@@ -1,0 +1,18 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "reactingreactions:mineral_salt"
+    }
+  ],
+  "processing_time": 100,
+  "results": [
+    {
+      "id": "reactingreactions:salt"
+    },
+    {
+      "chance": 0.25,
+      "id": "reactingreactions:salt"
+    }
+  ]
+}

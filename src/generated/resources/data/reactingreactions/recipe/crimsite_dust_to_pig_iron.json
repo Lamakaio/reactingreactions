@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 200,
+  "experience": 0.3,
+  "ingredient": {
+    "item": "reactingreactions:crimsite_dust"
+  },
+  "result": {
+    "count": 1,
+    "id": "reactingreactions:pig_iron"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "reactingreactions:aerozine",
+    "reactingreactions:acetylene",
+    "reactingreactions:oxygen",
+    "reactingreactions:compressed_air",
+    "reactingreactions:nitrogen",
+    "reactingreactions:hydrogen",
+    "reactingreactions:mineral_oil",
+    "reactingreactions:drill_grease",
+    "reactingreactions:neon"
+  ]
+}

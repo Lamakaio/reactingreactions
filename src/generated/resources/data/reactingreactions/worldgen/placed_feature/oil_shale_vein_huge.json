@@ -1,0 +1,35 @@
+{
+  "feature": "reactingreactions:oil_shale_vein_huge",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 32
+    },
+    {
+      "type": "minecraft:count",
+      "count": {
+        "type": "minecraft:uniform",
+        "max_inclusive": 14,
+        "min_inclusive": 9
+      }
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "max_inclusive": {
+          "absolute": -16
+        },
+        "min_inclusive": {
+          "absolute": -42
+        }
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

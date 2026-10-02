@@ -1,0 +1,16 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "type": "neoforge:single",
+      "amount": 144,
+      "fluid": "reactingreactions:liquid_hdpe"
+    }
+  ],
+  "processing_time": 100,
+  "results": [
+    {
+      "id": "reactingreactions:hdpe_pellets"
+    }
+  ]
+}

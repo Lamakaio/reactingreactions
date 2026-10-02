@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "reactingreactions:bromine"
+    },
+    "H": {
+      "tag": "c:plates/plastic"
+    },
+    "N": {
+      "item": "reactingreactions:nylon_fiber"
+    }
+  },
+  "pattern": [
+    "HNH",
+    "NBN",
+    "HNH"
+  ],
+  "result": {
+    "id": "reactingreactions:flame_retardant_cloak"
+  }
+}

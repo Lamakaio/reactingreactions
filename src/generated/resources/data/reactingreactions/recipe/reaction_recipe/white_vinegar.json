@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:mod_loaded",
+        "modid": "createdieselgenerators"
+      }
+    }
+  ],
+  "type": "reactingreactions:reaction_recipe",
+  "ingredients": [
+    {
+      "item": "reactingreactions:yeast"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:ethanol"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 250,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "processing_time": 1200,
+  "results": [
+    {
+      "amount": 500,
+      "id": "reactingreactions:white_vinegar"
+    }
+  ]
+}

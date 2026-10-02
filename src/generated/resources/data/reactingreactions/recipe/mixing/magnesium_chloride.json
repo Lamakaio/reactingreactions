@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 1000,
+      "tag": "c:brine"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:lye"
+    }
+  ],
+  "results": [
+    {
+      "amount": 500,
+      "id": "reactingreactions:magnesium_chloride"
+    },
+    {
+      "count": 2,
+      "id": "reactingreactions:salt"
+    }
+  ]
+}

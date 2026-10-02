@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "create:copper_casing"
+    },
+    "G": {
+      "tag": "c:ingots/copper"
+    },
+    "I": {
+      "tag": "c:ingots/iron"
+    }
+  },
+  "pattern": [
+    "III",
+    "GCG",
+    "III"
+  ],
+  "result": {
+    "count": 1,
+    "id": "reactingreactions:small_electrolyser"
+  }
+}

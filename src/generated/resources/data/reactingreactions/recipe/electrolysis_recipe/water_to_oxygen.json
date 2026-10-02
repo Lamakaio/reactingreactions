@@ -1,0 +1,18 @@
+{
+  "type": "reactingreactions:electrolysis_recipe",
+  "ingredients": [
+    {
+      "type": "neoforge:single",
+      "amount": 1000,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "min_voltage": 80.0,
+  "processing_time": 200,
+  "results": [
+    {
+      "amount": 500,
+      "id": "reactingreactions:oxygen"
+    }
+  ]
+}

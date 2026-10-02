@@ -1,0 +1,39 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:dusts/glowstone"
+    },
+    {
+      "tag": "c:dusts/glowstone"
+    },
+    {
+      "tag": "c:dusts/glowstone"
+    },
+    {
+      "tag": "c:dusts/glowstone"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:sulfuric_acid"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 100,
+      "tag": "c:acetone"
+    }
+  ],
+  "max_rpm": 64,
+  "min_rpm": 24,
+  "results": [
+    {
+      "id": "reactingreactions:rare_earth_dust"
+    },
+    {
+      "chance": 0.5,
+      "id": "reactingreactions:alumina_dust"
+    }
+  ]
+}

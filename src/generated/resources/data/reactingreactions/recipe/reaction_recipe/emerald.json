@@ -1,0 +1,25 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "item": "reactingreactions:beryllium_oxide"
+    },
+    {
+      "item": "reactingreactions:alumina_dust"
+    },
+    {
+      "tag": "c:dusts/quartz"
+    },
+    {
+      "item": "reactingreactions:chromium_dust"
+    }
+  ],
+  "max_rpm": 128,
+  "min_rpm": 64,
+  "results": [
+    {
+      "id": "minecraft:emerald"
+    }
+  ]
+}

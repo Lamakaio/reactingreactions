@@ -1,0 +1,16 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "reactingreactions:scoria_dust"
+    },
+    {
+      "item": "reactingreactions:scoria_dust"
+    }
+  ],
+  "results": [
+    {
+      "id": "create:scoria"
+    }
+  ]
+}

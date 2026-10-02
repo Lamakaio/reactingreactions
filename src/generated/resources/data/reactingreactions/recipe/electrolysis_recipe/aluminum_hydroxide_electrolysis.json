@@ -1,0 +1,18 @@
+{
+  "type": "reactingreactions:electrolysis_recipe",
+  "electrodes": [
+    "reactingreactions:graphite_electrode"
+  ],
+  "ingredients": [
+    {
+      "item": "reactingreactions:aluminum_hydroxide"
+    }
+  ],
+  "min_voltage": 2000.0,
+  "processing_time": 200,
+  "results": [
+    {
+      "id": "reactingreactions:aluminum_ingot"
+    }
+  ]
+}

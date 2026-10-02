@@ -1,0 +1,87 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:mod_loaded",
+        "modid": "electroenergetics"
+      }
+    }
+  ],
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "reactingreactions:silicon_board"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "reactingreactions:circuit_board"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_circuit_board"
+        },
+        {
+          "tag": "c:nuggets/copper"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_circuit_board"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_circuit_board"
+        },
+        {
+          "tag": "c:nuggets/copper"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_circuit_board"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_circuit_board"
+        },
+        {
+          "tag": "c:gems/amethyst"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_circuit_board"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_circuit_board"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_circuit_board"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "reactingreactions:incomplete_circuit_board"
+  }
+}

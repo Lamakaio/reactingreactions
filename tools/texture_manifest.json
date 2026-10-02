@@ -1,0 +1,1907 @@
+{
+  "sources": {
+    "unused-textures": {
+      "name": "Unused Textures",
+      "author": "Malcolm Riley (malcolmriley)",
+      "url": "https://github.com/malcolmriley/unused-textures",
+      "license": "CC BY 4.0"
+    },
+    "foreck-textures": {
+      "name": "Foreck's Textures",
+      "author": "Foreck (Foreck1)",
+      "url": "https://github.com/Foreck1/foreck-textures",
+      "license": "CC BY 4.0 per the repository README (its licence file text is CC BY-NC-SA 4.0; both are compatible with this mod's asset licence)"
+    },
+    "TextureRepository": {
+      "name": "Futureazoo's Texture Repository",
+      "author": "Futureazoo (with contributions credited in the repository)",
+      "url": "https://github.com/Futureazoo/TextureRepository",
+      "license": "CC BY-NC-SA 4.0"
+    }
+  },
+  "textures": [
+    {
+      "out": "item/aluminum_ingot",
+      "source": "unused-textures",
+      "src": "items/ingot_aluminium.png",
+      "ops": []
+    },
+    {
+      "out": "item/aluminum_nugget",
+      "source": "unused-textures",
+      "src": "items/nugget_aluminium.png",
+      "ops": []
+    },
+    {
+      "out": "item/lead_ingot",
+      "source": "unused-textures",
+      "src": "items/ingot_lead.png",
+      "ops": []
+    },
+    {
+      "out": "item/lead_nugget",
+      "source": "unused-textures",
+      "src": "items/nugget_lead.png",
+      "ops": []
+    },
+    {
+      "out": "item/nickel_ingot",
+      "source": "unused-textures",
+      "src": "items/ingot_nickel.png",
+      "ops": []
+    },
+    {
+      "out": "item/steel_ingot",
+      "source": "unused-textures",
+      "src": "items/ingot_steel.png",
+      "ops": []
+    },
+    {
+      "out": "item/titanium",
+      "source": "unused-textures",
+      "src": "items/metal_titanium_ingot.png",
+      "ops": []
+    },
+    {
+      "out": "item/lithium_ingot",
+      "source": "unused-textures",
+      "src": "items/ingot_tin.png",
+      "ops": []
+    },
+    {
+      "out": "item/lithium_nugget",
+      "source": "unused-textures",
+      "src": "items/nugget_tin.png",
+      "ops": []
+    },
+    {
+      "out": "item/magnesium",
+      "source": "unused-textures",
+      "src": "items/nugget_zinc.png",
+      "ops": []
+    },
+    {
+      "out": "item/magnesium_knuckle",
+      "source": "unused-textures",
+      "src": "items/ingot_zinc.png",
+      "ops": []
+    },
+    {
+      "out": "item/manganese_steel",
+      "source": "unused-textures",
+      "src": "items/ingot_wroughtiron.png",
+      "ops": []
+    },
+    {
+      "out": "item/pig_iron",
+      "source": "unused-textures",
+      "src": "items/material_nugget_iron.png",
+      "ops": []
+    },
+    {
+      "out": "item/manganese",
+      "source": "unused-textures",
+      "src": "items/material_dust_grayish.png",
+      "ops": []
+    },
+    {
+      "out": "item/titanium_sheet",
+      "source": "unused-textures",
+      "src": "items/part_plate_thick_steel.png",
+      "ops": [
+        [
+          "colorize",
+          "#1e2630",
+          "#b4c4d4",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/sulfur_dust",
+      "source": "unused-textures",
+      "src": "items/material_dust_sulfur.png",
+      "ops": []
+    },
+    {
+      "out": "item/salt",
+      "source": "unused-textures",
+      "src": "items/material_dust_salt.png",
+      "ops": []
+    },
+    {
+      "out": "item/borax",
+      "source": "unused-textures",
+      "src": "items/material_crystal_salt.png",
+      "ops": []
+    },
+    {
+      "out": "item/silica",
+      "source": "unused-textures",
+      "src": "items/material_dust_quartz.png",
+      "ops": []
+    },
+    {
+      "out": "item/rare_earth_dust",
+      "source": "unused-textures",
+      "src": "items/material_dust_ore_rareearths.png",
+      "ops": []
+    },
+    {
+      "out": "item/activated_carbon",
+      "source": "unused-textures",
+      "src": "items/material_dust_charcoal.png",
+      "ops": []
+    },
+    {
+      "out": "item/coal_coke",
+      "source": "unused-textures",
+      "src": "items/material_rock_coalcoke_2.png",
+      "ops": []
+    },
+    {
+      "out": "item/titanium_dioxide",
+      "source": "unused-textures",
+      "src": "items/material_dust_titaniumoxide.png",
+      "ops": []
+    },
+    {
+      "out": "item/iron_oxide",
+      "source": "unused-textures",
+      "src": "items/dust_red_metal.png",
+      "ops": []
+    },
+    {
+      "out": "item/ammonium_nitrate",
+      "source": "unused-textures",
+      "src": "items/material_dust_saltpeter.png",
+      "ops": []
+    },
+    {
+      "out": "item/fertilizer",
+      "source": "unused-textures",
+      "src": "items/material_dust_fertilizer_nitrogenous.png",
+      "ops": []
+    },
+    {
+      "out": "item/super_bone_meal",
+      "source": "unused-textures",
+      "src": "items/material_dust_fertilizer_phosphoric.png",
+      "ops": []
+    },
+    {
+      "out": "item/biomass",
+      "source": "unused-textures",
+      "src": "items/material_dust_compost.png",
+      "ops": []
+    },
+    {
+      "out": "item/alumina_dust",
+      "source": "unused-textures",
+      "src": "items/material_dust_generic.png",
+      "ops": []
+    },
+    {
+      "out": "item/aluminum_hydroxide",
+      "source": "unused-textures",
+      "src": "items/material_dust_pale.png",
+      "ops": []
+    },
+    {
+      "out": "item/soap",
+      "source": "unused-textures",
+      "src": "items/material_soap.png",
+      "ops": []
+    },
+    {
+      "out": "item/nylon_fiber",
+      "source": "unused-textures",
+      "src": "items/material_fiber_synthetic.png",
+      "ops": []
+    },
+    {
+      "out": "item/circuit_board",
+      "source": "unused-textures",
+      "src": "items/part_electronic_circuit_printed.png",
+      "ops": []
+    },
+    {
+      "out": "item/hdpe_sheet",
+      "source": "unused-textures",
+      "src": "items/material_plastic_sheet.png",
+      "ops": []
+    },
+    {
+      "out": "item/crushed_polymetallic_nodule",
+      "source": "unused-textures",
+      "src": "items/chunk_raw_ore_3.png",
+      "ops": []
+    },
+    {
+      "out": "item/helium_locket",
+      "source": "unused-textures",
+      "src": "items/artifact_amulet.png",
+      "ops": []
+    },
+    {
+      "out": "item/anchor_charm",
+      "source": "unused-textures",
+      "src": "items/artifact_corroded_copper_ring.png",
+      "ops": []
+    },
+    {
+      "out": "item/bleach_bottle",
+      "source": "unused-textures",
+      "src": "items/bottle_fluid_light.png",
+      "ops": []
+    },
+    {
+      "out": "item/varnish",
+      "source": "unused-textures",
+      "src": "items/part_paint_lacquer.png",
+      "ops": []
+    },
+    {
+      "out": "item/calcium_carbide",
+      "source": "unused-textures",
+      "src": "items/material_rock_coalcoke.png",
+      "ops": [
+        [
+          "colorize",
+          "#1a2028",
+          "#8090a4",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/hdpe_pellets",
+      "source": "unused-textures",
+      "src": "items/fuel_charcoal_pellets.png",
+      "ops": [
+        [
+          "colorize",
+          "#7a7e84",
+          "#f4f6f8",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/carbon_filter",
+      "source": "unused-textures",
+      "src": "items/material_plate_fiberglass_1.png",
+      "ops": [
+        [
+          "colorize",
+          "#16181a",
+          "#6a7076",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/bromine",
+      "source": "unused-textures",
+      "src": "items/bottle_fluid_dark.png",
+      "ops": [
+        [
+          "hue",
+          -15,
+          1.3,
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/ochrum_dust",
+      "source": "unused-textures",
+      "src": "items/material_dust_stone_pulver.png",
+      "ops": [
+        [
+          "colorize",
+          "#3a2c08",
+          "#d8b030",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/asurine_dust",
+      "source": "unused-textures",
+      "src": "items/material_dust_stone_pulver.png",
+      "ops": [
+        [
+          "colorize",
+          "#0e1c3a",
+          "#5a80d0",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/veridium_dust",
+      "source": "unused-textures",
+      "src": "items/material_dust_stone_pulver.png",
+      "ops": [
+        [
+          "colorize",
+          "#0c2a1c",
+          "#4cc088",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/scoria_dust",
+      "source": "unused-textures",
+      "src": "items/material_dust_stone_pulver.png",
+      "ops": [
+        [
+          "colorize",
+          "#241614",
+          "#7a4a40",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/diorite_dust",
+      "source": "unused-textures",
+      "src": "items/material_dust_stone_pulver.png",
+      "ops": [
+        [
+          "colorize",
+          "#5a5a5e",
+          "#d8d8dc",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/granite_dust",
+      "source": "unused-textures",
+      "src": "items/material_dust_stone_pulver.png",
+      "ops": [
+        [
+          "colorize",
+          "#4a2c24",
+          "#c08470",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/tuff_dust",
+      "source": "unused-textures",
+      "src": "items/material_dust_stone_pulver.png",
+      "ops": [
+        [
+          "colorize",
+          "#2c3228",
+          "#8a927e",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/black_paint",
+      "source": "unused-textures",
+      "src": "items/part_paint_black.png",
+      "ops": []
+    },
+    {
+      "out": "item/blue_paint",
+      "source": "unused-textures",
+      "src": "items/part_paint_blue.png",
+      "ops": []
+    },
+    {
+      "out": "item/brown_paint",
+      "source": "unused-textures",
+      "src": "items/part_paint_brown.png",
+      "ops": []
+    },
+    {
+      "out": "item/cyan_paint",
+      "source": "unused-textures",
+      "src": "items/part_paint_cyan.png",
+      "ops": []
+    },
+    {
+      "out": "item/gray_paint",
+      "source": "unused-textures",
+      "src": "items/part_paint_gray.png",
+      "ops": []
+    },
+    {
+      "out": "item/green_paint",
+      "source": "unused-textures",
+      "src": "items/part_paint_green.png",
+      "ops": []
+    },
+    {
+      "out": "item/light_blue_paint",
+      "source": "unused-textures",
+      "src": "items/part_paint_lightblue.png",
+      "ops": []
+    },
+    {
+      "out": "item/light_gray_paint",
+      "source": "unused-textures",
+      "src": "items/part_paint_silver.png",
+      "ops": []
+    },
+    {
+      "out": "item/lime_paint",
+      "source": "unused-textures",
+      "src": "items/part_paint_lime.png",
+      "ops": []
+    },
+    {
+      "out": "item/magenta_paint",
+      "source": "unused-textures",
+      "src": "items/part_paint_magenta.png",
+      "ops": []
+    },
+    {
+      "out": "item/orange_paint",
+      "source": "unused-textures",
+      "src": "items/part_paint_orange.png",
+      "ops": []
+    },
+    {
+      "out": "item/pink_paint",
+      "source": "unused-textures",
+      "src": "items/part_paint_pink.png",
+      "ops": []
+    },
+    {
+      "out": "item/purple_paint",
+      "source": "unused-textures",
+      "src": "items/part_paint_purple.png",
+      "ops": []
+    },
+    {
+      "out": "item/red_paint",
+      "source": "unused-textures",
+      "src": "items/part_paint_red.png",
+      "ops": []
+    },
+    {
+      "out": "item/white_paint",
+      "source": "unused-textures",
+      "src": "items/part_paint_white.png",
+      "ops": []
+    },
+    {
+      "out": "item/yellow_paint",
+      "source": "unused-textures",
+      "src": "items/part_paint_yellow.png",
+      "ops": []
+    },
+    {
+      "out": "item/gas_canister",
+      "source": "unused-textures",
+      "src": "items/container_fuelcan.png",
+      "ops": [
+        [
+          "box",
+          6,
+          8,
+          12,
+          13,
+          false
+        ],
+        [
+          "desaturate",
+          1.0
+        ],
+        [
+          "brighten",
+          1.15
+        ]
+      ]
+    },
+    {
+      "out": "item/gas_canister_band",
+      "source": "unused-textures",
+      "src": "items/container_fuelcan.png",
+      "ops": [
+        [
+          "box",
+          6,
+          8,
+          12,
+          13,
+          true
+        ],
+        [
+          "desaturate",
+          1.0
+        ],
+        [
+          "brighten",
+          1.5
+        ]
+      ]
+    },
+    {
+      "out": "item/titanium_axe",
+      "source": "foreck-textures",
+      "src": "textures/x16items/bronze_axe.png",
+      "ops": [
+        [
+          "where",
+          100,
+          255,
+          "colorize",
+          "#1a2634",
+          "#c0d2e2"
+        ]
+      ]
+    },
+    {
+      "out": "item/titanium_pickaxe",
+      "source": "foreck-textures",
+      "src": "textures/x16items/bronze_pickaxe.png",
+      "ops": [
+        [
+          "where",
+          100,
+          255,
+          "colorize",
+          "#1a2634",
+          "#c0d2e2"
+        ]
+      ]
+    },
+    {
+      "out": "item/titanium_shovel",
+      "source": "foreck-textures",
+      "src": "textures/x16items/bronze_shovel.png",
+      "ops": [
+        [
+          "where",
+          100,
+          255,
+          "colorize",
+          "#1a2634",
+          "#c0d2e2"
+        ]
+      ]
+    },
+    {
+      "out": "item/titanium_hoe",
+      "source": "foreck-textures",
+      "src": "textures/x16items/bronze_hoe.png",
+      "ops": [
+        [
+          "where",
+          100,
+          255,
+          "colorize",
+          "#1a2634",
+          "#c0d2e2"
+        ]
+      ]
+    },
+    {
+      "out": "item/titanium_sword",
+      "source": "foreck-textures",
+      "src": "textures/x16items/bronze_sword.png",
+      "ops": [
+        [
+          "where",
+          100,
+          255,
+          "colorize",
+          "#1a2634",
+          "#c0d2e2"
+        ]
+      ]
+    },
+    {
+      "out": "item/titanium_helmet",
+      "source": "foreck-textures",
+      "src": "textures/x16items/bronze_helmet.png",
+      "ops": [
+        [
+          "colorize",
+          "#1a2634",
+          "#c0d2e2",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/titanium_chestplate",
+      "source": "foreck-textures",
+      "src": "textures/x16items/bronze_chestplate.png",
+      "ops": [
+        [
+          "colorize",
+          "#1a2634",
+          "#c0d2e2",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/titanium_leggings",
+      "source": "foreck-textures",
+      "src": "textures/x16items/bronze_leggings.png",
+      "ops": [
+        [
+          "colorize",
+          "#1a2634",
+          "#c0d2e2",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/titanium_boots",
+      "source": "foreck-textures",
+      "src": "textures/x16items/bronze_boots.png",
+      "ops": [
+        [
+          "colorize",
+          "#1a2634",
+          "#c0d2e2",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "models/armor/titanium_layer_1",
+      "source": "foreck-textures",
+      "src": "textures/misceallaneous/armor/steel_layer_1.png",
+      "ops": [
+        [
+          "colorize",
+          "#141e2a",
+          "#b8ccdc",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "models/armor/titanium_layer_2",
+      "source": "foreck-textures",
+      "src": "textures/misceallaneous/armor/steel_layer_2.png",
+      "ops": [
+        [
+          "colorize",
+          "#141e2a",
+          "#b8ccdc",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "block/electrolysis_vat_wall",
+      "source": "unused-textures",
+      "src": "blocks/steel_block.png",
+      "ops": [
+        [
+          "colorize",
+          "#121417",
+          "#5c6168",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "block/electrolysis_vat_controller",
+      "source": "unused-textures",
+      "src": "blocks/metal_steel_block.png",
+      "ops": [
+        [
+          "colorize",
+          "#101215",
+          "#666c74",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "block/distillation_tower_wall",
+      "source": "unused-textures",
+      "src": "blocks/metal_tank_copper_sides.png",
+      "ops": [
+        [
+          "uniform_rows"
+        ],
+        [
+          "colorize",
+          "#7d4529",
+          "#d4966a"
+        ]
+      ]
+    },
+    {
+      "out": "block/distillation_tower_wall_end",
+      "source": "unused-textures",
+      "src": "blocks/metal_tank_copper_ends.png",
+      "ops": [
+        [
+          "uniform_rows"
+        ],
+        [
+          "colorize",
+          "#7d4529",
+          "#d4966a"
+        ]
+      ]
+    },
+    {
+      "out": "block/distillation_tower_controller",
+      "source": "unused-textures",
+      "src": "blocks/metal_tank_copper_window.png",
+      "ops": [
+        [
+          "uniform_rows"
+        ],
+        [
+          "colorize",
+          "#7d4529",
+          "#d4966a"
+        ]
+      ]
+    },
+    {
+      "out": "block/reinforced_glass",
+      "source": "unused-textures",
+      "src": "blocks/glass_crystal_0.png",
+      "ops": []
+    },
+    {
+      "out": "block/graphite_electrode",
+      "source": "unused-textures",
+      "src": "blocks/graphite_rough.png",
+      "ops": []
+    },
+    {
+      "out": "block/gold_steel_electrode",
+      "source": "unused-textures",
+      "src": "blocks/steel_block.png",
+      "ops": [
+        [
+          "colorize",
+          "#3a2c0a",
+          "#f0cc5c",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "block/lead_electrode",
+      "source": "unused-textures",
+      "src": "blocks/lead_block.png",
+      "ops": []
+    },
+    {
+      "out": "block/varnished_planks",
+      "source": "unused-textures",
+      "src": "blocks/plank_plywood.png",
+      "ops": []
+    },
+    {
+      "out": "block/polymetallic_nodule",
+      "source": "unused-textures",
+      "src": "blocks/ore_stone_big_pentlandite.png",
+      "ops": []
+    },
+    {
+      "out": "block/fluid_liquid_still",
+      "source": "unused-textures",
+      "src": "fluids/fluid_strange_gray.png",
+      "ops": [
+        [
+          "desaturate",
+          1.0
+        ],
+        [
+          "colorize",
+          "#a8a8a8",
+          "#ffffff",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "block/fluid_gas_still",
+      "source": "unused-textures",
+      "src": "fluids/fluid_gas_dark.png",
+      "ops": [
+        [
+          "desaturate",
+          1.0
+        ],
+        [
+          "colorize",
+          "#b8b8b8",
+          "#ffffff",
+          1.0
+        ],
+        [
+          "alpha",
+          0.8
+        ]
+      ]
+    },
+    {
+      "out": "block/small_electrolyser",
+      "source": "TextureRepository",
+      "src": "futureazoo/blocks/tech/crafting_interface_dark.png",
+      "ops": []
+    },
+    {
+      "out": "item/slag",
+      "source": "unused-textures",
+      "src": "items/material_dust_dark_ash.png",
+      "ops": []
+    },
+    {
+      "out": "item/silicon_board",
+      "source": "unused-textures",
+      "src": "items/part_plate_small_laminate_green.png",
+      "ops": []
+    },
+    {
+      "out": "block/oil_shale",
+      "source": "unused-textures",
+      "src": "blocks/ore_stone_anthracite.png",
+      "ops": []
+    },
+    {
+      "out": "block/airless_oven_wall",
+      "source": "unused-textures",
+      "src": "blocks/sturdy_bricks.png",
+      "ops": [
+        [
+          "colorize",
+          "#33201a",
+          "#c98d6b"
+        ]
+      ]
+    },
+    {
+      "out": "block/airless_oven_controller",
+      "source": "unused-textures",
+      "src": "blocks/device_kiln.png",
+      "ops": [
+        [
+          "colorize",
+          "#33201a",
+          "#c98d6b"
+        ]
+      ]
+    },
+    {
+      "out": "block/airless_oven_controller_top",
+      "source": "unused-textures",
+      "src": "blocks/device_kiln_top.png",
+      "ops": [
+        [
+          "colorize",
+          "#33201a",
+          "#c98d6b"
+        ]
+      ]
+    },
+    {
+      "out": "item/incomplete_circuit_board",
+      "source": "unused-textures",
+      "src": "items/part_electronic_incomplete_green_circuit.png",
+      "ops": []
+    },
+    {
+      "out": "item/yeast",
+      "source": "unused-textures",
+      "src": "items/material_dust_yeast.png",
+      "ops": []
+    },
+    {
+      "out": "block/reaction_chamber_wall",
+      "source": "TextureRepository",
+      "src": "futureazoo/blocks/tech/durasteel_frame_side.png",
+      "ops": [
+        [
+          "crop",
+          16,
+          24,
+          32,
+          40
+        ],
+        [
+          "flat"
+        ],
+        [
+          "brushed",
+          0.03
+        ],
+        [
+          "rivets",
+          3
+        ]
+      ]
+    },
+    {
+      "out": "block/reaction_chamber_controller",
+      "source": "TextureRepository",
+      "src": "futureazoo/blocks/tech/iron_compressor_front.png",
+      "ops": []
+    },
+    {
+      "out": "block/reaction_chamber_controller_top",
+      "source": "TextureRepository",
+      "src": "futureazoo/blocks/tech/iron_compressor_top.png",
+      "ops": []
+    },
+    {
+      "out": "block/electrolysis_vat_wall_connected",
+      "source": "unused-textures",
+      "src": "blocks/steel_block.png",
+      "ops": [
+        [
+          "colorize",
+          "#121417",
+          "#5c6168",
+          1.0
+        ]
+      ],
+      "ct": true
+    },
+    {
+      "out": "block/electrolysis_vat_controller_connected",
+      "source": "unused-textures",
+      "src": "blocks/metal_steel_block.png",
+      "ops": [
+        [
+          "colorize",
+          "#101215",
+          "#666c74",
+          1.0
+        ]
+      ],
+      "ct": true
+    },
+    {
+      "out": "block/distillation_tower_wall_connected",
+      "source": "unused-textures",
+      "src": "blocks/metal_tank_copper_sides.png",
+      "ops": [
+        [
+          "uniform_rows"
+        ],
+        [
+          "colorize",
+          "#7d4529",
+          "#d4966a"
+        ]
+      ],
+      "ct": true
+    },
+    {
+      "out": "block/distillation_tower_wall_end_connected",
+      "source": "unused-textures",
+      "src": "blocks/metal_tank_copper_ends.png",
+      "ops": [
+        [
+          "uniform_rows"
+        ],
+        [
+          "colorize",
+          "#7d4529",
+          "#d4966a"
+        ]
+      ],
+      "ct": true
+    },
+    {
+      "out": "block/distillation_tower_controller_connected",
+      "source": "unused-textures",
+      "src": "blocks/metal_tank_copper_window.png",
+      "ops": [
+        [
+          "uniform_rows"
+        ],
+        [
+          "colorize",
+          "#7d4529",
+          "#d4966a"
+        ]
+      ],
+      "ct": true
+    },
+    {
+      "out": "block/airless_oven_wall_connected",
+      "source": "unused-textures",
+      "src": "blocks/sturdy_bricks.png",
+      "ops": [
+        [
+          "colorize",
+          "#33201a",
+          "#c98d6b"
+        ]
+      ],
+      "ct": true
+    },
+    {
+      "out": "block/airless_oven_controller_connected",
+      "source": "unused-textures",
+      "src": "blocks/device_kiln.png",
+      "ops": [
+        [
+          "colorize",
+          "#33201a",
+          "#c98d6b"
+        ]
+      ],
+      "ct": true
+    },
+    {
+      "out": "block/airless_oven_controller_top_connected",
+      "source": "unused-textures",
+      "src": "blocks/device_kiln_top.png",
+      "ops": [
+        [
+          "colorize",
+          "#33201a",
+          "#c98d6b"
+        ]
+      ],
+      "ct": true
+    },
+    {
+      "out": "block/reaction_chamber_wall_connected",
+      "source": "TextureRepository",
+      "src": "futureazoo/blocks/tech/durasteel_frame_side.png",
+      "ops": [
+        [
+          "crop",
+          16,
+          24,
+          32,
+          40
+        ],
+        [
+          "flat"
+        ],
+        [
+          "brushed",
+          0.03
+        ],
+        [
+          "rivets",
+          3
+        ]
+      ],
+      "ct": true
+    },
+    {
+      "out": "block/reaction_chamber_controller_connected",
+      "source": "TextureRepository",
+      "src": "futureazoo/blocks/tech/iron_compressor_front.png",
+      "ops": [],
+      "ct": true
+    },
+    {
+      "out": "block/reaction_chamber_controller_top_connected",
+      "source": "TextureRepository",
+      "src": "futureazoo/blocks/tech/iron_compressor_top.png",
+      "ops": [],
+      "ct": true
+    },
+    {
+      "out": "block/steel_casing",
+      "source": "TextureRepository",
+      "src": "futureazoo/blocks/tech/durasteel_frame_side.png",
+      "ops": [
+        [
+          "crop",
+          16,
+          24,
+          32,
+          40
+        ],
+        [
+          "flat"
+        ],
+        [
+          "tint",
+          "#98a4b2"
+        ],
+        [
+          "brushed",
+          0.03
+        ]
+      ]
+    },
+    {
+      "out": "block/steel_casing_connected",
+      "source": "TextureRepository",
+      "src": "futureazoo/blocks/tech/durasteel_frame_side.png",
+      "ops": [
+        [
+          "crop",
+          16,
+          24,
+          32,
+          40
+        ],
+        [
+          "flat"
+        ],
+        [
+          "tint",
+          "#98a4b2"
+        ],
+        [
+          "brushed",
+          0.03
+        ]
+      ],
+      "ct": true
+    },
+    {
+      "out": "item/crimsite_dust",
+      "source": "unused-textures",
+      "src": "items/material_dust_stone_pulver.png",
+      "ops": [
+        [
+          "colorize",
+          "#3a0a0c",
+          "#d0403c",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/chemical_gloves",
+      "source": "unused-textures",
+      "src": "items/material_fabric.png",
+      "ops": [
+        [
+          "colorize",
+          "#3a3208",
+          "#e8d030",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/chemical_boots",
+      "source": "foreck-textures",
+      "src": "textures/x16items/bronze_boots.png",
+      "ops": [
+        [
+          "colorize",
+          "#3a3208",
+          "#e8d030",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/charcoal_tablet",
+      "source": "unused-textures",
+      "src": "items/material_rock_tablet_fancy_small.png",
+      "ops": [
+        [
+          "colorize",
+          "#101010",
+          "#6a6a6a",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/antidote",
+      "source": "unused-textures",
+      "src": "items/alchemy_bottle_green_potion.png",
+      "ops": []
+    },
+    {
+      "out": "block/derrick_wall",
+      "source": "TextureRepository",
+      "src": "futureazoo/blocks/tech/iron_macerator_side.png",
+      "ops": [
+        [
+          "hue",
+          30,
+          1.3,
+          0.98
+        ]
+      ]
+    },
+    {
+      "out": "block/derrick_truss",
+      "source": "TextureRepository",
+      "src": "futureazoo/blocks/tech/scaffold_iron.png",
+      "ops": []
+    },
+    {
+      "out": "block/derrick_pipe",
+      "source": "TextureRepository",
+      "src": "futureazoo/blocks/tech/bronze_watertower_side.png",
+      "ops": []
+    },
+    {
+      "out": "block/scrubber_front",
+      "source": "TextureRepository",
+      "src": "futureazoo/blocks/tech/iron_noteblock_side.png",
+      "ops": []
+    },
+    {
+      "out": "block/scrubber_side",
+      "source": "TextureRepository",
+      "src": "futureazoo/blocks/tech/iron_noteblock_vertical.png",
+      "ops": []
+    },
+    {
+      "out": "block/floor_drain",
+      "source": "TextureRepository",
+      "src": "futureazoo/blocks/tech/iron_noteblock_side.png",
+      "ops": [
+        [
+          "hue",
+          200,
+          0.6,
+          0.9
+        ]
+      ]
+    },
+    {
+      "out": "block/induction_plate",
+      "source": "TextureRepository",
+      "src": "futureazoo/blocks/tech/iron_furnace_top.png",
+      "ops": []
+    },
+    {
+      "out": "block/induction_plate_connected",
+      "source": "TextureRepository",
+      "src": "futureazoo/blocks/tech/iron_furnace_top.png",
+      "ops": [],
+      "ct": true
+    },
+    {
+      "out": "item/nickel_nugget",
+      "source": "unused-textures",
+      "src": "items/nugget_lead.png",
+      "ops": [
+        [
+          "colorize",
+          "#2a2f33",
+          "#cfd6db",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "block/charging_pad",
+      "source": "unused-textures",
+      "src": "blocks/space-plating-vent.png",
+      "ops": [
+        [
+          "tint",
+          "#c9ced6"
+        ]
+      ]
+    },
+    {
+      "out": "item/incomplete_diamond",
+      "source": "unused-textures",
+      "src": "items/material_dust_charcoal.png",
+      "ops": [
+        [
+          "colorize",
+          "#101820",
+          "#5f7fa3",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/netherite_alloy_dust",
+      "source": "unused-textures",
+      "src": "items/material_dust_stone_pulver.png",
+      "ops": [
+        [
+          "colorize",
+          "#1c161c",
+          "#6b5f68",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/beryllium_oxide",
+      "source": "unused-textures",
+      "src": "items/material_dust_generic.png",
+      "ops": [
+        [
+          "colorize",
+          "#0f2418",
+          "#c8ecd4",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/chromium_dust",
+      "source": "unused-textures",
+      "src": "items/material_dust_stone_pulver.png",
+      "ops": [
+        [
+          "colorize",
+          "#0a2a0d",
+          "#4caf50",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/refractory_brick",
+      "source": "foreck-textures",
+      "src": "textures/x16items/bricks/brick_sandstone.png",
+      "ops": []
+    },
+    {
+      "out": "item/steel_sheet",
+      "source": "unused-textures",
+      "src": "items/part_plate_thick_steel.png",
+      "ops": []
+    },
+    {
+      "out": "item/mineral_salt",
+      "source": "unused-textures",
+      "src": "items/material_crystal_salt_2.png",
+      "ops": []
+    },
+    {
+      "out": "item/iodine",
+      "source": "unused-textures",
+      "src": "items/material_crystal_dark_inert.png",
+      "ops": [
+        [
+          "colorize",
+          "#120a1c",
+          "#9a70c8",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/iodine_tablets",
+      "source": "unused-textures",
+      "src": "items/material_rock_tablet.png",
+      "ops": [
+        [
+          "colorize",
+          "#6a5a48",
+          "#f2e6d0",
+          1.0
+        ]
+      ]
+    },
+    {
+      "out": "item/iodine_spray",
+      "source": "unused-textures",
+      "src": "items/bottle_square_brown.png",
+      "ops": []
+    },
+    {
+      "out": "item/quicklime",
+      "source": "unused-textures",
+      "src": "items/material_rock_calcite_pebbles.png",
+      "ops": []
+    },
+    {
+      "out": "item/composite_exo_helmet",
+      "source": "foreck-textures",
+      "src": "textures/x16items/adamantium_helmet.png",
+      "ops": [
+        [
+          "colorize",
+          "#1e2530",
+          "#b8c8d8"
+        ],
+        [
+          "where",
+          170,
+          255,
+          "colorize",
+          "#1c6a80",
+          "#8ff4ff"
+        ]
+      ]
+    },
+    {
+      "out": "item/incomplete_composite_exo_helmet",
+      "source": "foreck-textures",
+      "src": "textures/x16items/adamantium_helmet.png",
+      "ops": [
+        [
+          "colorize",
+          "#1e2530",
+          "#b8c8d8"
+        ],
+        [
+          "desaturate",
+          0.6
+        ],
+        [
+          "brighten",
+          0.75
+        ]
+      ]
+    },
+    {
+      "out": "item/composite_exo_chestplate",
+      "source": "foreck-textures",
+      "src": "textures/x16items/adamantium_chestplate.png",
+      "ops": [
+        [
+          "colorize",
+          "#1e2530",
+          "#b8c8d8"
+        ],
+        [
+          "where",
+          170,
+          255,
+          "colorize",
+          "#1c6a80",
+          "#8ff4ff"
+        ]
+      ]
+    },
+    {
+      "out": "item/incomplete_composite_exo_chestplate",
+      "source": "foreck-textures",
+      "src": "textures/x16items/adamantium_chestplate.png",
+      "ops": [
+        [
+          "colorize",
+          "#1e2530",
+          "#b8c8d8"
+        ],
+        [
+          "desaturate",
+          0.6
+        ],
+        [
+          "brighten",
+          0.75
+        ]
+      ]
+    },
+    {
+      "out": "item/composite_exo_leggings",
+      "source": "foreck-textures",
+      "src": "textures/x16items/adamantium_leggings.png",
+      "ops": [
+        [
+          "colorize",
+          "#1e2530",
+          "#b8c8d8"
+        ],
+        [
+          "where",
+          170,
+          255,
+          "colorize",
+          "#1c6a80",
+          "#8ff4ff"
+        ]
+      ]
+    },
+    {
+      "out": "item/incomplete_composite_exo_leggings",
+      "source": "foreck-textures",
+      "src": "textures/x16items/adamantium_leggings.png",
+      "ops": [
+        [
+          "colorize",
+          "#1e2530",
+          "#b8c8d8"
+        ],
+        [
+          "desaturate",
+          0.6
+        ],
+        [
+          "brighten",
+          0.75
+        ]
+      ]
+    },
+    {
+      "out": "item/composite_exo_boots",
+      "source": "foreck-textures",
+      "src": "textures/x16items/adamantium_boots.png",
+      "ops": [
+        [
+          "colorize",
+          "#1e2530",
+          "#b8c8d8"
+        ],
+        [
+          "where",
+          170,
+          255,
+          "colorize",
+          "#1c6a80",
+          "#8ff4ff"
+        ]
+      ]
+    },
+    {
+      "out": "item/incomplete_composite_exo_boots",
+      "source": "foreck-textures",
+      "src": "textures/x16items/adamantium_boots.png",
+      "ops": [
+        [
+          "colorize",
+          "#1e2530",
+          "#b8c8d8"
+        ],
+        [
+          "desaturate",
+          0.6
+        ],
+        [
+          "brighten",
+          0.75
+        ]
+      ]
+    },
+    {
+      "out": "models/armor/composite_exo_layer_1",
+      "source": "foreck-textures",
+      "src": "textures/misceallaneous/armor/adamantium_layer_1.png",
+      "ops": [
+        [
+          "colorize",
+          "#1e2530",
+          "#b8c8d8"
+        ],
+        [
+          "where",
+          170,
+          255,
+          "colorize",
+          "#1c6a80",
+          "#8ff4ff"
+        ]
+      ]
+    },
+    {
+      "out": "models/armor/composite_exo_layer_2",
+      "source": "foreck-textures",
+      "src": "textures/misceallaneous/armor/adamantium_layer_2.png",
+      "ops": [
+        [
+          "colorize",
+          "#1e2530",
+          "#b8c8d8"
+        ],
+        [
+          "where",
+          170,
+          255,
+          "colorize",
+          "#1c6a80",
+          "#8ff4ff"
+        ]
+      ]
+    },
+    {
+      "out": "item/plasma_multitool",
+      "source": "foreck-textures",
+      "src": "textures/x16items/adamantium_pickaxe.png",
+      "ops": [
+        [
+          "colorize",
+          "#1e2530",
+          "#b8c8d8"
+        ],
+        [
+          "where",
+          170,
+          255,
+          "colorize",
+          "#1c6a80",
+          "#8ff4ff"
+        ]
+      ]
+    },
+    {
+      "out": "item/incomplete_plasma_multitool",
+      "source": "foreck-textures",
+      "src": "textures/x16items/adamantium_pickaxe.png",
+      "ops": [
+        [
+          "colorize",
+          "#1e2530",
+          "#b8c8d8"
+        ],
+        [
+          "desaturate",
+          0.6
+        ],
+        [
+          "brighten",
+          0.75
+        ]
+      ]
+    },
+    {
+      "out": "item/neon_blade",
+      "source": "foreck-textures",
+      "src": "textures/x16items/saber_adamantium.png",
+      "ops": [
+        [
+          "colorize",
+          "#1e2530",
+          "#b8c8d8"
+        ],
+        [
+          "inside",
+          6,
+          1,
+          15,
+          9,
+          "colorize",
+          "#303038",
+          "#9098a0"
+        ]
+      ]
+    },
+    {
+      "out": "item/neon_blade_lit",
+      "source": "foreck-textures",
+      "src": "textures/x16items/saber_adamantium.png",
+      "ops": [
+        [
+          "colorize",
+          "#1e2530",
+          "#b8c8d8"
+        ],
+        [
+          "inside",
+          6,
+          1,
+          15,
+          9,
+          "colorize",
+          "#ff2a10",
+          "#fff4e0"
+        ]
+      ]
+    },
+    {
+      "out": "item/incomplete_neon_blade",
+      "source": "foreck-textures",
+      "src": "textures/x16items/saber_adamantium.png",
+      "ops": [
+        [
+          "colorize",
+          "#1e2530",
+          "#b8c8d8"
+        ],
+        [
+          "desaturate",
+          0.6
+        ],
+        [
+          "brighten",
+          0.75
+        ]
+      ]
+    },
+    {
+      "out": "item/rare_earth_magnet",
+      "source": "unused-textures",
+      "src": "items/part_electronic_magnet.png",
+      "ops": []
+    },
+    {
+      "out": "item/composite_plating",
+      "source": "unused-textures",
+      "src": "items/part_plate_superalloy.png",
+      "ops": []
+    },
+    {
+      "out": "item/incomplete_composite_plating",
+      "source": "unused-textures",
+      "src": "items/part_plate_superalloy.png",
+      "ops": [
+        [
+          "desaturate",
+          0.6
+        ],
+        [
+          "brighten",
+          0.75
+        ]
+      ]
+    },
+    {
+      "out": "item/control_unit",
+      "source": "unused-textures",
+      "src": "items/part_electronic_circuit_integrated.png",
+      "ops": []
+    },
+    {
+      "out": "item/incomplete_control_unit",
+      "source": "unused-textures",
+      "src": "items/part_electronic_circuit_integrated.png",
+      "ops": [
+        [
+          "desaturate",
+          0.6
+        ],
+        [
+          "brighten",
+          0.75
+        ]
+      ]
+    },
+    {
+      "out": "item/servo_actuator",
+      "source": "unused-textures",
+      "src": "items/part_advanced_mechanical_component.png",
+      "ops": []
+    },
+    {
+      "out": "item/incomplete_servo_actuator",
+      "source": "unused-textures",
+      "src": "items/part_advanced_mechanical_component_incomplete.png",
+      "ops": []
+    },
+    {
+      "out": "item/ruby_lens",
+      "source": "unused-textures",
+      "src": "items/gem_lens.png",
+      "ops": [
+        [
+          "colorize",
+          "#3a0008",
+          "#ff8090"
+        ]
+      ]
+    },
+    {
+      "out": "item/incomplete_ruby_lens",
+      "source": "unused-textures",
+      "src": "items/gem_lens.png",
+      "ops": [
+        [
+          "colorize",
+          "#3a0008",
+          "#ff8090"
+        ],
+        [
+          "desaturate",
+          0.6
+        ],
+        [
+          "brighten",
+          0.75
+        ]
+      ]
+    },
+    {
+      "out": "item/aerozine_thrusters",
+      "source": "TextureRepository",
+      "src": "futureazoo/items/tech/jetpack1_booster.png",
+      "ops": []
+    },
+    {
+      "out": "item/digging_ring",
+      "source": "unused-textures",
+      "src": "items/artifact_diamond_ring.png",
+      "ops": []
+    },
+    {
+      "out": "block/steam_turbine_front",
+      "source": "unused-textures",
+      "src": "blocks/industrial_metal_duct_fan.png",
+      "ops": [
+        [
+          "desaturate",
+          1.0
+        ],
+        [
+          "colorize",
+          "#26292e",
+          "#c9d0d6"
+        ]
+      ]
+    },
+    {
+      "out": "block/steam_turbine_side",
+      "source": "unused-textures",
+      "src": "blocks/industrial_metal_duct_vent.png",
+      "ops": [
+        [
+          "desaturate",
+          1.0
+        ],
+        [
+          "colorize",
+          "#26292e",
+          "#c9d0d6"
+        ]
+      ]
+    },
+    {
+      "out": "block/steam_turbine_top",
+      "source": "unused-textures",
+      "src": "blocks/industrial_metal_duct_flat_1.png",
+      "ops": [
+        [
+          "desaturate",
+          1.0
+        ],
+        [
+          "colorize",
+          "#26292e",
+          "#c9d0d6"
+        ]
+      ]
+    },
+    {
+      "out": "block/drill_bit_steel",
+      "source": "unused-textures",
+      "src": "blocks/steel_block.png",
+      "ops": [
+        [
+          "desaturate",
+          1.0
+        ],
+        [
+          "colorize",
+          "#26292e",
+          "#c9d0d6"
+        ]
+      ]
+    },
+    {
+      "out": "block/drill_bit_titanium",
+      "source": "unused-textures",
+      "src": "blocks/metal_titanium_block.png",
+      "ops": [
+        [
+          "brighten",
+          1.45
+        ]
+      ]
+    }
+  ],
+  "photos": []
+}

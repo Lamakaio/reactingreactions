@@ -1,0 +1,32 @@
+{
+  "parent": "reactingreactions:derrick",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "reactingreactions:crimsite_dust"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.reactingreactions.drilled.description"
+    },
+    "frame": "task",
+    "icon": {
+      "id": "reactingreactions:crimsite_dust"
+    },
+    "title": {
+      "translate": "advancements.reactingreactions.drilled.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ]
+}

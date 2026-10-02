@@ -1,0 +1,20 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:magma_cream"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 500,
+      "tag": "c:mineral_oil"
+    }
+  ],
+  "results": [
+    {
+      "amount": 500,
+      "id": "reactingreactions:drill_grease"
+    }
+  ]
+}

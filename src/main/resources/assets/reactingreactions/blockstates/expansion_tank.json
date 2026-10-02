@@ -1,0 +1,19 @@
+{
+ "variants": {
+  "facing=south": {
+   "model": "reactingreactions:block/expansion_tank"
+  },
+  "facing=west": {
+   "model": "reactingreactions:block/expansion_tank",
+   "y": 90
+  },
+  "facing=north": {
+   "model": "reactingreactions:block/expansion_tank",
+   "y": 180
+  },
+  "facing=east": {
+   "model": "reactingreactions:block/expansion_tank",
+   "y": 270
+  }
+ }
+}

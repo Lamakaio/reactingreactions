@@ -1,0 +1,25 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "ingredients": [
+    {
+      "tag": "c:nuggets/lithium"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 250,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "max_rpm": 24,
+  "min_rpm": 8,
+  "results": [
+    {
+      "amount": 250,
+      "id": "reactingreactions:hydrogen"
+    },
+    {
+      "amount": 125,
+      "id": "reactingreactions:lye"
+    }
+  ]
+}

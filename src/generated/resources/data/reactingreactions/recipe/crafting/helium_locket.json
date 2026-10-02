@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "reactingreactions:helium_bucket"
+    },
+    "H": {
+      "tag": "c:plates/plastic"
+    },
+    "N": {
+      "item": "reactingreactions:nylon_fiber"
+    }
+  },
+  "pattern": [
+    " N ",
+    "HBH"
+  ],
+  "result": {
+    "id": "reactingreactions:helium_locket"
+  }
+}

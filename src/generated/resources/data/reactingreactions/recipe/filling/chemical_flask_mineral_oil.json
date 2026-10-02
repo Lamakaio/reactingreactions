@@ -1,0 +1,24 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 500,
+      "fluid": "reactingreactions:mineral_oil"
+    }
+  ],
+  "results": [
+    {
+      "components": {
+        "reactingreactions:fluid_tank": {
+          "amount": 500,
+          "id": "reactingreactions:mineral_oil"
+        }
+      },
+      "id": "reactingreactions:chemical_flask"
+    }
+  ]
+}

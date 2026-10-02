@@ -1,0 +1,24 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "reactingreactions:ammonium_nitrate"
+    },
+    {
+      "item": "reactingreactions:ammonium_nitrate"
+    },
+    {
+      "tag": "c:barrels/wooden"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 125,
+      "tag": "c:diesel"
+    }
+  ],
+  "results": [
+    {
+      "id": "reactingreactions:anfo_charge"
+    }
+  ]
+}

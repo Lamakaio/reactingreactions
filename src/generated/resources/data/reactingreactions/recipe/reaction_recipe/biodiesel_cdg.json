@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "createdieselgenerators"
+    }
+  ],
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "type": "neoforge:single",
+      "amount": 500,
+      "fluid": "createdieselgenerators:plant_oil"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 250,
+      "fluid": "createdieselgenerators:ethanol"
+    },
+    {
+      "tag": "c:dusts/sulfur"
+    }
+  ],
+  "max_rpm": 64,
+  "min_rpm": 24,
+  "results": [
+    {
+      "amount": 500,
+      "id": "createdieselgenerators:biodiesel"
+    }
+  ]
+}

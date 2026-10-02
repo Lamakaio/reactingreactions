@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "reactingreactions:block/distillation_tower_wall_end",
+    "side": "reactingreactions:block/distillation_tower_wall"
+  }
+}

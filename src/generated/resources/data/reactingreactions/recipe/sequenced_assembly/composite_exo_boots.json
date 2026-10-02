@@ -1,0 +1,160 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "reactingreactions:titanium_boots"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "reactingreactions:composite_exo_boots"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_boots"
+        },
+        {
+          "item": "reactingreactions:composite_plating"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_boots"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_boots"
+        },
+        {
+          "item": "reactingreactions:servo_actuator"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_boots"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_boots"
+        },
+        {
+          "item": "reactingreactions:servo_actuator"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_boots"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_boots"
+        },
+        {
+          "item": "reactingreactions:control_unit"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_boots"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_boots"
+        },
+        {
+          "item": "minecraft:netherite_ingot"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_boots"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_boots"
+        },
+        {
+          "item": "reactingreactions:circuit_board"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_boots"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_boots"
+        },
+        {
+          "item": "minecraft:heavy_core"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_boots"
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_boots"
+        },
+        {
+          "type": "neoforge:tag",
+          "amount": 250,
+          "tag": "c:mineral_oil"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_boots"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_boots"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_boots"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "reactingreactions:incomplete_composite_exo_boots"
+  }
+}

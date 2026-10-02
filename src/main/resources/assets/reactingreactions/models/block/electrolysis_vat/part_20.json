@@ -1,0 +1,91 @@
+{
+ "parent": "minecraft:block/block",
+ "textures": {
+  "vat": "reactingreactions:block/machine/vat_paint",
+  "particle": "reactingreactions:block/machine/vat_paint"
+ },
+ "elements": [
+  {
+   "from": [
+    14,
+    0,
+    0.5
+   ],
+   "to": [
+    15.5,
+    16,
+    16
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0.5,
+      0,
+      2,
+      16
+     ],
+     "texture": "#vat"
+    },
+    "east": {
+     "uv": [
+      0,
+      0,
+      15.5,
+      16
+     ],
+     "texture": "#vat"
+    },
+    "west": {
+     "uv": [
+      0.5,
+      0,
+      16,
+      16
+     ],
+     "texture": "#vat"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    0,
+    0.5
+   ],
+   "to": [
+    14,
+    16,
+    2
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      2,
+      0,
+      16,
+      16
+     ],
+     "texture": "#vat"
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      14,
+      16
+     ],
+     "texture": "#vat"
+    },
+    "east": {
+     "uv": [
+      14,
+      0,
+      15.5,
+      16
+     ],
+     "texture": "#vat"
+    }
+   }
+  }
+ ]
+}

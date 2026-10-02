@@ -1,0 +1,26 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "item": "reactingreactions:veridium_dust"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:oxygen"
+    }
+  ],
+  "max_rpm": 128,
+  "min_rpm": 64,
+  "results": [
+    {
+      "id": "minecraft:copper_ingot"
+    },
+    {
+      "chance": 0.5,
+      "count": 3,
+      "id": "minecraft:iron_nugget"
+    }
+  ]
+}

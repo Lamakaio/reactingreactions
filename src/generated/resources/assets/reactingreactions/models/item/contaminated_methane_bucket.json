@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "reactingreactions:item/gas_canister",
+    "layer1": "reactingreactions:item/gas_canister_band"
+  }
+}

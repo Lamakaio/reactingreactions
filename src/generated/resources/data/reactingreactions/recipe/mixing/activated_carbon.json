@@ -1,0 +1,14 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "tag": "c:coal_coke"
+    }
+  ],
+  "results": [
+    {
+      "id": "reactingreactions:activated_carbon"
+    }
+  ]
+}

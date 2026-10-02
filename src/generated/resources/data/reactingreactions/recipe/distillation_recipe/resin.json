@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:mod_loaded",
+        "modid": "createdieselgenerators"
+      }
+    }
+  ],
+  "type": "reactingreactions:distillation_recipe",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 500,
+      "tag": "c:resin"
+    }
+  ],
+  "processing_time": 400,
+  "results": [
+    {
+      "amount": 30,
+      "id": "reactingreactions:naphtha"
+    },
+    {
+      "amount": 50,
+      "id": "reactingreactions:solvent"
+    }
+  ]
+}

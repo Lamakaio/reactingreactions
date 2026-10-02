@@ -1,0 +1,26 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "item": "minecraft:coal"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:steam"
+    }
+  ],
+  "max_rpm": 128,
+  "min_rpm": 64,
+  "results": [
+    {
+      "amount": 500,
+      "id": "reactingreactions:carbon_monoxide"
+    },
+    {
+      "amount": 500,
+      "id": "reactingreactions:hydrogen"
+    }
+  ]
+}

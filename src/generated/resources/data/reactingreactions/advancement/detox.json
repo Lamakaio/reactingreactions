@@ -1,0 +1,32 @@
+{
+  "parent": "reactingreactions:bad_air",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "reactingreactions:antidote"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.reactingreactions.detox.description"
+    },
+    "frame": "task",
+    "icon": {
+      "id": "reactingreactions:antidote"
+    },
+    "title": {
+      "translate": "advancements.reactingreactions.detox.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ]
+}

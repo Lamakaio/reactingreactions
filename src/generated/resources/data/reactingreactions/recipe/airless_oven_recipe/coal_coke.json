@@ -1,0 +1,28 @@
+{
+  "type": "reactingreactions:airless_oven_recipe",
+  "ingredients": [
+    {
+      "item": "minecraft:coal"
+    },
+    {
+      "item": "minecraft:coal"
+    }
+  ],
+  "processing_time": 600,
+  "results": [
+    {
+      "id": "reactingreactions:coal_coke"
+    },
+    {
+      "id": "reactingreactions:coal_coke"
+    },
+    {
+      "amount": 50,
+      "id": "reactingreactions:naphtha"
+    },
+    {
+      "chance": 0.3,
+      "id": "reactingreactions:slag"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "create:limestone"
+    }
+  ],
+  "processing_time": 250,
+  "results": [
+    {
+      "chance": 0.2,
+      "id": "reactingreactions:mineral_salt"
+    }
+  ]
+}

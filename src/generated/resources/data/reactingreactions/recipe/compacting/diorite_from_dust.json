@@ -1,0 +1,16 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "reactingreactions:diorite_dust"
+    },
+    {
+      "item": "reactingreactions:diorite_dust"
+    }
+  ],
+  "results": [
+    {
+      "id": "minecraft:diorite"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:mod_loaded",
+        "modid": "createdieselgenerators"
+      }
+    }
+  ],
+  "type": "reactingreactions:distillation_recipe",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "type": "neoforge:single",
+      "amount": 1000,
+      "fluid": "reactingreactions:weak_brine"
+    }
+  ],
+  "processing_time": 40,
+  "results": [
+    {
+      "amount": 100,
+      "id": "reactingreactions:strong_brine"
+    },
+    {
+      "amount": 90,
+      "id": "reactingreactions:steam"
+    }
+  ]
+}

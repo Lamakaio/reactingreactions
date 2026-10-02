@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "minecraft:blast_furnace"
+    },
+    "P": {
+      "item": "create:fluid_pipe"
+    },
+    "W": {
+      "item": "reactingreactions:airless_oven_wall"
+    }
+  },
+  "pattern": [
+    " P ",
+    "WFW",
+    " W "
+  ],
+  "result": {
+    "count": 1,
+    "id": "reactingreactions:airless_oven_controller"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "H": {
+      "tag": "c:plates/plastic"
+    },
+    "P": {
+      "item": "create:fluid_pipe"
+    },
+    "V": {
+      "item": "create:fluid_valve"
+    }
+  },
+  "pattern": [
+    "P",
+    "V",
+    "H"
+  ],
+  "result": {
+    "count": 1,
+    "id": "reactingreactions:purger"
+  }
+}

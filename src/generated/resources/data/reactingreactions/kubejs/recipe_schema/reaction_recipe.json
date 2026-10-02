@@ -1,0 +1,26 @@
+{
+  "parent": "create:base/processing_with_time",
+  "keys": [
+    {
+      "type": "float",
+      "function_names": [
+        "minRpm"
+      ],
+      "name": "min_rpm",
+      "optional": 0.0,
+      "role": "other"
+    },
+    {
+      "type": "float",
+      "function_names": [
+        "maxRpm"
+      ],
+      "name": "max_rpm",
+      "optional": 0.0,
+      "role": "other"
+    }
+  ],
+  "merge": {
+    "keys": true
+  }
+}

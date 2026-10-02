@@ -1,0 +1,26 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "createdieselgenerators"
+    }
+  ],
+  "burner_multiplier": 0.55,
+  "fluid": "reactingreactions:naphtha",
+  "huge": {
+    "burn_rate": 0.05,
+    "speed": 224.0,
+    "strength": 14336.0
+  },
+  "modular": {
+    "burn_rate": 0.05,
+    "speed": 96.0,
+    "strength": 7168.0
+  },
+  "normal": {
+    "burn_rate": 0.05,
+    "speed": 96.0,
+    "strength": 5120.0
+  },
+  "sound_pitch": 0.95
+}

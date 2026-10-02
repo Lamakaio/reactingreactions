@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "reactingreactions:alumina_dust"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:lye"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "id": "reactingreactions:aluminum_hydroxide"
+    }
+  ]
+}

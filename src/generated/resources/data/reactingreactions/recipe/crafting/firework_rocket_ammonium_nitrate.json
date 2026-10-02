@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "reactingreactions:ammonium_nitrate"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    }
+  },
+  "pattern": [
+    "A",
+    "P",
+    "A"
+  ],
+  "result": {
+    "count": 3,
+    "id": "minecraft:firework_rocket"
+  }
+}

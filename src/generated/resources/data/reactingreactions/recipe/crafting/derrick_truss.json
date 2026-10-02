@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:iron_bars"
+    },
+    "S": {
+      "tag": "c:ingots/steel"
+    }
+  },
+  "pattern": [
+    "S S",
+    "BBB",
+    "S S"
+  ],
+  "result": {
+    "count": 4,
+    "id": "reactingreactions:derrick_truss"
+  }
+}

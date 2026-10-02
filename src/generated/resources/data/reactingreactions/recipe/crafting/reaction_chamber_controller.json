@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "reactingreactions:steel_casing"
+    },
+    "K": {
+      "item": "create:whisk"
+    },
+    "W": {
+      "item": "reactingreactions:reaction_chamber_wall"
+    }
+  },
+  "pattern": [
+    "C",
+    "K",
+    "W"
+  ],
+  "result": {
+    "count": 1,
+    "id": "reactingreactions:reaction_chamber_controller"
+  }
+}

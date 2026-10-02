@@ -1,0 +1,86 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "electroenergetics"
+    }
+  ],
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "create:andesite_alloy"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "electroenergetics:accumulator"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_lead_acid_battery"
+        },
+        {
+          "tag": "c:ingots/lead"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_lead_acid_battery"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_lead_acid_battery"
+        },
+        {
+          "tag": "c:ingots/lead"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_lead_acid_battery"
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_lead_acid_battery"
+        },
+        {
+          "type": "neoforge:tag",
+          "amount": 250,
+          "tag": "c:sulfuric_acid"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_lead_acid_battery"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_lead_acid_battery"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_lead_acid_battery"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "reactingreactions:incomplete_lead_acid_battery"
+  }
+}

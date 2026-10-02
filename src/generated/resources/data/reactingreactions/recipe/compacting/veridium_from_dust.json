@@ -1,0 +1,16 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "reactingreactions:veridium_dust"
+    },
+    {
+      "item": "reactingreactions:veridium_dust"
+    }
+  ],
+  "results": [
+    {
+      "id": "create:veridium"
+    }
+  ]
+}

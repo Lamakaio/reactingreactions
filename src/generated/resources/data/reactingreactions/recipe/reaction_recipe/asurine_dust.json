@@ -1,0 +1,26 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "item": "reactingreactions:asurine_dust"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:oxygen"
+    }
+  ],
+  "max_rpm": 128,
+  "min_rpm": 64,
+  "results": [
+    {
+      "count": 5,
+      "id": "create:zinc_nugget"
+    },
+    {
+      "chance": 0.35,
+      "id": "reactingreactions:rare_earth_dust"
+    }
+  ]
+}

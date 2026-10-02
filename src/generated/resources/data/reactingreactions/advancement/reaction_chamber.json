@@ -1,0 +1,32 @@
+{
+  "parent": "reactingreactions:steel",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "reactingreactions:reaction_chamber_controller"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.reactingreactions.reaction_chamber.description"
+    },
+    "frame": "task",
+    "icon": {
+      "id": "reactingreactions:reaction_chamber_controller"
+    },
+    "title": {
+      "translate": "advancements.reactingreactions.reaction_chamber.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ]
+}

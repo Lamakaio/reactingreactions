@@ -1,0 +1,29 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "tag": "c:dusts/salt"
+    },
+    {
+      "item": "reactingreactions:alumina_dust"
+    },
+    {
+      "tag": "c:dusts/quartz"
+    },
+    {
+      "tag": "c:dusts/sulfur"
+    },
+    {
+      "tag": "c:nuggets/iron"
+    }
+  ],
+  "max_rpm": 128,
+  "min_rpm": 64,
+  "results": [
+    {
+      "count": 4,
+      "id": "minecraft:lapis_lazuli"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "reactingreactions:reaction_chamber",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "reactingreactions:titanium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.reactingreactions.titanium.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "id": "reactingreactions:titanium"
+    },
+    "title": {
+      "translate": "advancements.reactingreactions.titanium.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ]
+}

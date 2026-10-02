@@ -1,0 +1,23 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "reactingreactions:polymetallic_nodule"
+    }
+  ],
+  "processing_time": 350,
+  "results": [
+    {
+      "count": 2,
+      "id": "reactingreactions:crushed_polymetallic_nodule"
+    },
+    {
+      "chance": 0.2,
+      "id": "minecraft:iron_nugget"
+    },
+    {
+      "chance": 0.15,
+      "id": "create:copper_nugget"
+    }
+  ]
+}

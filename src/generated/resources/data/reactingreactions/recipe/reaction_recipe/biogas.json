@@ -1,0 +1,24 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "ingredients": [
+    {
+      "item": "reactingreactions:biomass"
+    },
+    {
+      "item": "reactingreactions:biomass"
+    }
+  ],
+  "max_rpm": 24,
+  "min_rpm": 8,
+  "processing_time": 400,
+  "results": [
+    {
+      "amount": 500,
+      "id": "reactingreactions:contaminated_methane"
+    },
+    {
+      "amount": 250,
+      "id": "reactingreactions:carbon_dioxide"
+    }
+  ]
+}

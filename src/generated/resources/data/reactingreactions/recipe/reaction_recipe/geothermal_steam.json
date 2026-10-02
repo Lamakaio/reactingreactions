@@ -1,0 +1,27 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "ingredients": [
+    {
+      "type": "neoforge:single",
+      "amount": 250,
+      "fluid": "minecraft:lava"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 1000,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "max_rpm": 24,
+  "min_rpm": 8,
+  "results": [
+    {
+      "amount": 1000,
+      "id": "reactingreactions:steam"
+    },
+    {
+      "chance": 0.5,
+      "id": "minecraft:basalt"
+    }
+  ]
+}

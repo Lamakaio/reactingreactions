@@ -1,0 +1,33 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "tag": "c:gunpowders"
+    },
+    {
+      "tag": "c:gunpowders"
+    },
+    {
+      "tag": "c:gunpowders"
+    },
+    {
+      "tag": "c:gunpowders"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:sulfuric_acid"
+    }
+  ],
+  "results": [
+    {
+      "amount": 200,
+      "id": "reactingreactions:nitric_acid"
+    },
+    {
+      "chance": 0.5,
+      "id": "reactingreactions:sulfur_dust"
+    }
+  ]
+}

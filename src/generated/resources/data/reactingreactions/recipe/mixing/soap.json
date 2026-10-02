@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:lye"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:plantoil"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "id": "reactingreactions:soap"
+    }
+  ]
+}

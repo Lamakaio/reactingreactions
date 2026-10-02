@@ -1,0 +1,88 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "reactingreactions:activated_carbon"
+  },
+  "loops": 10,
+  "results": [
+    {
+      "id": "minecraft:diamond"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_diamond"
+        },
+        {
+          "item": "reactingreactions:activated_carbon"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_diamond"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_diamond"
+        },
+        {
+          "tag": "c:nuggets/nickel"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_diamond"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_diamond"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_diamond"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_diamond"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_diamond"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_diamond"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_diamond"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "reactingreactions:incomplete_diamond"
+  }
+}

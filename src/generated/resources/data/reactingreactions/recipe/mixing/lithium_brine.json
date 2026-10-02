@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 1000,
+      "tag": "c:brine"
+    }
+  ],
+  "results": [
+    {
+      "amount": 400,
+      "id": "reactingreactions:lithium_brine"
+    },
+    {
+      "count": 4,
+      "id": "reactingreactions:salt"
+    },
+    {
+      "chance": 0.4,
+      "id": "reactingreactions:borax"
+    }
+  ]
+}

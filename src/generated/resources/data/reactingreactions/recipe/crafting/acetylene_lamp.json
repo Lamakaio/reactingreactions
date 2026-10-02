@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "reactingreactions:acetylene_bucket"
+    },
+    "G": {
+      "tag": "c:glass_blocks/colorless"
+    },
+    "H": {
+      "tag": "c:plates/plastic"
+    }
+  },
+  "pattern": [
+    "HGH",
+    "GAG",
+    "HGH"
+  ],
+  "result": {
+    "components": {
+      "reactingreactions:fluid_tank": {
+        "amount": 2000,
+        "id": "reactingreactions:acetylene"
+      }
+    },
+    "count": 1,
+    "id": "reactingreactions:acetylene_lamp"
+  }
+}

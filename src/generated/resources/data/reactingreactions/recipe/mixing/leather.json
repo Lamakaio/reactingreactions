@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:rotten_flesh"
+    },
+    {
+      "item": "minecraft:rotten_flesh"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 250,
+      "fluid": "reactingreactions:weak_brine"
+    }
+  ],
+  "results": [
+    {
+      "id": "minecraft:leather"
+    }
+  ]
+}

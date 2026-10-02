@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "reactingreactions:reinforced_glass"
+    },
+    "R": {
+      "tag": "c:gems/ruby"
+    },
+    "S": {
+      "tag": "c:ingots/steel"
+    }
+  },
+  "pattern": [
+    " R ",
+    "SGS",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "reactingreactions:laser_pointer"
+  }
+}

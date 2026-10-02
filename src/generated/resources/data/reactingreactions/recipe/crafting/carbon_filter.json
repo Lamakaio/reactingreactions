@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": {
+      "item": "reactingreactions:activated_carbon"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    }
+  },
+  "pattern": [
+    "P",
+    "C",
+    "P"
+  ],
+  "result": {
+    "id": "reactingreactions:carbon_filter"
+  }
+}

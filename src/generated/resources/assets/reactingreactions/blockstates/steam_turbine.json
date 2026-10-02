@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "reactingreactions:block/steam_turbine",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "reactingreactions:block/steam_turbine"
+    },
+    "facing=south": {
+      "model": "reactingreactions:block/steam_turbine",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "reactingreactions:block/steam_turbine",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "create:andesite_alloy"
+    },
+    "K": {
+      "item": "create:shaft"
+    },
+    "S": {
+      "tag": "c:plates/steel"
+    }
+  },
+  "pattern": [
+    "SAS",
+    " K "
+  ],
+  "result": {
+    "count": 1,
+    "id": "reactingreactions:steam_turbine"
+  }
+}

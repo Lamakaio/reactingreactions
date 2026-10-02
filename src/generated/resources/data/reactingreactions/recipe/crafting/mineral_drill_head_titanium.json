@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "reactingreactions:drill_pipe"
+    },
+    "T": {
+      "tag": "c:ingots/titanium"
+    }
+  },
+  "pattern": [
+    "T",
+    "P",
+    "T"
+  ],
+  "result": {
+    "count": 1,
+    "id": "reactingreactions:mineral_drill_head_titanium"
+  }
+}

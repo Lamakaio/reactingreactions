@@ -1,0 +1,20 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "reactingreactions:oil_shale"
+    }
+  ],
+  "processing_time": 300,
+  "results": [
+    {
+      "amount": 500,
+      "id": "reactingreactions:crude_oil"
+    },
+    {
+      "chance": 0.5,
+      "id": "reactingreactions:slag"
+    }
+  ]
+}

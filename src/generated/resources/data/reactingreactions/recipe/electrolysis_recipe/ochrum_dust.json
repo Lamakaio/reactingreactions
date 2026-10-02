@@ -1,0 +1,23 @@
+{
+  "type": "reactingreactions:electrolysis_recipe",
+  "electrodes": [
+    "reactingreactions:gold_steel_electrode"
+  ],
+  "ingredients": [
+    {
+      "item": "reactingreactions:ochrum_dust"
+    }
+  ],
+  "min_voltage": 600.0,
+  "processing_time": 200,
+  "results": [
+    {
+      "count": 3,
+      "id": "minecraft:gold_nugget"
+    },
+    {
+      "count": 3,
+      "id": "reactingreactions:lead_nugget"
+    }
+  ]
+}

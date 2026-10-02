@@ -1,0 +1,16 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "reactingreactions:ochrum_dust"
+    },
+    {
+      "item": "reactingreactions:ochrum_dust"
+    }
+  ],
+  "results": [
+    {
+      "id": "create:ochrum"
+    }
+  ]
+}

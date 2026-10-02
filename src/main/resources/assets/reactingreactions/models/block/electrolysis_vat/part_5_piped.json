@@ -1,0 +1,178 @@
+{
+ "parent": "minecraft:block/block",
+ "textures": {
+  "brass": "create:block/brass_block",
+  "copper": "reactingreactions:block/machine/copper_plate",
+  "particle": "create:block/brass_block"
+ },
+ "elements": [
+  {
+   "from": [
+    0,
+    7.25,
+    -2
+   ],
+   "to": [
+    15.5,
+    8.75,
+    -0.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0.5,
+      7.25,
+      16,
+      8.75
+     ],
+     "texture": "#copper"
+    },
+    "south": {
+     "uv": [
+      0,
+      7.25,
+      15.5,
+      8.75
+     ],
+     "texture": "#copper"
+    },
+    "east": {
+     "uv": [
+      0.5,
+      7.25,
+      2,
+      8.75
+     ],
+     "texture": "#copper"
+    },
+    "up": {
+     "uv": [
+      0,
+      14,
+      15.5,
+      15.5
+     ],
+     "texture": "#copper"
+    },
+    "down": {
+     "uv": [
+      0,
+      0.5,
+      15.5,
+      2
+     ],
+     "texture": "#copper"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    8.75,
+    -2
+   ],
+   "to": [
+    0.75,
+    16,
+    -0.5
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      15.25,
+      0,
+      16,
+      7.25
+     ],
+     "texture": "#copper"
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      0.75,
+      7.25
+     ],
+     "texture": "#copper"
+    },
+    "east": {
+     "uv": [
+      0.5,
+      0,
+      2,
+      7.25
+     ],
+     "texture": "#copper"
+    },
+    "down": {
+     "uv": [
+      0,
+      0.5,
+      0.75,
+      2
+     ],
+     "texture": "#copper"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    8.75,
+    -2.25
+   ],
+   "to": [
+    1.25,
+    9.5,
+    -0.25
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      14.75,
+      6.5,
+      16,
+      7.25
+     ],
+     "texture": "#brass"
+    },
+    "south": {
+     "uv": [
+      0,
+      6.5,
+      1.25,
+      7.25
+     ],
+     "texture": "#brass"
+    },
+    "east": {
+     "uv": [
+      0.25,
+      6.5,
+      2.25,
+      7.25
+     ],
+     "texture": "#brass"
+    },
+    "up": {
+     "uv": [
+      0,
+      13.75,
+      1.25,
+      15.75
+     ],
+     "texture": "#brass"
+    },
+    "down": {
+     "uv": [
+      0,
+      0.25,
+      1.25,
+      2.25
+     ],
+     "texture": "#brass"
+    }
+   }
+  }
+ ]
+}

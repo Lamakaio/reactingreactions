@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "N": {
+      "item": "reactingreactions:nylon_fiber"
+    },
+    "X": {
+      "tag": "c:ingots/titanium"
+    }
+  },
+  "pattern": [
+    " XN",
+    "X N",
+    " XN"
+  ],
+  "result": {
+    "id": "reactingreactions:titanium_bow"
+  }
+}

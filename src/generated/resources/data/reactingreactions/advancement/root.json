@@ -1,0 +1,21 @@
+{
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+    "description": {
+      "translate": "advancements.reactingreactions.root.description"
+    },
+    "icon": {
+      "id": "reactingreactions:reaction_chamber_controller"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.reactingreactions.root.title"
+    }
+  }
+}

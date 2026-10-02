@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "reactingreactions:activated_carbon"
+    },
+    "B": {
+      "item": "minecraft:iron_bars"
+    },
+    "K": {
+      "item": "create:shaft"
+    },
+    "S": {
+      "item": "reactingreactions:steel_casing"
+    }
+  },
+  "pattern": [
+    " B ",
+    "ASA",
+    " K "
+  ],
+  "result": {
+    "count": 1,
+    "id": "reactingreactions:atmospheric_scrubber"
+  }
+}

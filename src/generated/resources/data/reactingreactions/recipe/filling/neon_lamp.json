@@ -1,0 +1,18 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "reactingreactions:reinforced_glass"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:neon"
+    }
+  ],
+  "results": [
+    {
+      "id": "reactingreactions:neon_lamp"
+    }
+  ]
+}

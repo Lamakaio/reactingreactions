@@ -1,0 +1,94 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "reactingreactions:circuit_board"
+  },
+  "loops": 3,
+  "results": [
+    {
+      "id": "reactingreactions:control_unit"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_control_unit"
+        },
+        {
+          "item": "reactingreactions:circuit_board"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_control_unit"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_control_unit"
+        },
+        {
+          "item": "reactingreactions:rare_earth_magnet"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_control_unit"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_control_unit"
+        },
+        {
+          "tag": "c:ingots/aluminum"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_control_unit"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_control_unit"
+        },
+        {
+          "tag": "c:ingots/lithium"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_control_unit"
+        }
+      ]
+    },
+    {
+      "type": "create:cutting",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_control_unit"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_control_unit"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "reactingreactions:incomplete_control_unit"
+  }
+}

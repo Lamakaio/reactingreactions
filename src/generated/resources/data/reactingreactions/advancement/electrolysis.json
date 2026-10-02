@@ -1,0 +1,32 @@
+{
+  "parent": "reactingreactions:steel",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "reactingreactions:electrolysis_vat_controller"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.reactingreactions.electrolysis.description"
+    },
+    "frame": "task",
+    "icon": {
+      "id": "reactingreactions:electrolysis_vat_controller"
+    },
+    "title": {
+      "translate": "advancements.reactingreactions.electrolysis.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ]
+}

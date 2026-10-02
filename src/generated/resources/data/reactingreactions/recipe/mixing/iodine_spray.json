@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "reactingreactions:iodine"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:ethanol"
+    }
+  ],
+  "results": [
+    {
+      "id": "reactingreactions:iodine_spray"
+    }
+  ]
+}

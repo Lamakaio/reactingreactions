@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "reactingreactions:aluminum_nugget",
+    "reactingreactions:lead_nugget",
+    "reactingreactions:lithium_nugget",
+    "reactingreactions:nickel_nugget"
+  ]
+}

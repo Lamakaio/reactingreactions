@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "half=bottom": {
+      "model": "reactingreactions:block/floor_drain"
+    },
+    "half=top": {
+      "model": "reactingreactions:block/floor_drain",
+      "x": 180
+    }
+  }
+}

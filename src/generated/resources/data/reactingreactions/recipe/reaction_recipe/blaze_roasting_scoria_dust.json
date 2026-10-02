@@ -1,0 +1,27 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "reactingreactions:scoria_dust"
+    },
+    {
+      "item": "reactingreactions:scoria_dust"
+    },
+    {
+      "item": "minecraft:blaze_powder"
+    }
+  ],
+  "max_rpm": 64,
+  "min_rpm": 24,
+  "results": [
+    {
+      "count": 8,
+      "id": "reactingreactions:lead_nugget"
+    },
+    {
+      "chance": 0.8,
+      "id": "reactingreactions:sulfur_dust"
+    }
+  ]
+}

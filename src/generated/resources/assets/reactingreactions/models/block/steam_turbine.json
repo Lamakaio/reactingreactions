@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#top"
+        },
+        "east": {
+          "texture": "#side"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#side"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#side"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        14
+      ]
+    }
+  ],
+  "textures": {
+    "front": "reactingreactions:block/steam_turbine_front",
+    "particle": "reactingreactions:block/steam_turbine_side",
+    "side": "reactingreactions:block/steam_turbine_side",
+    "top": "reactingreactions:block/steam_turbine_top"
+  }
+}

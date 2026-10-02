@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "type": "neoforge:components",
+      "components": {
+        "reactingreactions:fluid_tank": {
+          "amount": 500,
+          "id": "reactingreactions:propylene"
+        }
+      },
+      "items": "reactingreactions:chemical_flask"
+    },
+    {
+      "item": "minecraft:gunpowder"
+    }
+  ],
+  "result": {
+    "components": {
+      "reactingreactions:fluid_tank": {
+        "amount": 500,
+        "id": "reactingreactions:propylene"
+      }
+    },
+    "count": 1,
+    "id": "reactingreactions:blast_flask"
+  }
+}

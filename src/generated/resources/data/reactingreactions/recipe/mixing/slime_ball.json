@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:dusts/borax"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:resin"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "id": "minecraft:slime_ball"
+    }
+  ]
+}

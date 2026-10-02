@@ -1,0 +1,36 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "createdieselgenerators"
+    }
+  ],
+  "type": "createdieselgenerators:distillation",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "type": "fluid_stack",
+      "amount": 1000,
+      "fluid": "createdieselgenerators:crude_oil"
+    }
+  ],
+  "processing_time": 400,
+  "results": [
+    {
+      "amount": 400,
+      "id": "reactingreactions:naphtha"
+    },
+    {
+      "amount": 150,
+      "id": "createdieselgenerators:diesel"
+    },
+    {
+      "amount": 150,
+      "id": "createdieselgenerators:gasoline"
+    },
+    {
+      "amount": 300,
+      "id": "reactingreactions:lpg"
+    }
+  ]
+}

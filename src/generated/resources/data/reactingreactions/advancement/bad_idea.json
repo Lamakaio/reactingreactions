@@ -1,0 +1,25 @@
+{
+  "parent": "reactingreactions:bad_air",
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.reactingreactions.bad_idea.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "id": "reactingreactions:acetylene_bucket"
+    },
+    "title": {
+      "translate": "advancements.reactingreactions.bad_idea.title"
+    }
+  },
+  "requirements": [
+    [
+      "impossible"
+    ]
+  ]
+}

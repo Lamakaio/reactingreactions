@@ -1,0 +1,22 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "item": "reactingreactions:alumina_dust"
+    },
+    {
+      "tag": "c:dusts/quartz"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:sulfuric_acid"
+    }
+  ],
+  "results": [
+    {
+      "id": "reactingreactions:beryllium_oxide"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "tag": "c:ingots/titanium"
+    },
+    {
+      "tag": "c:ingots/steel"
+    },
+    {
+      "tag": "c:ingots/nickel"
+    },
+    {
+      "tag": "c:ingots/manganese"
+    }
+  ],
+  "results": [
+    {
+      "id": "reactingreactions:netherite_alloy_dust"
+    }
+  ]
+}

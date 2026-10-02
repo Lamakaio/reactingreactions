@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "createdieselgenerators"
+    }
+  ],
+  "type": "createdieselgenerators:bulk_fermenting",
+  "ingredients": [
+    {
+      "item": "reactingreactions:yeast"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "createdieselgenerators:ethanol"
+    },
+    {
+      "type": "fluid_stack",
+      "amount": 250,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "processing_time": 1200,
+  "results": [
+    {
+      "amount": 500,
+      "id": "reactingreactions:white_vinegar"
+    }
+  ]
+}

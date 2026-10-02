@@ -1,0 +1,176 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "reactingreactions:titanium_chestplate"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "reactingreactions:composite_exo_chestplate"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_chestplate"
+        },
+        {
+          "item": "reactingreactions:composite_plating"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_chestplate"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_chestplate"
+        },
+        {
+          "item": "reactingreactions:composite_plating"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_chestplate"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_chestplate"
+        },
+        {
+          "item": "reactingreactions:servo_actuator"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_chestplate"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_chestplate"
+        },
+        {
+          "item": "reactingreactions:control_unit"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_chestplate"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_chestplate"
+        },
+        {
+          "item": "reactingreactions:aerozine_thrusters"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_chestplate"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_chestplate"
+        },
+        {
+          "item": "minecraft:netherite_ingot"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_chestplate"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_chestplate"
+        },
+        {
+          "item": "reactingreactions:circuit_board"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_chestplate"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_chestplate"
+        },
+        {
+          "item": "minecraft:elytra"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_chestplate"
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_chestplate"
+        },
+        {
+          "type": "neoforge:tag",
+          "amount": 250,
+          "tag": "c:aerozine"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_chestplate"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_chestplate"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_chestplate"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "reactingreactions:incomplete_composite_exo_chestplate"
+  }
+}

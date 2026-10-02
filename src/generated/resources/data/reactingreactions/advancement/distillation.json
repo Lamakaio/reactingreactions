@@ -1,0 +1,32 @@
+{
+  "parent": "reactingreactions:steel",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "reactingreactions:distillation_tower_controller"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.reactingreactions.distillation.description"
+    },
+    "frame": "task",
+    "icon": {
+      "id": "reactingreactions:distillation_tower_controller"
+    },
+    "title": {
+      "translate": "advancements.reactingreactions.distillation.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ]
+}

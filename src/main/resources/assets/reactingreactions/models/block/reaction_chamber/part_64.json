@@ -1,0 +1,211 @@
+{
+ "parent": "minecraft:block/block",
+ "textures": {
+  "band": "reactingreactions:block/machine/steel_band",
+  "dark": "reactingreactions:block/machine/steel_dark",
+  "plate": "reactingreactions:block/machine/reaction_chamber_plate",
+  "particle": "reactingreactions:block/machine/steel_band"
+ },
+ "elements": [
+  {
+   "from": [
+    0,
+    0,
+    0.5
+   ],
+   "to": [
+    16,
+    16,
+    2
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#plate"
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#plate"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    6,
+    0.0
+   ],
+   "to": [
+    16,
+    8,
+    2
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      8,
+      16,
+      10
+     ],
+     "texture": "#band"
+    },
+    "south": {
+     "uv": [
+      0,
+      8,
+      16,
+      10
+     ],
+     "texture": "#band"
+    },
+    "up": {
+     "uv": [
+      0,
+      0.0,
+      16,
+      2
+     ],
+     "texture": "#band"
+    },
+    "down": {
+     "uv": [
+      0,
+      14,
+      16,
+      16.0
+     ],
+     "texture": "#band"
+    }
+   }
+  },
+  {
+   "from": [
+    0.0,
+    1,
+    -1
+   ],
+   "to": [
+    16.0,
+    15,
+    0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0.0,
+      1,
+      16.0,
+      15
+     ],
+     "texture": "#dark"
+    },
+    "east": {
+     "uv": [
+      0,
+      1,
+      1,
+      15
+     ],
+     "texture": "#dark"
+    },
+    "west": {
+     "uv": [
+      15,
+      1,
+      16,
+      15
+     ],
+     "texture": "#dark"
+    },
+    "up": {
+     "uv": [
+      0.0,
+      15,
+      16.0,
+      16
+     ],
+     "texture": "#dark"
+    },
+    "down": {
+     "uv": [
+      0.0,
+      0,
+      16.0,
+      1
+     ],
+     "texture": "#dark"
+    }
+   }
+  },
+  {
+   "from": [
+    0.0,
+    1,
+    0
+   ],
+   "to": [
+    16.0,
+    15,
+    0.5
+   ],
+   "faces": {
+    "south": {
+     "uv": [
+      0.0,
+      1,
+      16.0,
+      15
+     ],
+     "texture": "#dark"
+    },
+    "east": {
+     "uv": [
+      15.5,
+      1,
+      16,
+      15
+     ],
+     "texture": "#dark"
+    },
+    "west": {
+     "uv": [
+      0,
+      1,
+      0.5,
+      15
+     ],
+     "texture": "#dark"
+    },
+    "up": {
+     "uv": [
+      0.0,
+      0,
+      16.0,
+      0.5
+     ],
+     "texture": "#dark"
+    },
+    "down": {
+     "uv": [
+      0.0,
+      15.5,
+      16.0,
+      16
+     ],
+     "texture": "#dark"
+    }
+   }
+  }
+ ]
+}

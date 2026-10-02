@@ -1,0 +1,86 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "cullface": "down",
+          "texture": "#all"
+        },
+        "east": {
+          "cullface": "east",
+          "texture": "#all"
+        },
+        "north": {
+          "cullface": "north",
+          "texture": "#all"
+        },
+        "south": {
+          "cullface": "south",
+          "texture": "#all"
+        },
+        "up": {
+          "cullface": "up",
+          "texture": "#all"
+        },
+        "west": {
+          "cullface": "west",
+          "texture": "#all"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "texture": "#flecks",
+          "tintindex": 0
+        },
+        "east": {
+          "texture": "#flecks",
+          "tintindex": 0
+        },
+        "north": {
+          "texture": "#flecks",
+          "tintindex": 0
+        },
+        "south": {
+          "texture": "#flecks",
+          "tintindex": 0
+        },
+        "up": {
+          "texture": "#flecks",
+          "tintindex": 0
+        },
+        "west": {
+          "texture": "#flecks",
+          "tintindex": 0
+        }
+      },
+      "from": [
+        -0.01,
+        -0.01,
+        -0.01
+      ],
+      "to": [
+        16.01,
+        16.01,
+        16.01
+      ]
+    }
+  ],
+  "textures": {
+    "all": "create:block/palettes/stone_types/natural/asurine_0",
+    "flecks": "reactingreactions:block/rich_vein_flecks",
+    "particle": "create:block/palettes/stone_types/natural/asurine_0"
+  }
+}

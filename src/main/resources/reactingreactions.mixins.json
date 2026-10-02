@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.koala.reactingreactions.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "FluidTankBlockEntityMixin",
+    "FluidTransportBehaviourMixin",
+    "JeiFluidTooltipMixin",
+    "SmartBlockEntityMixin",
+    "SmartFluidTankBehaviourMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}

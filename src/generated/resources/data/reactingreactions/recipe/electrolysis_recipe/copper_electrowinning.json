@@ -1,0 +1,27 @@
+{
+  "type": "reactingreactions:electrolysis_recipe",
+  "electrodes": [
+    "reactingreactions:lead_electrode"
+  ],
+  "ingredients": [
+    {
+      "item": "reactingreactions:veridium_dust"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:sulfuric_acid"
+    }
+  ],
+  "min_voltage": 200.0,
+  "processing_time": 200,
+  "results": [
+    {
+      "id": "minecraft:copper_ingot"
+    },
+    {
+      "amount": 200,
+      "id": "reactingreactions:sulfuric_acid"
+    }
+  ]
+}

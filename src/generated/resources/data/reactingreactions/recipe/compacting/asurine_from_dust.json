@@ -1,0 +1,16 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "reactingreactions:asurine_dust"
+    },
+    {
+      "item": "reactingreactions:asurine_dust"
+    }
+  ],
+  "results": [
+    {
+      "id": "create:asurine"
+    }
+  ]
+}

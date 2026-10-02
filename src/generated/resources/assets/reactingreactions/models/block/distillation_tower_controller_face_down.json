@@ -1,0 +1,30 @@
+{
+  "parent": "minecraft:block/block",
+  "ambientocclusion": false,
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#face"
+        },
+        "up": {
+          "texture": "#face"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        1,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "face": "reactingreactions:block/distillation_tower_wall_end",
+    "particle": "reactingreactions:block/distillation_tower_controller"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "reactingreactions:circuit_board"
+    },
+    "S": {
+      "tag": "c:plates/steel"
+    },
+    "T": {
+      "item": "create:fluid_tank"
+    }
+  },
+  "pattern": [
+    "TCT",
+    "SSS"
+  ],
+  "result": {
+    "id": "reactingreactions:charging_pad"
+  }
+}

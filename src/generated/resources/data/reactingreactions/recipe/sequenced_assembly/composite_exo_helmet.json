@@ -1,0 +1,144 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "reactingreactions:titanium_helmet"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "reactingreactions:composite_exo_helmet"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_helmet"
+        },
+        {
+          "item": "reactingreactions:composite_plating"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_helmet"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_helmet"
+        },
+        {
+          "item": "reactingreactions:ruby_lens"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_helmet"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_helmet"
+        },
+        {
+          "item": "reactingreactions:control_unit"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_helmet"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_helmet"
+        },
+        {
+          "item": "minecraft:netherite_ingot"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_helmet"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_helmet"
+        },
+        {
+          "item": "reactingreactions:circuit_board"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_helmet"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_helmet"
+        },
+        {
+          "item": "minecraft:echo_shard"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_helmet"
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_helmet"
+        },
+        {
+          "type": "neoforge:tag",
+          "amount": 250,
+          "tag": "c:nitrogen"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_helmet"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_helmet"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_helmet"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "reactingreactions:incomplete_composite_exo_helmet"
+  }
+}

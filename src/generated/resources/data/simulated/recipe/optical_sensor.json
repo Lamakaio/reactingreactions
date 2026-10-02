@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "simulated"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "c:gems/amethyst"
+    },
+    "B": {
+      "item": "create:brass_casing"
+    },
+    "C": {
+      "item": "create:electron_tube"
+    },
+    "T": {
+      "item": "reactingreactions:circuit_board"
+    }
+  },
+  "pattern": [
+    " AT",
+    " C ",
+    " B "
+  ],
+  "result": {
+    "count": 1,
+    "id": "simulated:optical_sensor"
+  }
+}

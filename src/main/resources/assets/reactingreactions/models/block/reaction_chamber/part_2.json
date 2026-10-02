@@ -1,0 +1,357 @@
+{
+ "parent": "minecraft:block/block",
+ "textures": {
+  "band": "reactingreactions:block/machine/steel_band",
+  "dark": "reactingreactions:block/machine/steel_dark",
+  "plate": "reactingreactions:block/machine/reaction_chamber_plate",
+  "particle": "reactingreactions:block/machine/steel_band"
+ },
+ "elements": [
+  {
+   "from": [
+    0,
+    8,
+    7
+   ],
+   "to": [
+    16,
+    9.5,
+    16
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      6.5,
+      16,
+      8
+     ],
+     "texture": "#plate"
+    },
+    "up": {
+     "uv": [
+      0,
+      7,
+      16,
+      16
+     ],
+     "texture": "#plate"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      9
+     ],
+     "texture": "#plate"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    8,
+    0.5
+   ],
+   "to": [
+    16,
+    9.5,
+    16
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      6.5,
+      16,
+      8
+     ],
+     "texture": "#plate"
+    },
+    "up": {
+     "uv": [
+      0,
+      0.5,
+      16,
+      16
+     ],
+     "texture": "#plate"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      15.5
+     ],
+     "texture": "#plate"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    9.5,
+    0.5
+   ],
+   "to": [
+    16,
+    16,
+    2
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      0,
+      16,
+      6.5
+     ],
+     "texture": "#plate"
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      16,
+      6.5
+     ],
+     "texture": "#plate"
+    },
+    "down": {
+     "uv": [
+      0,
+      14,
+      16,
+      15.5
+     ],
+     "texture": "#plate"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    0,
+    0
+   ],
+   "to": [
+    16,
+    6,
+    16
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      10,
+      16,
+      16
+     ],
+     "texture": "#dark"
+    },
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#dark"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#dark"
+    }
+   }
+  },
+  {
+   "from": [
+    7.0,
+    0,
+    -0.5
+   ],
+   "to": [
+    9.0,
+    6,
+    0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      7.0,
+      10,
+      9.0,
+      16
+     ],
+     "texture": "#band"
+    },
+    "south": {
+     "uv": [
+      7.0,
+      10,
+      9.0,
+      16
+     ],
+     "texture": "#band"
+    },
+    "east": {
+     "uv": [
+      0,
+      10,
+      0.5,
+      16
+     ],
+     "texture": "#band"
+    },
+    "west": {
+     "uv": [
+      15.5,
+      10,
+      16,
+      16
+     ],
+     "texture": "#band"
+    },
+    "up": {
+     "uv": [
+      7.0,
+      15.5,
+      9.0,
+      16
+     ],
+     "texture": "#band"
+    },
+    "down": {
+     "uv": [
+      7.0,
+      0,
+      9.0,
+      0.5
+     ],
+     "texture": "#band"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    6,
+    7
+   ],
+   "to": [
+    16,
+    8,
+    16
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      8,
+      16,
+      10
+     ],
+     "texture": "#dark"
+    },
+    "up": {
+     "uv": [
+      0,
+      7,
+      16,
+      16
+     ],
+     "texture": "#dark"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      9
+     ],
+     "texture": "#dark"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    6,
+    -0.25
+   ],
+   "to": [
+    16,
+    8,
+    0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      8,
+      16,
+      10
+     ],
+     "texture": "#dark"
+    },
+    "up": {
+     "uv": [
+      0,
+      15.75,
+      16,
+      16
+     ],
+     "texture": "#dark"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      0.25
+     ],
+     "texture": "#dark"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    6,
+    0
+   ],
+   "to": [
+    16,
+    8,
+    16
+   ],
+   "faces": {
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#dark"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#dark"
+    }
+   }
+  }
+ ]
+}

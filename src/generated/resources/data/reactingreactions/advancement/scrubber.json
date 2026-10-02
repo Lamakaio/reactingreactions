@@ -1,0 +1,32 @@
+{
+  "parent": "reactingreactions:gas_mask",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "reactingreactions:atmospheric_scrubber"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.reactingreactions.scrubber.description"
+    },
+    "frame": "task",
+    "icon": {
+      "id": "reactingreactions:atmospheric_scrubber"
+    },
+    "title": {
+      "translate": "advancements.reactingreactions.scrubber.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ]
+}

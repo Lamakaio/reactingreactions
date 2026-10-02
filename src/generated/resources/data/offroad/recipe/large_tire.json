@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "offroad"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "create:belt_connector"
+    },
+    "H": {
+      "tag": "c:plates/plastic"
+    },
+    "S": {
+      "item": "create:shaft"
+    }
+  },
+  "pattern": [
+    " BH",
+    "BSB",
+    " B "
+  ],
+  "result": {
+    "count": 1,
+    "id": "offroad:large_tire"
+  }
+}

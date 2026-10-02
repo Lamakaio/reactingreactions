@@ -1,0 +1,22 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "item": "reactingreactions:quicklime"
+    },
+    {
+      "tag": "c:coal_coke"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "id": "reactingreactions:calcium_carbide"
+    },
+    {
+      "amount": 250,
+      "id": "reactingreactions:carbon_monoxide"
+    }
+  ]
+}

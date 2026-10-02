@@ -1,0 +1,32 @@
+{
+  "parent": "reactingreactions:root",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "reactingreactions:steel_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.reactingreactions.steel.description"
+    },
+    "frame": "task",
+    "icon": {
+      "id": "reactingreactions:steel_ingot"
+    },
+    "title": {
+      "translate": "advancements.reactingreactions.steel.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ]
+}

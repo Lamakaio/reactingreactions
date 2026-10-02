@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "reactingreactions:block/reaction_chamber_controller_top",
+    "side": "reactingreactions:block/reaction_chamber_controller"
+  }
+}

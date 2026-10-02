@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "reactingreactions:aerozine_thrusters",
+    "reactingreactions:acetylene_lamp",
+    "reactingreactions:composite_exo_helmet",
+    "reactingreactions:composite_exo_chestplate",
+    "reactingreactions:composite_exo_leggings",
+    "reactingreactions:composite_exo_boots",
+    "reactingreactions:plasma_multitool",
+    "reactingreactions:neon_blade"
+  ]
+}

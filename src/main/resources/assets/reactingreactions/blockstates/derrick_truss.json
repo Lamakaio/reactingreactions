@@ -1,0 +1,562 @@
+{
+ "variants": {
+  "part=0": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=1": {
+   "model": "reactingreactions:block/derrick/part_1"
+  },
+  "part=2": {
+   "model": "reactingreactions:block/derrick/part_2"
+  },
+  "part=3": {
+   "model": "reactingreactions:block/derrick/part_3"
+  },
+  "part=4": {
+   "model": "reactingreactions:block/derrick/part_4"
+  },
+  "part=5": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=6": {
+   "model": "reactingreactions:block/derrick/part_6"
+  },
+  "part=7": {
+   "model": "reactingreactions:block/derrick/part_7"
+  },
+  "part=8": {
+   "model": "reactingreactions:block/derrick/part_8"
+  },
+  "part=9": {
+   "model": "reactingreactions:block/derrick/part_9"
+  },
+  "part=10": {
+   "model": "reactingreactions:block/derrick/part_10"
+  },
+  "part=11": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=12": {
+   "model": "reactingreactions:block/derrick/part_12"
+  },
+  "part=13": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=14": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=15": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=16": {
+   "model": "reactingreactions:block/derrick/part_16"
+  },
+  "part=17": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=18": {
+   "model": "reactingreactions:block/derrick/part_18"
+  },
+  "part=19": {
+   "model": "reactingreactions:block/derrick/part_19"
+  },
+  "part=20": {
+   "model": "reactingreactions:block/derrick/part_20"
+  },
+  "part=21": {
+   "model": "reactingreactions:block/derrick/part_21"
+  },
+  "part=22": {
+   "model": "reactingreactions:block/derrick/part_22"
+  },
+  "part=23": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=24": {
+   "model": "reactingreactions:block/derrick/part_24"
+  },
+  "part=25": {
+   "model": "reactingreactions:block/derrick/part_25"
+  },
+  "part=26": {
+   "model": "reactingreactions:block/derrick/part_26"
+  },
+  "part=27": {
+   "model": "reactingreactions:block/derrick/part_27"
+  },
+  "part=28": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=29": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=30": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=31": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=32": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=33": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=34": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=35": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=36": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=37": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=38": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=39": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=40": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=41": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=42": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=43": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=44": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=45": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=46": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=47": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=48": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=49": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=50": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=51": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=52": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=53": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=54": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=55": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=56": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=57": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=58": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=59": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=60": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=61": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=62": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=63": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=64": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=65": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=66": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=67": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=68": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=69": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=70": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=71": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=72": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=73": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=74": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=75": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=76": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=77": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=78": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=79": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=80": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=81": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=82": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=83": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=84": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=85": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=86": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=87": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=88": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=89": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=90": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=91": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=92": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=93": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=94": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=95": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=96": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=97": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=98": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=99": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=100": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=101": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=102": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=103": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=104": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=105": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=106": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=107": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=108": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=109": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=110": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=111": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=112": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=113": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=114": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=115": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=116": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=117": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=118": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=119": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=120": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=121": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=122": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=123": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=124": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=125": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=126": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=127": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=128": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=129": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=130": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=131": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=132": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=133": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=134": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=135": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=136": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=137": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=138": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=139": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=140": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=141": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=142": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=143": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=144": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=145": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=146": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=147": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=148": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=149": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=150": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=151": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=152": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=153": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=154": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=155": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=156": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=157": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=158": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=159": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=160": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=161": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=162": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=163": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=164": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=165": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=166": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=167": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=168": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=169": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=170": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=171": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=172": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=173": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=174": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=175": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=176": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=177": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=178": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=179": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=180": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=181": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=182": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=183": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=184": {
+   "model": "reactingreactions:block/derrick_truss"
+  },
+  "part=185": {
+   "model": "reactingreactions:block/derrick_truss"
+  }
+ }
+}

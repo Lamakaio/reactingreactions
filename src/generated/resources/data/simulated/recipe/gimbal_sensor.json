@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "simulated"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "create:brass_casing"
+    },
+    "C": {
+      "item": "minecraft:compass"
+    },
+    "G": {
+      "item": "simulated:gyroscopic_mechanism"
+    },
+    "T": {
+      "item": "reactingreactions:circuit_board"
+    }
+  },
+  "pattern": [
+    "CT",
+    "G ",
+    "B "
+  ],
+  "result": {
+    "count": 1,
+    "id": "simulated:gimbal_sensor"
+  }
+}

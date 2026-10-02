@@ -1,0 +1,32 @@
+{
+  "type": "reactingreactions:electrolysis_recipe",
+  "electrodes": [
+    "reactingreactions:lead_electrode"
+  ],
+  "ingredients": [
+    {
+      "item": "reactingreactions:asurine_dust"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:sulfuric_acid"
+    }
+  ],
+  "min_voltage": 300.0,
+  "processing_time": 200,
+  "results": [
+    {
+      "count": 6,
+      "id": "create:zinc_nugget"
+    },
+    {
+      "chance": 0.35,
+      "id": "reactingreactions:rare_earth_dust"
+    },
+    {
+      "amount": 200,
+      "id": "reactingreactions:sulfuric_acid"
+    }
+  ]
+}

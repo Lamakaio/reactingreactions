@@ -1,0 +1,73 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#plate"
+        },
+        "east": {
+          "texture": "#plate"
+        },
+        "north": {
+          "texture": "#plate"
+        },
+        "south": {
+          "texture": "#plate"
+        },
+        "up": {
+          "texture": "#plate"
+        },
+        "west": {
+          "texture": "#plate"
+        }
+      },
+      "from": [
+        4,
+        6,
+        -2
+      ],
+      "to": [
+        6,
+        10,
+        0
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "texture": "#plate"
+        },
+        "east": {
+          "texture": "#plate"
+        },
+        "north": {
+          "texture": "#plate"
+        },
+        "south": {
+          "texture": "#plate"
+        },
+        "up": {
+          "texture": "#plate"
+        },
+        "west": {
+          "texture": "#plate"
+        }
+      },
+      "from": [
+        10,
+        6,
+        -2
+      ],
+      "to": [
+        12,
+        10,
+        0
+      ]
+    }
+  ],
+  "textures": {
+    "particle": "reactingreactions:block/induction_plate",
+    "plate": "reactingreactions:block/induction_plate"
+  }
+}

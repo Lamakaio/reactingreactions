@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "N": {
+      "item": "reactingreactions:nylon_fiber"
+    },
+    "T": {
+      "tag": "c:plates/titanium"
+    }
+  },
+  "pattern": [
+    "N N",
+    " T "
+  ],
+  "result": {
+    "id": "reactingreactions:diving_fins"
+  }
+}

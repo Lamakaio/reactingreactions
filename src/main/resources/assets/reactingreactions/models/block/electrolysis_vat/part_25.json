@@ -1,0 +1,330 @@
+{
+ "parent": "minecraft:block/block",
+ "textures": {
+  "brass": "create:block/brass_block",
+  "copper": "reactingreactions:block/machine/copper_plate",
+  "dark": "reactingreactions:block/machine/steel_dark",
+  "vat": "reactingreactions:block/machine/vat_paint",
+  "particle": "create:block/brass_block"
+ },
+ "elements": [
+  {
+   "from": [
+    14,
+    0,
+    0
+   ],
+   "to": [
+    15.5,
+    16,
+    16
+   ],
+   "faces": {
+    "east": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#vat"
+    },
+    "west": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#vat"
+    }
+   }
+  },
+  {
+   "from": [
+    15.5,
+    12,
+    6
+   ],
+   "to": [
+    16,
+    16,
+    10
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      0,
+      0.5,
+      4
+     ],
+     "texture": "#copper"
+    },
+    "south": {
+     "uv": [
+      15.5,
+      0,
+      16,
+      4
+     ],
+     "texture": "#copper"
+    },
+    "west": {
+     "uv": [
+      6,
+      0,
+      10,
+      4
+     ],
+     "texture": "#copper"
+    },
+    "down": {
+     "uv": [
+      15.5,
+      6,
+      16,
+      10
+     ],
+     "texture": "#copper"
+    }
+   }
+  },
+  {
+   "from": [
+    16,
+    12,
+    6
+   ],
+   "to": [
+    16.5,
+    16,
+    10
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      15.5,
+      0,
+      16,
+      4
+     ],
+     "texture": "#copper"
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      0.5,
+      4
+     ],
+     "texture": "#copper"
+    },
+    "east": {
+     "uv": [
+      6,
+      0,
+      10,
+      4
+     ],
+     "texture": "#copper"
+    },
+    "down": {
+     "uv": [
+      0,
+      6,
+      0.5,
+      10
+     ],
+     "texture": "#copper"
+    }
+   }
+  },
+  {
+   "from": [
+    15.5,
+    4,
+    4
+   ],
+   "to": [
+    16,
+    12,
+    12
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      4,
+      0.5,
+      12
+     ],
+     "texture": "#dark"
+    },
+    "south": {
+     "uv": [
+      15.5,
+      4,
+      16,
+      12
+     ],
+     "texture": "#dark"
+    },
+    "west": {
+     "uv": [
+      4,
+      4,
+      12,
+      12
+     ],
+     "texture": "#dark"
+    },
+    "up": {
+     "uv": [
+      15.5,
+      4,
+      16,
+      12
+     ],
+     "texture": "#dark"
+    },
+    "down": {
+     "uv": [
+      15.5,
+      4,
+      16,
+      12
+     ],
+     "texture": "#dark"
+    }
+   }
+  },
+  {
+   "from": [
+    16,
+    4,
+    4
+   ],
+   "to": [
+    19.5,
+    12,
+    12
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      12.5,
+      4,
+      16,
+      12
+     ],
+     "texture": "#dark"
+    },
+    "south": {
+     "uv": [
+      0,
+      4,
+      3.5,
+      12
+     ],
+     "texture": "#dark"
+    },
+    "east": {
+     "uv": [
+      4,
+      4,
+      12,
+      12
+     ],
+     "texture": "#dark"
+    },
+    "up": {
+     "uv": [
+      0,
+      4,
+      3.5,
+      12
+     ],
+     "texture": "#dark"
+    },
+    "down": {
+     "uv": [
+      0,
+      4,
+      3.5,
+      12
+     ],
+     "texture": "#dark"
+    }
+   }
+  },
+  {
+   "from": [
+    19.5,
+    7,
+    7
+   ],
+   "to": [
+    20.5,
+    9,
+    9
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      11.5,
+      7,
+      12.5,
+      9
+     ],
+     "texture": "#brass"
+    },
+    "south": {
+     "uv": [
+      3.5,
+      7,
+      4.5,
+      9
+     ],
+     "texture": "#brass"
+    },
+    "east": {
+     "uv": [
+      7,
+      7,
+      9,
+      9
+     ],
+     "texture": "#brass"
+    },
+    "west": {
+     "uv": [
+      7,
+      7,
+      9,
+      9
+     ],
+     "texture": "#brass"
+    },
+    "up": {
+     "uv": [
+      3.5,
+      7,
+      4.5,
+      9
+     ],
+     "texture": "#brass"
+    },
+    "down": {
+     "uv": [
+      3.5,
+      7,
+      4.5,
+      9
+     ],
+     "texture": "#brass"
+    }
+   }
+  }
+ ]
+}

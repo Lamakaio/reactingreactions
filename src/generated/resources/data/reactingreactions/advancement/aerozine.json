@@ -1,0 +1,32 @@
+{
+  "parent": "reactingreactions:titanium",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "reactingreactions:composite_exo_chestplate"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.reactingreactions.aerozine.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "id": "reactingreactions:composite_exo_chestplate"
+    },
+    "title": {
+      "translate": "advancements.reactingreactions.aerozine.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ]
+}

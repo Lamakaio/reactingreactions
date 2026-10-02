@@ -1,0 +1,15 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:snow_block"
+    }
+  ],
+  "results": [
+    {
+      "amount": 500,
+      "id": "reactingreactions:purified_water"
+    }
+  ]
+}

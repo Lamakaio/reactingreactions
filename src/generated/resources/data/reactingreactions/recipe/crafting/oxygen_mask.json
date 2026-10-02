@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "G": {
+      "tag": "c:glass_blocks/colorless"
+    },
+    "H": {
+      "tag": "c:plates/plastic"
+    },
+    "N": {
+      "item": "reactingreactions:nylon_fiber"
+    },
+    "P": {
+      "item": "create:fluid_pipe"
+    }
+  },
+  "pattern": [
+    "HGH",
+    "NPN"
+  ],
+  "result": {
+    "id": "reactingreactions:oxygen_mask"
+  }
+}

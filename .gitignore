@@ -1,0 +1,67 @@
+### Gradle ###
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/**/build/
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/**/out/
+
+.run/
+
+### Eclipse ###
+.apt_generated
+.classpath
+.eclipse/
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/**/bin/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+
+### Minecraft Modding ###
+run/
+!**/src/**/run/
+**/src/generated/**/.cache/
+repo/
+!**/src/**/repo/
+
+### Local tooling and scratch ###
+# Claude Code local state and settings
+.claude/
+# Alternative data-gen / run directories
+run-data/
+run-ponder/
+# Game and JVM output
+logs/
+crash-reports/
+hs_err_pid*
+replay_pid*
+*.log
+# Editor and OS leftovers
+*.swp
+*.swo
+*~
+*.bak
+Thumbs.db
+desktop.ini
+run-showcase/
+
+# Python bytecode
+__pycache__/
+
+design-notes.md
+ponder-scenes.md

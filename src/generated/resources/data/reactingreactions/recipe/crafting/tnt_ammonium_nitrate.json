@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "reactingreactions:ammonium_nitrate"
+    },
+    "S": {
+      "tag": "c:sands/colorless"
+    }
+  },
+  "pattern": [
+    "ASA",
+    "SAS",
+    "ASA"
+  ],
+  "result": {
+    "id": "minecraft:tnt"
+  }
+}

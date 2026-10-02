@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "reactingreactions:block/atmospheric_scrubber",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "reactingreactions:block/atmospheric_scrubber"
+    },
+    "facing=south": {
+      "model": "reactingreactions:block/atmospheric_scrubber",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "reactingreactions:block/atmospheric_scrubber",
+      "y": 270
+    }
+  }
+}

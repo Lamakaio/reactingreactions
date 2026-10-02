@@ -1,0 +1,91 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "c:plates/titanium"
+  },
+  "loops": 3,
+  "results": [
+    {
+      "id": "reactingreactions:composite_plating"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_plating"
+        },
+        {
+          "item": "reactingreactions:beryllium_oxide"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_plating"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_plating"
+        },
+        {
+          "item": "minecraft:netherite_ingot"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_plating"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_plating"
+        },
+        {
+          "tag": "c:plates/plastic"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_plating"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_plating"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_plating"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_plating"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_plating"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "reactingreactions:incomplete_composite_plating"
+  }
+}

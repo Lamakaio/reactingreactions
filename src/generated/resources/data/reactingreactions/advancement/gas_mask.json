@@ -1,0 +1,32 @@
+{
+  "parent": "reactingreactions:bad_air",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "reactingreactions:gas_mask"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.reactingreactions.gas_mask.description"
+    },
+    "frame": "task",
+    "icon": {
+      "id": "reactingreactions:gas_mask"
+    },
+    "title": {
+      "translate": "advancements.reactingreactions.gas_mask.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ]
+}

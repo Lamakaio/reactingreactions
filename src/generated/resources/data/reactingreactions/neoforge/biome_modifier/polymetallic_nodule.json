@@ -1,0 +1,8 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_ocean",
+  "features": [
+    "reactingreactions:polymetallic_nodule_disk"
+  ],
+  "step": "local_modifications"
+}

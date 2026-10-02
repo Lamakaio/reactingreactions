@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "reactingreactions:block/gas_vent_stack",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "reactingreactions:block/gas_vent_stack",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "reactingreactions:block/gas_vent_stack",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "reactingreactions:block/gas_vent_stack",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "reactingreactions:block/gas_vent_stack"
+    },
+    "facing=west": {
+      "model": "reactingreactions:block/gas_vent_stack",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

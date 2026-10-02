@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "reactingreactions:block/derrick_drive",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "reactingreactions:block/derrick_drive"
+    },
+    "facing=south": {
+      "model": "reactingreactions:block/derrick_drive",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "reactingreactions:block/derrick_drive",
+      "y": 270
+    }
+  }
+}

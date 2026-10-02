@@ -1,0 +1,40 @@
+{
+  "values": {
+    "create:asurine": {
+      "chance": 0.9,
+      "rich": "reactingreactions:rich_asurine_vein"
+    },
+    "create:crimsite": {
+      "chance": 0.9,
+      "rich": "reactingreactions:rich_crimsite_vein"
+    },
+    "create:ochrum": {
+      "chance": 0.9,
+      "rich": "reactingreactions:rich_ochrum_vein"
+    },
+    "create:scoria": {
+      "chance": 0.9,
+      "rich": "reactingreactions:rich_scoria_vein"
+    },
+    "create:veridium": {
+      "chance": 0.9,
+      "rich": "reactingreactions:rich_veridium_vein"
+    },
+    "minecraft:diorite": {
+      "chance": 0.3,
+      "rich": "reactingreactions:rich_diorite_vein"
+    },
+    "minecraft:granite": {
+      "chance": 0.3,
+      "rich": "reactingreactions:rich_granite_vein"
+    },
+    "minecraft:tuff": {
+      "chance": 0.3,
+      "rich": "reactingreactions:rich_tuff_vein"
+    },
+    "reactingreactions:oil_shale": {
+      "min_vein_size": 20,
+      "rich": "reactingreactions:rich_oil_vein"
+    }
+  }
+}

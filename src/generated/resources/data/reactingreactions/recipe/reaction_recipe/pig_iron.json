@@ -1,0 +1,26 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "item": "reactingreactions:pig_iron"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:oxygen"
+    }
+  ],
+  "max_rpm": 128,
+  "min_rpm": 64,
+  "results": [
+    {
+      "chance": 0.7,
+      "id": "reactingreactions:steel_ingot"
+    },
+    {
+      "chance": 0.3,
+      "id": "minecraft:iron_ingot"
+    }
+  ]
+}

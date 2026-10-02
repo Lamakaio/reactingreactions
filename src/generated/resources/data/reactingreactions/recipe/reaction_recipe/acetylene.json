@@ -1,0 +1,21 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "ingredients": [
+    {
+      "item": "reactingreactions:calcium_carbide"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 250,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "max_rpm": 24,
+  "min_rpm": 8,
+  "results": [
+    {
+      "amount": 250,
+      "id": "reactingreactions:acetylene"
+    }
+  ]
+}

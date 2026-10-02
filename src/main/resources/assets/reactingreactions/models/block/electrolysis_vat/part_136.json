@@ -1,0 +1,124 @@
+{
+ "parent": "minecraft:block/block",
+ "textures": {
+  "copper": "reactingreactions:block/machine/copper_plate",
+  "vat": "reactingreactions:block/machine/vat_paint",
+  "particle": "reactingreactions:block/machine/copper_plate"
+ },
+ "elements": [
+  {
+   "from": [
+    14,
+    0,
+    0
+   ],
+   "to": [
+    15.5,
+    16,
+    16
+   ],
+   "faces": {
+    "east": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#vat"
+    },
+    "west": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#vat"
+    }
+   }
+  },
+  {
+   "from": [
+    15.5,
+    0,
+    6
+   ],
+   "to": [
+    16,
+    16,
+    10
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      0,
+      0.5,
+      16
+     ],
+     "texture": "#copper"
+    },
+    "south": {
+     "uv": [
+      15.5,
+      0,
+      16,
+      16
+     ],
+     "texture": "#copper"
+    },
+    "west": {
+     "uv": [
+      6,
+      0,
+      10,
+      16
+     ],
+     "texture": "#copper"
+    }
+   }
+  },
+  {
+   "from": [
+    16,
+    0,
+    6
+   ],
+   "to": [
+    16.5,
+    16,
+    10
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      15.5,
+      0,
+      16,
+      16
+     ],
+     "texture": "#copper"
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      0.5,
+      16
+     ],
+     "texture": "#copper"
+    },
+    "east": {
+     "uv": [
+      6,
+      0,
+      10,
+      16
+     ],
+     "texture": "#copper"
+    }
+   }
+  }
+ ]
+}

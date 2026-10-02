@@ -1,0 +1,18 @@
+{
+  "type": "reactingreactions:electrolysis_recipe",
+  "ingredients": [
+    {
+      "type": "neoforge:single",
+      "amount": 1000,
+      "fluid": "reactingreactions:weak_brine"
+    }
+  ],
+  "min_voltage": 60.0,
+  "processing_time": 200,
+  "results": [
+    {
+      "amount": 50,
+      "id": "reactingreactions:bleach"
+    }
+  ]
+}

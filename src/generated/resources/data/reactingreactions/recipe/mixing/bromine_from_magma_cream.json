@@ -1,0 +1,18 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:magma_cream"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 100,
+      "tag": "c:bleach"
+    }
+  ],
+  "results": [
+    {
+      "id": "reactingreactions:bromine"
+    }
+  ]
+}

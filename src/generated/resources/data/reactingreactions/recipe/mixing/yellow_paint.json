@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:dusts/sulfur"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:plantoil"
+    }
+  ],
+  "results": [
+    {
+      "count": 16,
+      "id": "reactingreactions:yellow_paint"
+    }
+  ]
+}

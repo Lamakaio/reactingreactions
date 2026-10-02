@@ -1,0 +1,77 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "c:gems/ruby"
+  },
+  "loops": 2,
+  "results": [
+    {
+      "id": "reactingreactions:ruby_lens"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:cutting",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_ruby_lens"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_ruby_lens"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_ruby_lens"
+        },
+        {
+          "item": "reactingreactions:reinforced_glass"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_ruby_lens"
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_ruby_lens"
+        },
+        {
+          "type": "neoforge:tag",
+          "amount": 100,
+          "tag": "c:neon"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_ruby_lens"
+        }
+      ]
+    },
+    {
+      "type": "create:cutting",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_ruby_lens"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_ruby_lens"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "reactingreactions:incomplete_ruby_lens"
+  }
+}

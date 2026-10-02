@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "item": "reactingreactions:crimsite_dust"
+    },
+    {
+      "tag": "c:coal_coke"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:bleach"
+    }
+  ],
+  "results": [
+    {
+      "amount": 250,
+      "id": "reactingreactions:titanium_tetrachloride"
+    }
+  ]
+}

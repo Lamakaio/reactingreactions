@@ -1,0 +1,16 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "reactingreactions:crimsite_dust"
+    },
+    {
+      "item": "reactingreactions:crimsite_dust"
+    }
+  ],
+  "results": [
+    {
+      "id": "create:crimsite"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "createdieselgenerators"
+    }
+  ],
+  "type": "createdieselgenerators:distillation",
+  "ingredients": [
+    {
+      "type": "fluid_stack",
+      "amount": 1000,
+      "fluid": "reactingreactions:compressed_air"
+    }
+  ],
+  "processing_time": 400,
+  "results": [
+    {
+      "amount": 780,
+      "id": "reactingreactions:nitrogen"
+    },
+    {
+      "amount": 210,
+      "id": "reactingreactions:oxygen"
+    },
+    {
+      "amount": 5,
+      "id": "reactingreactions:neon"
+    }
+  ]
+}

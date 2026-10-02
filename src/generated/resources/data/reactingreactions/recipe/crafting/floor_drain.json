@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:iron_bars"
+    },
+    "P": {
+      "item": "create:fluid_pipe"
+    }
+  },
+  "pattern": [
+    "BBB",
+    " P "
+  ],
+  "result": {
+    "count": 1,
+    "id": "reactingreactions:floor_drain"
+  }
+}

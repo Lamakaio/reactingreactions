@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "type": "neoforge:single",
+      "amount": 750,
+      "fluid": "minecraft:water"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:ethanol"
+    }
+  ],
+  "results": [
+    {
+      "amount": 1000,
+      "id": "reactingreactions:coolant"
+    }
+  ]
+}

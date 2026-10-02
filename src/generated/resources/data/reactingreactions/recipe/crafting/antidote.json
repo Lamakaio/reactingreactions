@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "reactingreactions:activated_carbon"
+    },
+    {
+      "item": "reactingreactions:activated_carbon"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "reactingreactions:antidote"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "reactingreactions:reaction_chamber",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "reactingreactions:hdpe_sheet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.reactingreactions.plastics.description"
+    },
+    "frame": "task",
+    "icon": {
+      "id": "reactingreactions:hdpe_sheet"
+    },
+    "title": {
+      "translate": "advancements.reactingreactions.plastics.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ]
+}

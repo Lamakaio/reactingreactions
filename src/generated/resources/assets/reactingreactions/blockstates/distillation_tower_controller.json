@@ -1,0 +1,52 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_controller_face_down"
+      },
+      "when": {
+        "outer_down": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_controller_face_up"
+      },
+      "when": {
+        "outer_up": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_controller_face_north"
+      },
+      "when": {
+        "outer_north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_controller_face_south"
+      },
+      "when": {
+        "outer_south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_controller_face_west"
+      },
+      "when": {
+        "outer_west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/distillation_tower_controller_face_east"
+      },
+      "when": {
+        "outer_east": "true"
+      }
+    }
+  ]
+}

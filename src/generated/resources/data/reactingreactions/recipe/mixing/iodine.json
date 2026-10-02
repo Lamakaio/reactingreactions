@@ -1,0 +1,33 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 250,
+      "fluid": "reactingreactions:weak_brine"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 50,
+      "tag": "c:bleach"
+    }
+  ],
+  "results": [
+    {
+      "id": "reactingreactions:iodine"
+    }
+  ]
+}

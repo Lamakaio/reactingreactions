@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "reactingreactions:block/graphite_electrode",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "reactingreactions:block/graphite_electrode",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "reactingreactions:block/graphite_electrode",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "reactingreactions:block/graphite_electrode",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "reactingreactions:block/graphite_electrode"
+    },
+    "facing=west": {
+      "model": "reactingreactions:block/graphite_electrode",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

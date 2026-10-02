@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "createdieselgenerators"
+    }
+  ],
+  "type": "createdieselgenerators:bulk_fermenting",
+  "ingredients": [
+    {
+      "item": "reactingreactions:yeast"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "processing_time": 1200,
+  "results": [
+    {
+      "amount": 500,
+      "id": "createdieselgenerators:ethanol"
+    }
+  ]
+}

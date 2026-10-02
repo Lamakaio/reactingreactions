@@ -1,0 +1,26 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "reactingreactions:veridium_dust"
+    },
+    {
+      "item": "reactingreactions:veridium_dust"
+    },
+    {
+      "item": "minecraft:blaze_powder"
+    }
+  ],
+  "max_rpm": 64,
+  "min_rpm": 24,
+  "results": [
+    {
+      "id": "minecraft:copper_ingot"
+    },
+    {
+      "chance": 0.5,
+      "id": "minecraft:copper_ingot"
+    }
+  ]
+}

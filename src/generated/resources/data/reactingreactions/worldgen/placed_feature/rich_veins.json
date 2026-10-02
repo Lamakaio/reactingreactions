@@ -1,0 +1,8 @@
+{
+  "feature": "reactingreactions:rich_veins",
+  "placement": [
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

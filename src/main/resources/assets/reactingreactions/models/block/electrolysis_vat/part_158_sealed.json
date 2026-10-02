@@ -1,0 +1,91 @@
+{
+ "parent": "minecraft:block/block",
+ "textures": {
+  "dark": "reactingreactions:block/machine/steel_dark",
+  "particle": "reactingreactions:block/machine/steel_dark"
+ },
+ "elements": [
+  {
+   "from": [
+    -1.75,
+    12.25,
+    0
+   ],
+   "to": [
+    0,
+    15.25,
+    16
+   ],
+   "faces": {
+    "west": {
+     "uv": [
+      0,
+      0.75,
+      16,
+      3.75
+     ],
+     "texture": "#dark"
+    },
+    "up": {
+     "uv": [
+      14.25,
+      0,
+      16,
+      16
+     ],
+     "texture": "#dark"
+    },
+    "down": {
+     "uv": [
+      14.25,
+      0,
+      16,
+      16
+     ],
+     "texture": "#dark"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    12.25,
+    0
+   ],
+   "to": [
+    0.5,
+    15.25,
+    16
+   ],
+   "faces": {
+    "east": {
+     "uv": [
+      0,
+      0.75,
+      16,
+      3.75
+     ],
+     "texture": "#dark"
+    },
+    "up": {
+     "uv": [
+      0,
+      0,
+      0.5,
+      16
+     ],
+     "texture": "#dark"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      0.5,
+      16
+     ],
+     "texture": "#dark"
+    }
+   }
+  }
+ ]
+}

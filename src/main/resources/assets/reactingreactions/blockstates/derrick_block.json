@@ -1,0 +1,562 @@
+{
+ "variants": {
+  "part=0": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=1": {
+   "model": "reactingreactions:block/derrick/part_1"
+  },
+  "part=2": {
+   "model": "reactingreactions:block/derrick/part_2"
+  },
+  "part=3": {
+   "model": "reactingreactions:block/derrick/part_3"
+  },
+  "part=4": {
+   "model": "reactingreactions:block/derrick/part_4"
+  },
+  "part=5": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=6": {
+   "model": "reactingreactions:block/derrick/part_6"
+  },
+  "part=7": {
+   "model": "reactingreactions:block/derrick/part_7"
+  },
+  "part=8": {
+   "model": "reactingreactions:block/derrick/part_8"
+  },
+  "part=9": {
+   "model": "reactingreactions:block/derrick/part_9"
+  },
+  "part=10": {
+   "model": "reactingreactions:block/derrick/part_10"
+  },
+  "part=11": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=12": {
+   "model": "reactingreactions:block/derrick/part_12"
+  },
+  "part=13": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=14": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=15": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=16": {
+   "model": "reactingreactions:block/derrick/part_16"
+  },
+  "part=17": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=18": {
+   "model": "reactingreactions:block/derrick/part_18"
+  },
+  "part=19": {
+   "model": "reactingreactions:block/derrick/part_19"
+  },
+  "part=20": {
+   "model": "reactingreactions:block/derrick/part_20"
+  },
+  "part=21": {
+   "model": "reactingreactions:block/derrick/part_21"
+  },
+  "part=22": {
+   "model": "reactingreactions:block/derrick/part_22"
+  },
+  "part=23": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=24": {
+   "model": "reactingreactions:block/derrick/part_24"
+  },
+  "part=25": {
+   "model": "reactingreactions:block/derrick/part_25"
+  },
+  "part=26": {
+   "model": "reactingreactions:block/derrick/part_26"
+  },
+  "part=27": {
+   "model": "reactingreactions:block/derrick/part_27"
+  },
+  "part=28": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=29": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=30": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=31": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=32": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=33": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=34": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=35": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=36": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=37": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=38": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=39": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=40": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=41": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=42": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=43": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=44": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=45": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=46": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=47": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=48": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=49": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=50": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=51": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=52": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=53": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=54": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=55": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=56": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=57": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=58": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=59": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=60": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=61": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=62": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=63": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=64": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=65": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=66": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=67": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=68": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=69": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=70": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=71": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=72": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=73": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=74": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=75": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=76": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=77": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=78": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=79": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=80": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=81": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=82": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=83": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=84": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=85": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=86": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=87": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=88": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=89": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=90": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=91": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=92": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=93": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=94": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=95": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=96": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=97": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=98": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=99": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=100": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=101": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=102": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=103": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=104": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=105": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=106": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=107": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=108": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=109": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=110": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=111": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=112": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=113": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=114": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=115": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=116": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=117": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=118": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=119": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=120": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=121": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=122": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=123": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=124": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=125": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=126": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=127": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=128": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=129": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=130": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=131": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=132": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=133": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=134": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=135": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=136": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=137": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=138": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=139": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=140": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=141": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=142": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=143": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=144": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=145": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=146": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=147": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=148": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=149": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=150": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=151": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=152": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=153": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=154": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=155": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=156": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=157": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=158": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=159": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=160": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=161": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=162": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=163": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=164": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=165": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=166": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=167": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=168": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=169": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=170": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=171": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=172": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=173": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=174": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=175": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=176": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=177": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=178": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=179": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=180": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=181": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=182": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=183": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=184": {
+   "model": "reactingreactions:block/derrick_block"
+  },
+  "part=185": {
+   "model": "reactingreactions:block/derrick_block"
+  }
+ }
+}

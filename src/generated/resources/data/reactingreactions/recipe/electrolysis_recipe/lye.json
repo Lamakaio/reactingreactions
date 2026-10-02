@@ -1,0 +1,21 @@
+{
+  "type": "reactingreactions:electrolysis_recipe",
+  "electrodes": [
+    "reactingreactions:gold_steel_electrode"
+  ],
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 1000,
+      "tag": "c:brine"
+    }
+  ],
+  "min_voltage": 200.0,
+  "processing_time": 200,
+  "results": [
+    {
+      "amount": 500,
+      "id": "reactingreactions:lye"
+    }
+  ]
+}

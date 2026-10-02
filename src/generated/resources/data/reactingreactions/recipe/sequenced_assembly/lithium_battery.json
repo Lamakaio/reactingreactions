@@ -1,0 +1,87 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "electroenergetics"
+    }
+  ],
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "create:andesite_alloy"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "count": 2,
+      "id": "electroenergetics:accumulator"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_lithium_battery"
+        },
+        {
+          "tag": "c:ingots/lithium"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_lithium_battery"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_lithium_battery"
+        },
+        {
+          "item": "reactingreactions:activated_carbon"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_lithium_battery"
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_lithium_battery"
+        },
+        {
+          "type": "neoforge:tag",
+          "amount": 250,
+          "tag": "c:purified_water"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_lithium_battery"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_lithium_battery"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_lithium_battery"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "reactingreactions:incomplete_lithium_battery"
+  }
+}

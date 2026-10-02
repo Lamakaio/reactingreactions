@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:mod_loaded",
+        "modid": "createdieselgenerators"
+      }
+    }
+  ],
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:ethylene"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:steam"
+    }
+  ],
+  "max_rpm": 64,
+  "min_rpm": 24,
+  "results": [
+    {
+      "amount": 250,
+      "id": "reactingreactions:ethanol"
+    }
+  ]
+}

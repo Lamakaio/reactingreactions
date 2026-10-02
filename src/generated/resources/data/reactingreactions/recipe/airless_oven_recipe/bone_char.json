@@ -1,0 +1,24 @@
+{
+  "type": "reactingreactions:airless_oven_recipe",
+  "ingredients": [
+    {
+      "tag": "c:bones"
+    },
+    {
+      "tag": "c:bones"
+    },
+    {
+      "tag": "c:bones"
+    }
+  ],
+  "processing_time": 300,
+  "results": [
+    {
+      "id": "reactingreactions:activated_carbon"
+    },
+    {
+      "amount": 50,
+      "id": "reactingreactions:ammonia"
+    }
+  ]
+}

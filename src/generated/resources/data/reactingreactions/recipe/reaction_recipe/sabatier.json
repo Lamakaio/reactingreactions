@@ -1,0 +1,28 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:carbon_dioxide"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 1000,
+      "tag": "c:hydrogen"
+    }
+  ],
+  "max_rpm": 64,
+  "min_rpm": 24,
+  "results": [
+    {
+      "amount": 250,
+      "id": "reactingreactions:methane"
+    },
+    {
+      "amount": 500,
+      "id": "minecraft:water"
+    }
+  ]
+}

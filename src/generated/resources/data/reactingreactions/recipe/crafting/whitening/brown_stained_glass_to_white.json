@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "reactingreactions:bleach_bottle"
+    },
+    {
+      "item": "minecraft:brown_stained_glass"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:white_stained_glass"
+  }
+}

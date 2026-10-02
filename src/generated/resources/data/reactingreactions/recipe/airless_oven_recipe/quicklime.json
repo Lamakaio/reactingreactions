@@ -1,0 +1,41 @@
+{
+  "type": "reactingreactions:airless_oven_recipe",
+  "ingredients": [
+    [
+      {
+        "item": "create:limestone"
+      },
+      {
+        "item": "minecraft:calcite"
+      },
+      {
+        "item": "minecraft:dripstone_block"
+      }
+    ],
+    [
+      {
+        "item": "create:limestone"
+      },
+      {
+        "item": "minecraft:calcite"
+      },
+      {
+        "item": "minecraft:dripstone_block"
+      }
+    ],
+    {
+      "tag": "c:coal_coke"
+    }
+  ],
+  "processing_time": 400,
+  "results": [
+    {
+      "amount": 250,
+      "id": "reactingreactions:carbon_dioxide"
+    },
+    {
+      "count": 2,
+      "id": "reactingreactions:quicklime"
+    }
+  ]
+}

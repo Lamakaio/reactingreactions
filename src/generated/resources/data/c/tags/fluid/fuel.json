@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "reactingreactions:seed_oil",
+    "reactingreactions:mineral_oil",
+    "reactingreactions:crude_oil",
+    "reactingreactions:ethanol",
+    "reactingreactions:diesel",
+    "reactingreactions:naphtha",
+    "reactingreactions:methane",
+    "reactingreactions:hydrogen",
+    "reactingreactions:lpg",
+    "reactingreactions:acetylene"
+  ]
+}

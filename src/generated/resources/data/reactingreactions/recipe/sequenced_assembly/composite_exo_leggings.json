@@ -1,0 +1,176 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "reactingreactions:titanium_leggings"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "reactingreactions:composite_exo_leggings"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_leggings"
+        },
+        {
+          "item": "reactingreactions:composite_plating"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_leggings"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_leggings"
+        },
+        {
+          "item": "reactingreactions:composite_plating"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_leggings"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_leggings"
+        },
+        {
+          "item": "reactingreactions:servo_actuator"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_leggings"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_leggings"
+        },
+        {
+          "item": "reactingreactions:servo_actuator"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_leggings"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_leggings"
+        },
+        {
+          "item": "reactingreactions:control_unit"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_leggings"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_leggings"
+        },
+        {
+          "item": "minecraft:netherite_ingot"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_leggings"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_leggings"
+        },
+        {
+          "item": "reactingreactions:circuit_board"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_leggings"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_leggings"
+        },
+        {
+          "item": "minecraft:heart_of_the_sea"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_leggings"
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_leggings"
+        },
+        {
+          "type": "neoforge:tag",
+          "amount": 250,
+          "tag": "c:hydrogen"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_leggings"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_composite_exo_leggings"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_composite_exo_leggings"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "reactingreactions:incomplete_composite_exo_leggings"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "reactingreactions:distillation",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "reactingreactions:crude_oil_bucket"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.reactingreactions.black_gold.description"
+    },
+    "frame": "task",
+    "icon": {
+      "id": "reactingreactions:crude_oil_bucket"
+    },
+    "title": {
+      "translate": "advancements.reactingreactions.black_gold.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ]
+}

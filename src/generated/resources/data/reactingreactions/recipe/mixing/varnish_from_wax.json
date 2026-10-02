@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:honeycomb"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:acetone"
+    }
+  ],
+  "results": [
+    {
+      "count": 12,
+      "id": "reactingreactions:varnish"
+    }
+  ]
+}

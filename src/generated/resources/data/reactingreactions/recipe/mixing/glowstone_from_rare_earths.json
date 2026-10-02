@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "tag": "c:dusts/rare_earth"
+    },
+    {
+      "item": "reactingreactions:alumina_dust"
+    },
+    {
+      "item": "reactingreactions:quicklime"
+    }
+  ],
+  "results": [
+    {
+      "count": 3,
+      "id": "minecraft:glowstone_dust"
+    }
+  ]
+}

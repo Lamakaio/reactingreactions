@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:resin"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:acetone"
+    }
+  ],
+  "results": [
+    {
+      "count": 16,
+      "id": "reactingreactions:varnish"
+    }
+  ]
+}

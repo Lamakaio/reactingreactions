@@ -1,0 +1,22 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "item": "reactingreactions:pig_iron"
+    },
+    {
+      "tag": "c:coal_coke"
+    }
+  ],
+  "processing_time": 400,
+  "results": [
+    {
+      "id": "reactingreactions:steel_ingot"
+    },
+    {
+      "chance": 0.4,
+      "id": "reactingreactions:slag"
+    }
+  ]
+}

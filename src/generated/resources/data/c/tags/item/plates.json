@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "reactingreactions:steel_sheet",
+    "reactingreactions:titanium_sheet",
+    "reactingreactions:hdpe_sheet"
+  ]
+}

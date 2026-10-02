@@ -1,0 +1,23 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:ammonia"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:nitric_acid"
+    }
+  ],
+  "max_rpm": 24,
+  "min_rpm": 8,
+  "results": [
+    {
+      "count": 2,
+      "id": "reactingreactions:ammonium_nitrate"
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "reactingreactions:titanium_sword"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "reactingreactions:neon_blade"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_neon_blade"
+        },
+        {
+          "item": "reactingreactions:ruby_lens"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_neon_blade"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_neon_blade"
+        },
+        {
+          "item": "reactingreactions:ruby_lens"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_neon_blade"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_neon_blade"
+        },
+        {
+          "item": "reactingreactions:composite_plating"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_neon_blade"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_neon_blade"
+        },
+        {
+          "item": "reactingreactions:control_unit"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_neon_blade"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_neon_blade"
+        },
+        {
+          "item": "minecraft:netherite_ingot"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_neon_blade"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_neon_blade"
+        },
+        {
+          "item": "reactingreactions:circuit_board"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_neon_blade"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_neon_blade"
+        },
+        {
+          "item": "minecraft:nether_star"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_neon_blade"
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_neon_blade"
+        },
+        {
+          "type": "neoforge:tag",
+          "amount": 250,
+          "tag": "c:neon"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_neon_blade"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_neon_blade"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_neon_blade"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "reactingreactions:incomplete_neon_blade"
+  }
+}

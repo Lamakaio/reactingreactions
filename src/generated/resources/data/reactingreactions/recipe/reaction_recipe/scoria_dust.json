@@ -1,0 +1,26 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "item": "reactingreactions:scoria_dust"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:oxygen"
+    }
+  ],
+  "max_rpm": 128,
+  "min_rpm": 64,
+  "results": [
+    {
+      "count": 6,
+      "id": "reactingreactions:lead_nugget"
+    },
+    {
+      "chance": 0.6,
+      "id": "reactingreactions:sulfur_dust"
+    }
+  ]
+}

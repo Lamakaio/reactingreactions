@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "reactingreactions:circuit_board"
+    },
+    "C": {
+      "tag": "c:ingots/copper"
+    },
+    "P": {
+      "item": "reactingreactions:induction_heater_plate"
+    }
+  },
+  "pattern": [
+    " B ",
+    "CPC"
+  ],
+  "result": {
+    "count": 1,
+    "id": "reactingreactions:induction_heater_connector"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "P": {
+      "tag": "minecraft:planks"
+    },
+    "V": {
+      "item": "reactingreactions:varnish"
+    }
+  },
+  "pattern": [
+    "PPP",
+    "PVP",
+    "PPP"
+  ],
+  "result": {
+    "count": 8,
+    "id": "reactingreactions:varnished_planks"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 1000,
+      "tag": "c:brine"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:bleach"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "id": "reactingreactions:bromine"
+    },
+    {
+      "count": 2,
+      "id": "reactingreactions:salt"
+    }
+  ]
+}

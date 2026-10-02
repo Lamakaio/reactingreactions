@@ -1,0 +1,56 @@
+{
+  "boiling": {
+    "sounds": [
+      "reactingreactions:boiling"
+    ],
+    "subtitle": "subtitles.reactingreactions.boiling"
+  },
+  "drill_rumble": {
+    "sounds": [
+      "reactingreactions:drill_rumble"
+    ],
+    "subtitle": "subtitles.reactingreactions.drill_rumble"
+  },
+  "gas_hiss": {
+    "sounds": [
+      "reactingreactions:gas_hiss"
+    ],
+    "subtitle": "subtitles.reactingreactions.gas_hiss"
+  },
+  "ignite_whoosh": {
+    "sounds": [
+      "reactingreactions:ignite_whoosh"
+    ],
+    "subtitle": "subtitles.reactingreactions.ignite_whoosh"
+  },
+  "leak_drip": {
+    "sounds": [
+      "reactingreactions:leak_drip"
+    ],
+    "subtitle": "subtitles.reactingreactions.leak_drip"
+  },
+  "oven_roar": {
+    "sounds": [
+      "reactingreactions:oven_roar"
+    ],
+    "subtitle": "subtitles.reactingreactions.oven_roar"
+  },
+  "pool_splash": {
+    "sounds": [
+      "reactingreactions:pool_splash"
+    ],
+    "subtitle": "subtitles.reactingreactions.pool_splash"
+  },
+  "scrubber_hum": {
+    "sounds": [
+      "reactingreactions:scrubber_hum"
+    ],
+    "subtitle": "subtitles.reactingreactions.scrubber_hum"
+  },
+  "vat_buzz": {
+    "sounds": [
+      "reactingreactions:vat_buzz"
+    ],
+    "subtitle": "subtitles.reactingreactions.vat_buzz"
+  }
+}

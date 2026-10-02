@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "H": {
+      "tag": "c:plates/plastic"
+    },
+    "N": {
+      "item": "create:brass_nugget"
+    }
+  },
+  "pattern": [
+    "NHN",
+    "H H",
+    "NHN"
+  ],
+  "result": {
+    "count": 1,
+    "id": "reactingreactions:gasket"
+  }
+}

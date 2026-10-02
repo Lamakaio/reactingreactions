@@ -1,0 +1,41 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:mod_loaded",
+        "modid": "createdieselgenerators"
+      }
+    }
+  ],
+  "type": "reactingreactions:reaction_recipe",
+  "ingredients": [
+    {
+      "tag": "reactingreactions:plant_matter"
+    },
+    {
+      "tag": "reactingreactions:plant_matter"
+    },
+    {
+      "tag": "reactingreactions:plant_matter"
+    },
+    {
+      "tag": "reactingreactions:plant_matter"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 500,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "processing_time": 1200,
+  "results": [
+    {
+      "amount": 250,
+      "id": "reactingreactions:methane"
+    },
+    {
+      "id": "reactingreactions:fertilizer"
+    }
+  ]
+}

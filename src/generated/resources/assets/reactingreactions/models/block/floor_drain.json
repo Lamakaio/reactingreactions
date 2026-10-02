@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "cullface": "down",
+          "texture": "#t"
+        },
+        "east": {
+          "cullface": "east",
+          "texture": "#t"
+        },
+        "north": {
+          "cullface": "north",
+          "texture": "#t"
+        },
+        "south": {
+          "cullface": "south",
+          "texture": "#t"
+        },
+        "up": {
+          "texture": "#t"
+        },
+        "west": {
+          "cullface": "west",
+          "texture": "#t"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        3,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "particle": "reactingreactions:block/floor_drain",
+    "t": "reactingreactions:block/floor_drain"
+  }
+}

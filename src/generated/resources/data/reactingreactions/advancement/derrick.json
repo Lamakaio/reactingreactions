@@ -1,0 +1,32 @@
+{
+  "parent": "reactingreactions:black_gold",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "reactingreactions:derrick_controller"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.reactingreactions.derrick.description"
+    },
+    "frame": "task",
+    "icon": {
+      "id": "reactingreactions:derrick_controller"
+    },
+    "title": {
+      "translate": "advancements.reactingreactions.derrick.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ]
+}

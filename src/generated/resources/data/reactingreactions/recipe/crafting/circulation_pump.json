@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "K": {
+      "item": "create:shaft"
+    },
+    "M": {
+      "item": "create:mechanical_pump"
+    },
+    "S": {
+      "tag": "c:plates/steel"
+    }
+  },
+  "pattern": [
+    "SMS",
+    " K "
+  ],
+  "result": {
+    "count": 1,
+    "id": "reactingreactions:circulation_pump"
+  }
+}

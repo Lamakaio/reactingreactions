@@ -1,0 +1,34 @@
+{
+  "values": {
+    "reactingreactions:ammonium_nitrate": {
+      "toxicity": 2.0
+    },
+    "reactingreactions:bleach_bottle": {
+      "toxicity": 3.0
+    },
+    "reactingreactions:bromine": {
+      "toxicity": 6.0
+    },
+    "reactingreactions:calcium_carbide": {
+      "toxicity": 2.0
+    },
+    "reactingreactions:lead_ingot": {
+      "toxicity": 1.0
+    },
+    "reactingreactions:lead_nugget": {
+      "toxicity": 1.0
+    },
+    "reactingreactions:lithium_ingot": {
+      "toxicity": 1.0
+    },
+    "reactingreactions:lithium_nugget": {
+      "toxicity": 1.0
+    },
+    "reactingreactions:manganese": {
+      "toxicity": 1.0
+    },
+    "reactingreactions:sulfur_dust": {
+      "toxicity": 2.0
+    }
+  }
+}

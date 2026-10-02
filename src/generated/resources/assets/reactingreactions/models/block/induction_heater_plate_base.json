@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "cullface": "down",
+          "texture": "#plate"
+        },
+        "east": {
+          "cullface": "east",
+          "texture": "#plate"
+        },
+        "north": {
+          "cullface": "north",
+          "texture": "#plate"
+        },
+        "south": {
+          "cullface": "south",
+          "texture": "#plate"
+        },
+        "up": {
+          "cullface": "up",
+          "texture": "#plate"
+        },
+        "west": {
+          "cullface": "west",
+          "texture": "#plate"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "particle": "reactingreactions:block/induction_plate",
+    "plate": "reactingreactions:block/induction_plate"
+  }
+}

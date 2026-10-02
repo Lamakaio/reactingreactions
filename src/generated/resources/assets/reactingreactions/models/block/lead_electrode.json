@@ -1,0 +1,74 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#rod"
+        },
+        "east": {
+          "texture": "#rod"
+        },
+        "north": {
+          "texture": "#rod"
+        },
+        "south": {
+          "texture": "#rod"
+        },
+        "up": {
+          "texture": "#rod"
+        },
+        "west": {
+          "texture": "#rod"
+        }
+      },
+      "from": [
+        6,
+        0,
+        6
+      ],
+      "to": [
+        10,
+        16,
+        10
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "texture": "#clamp"
+        },
+        "east": {
+          "texture": "#clamp"
+        },
+        "north": {
+          "texture": "#clamp"
+        },
+        "south": {
+          "texture": "#clamp"
+        },
+        "up": {
+          "texture": "#clamp"
+        },
+        "west": {
+          "texture": "#clamp"
+        }
+      },
+      "from": [
+        5,
+        0,
+        5
+      ],
+      "to": [
+        11,
+        2,
+        11
+      ]
+    }
+  ],
+  "textures": {
+    "clamp": "reactingreactions:block/electrolysis_vat_wall",
+    "particle": "reactingreactions:block/lead_electrode",
+    "rod": "reactingreactions:block/lead_electrode"
+  }
+}

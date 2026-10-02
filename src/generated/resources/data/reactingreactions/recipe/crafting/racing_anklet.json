@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "N": {
+      "item": "reactingreactions:nylon_fiber"
+    },
+    "T": {
+      "tag": "c:ingots/titanium"
+    }
+  },
+  "pattern": [
+    "T T",
+    " N "
+  ],
+  "result": {
+    "id": "reactingreactions:racing_anklet"
+  }
+}

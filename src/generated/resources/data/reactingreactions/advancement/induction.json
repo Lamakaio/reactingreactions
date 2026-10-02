@@ -1,0 +1,32 @@
+{
+  "parent": "reactingreactions:steel",
+  "criteria": {
+    "has_item": {
+      "conditions": {
+        "items": [
+          {
+            "items": "reactingreactions:induction_heater_connector"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.reactingreactions.induction.description"
+    },
+    "frame": "task",
+    "icon": {
+      "id": "reactingreactions:induction_heater_connector"
+    },
+    "title": {
+      "translate": "advancements.reactingreactions.induction.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_item"
+    ]
+  ]
+}

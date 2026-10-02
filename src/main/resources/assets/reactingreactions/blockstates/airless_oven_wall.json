@@ -1,0 +1,2402 @@
+{
+ "multipart": [
+  {
+   "when": {
+    "part": "0"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven_wall"
+   }
+  },
+  {
+   "when": {
+    "part": "1",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_1"
+   }
+  },
+  {
+   "when": {
+    "part": "1",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_1",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "1",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_1",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "1",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_1",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "2",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_2"
+   }
+  },
+  {
+   "when": {
+    "part": "2",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_2",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "2",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_2",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "2",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_2",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "3",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_3"
+   }
+  },
+  {
+   "when": {
+    "part": "3",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_3",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "3",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_3",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "3",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_3",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "4",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_4"
+   }
+  },
+  {
+   "when": {
+    "part": "4",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_4",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "4",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_4",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "4",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_4",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "5",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_5"
+   }
+  },
+  {
+   "when": {
+    "part": "5",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_5",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "5",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_5",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "5",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_5",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "6",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_6"
+   }
+  },
+  {
+   "when": {
+    "part": "6",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_6",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "6",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_6",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "6",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_6",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "7",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_7"
+   }
+  },
+  {
+   "when": {
+    "part": "7",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_7",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "7",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_7",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "7",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_7",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "8",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_8"
+   }
+  },
+  {
+   "when": {
+    "part": "8",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_8",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "8",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_8",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "8",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_8",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "9",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_9"
+   }
+  },
+  {
+   "when": {
+    "part": "9",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_9",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "9",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_9",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "9",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_9",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "10",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_10"
+   }
+  },
+  {
+   "when": {
+    "part": "10",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_10",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "10",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_10",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "10",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_10",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "11",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_11"
+   }
+  },
+  {
+   "when": {
+    "part": "11",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_11",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "11",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_11",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "11",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_11",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "12",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_12"
+   }
+  },
+  {
+   "when": {
+    "part": "12",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_12",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "12",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_12",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "12",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_12",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "13",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_13"
+   }
+  },
+  {
+   "when": {
+    "part": "13",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_13",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "13",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_13",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "13",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_13",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "15",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_15"
+   }
+  },
+  {
+   "when": {
+    "part": "15",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_15",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "15",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_15",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "15",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_15",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "16",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_16"
+   }
+  },
+  {
+   "when": {
+    "part": "16",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_16",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "16",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_16",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "16",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_16",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "17",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_17"
+   }
+  },
+  {
+   "when": {
+    "part": "17",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_17",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "17",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_17",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "17",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_17",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "18",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_18"
+   }
+  },
+  {
+   "when": {
+    "part": "18",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_18",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "18",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_18",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "18",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_18",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "19",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_19"
+   }
+  },
+  {
+   "when": {
+    "part": "19",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_19",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "19",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_19",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "19",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_19",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "20",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_20"
+   }
+  },
+  {
+   "when": {
+    "part": "20",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_20",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "20",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_20",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "20",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_20",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "21",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_21"
+   }
+  },
+  {
+   "when": {
+    "part": "21",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_21",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "21",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_21",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "21",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_21",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "22",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_22"
+   }
+  },
+  {
+   "when": {
+    "part": "22",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_22",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "22",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_22",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "22",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_22",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "23",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_23"
+   }
+  },
+  {
+   "when": {
+    "part": "23",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_23",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "23",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_23",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "23",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_23",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "24",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_24"
+   }
+  },
+  {
+   "when": {
+    "part": "24",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_24",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "24",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_24",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "24",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_24",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "25",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_25"
+   }
+  },
+  {
+   "when": {
+    "part": "25",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_25",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "25",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_25",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "25",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_25",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "26",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_26"
+   }
+  },
+  {
+   "when": {
+    "part": "26",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_26",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "26",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_26",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "26",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_26",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "27",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_27"
+   }
+  },
+  {
+   "when": {
+    "part": "27",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_27",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "27",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_27",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "27",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_27",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "1",
+    "facing": "north",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_1_piped"
+   }
+  },
+  {
+   "when": {
+    "part": "1",
+    "facing": "east",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_1_piped",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "1",
+    "facing": "south",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_1_piped",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "1",
+    "facing": "west",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_1_piped",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "3",
+    "facing": "north",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_3_piped"
+   }
+  },
+  {
+   "when": {
+    "part": "3",
+    "facing": "east",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_3_piped",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "3",
+    "facing": "south",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_3_piped",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "3",
+    "facing": "west",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_3_piped",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "7",
+    "facing": "north",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_7_piped"
+   }
+  },
+  {
+   "when": {
+    "part": "7",
+    "facing": "east",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_7_piped",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "7",
+    "facing": "south",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_7_piped",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "7",
+    "facing": "west",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_7_piped",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "9",
+    "facing": "north",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_9_piped"
+   }
+  },
+  {
+   "when": {
+    "part": "9",
+    "facing": "east",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_9_piped",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "9",
+    "facing": "south",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_9_piped",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "9",
+    "facing": "west",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_9_piped",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "10",
+    "facing": "north",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_10_piped"
+   }
+  },
+  {
+   "when": {
+    "part": "10",
+    "facing": "east",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_10_piped",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "10",
+    "facing": "south",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_10_piped",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "10",
+    "facing": "west",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_10_piped",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "12",
+    "facing": "north",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_12_piped"
+   }
+  },
+  {
+   "when": {
+    "part": "12",
+    "facing": "east",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_12_piped",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "12",
+    "facing": "south",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_12_piped",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "12",
+    "facing": "west",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_12_piped",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "16",
+    "facing": "north",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_16_piped"
+   }
+  },
+  {
+   "when": {
+    "part": "16",
+    "facing": "east",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_16_piped",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "16",
+    "facing": "south",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_16_piped",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "16",
+    "facing": "west",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_16_piped",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "18",
+    "facing": "north",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_18_piped"
+   }
+  },
+  {
+   "when": {
+    "part": "18",
+    "facing": "east",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_18_piped",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "18",
+    "facing": "south",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_18_piped",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "18",
+    "facing": "west",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_18_piped",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "19",
+    "facing": "north",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_19_piped"
+   }
+  },
+  {
+   "when": {
+    "part": "19",
+    "facing": "east",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_19_piped",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "19",
+    "facing": "south",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_19_piped",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "19",
+    "facing": "west",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_19_piped",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "20",
+    "facing": "north",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_20_piped"
+   }
+  },
+  {
+   "when": {
+    "part": "20",
+    "facing": "east",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_20_piped",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "20",
+    "facing": "south",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_20_piped",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "20",
+    "facing": "west",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_20_piped",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "21",
+    "facing": "north",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_21_piped"
+   }
+  },
+  {
+   "when": {
+    "part": "21",
+    "facing": "east",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_21_piped",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "21",
+    "facing": "south",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_21_piped",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "21",
+    "facing": "west",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_21_piped",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "22",
+    "facing": "north",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_22_piped"
+   }
+  },
+  {
+   "when": {
+    "part": "22",
+    "facing": "east",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_22_piped",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "22",
+    "facing": "south",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_22_piped",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "22",
+    "facing": "west",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_22_piped",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "24",
+    "facing": "north",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_24_piped"
+   }
+  },
+  {
+   "when": {
+    "part": "24",
+    "facing": "east",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_24_piped",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "24",
+    "facing": "south",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_24_piped",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "24",
+    "facing": "west",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_24_piped",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "25",
+    "facing": "north",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_25_piped"
+   }
+  },
+  {
+   "when": {
+    "part": "25",
+    "facing": "east",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_25_piped",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "25",
+    "facing": "south",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_25_piped",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "25",
+    "facing": "west",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_25_piped",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "26",
+    "facing": "north",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_26_piped"
+   }
+  },
+  {
+   "when": {
+    "part": "26",
+    "facing": "east",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_26_piped",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "26",
+    "facing": "south",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_26_piped",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "26",
+    "facing": "west",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_26_piped",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "27",
+    "facing": "north",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_27_piped"
+   }
+  },
+  {
+   "when": {
+    "part": "27",
+    "facing": "east",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_27_piped",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "27",
+    "facing": "south",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_27_piped",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "27",
+    "facing": "west",
+    "piped": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_27_piped",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "1",
+    "facing": "north",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_1_sealed"
+   }
+  },
+  {
+   "when": {
+    "part": "1",
+    "facing": "east",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_1_sealed",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "1",
+    "facing": "south",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_1_sealed",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "1",
+    "facing": "west",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_1_sealed",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "2",
+    "facing": "north",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_2_sealed"
+   }
+  },
+  {
+   "when": {
+    "part": "2",
+    "facing": "east",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_2_sealed",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "2",
+    "facing": "south",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_2_sealed",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "2",
+    "facing": "west",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_2_sealed",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "3",
+    "facing": "north",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_3_sealed"
+   }
+  },
+  {
+   "when": {
+    "part": "3",
+    "facing": "east",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_3_sealed",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "3",
+    "facing": "south",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_3_sealed",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "3",
+    "facing": "west",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_3_sealed",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "4",
+    "facing": "north",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_4_sealed"
+   }
+  },
+  {
+   "when": {
+    "part": "4",
+    "facing": "east",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_4_sealed",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "4",
+    "facing": "south",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_4_sealed",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "4",
+    "facing": "west",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_4_sealed",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "6",
+    "facing": "north",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_6_sealed"
+   }
+  },
+  {
+   "when": {
+    "part": "6",
+    "facing": "east",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_6_sealed",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "6",
+    "facing": "south",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_6_sealed",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "6",
+    "facing": "west",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_6_sealed",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "7",
+    "facing": "north",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_7_sealed"
+   }
+  },
+  {
+   "when": {
+    "part": "7",
+    "facing": "east",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_7_sealed",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "7",
+    "facing": "south",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_7_sealed",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "7",
+    "facing": "west",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_7_sealed",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "8",
+    "facing": "north",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_8_sealed"
+   }
+  },
+  {
+   "when": {
+    "part": "8",
+    "facing": "east",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_8_sealed",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "8",
+    "facing": "south",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_8_sealed",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "8",
+    "facing": "west",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_8_sealed",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "9",
+    "facing": "north",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_9_sealed"
+   }
+  },
+  {
+   "when": {
+    "part": "9",
+    "facing": "east",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_9_sealed",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "9",
+    "facing": "south",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_9_sealed",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "9",
+    "facing": "west",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_9_sealed",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "19",
+    "facing": "north",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_19_sealed"
+   }
+  },
+  {
+   "when": {
+    "part": "19",
+    "facing": "east",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_19_sealed",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "19",
+    "facing": "south",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_19_sealed",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "19",
+    "facing": "west",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_19_sealed",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "20",
+    "facing": "north",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_20_sealed"
+   }
+  },
+  {
+   "when": {
+    "part": "20",
+    "facing": "east",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_20_sealed",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "20",
+    "facing": "south",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_20_sealed",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "20",
+    "facing": "west",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_20_sealed",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "21",
+    "facing": "north",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_21_sealed"
+   }
+  },
+  {
+   "when": {
+    "part": "21",
+    "facing": "east",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_21_sealed",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "21",
+    "facing": "south",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_21_sealed",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "21",
+    "facing": "west",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_21_sealed",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "22",
+    "facing": "north",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_22_sealed"
+   }
+  },
+  {
+   "when": {
+    "part": "22",
+    "facing": "east",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_22_sealed",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "22",
+    "facing": "south",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_22_sealed",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "22",
+    "facing": "west",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_22_sealed",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "24",
+    "facing": "north",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_24_sealed"
+   }
+  },
+  {
+   "when": {
+    "part": "24",
+    "facing": "east",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_24_sealed",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "24",
+    "facing": "south",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_24_sealed",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "24",
+    "facing": "west",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_24_sealed",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "25",
+    "facing": "north",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_25_sealed"
+   }
+  },
+  {
+   "when": {
+    "part": "25",
+    "facing": "east",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_25_sealed",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "25",
+    "facing": "south",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_25_sealed",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "25",
+    "facing": "west",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_25_sealed",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "26",
+    "facing": "north",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_26_sealed"
+   }
+  },
+  {
+   "when": {
+    "part": "26",
+    "facing": "east",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_26_sealed",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "26",
+    "facing": "south",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_26_sealed",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "26",
+    "facing": "west",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_26_sealed",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "part": "27",
+    "facing": "north",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_27_sealed"
+   }
+  },
+  {
+   "when": {
+    "part": "27",
+    "facing": "east",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_27_sealed",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "part": "27",
+    "facing": "south",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_27_sealed",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "part": "27",
+    "facing": "west",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/airless_oven/part_27_sealed",
+    "y": 270
+   }
+  }
+ ]
+}

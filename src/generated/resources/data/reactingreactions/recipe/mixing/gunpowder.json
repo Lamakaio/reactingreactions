@@ -1,0 +1,22 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "tag": "c:dusts/sulfur"
+    },
+    {
+      "item": "minecraft:charcoal"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:nitric_acid"
+    }
+  ],
+  "results": [
+    {
+      "count": 4,
+      "id": "minecraft:gunpowder"
+    }
+  ]
+}

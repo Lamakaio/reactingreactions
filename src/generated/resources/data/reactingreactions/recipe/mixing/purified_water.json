@@ -1,0 +1,24 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "reactingreactions:aluminum_hydroxide"
+    },
+    {
+      "type": "neoforge:single",
+      "amount": 1000,
+      "fluid": "minecraft:water"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 50,
+      "tag": "c:bleach"
+    }
+  ],
+  "results": [
+    {
+      "amount": 1000,
+      "id": "reactingreactions:purified_water"
+    }
+  ]
+}

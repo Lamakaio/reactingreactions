@@ -1,0 +1,6 @@
+{
+  "parent": "reactingreactions:item/titanium_bow",
+  "textures": {
+    "layer0": "reactingreactions:item/titanium_bow_pulling_2"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "tag": "c:sands/colorless"
+    },
+    {
+      "tag": "c:sands/colorless"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:acetone"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "id": "reactingreactions:silica"
+    }
+  ]
+}

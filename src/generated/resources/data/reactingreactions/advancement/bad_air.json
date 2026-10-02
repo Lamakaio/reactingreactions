@@ -1,0 +1,25 @@
+{
+  "parent": "reactingreactions:steel",
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.reactingreactions.bad_air.description"
+    },
+    "frame": "task",
+    "icon": {
+      "id": "reactingreactions:bromine"
+    },
+    "title": {
+      "translate": "advancements.reactingreactions.bad_air.title"
+    }
+  },
+  "requirements": [
+    [
+      "impossible"
+    ]
+  ]
+}

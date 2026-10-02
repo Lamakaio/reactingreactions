@@ -1,0 +1,18 @@
+{
+  "type": "reactingreactions:airless_oven_recipe",
+  "ingredients": [
+    {
+      "tag": "minecraft:logs_that_burn"
+    }
+  ],
+  "processing_time": 400,
+  "results": [
+    {
+      "amount": 400,
+      "id": "reactingreactions:carbon_monoxide"
+    },
+    {
+      "id": "minecraft:charcoal"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "item": "reactingreactions:asurine_dust"
+    },
+    {
+      "item": "reactingreactions:asurine_dust"
+    },
+    {
+      "item": "minecraft:blaze_powder"
+    }
+  ],
+  "max_rpm": 64,
+  "min_rpm": 24,
+  "results": [
+    {
+      "count": 6,
+      "id": "create:zinc_nugget"
+    },
+    {
+      "chance": 0.4,
+      "id": "reactingreactions:rare_earth_dust"
+    }
+  ]
+}

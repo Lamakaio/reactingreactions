@@ -1,0 +1,22 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "tag": "c:dusts/quartz"
+    },
+    {
+      "tag": "c:dusts/quartz"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:purified_water"
+    }
+  ],
+  "results": [
+    {
+      "id": "minecraft:quartz"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "values": {
+    "reactingreactions:acetylene": {
+      "explosive": true,
+      "flammable": true,
+      "toxicity": 3.0
+    },
+    "reactingreactions:aerozine": {
+      "explosive": true,
+      "flammable": true,
+      "toxicity": 7.0
+    },
+    "reactingreactions:ammonia": {
+      "toxicity": 6.0
+    },
+    "reactingreactions:bleach": {
+      "toxicity": 6.0
+    },
+    "reactingreactions:butane": {
+      "flammable": true,
+      "toxicity": 3.0
+    },
+    "reactingreactions:carbon_dioxide": {
+      "toxicity": 2.0
+    },
+    "reactingreactions:carbon_monoxide": {
+      "flammable": true,
+      "toxicity": 7.0
+    },
+    "reactingreactions:contaminated_hydrocarbon_gas": {
+      "flammable": true,
+      "toxicity": 8.0
+    },
+    "reactingreactions:contaminated_methane": {
+      "flammable": true,
+      "toxicity": 8.0
+    },
+    "reactingreactions:coolant": {
+      "toxicity": 1.0
+    },
+    "reactingreactions:crude_oil": {
+      "flammable": true,
+      "toxicity": 3.0
+    },
+    "reactingreactions:diesel": {
+      "flammable": true,
+      "toxicity": 3.0
+    },
+    "reactingreactions:ethane": {
+      "flammable": true,
+      "toxicity": 2.0
+    },
+    "reactingreactions:ethanol": {
+      "flammable": true,
+      "toxicity": 2.0
+    },
+    "reactingreactions:ethylene": {
+      "flammable": true,
+      "toxicity": 3.0
+    },
+    "reactingreactions:hydrocarbon_gas": {
+      "flammable": true,
+      "toxicity": 4.0
+    },
+    "reactingreactions:hydrogen": {
+      "explosive": true,
+      "flammable": true,
+      "toxicity": 1.0
+    },
+    "reactingreactions:liquid_hdpe": {
+      "toxicity": 2.0
+    },
+    "reactingreactions:liquid_nylon": {
+      "toxicity": 3.0
+    },
+    "reactingreactions:liquid_polypropylene": {
+      "toxicity": 2.0
+    },
+    "reactingreactions:lithium_brine": {
+      "toxicity": 2.0
+    },
+    "reactingreactions:lpg": {
+      "flammable": true,
+      "toxicity": 4.0
+    },
+    "reactingreactions:lye": {
+      "toxicity": 5.0
+    },
+    "reactingreactions:magnesium_chloride": {
+      "toxicity": 2.0
+    },
+    "reactingreactions:methane": {
+      "flammable": true,
+      "toxicity": 2.0
+    },
+    "reactingreactions:mineral_oil": {
+      "toxicity": 1.0
+    },
+    "reactingreactions:naphtha": {
+      "flammable": true,
+      "toxicity": 4.0
+    },
+    "reactingreactions:nitric_acid": {
+      "toxicity": 8.0
+    },
+    "reactingreactions:propane": {
+      "flammable": true,
+      "toxicity": 3.0
+    },
+    "reactingreactions:propylene": {
+      "flammable": true,
+      "toxicity": 3.0
+    },
+    "reactingreactions:resin": {
+      "flammable": true,
+      "toxicity": 2.0
+    },
+    "reactingreactions:solvent": {
+      "flammable": true,
+      "toxicity": 4.0
+    },
+    "reactingreactions:strong_brine": {
+      "toxicity": 2.0
+    },
+    "reactingreactions:sulfuric_acid": {
+      "toxicity": 8.0
+    },
+    "reactingreactions:titanium_tetrachloride": {
+      "toxicity": 7.0
+    },
+    "reactingreactions:weak_brine": {
+      "toxicity": 1.0
+    },
+    "reactingreactions:white_vinegar": {
+      "toxicity": 1.0
+    }
+  }
+}

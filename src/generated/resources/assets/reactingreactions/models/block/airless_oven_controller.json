@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "reactingreactions:block/airless_oven_controller_top",
+    "side": "reactingreactions:block/airless_oven_controller"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "tag": "c:dusts/rare_earth"
+    },
+    {
+      "tag": "c:dusts/rare_earth"
+    },
+    {
+      "tag": "c:ingots/iron"
+    },
+    {
+      "tag": "c:dusts/borax"
+    }
+  ],
+  "max_rpm": 128,
+  "min_rpm": 64,
+  "results": [
+    {
+      "id": "reactingreactions:rare_earth_magnet"
+    }
+  ]
+}

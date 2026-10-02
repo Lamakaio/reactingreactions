@@ -1,0 +1,138 @@
+{
+  "parent": "minecraft:block/block",
+  "ambientocclusion": false,
+  "elements": [
+    {
+      "faces": {
+        "east": {
+          "texture": "#frame"
+        },
+        "north": {
+          "texture": "#frame",
+          "uv": [
+            0.0,
+            0.0,
+            4.0,
+            16.0
+          ]
+        },
+        "south": {
+          "texture": "#frame"
+        }
+      },
+      "from": [
+        0,
+        0,
+        15
+      ],
+      "to": [
+        4,
+        16,
+        16
+      ]
+    },
+    {
+      "faces": {
+        "north": {
+          "texture": "#frame",
+          "uv": [
+            12.0,
+            0.0,
+            16.0,
+            16.0
+          ]
+        },
+        "south": {
+          "texture": "#frame"
+        },
+        "west": {
+          "texture": "#frame",
+          "uv": [
+            0.0,
+            0.0,
+            1.0,
+            16.0
+          ]
+        }
+      },
+      "from": [
+        12,
+        0,
+        15
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "texture": "#frame",
+          "uv": [
+            0.0,
+            0.0,
+            8.0,
+            1.0
+          ]
+        },
+        "north": {
+          "texture": "#frame"
+        },
+        "south": {
+          "texture": "#frame"
+        }
+      },
+      "from": [
+        4,
+        12,
+        15
+      ],
+      "to": [
+        12,
+        16,
+        16
+      ]
+    },
+    {
+      "faces": {
+        "north": {
+          "texture": "#window",
+          "tintindex": 0,
+          "uv": [
+            0.0,
+            0.0,
+            8.0,
+            12.0
+          ]
+        },
+        "south": {
+          "texture": "#window",
+          "tintindex": 0,
+          "uv": [
+            0.0,
+            0.0,
+            8.0,
+            12.0
+          ]
+        }
+      },
+      "from": [
+        4,
+        0,
+        15.05
+      ],
+      "to": [
+        12,
+        12,
+        15.05
+      ]
+    }
+  ],
+  "textures": {
+    "frame": "reactingreactions:block/distillation_tower_wall",
+    "particle": "reactingreactions:block/distillation_tower_wall",
+    "window": "create:block/fluid_tank_window"
+  }
+}

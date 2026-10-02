@@ -1,0 +1,28 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:diesel"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 500,
+      "tag": "c:steam"
+    }
+  ],
+  "max_rpm": 128,
+  "min_rpm": 64,
+  "results": [
+    {
+      "amount": 1000,
+      "id": "reactingreactions:hydrogen"
+    },
+    {
+      "amount": 500,
+      "id": "reactingreactions:carbon_monoxide"
+    }
+  ]
+}

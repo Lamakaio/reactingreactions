@@ -1,0 +1,29 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 500,
+      "tag": "c:ammonia"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 500,
+      "tag": "c:bleach"
+    }
+  ],
+  "max_rpm": 64,
+  "min_rpm": 24,
+  "processing_time": 300,
+  "results": [
+    {
+      "amount": 400,
+      "id": "reactingreactions:aerozine"
+    },
+    {
+      "amount": 300,
+      "id": "minecraft:water"
+    }
+  ]
+}

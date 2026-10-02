@@ -1,0 +1,25 @@
+{
+  "parent": "reactingreactions:derrick",
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.reactingreactions.rich_vein.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "id": "reactingreactions:rich_oil_vein"
+    },
+    "title": {
+      "translate": "advancements.reactingreactions.rich_vein.title"
+    }
+  },
+  "requirements": [
+    [
+      "impossible"
+    ]
+  ]
+}

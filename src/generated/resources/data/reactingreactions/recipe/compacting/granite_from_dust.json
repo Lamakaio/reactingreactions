@@ -1,0 +1,16 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "reactingreactions:granite_dust"
+    },
+    {
+      "item": "reactingreactions:granite_dust"
+    }
+  ],
+  "results": [
+    {
+      "id": "minecraft:granite"
+    }
+  ]
+}

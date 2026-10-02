@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "H": {
+      "tag": "c:plates/plastic"
+    }
+  },
+  "pattern": [
+    "HHH"
+  ],
+  "result": {
+    "count": 4,
+    "id": "reactingreactions:plastic_pipe"
+  }
+}

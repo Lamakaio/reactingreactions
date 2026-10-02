@@ -1,0 +1,22 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 500,
+      "tag": "c:lithium_brine"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "id": "reactingreactions:lithium_nugget"
+    },
+    {
+      "chance": 0.5,
+      "count": 2,
+      "id": "reactingreactions:salt"
+    }
+  ]
+}

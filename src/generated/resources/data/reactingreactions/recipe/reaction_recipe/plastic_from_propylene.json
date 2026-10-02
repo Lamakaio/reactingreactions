@@ -1,0 +1,22 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "heated",
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 500,
+      "tag": "c:propylene"
+    },
+    {
+      "tag": "c:nuggets/aluminum"
+    }
+  ],
+  "max_rpm": 64,
+  "min_rpm": 24,
+  "results": [
+    {
+      "amount": 500,
+      "id": "reactingreactions:liquid_polypropylene"
+    }
+  ]
+}

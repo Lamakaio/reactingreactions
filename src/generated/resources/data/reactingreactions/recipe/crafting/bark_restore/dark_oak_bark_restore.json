@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "reactingreactions:varnish"
+    },
+    {
+      "item": "minecraft:stripped_dark_oak_log"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:dark_oak_log"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "reactingreactions:ammonium_nitrate"
+    },
+    {
+      "tag": "c:ingots/magnesium"
+    }
+  ],
+  "result": {
+    "id": "minecraft:firework_star"
+  }
+}

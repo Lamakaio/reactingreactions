@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "reactingreactions:activated_carbon"
+    },
+    "H": {
+      "tag": "c:plates/plastic"
+    },
+    "N": {
+      "item": "reactingreactions:nylon_fiber"
+    }
+  },
+  "pattern": [
+    "HNH",
+    "AAA",
+    "NAN"
+  ],
+  "result": {
+    "id": "reactingreactions:gas_mask"
+  }
+}

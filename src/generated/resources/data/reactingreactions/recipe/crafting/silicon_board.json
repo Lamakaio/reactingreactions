@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "H": {
+      "tag": "c:plates/plastic"
+    },
+    "S": {
+      "tag": "c:dusts/quartz"
+    }
+  },
+  "pattern": [
+    "SHS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "reactingreactions:silicon_board"
+  }
+}

@@ -1,0 +1,363 @@
+{
+ "parent": "minecraft:block/block",
+ "textures": {
+  "copper": "reactingreactions:block/machine/copper_plate",
+  "particle": "reactingreactions:block/machine/copper_plate"
+ },
+ "elements": [
+  {
+   "from": [
+    5.5,
+    0,
+    16.5
+   ],
+   "to": [
+    7.0,
+    9,
+    18
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      9.0,
+      7,
+      10.5,
+      16
+     ],
+     "texture": "#copper"
+    },
+    "south": {
+     "uv": [
+      5.5,
+      7,
+      7.0,
+      16
+     ],
+     "texture": "#copper"
+    },
+    "east": {
+     "uv": [
+      14,
+      7,
+      15.5,
+      16
+     ],
+     "texture": "#copper"
+    },
+    "west": {
+     "uv": [
+      0.5,
+      7,
+      2,
+      16
+     ],
+     "texture": "#copper"
+    },
+    "up": {
+     "uv": [
+      5.5,
+      0.5,
+      7.0,
+      2
+     ],
+     "texture": "#copper"
+    }
+   }
+  },
+  {
+   "from": [
+    5.5,
+    9,
+    15.5
+   ],
+   "to": [
+    7.0,
+    10.5,
+    16
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      9.0,
+      5.5,
+      10.5,
+      7
+     ],
+     "texture": "#copper"
+    },
+    "east": {
+     "uv": [
+      0,
+      5.5,
+      0.5,
+      7
+     ],
+     "texture": "#copper"
+    },
+    "west": {
+     "uv": [
+      15.5,
+      5.5,
+      16,
+      7
+     ],
+     "texture": "#copper"
+    },
+    "up": {
+     "uv": [
+      5.5,
+      15.5,
+      7.0,
+      16
+     ],
+     "texture": "#copper"
+    },
+    "down": {
+     "uv": [
+      5.5,
+      0,
+      7.0,
+      0.5
+     ],
+     "texture": "#copper"
+    }
+   }
+  },
+  {
+   "from": [
+    5.5,
+    9,
+    16
+   ],
+   "to": [
+    7.0,
+    10.5,
+    18
+   ],
+   "faces": {
+    "south": {
+     "uv": [
+      5.5,
+      5.5,
+      7.0,
+      7
+     ],
+     "texture": "#copper"
+    },
+    "east": {
+     "uv": [
+      14,
+      5.5,
+      16,
+      7
+     ],
+     "texture": "#copper"
+    },
+    "west": {
+     "uv": [
+      0,
+      5.5,
+      2,
+      7
+     ],
+     "texture": "#copper"
+    },
+    "up": {
+     "uv": [
+      5.5,
+      0,
+      7.0,
+      2
+     ],
+     "texture": "#copper"
+    },
+    "down": {
+     "uv": [
+      5.5,
+      14,
+      7.0,
+      16
+     ],
+     "texture": "#copper"
+    }
+   }
+  },
+  {
+   "from": [
+    16.5,
+    0,
+    5.5
+   ],
+   "to": [
+    18,
+    9,
+    7.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      14,
+      7,
+      15.5,
+      16
+     ],
+     "texture": "#copper"
+    },
+    "south": {
+     "uv": [
+      0.5,
+      7,
+      2,
+      16
+     ],
+     "texture": "#copper"
+    },
+    "east": {
+     "uv": [
+      9.0,
+      7,
+      10.5,
+      16
+     ],
+     "texture": "#copper"
+    },
+    "west": {
+     "uv": [
+      5.5,
+      7,
+      7.0,
+      16
+     ],
+     "texture": "#copper"
+    },
+    "up": {
+     "uv": [
+      0.5,
+      5.5,
+      2,
+      7.0
+     ],
+     "texture": "#copper"
+    }
+   }
+  },
+  {
+   "from": [
+    15.5,
+    9,
+    5.5
+   ],
+   "to": [
+    16,
+    10.5,
+    7.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      5.5,
+      0.5,
+      7
+     ],
+     "texture": "#copper"
+    },
+    "south": {
+     "uv": [
+      15.5,
+      5.5,
+      16,
+      7
+     ],
+     "texture": "#copper"
+    },
+    "west": {
+     "uv": [
+      5.5,
+      5.5,
+      7.0,
+      7
+     ],
+     "texture": "#copper"
+    },
+    "up": {
+     "uv": [
+      15.5,
+      5.5,
+      16,
+      7.0
+     ],
+     "texture": "#copper"
+    },
+    "down": {
+     "uv": [
+      15.5,
+      9.0,
+      16,
+      10.5
+     ],
+     "texture": "#copper"
+    }
+   }
+  },
+  {
+   "from": [
+    16,
+    9,
+    5.5
+   ],
+   "to": [
+    18,
+    10.5,
+    7.0
+   ],
+   "faces": {
+    "north": {
+     "uv": [
+      14,
+      5.5,
+      16,
+      7
+     ],
+     "texture": "#copper"
+    },
+    "south": {
+     "uv": [
+      0,
+      5.5,
+      2,
+      7
+     ],
+     "texture": "#copper"
+    },
+    "east": {
+     "uv": [
+      9.0,
+      5.5,
+      10.5,
+      7
+     ],
+     "texture": "#copper"
+    },
+    "up": {
+     "uv": [
+      0,
+      5.5,
+      2,
+      7.0
+     ],
+     "texture": "#copper"
+    },
+    "down": {
+     "uv": [
+      0,
+      9.0,
+      2,
+      10.5
+     ],
+     "texture": "#copper"
+    }
+   }
+  }
+ ]
+}

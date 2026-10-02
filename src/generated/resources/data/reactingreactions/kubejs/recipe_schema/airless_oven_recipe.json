@@ -1,0 +1,43 @@
+{
+  "keys": [
+    {
+      "type": {
+        "type": "list",
+        "component": {
+          "type": "either",
+          "left": "fluid_stack",
+          "right": "create:processing_output"
+        }
+      },
+      "name": "results",
+      "role": "output"
+    },
+    {
+      "type": {
+        "type": "list",
+        "component": {
+          "type": "either",
+          "left": "create:sized_fluid_ingredient",
+          "right": "ingredient"
+        },
+        "spread": {
+          "type": "either",
+          "left": "ignore",
+          "right": "sized_ingredient"
+        }
+      },
+      "name": "ingredients",
+      "role": "input"
+    },
+    {
+      "type": "ticks",
+      "always_write": true,
+      "name": "processing_time",
+      "optional": 100,
+      "role": "input"
+    }
+  ],
+  "unique": [
+    "results"
+  ]
+}

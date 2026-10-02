@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "item": "minecraft:charcoal"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:steam"
+    }
+  ],
+  "results": [
+    {
+      "id": "reactingreactions:activated_carbon"
+    }
+  ]
+}

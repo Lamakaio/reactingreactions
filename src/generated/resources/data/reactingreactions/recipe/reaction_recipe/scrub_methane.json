@@ -1,0 +1,27 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "ingredients": [
+    {
+      "type": "neoforge:single",
+      "amount": 500,
+      "fluid": "reactingreactions:contaminated_methane"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:acetone"
+    }
+  ],
+  "max_rpm": 24,
+  "min_rpm": 8,
+  "results": [
+    {
+      "amount": 500,
+      "id": "reactingreactions:methane"
+    },
+    {
+      "amount": 100,
+      "id": "reactingreactions:sulfuric_acid"
+    }
+  ]
+}

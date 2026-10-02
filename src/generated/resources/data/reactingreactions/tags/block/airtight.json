@@ -1,0 +1,28 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:iron_block",
+    "minecraft:copper_block",
+    "minecraft:exposed_copper",
+    "minecraft:weathered_copper",
+    "minecraft:oxidized_copper",
+    "minecraft:cut_copper",
+    "minecraft:gold_block",
+    "minecraft:netherite_block",
+    "minecraft:iron_door",
+    "minecraft:iron_trapdoor",
+    "create:andesite_casing",
+    "create:brass_casing",
+    "create:copper_casing",
+    "create:railway_casing",
+    "create:industrial_iron_block",
+    "reactingreactions:steel_casing",
+    "reactingreactions:reinforced_glass",
+    "reactingreactions:varnished_planks",
+    "reactingreactions:derrick_block",
+    "reactingreactions:reaction_chamber_wall",
+    "reactingreactions:electrolysis_vat_wall",
+    "reactingreactions:distillation_tower_wall",
+    "reactingreactions:airless_oven_wall"
+  ]
+}

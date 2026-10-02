@@ -1,0 +1,109 @@
+{
+  "parent": "minecraft:block/block",
+  "ambientocclusion": false,
+  "elements": [
+    {
+      "faces": {
+        "east": {
+          "texture": "#frame",
+          "uv": [
+            0.0,
+            0.0,
+            4.0,
+            16.0
+          ]
+        },
+        "south": {
+          "texture": "#frame",
+          "uv": [
+            0.0,
+            0.0,
+            1.0,
+            16.0
+          ]
+        },
+        "west": {
+          "texture": "#frame"
+        }
+      },
+      "from": [
+        15,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        4
+      ]
+    },
+    {
+      "faces": {
+        "east": {
+          "texture": "#frame",
+          "uv": [
+            12.0,
+            0.0,
+            16.0,
+            16.0
+          ]
+        },
+        "north": {
+          "texture": "#frame"
+        },
+        "west": {
+          "texture": "#frame"
+        }
+      },
+      "from": [
+        15,
+        0,
+        12
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "faces": {
+        "east": {
+          "texture": "#window",
+          "tintindex": 0,
+          "uv": [
+            8.0,
+            0.0,
+            16.0,
+            16.0
+          ]
+        },
+        "west": {
+          "texture": "#window",
+          "tintindex": 0,
+          "uv": [
+            8.0,
+            0.0,
+            16.0,
+            16.0
+          ]
+        }
+      },
+      "from": [
+        15.05,
+        0,
+        4
+      ],
+      "to": [
+        15.05,
+        16,
+        12
+      ]
+    }
+  ],
+  "textures": {
+    "frame": "reactingreactions:block/distillation_tower_wall",
+    "particle": "reactingreactions:block/distillation_tower_wall",
+    "window": "create:block/fluid_tank_window"
+  }
+}

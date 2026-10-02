@@ -1,0 +1,96 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "reactingreactions:manganese_steel"
+  },
+  "loops": 3,
+  "results": [
+    {
+      "id": "reactingreactions:servo_actuator"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_servo_actuator"
+        },
+        {
+          "item": "reactingreactions:rare_earth_magnet"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_servo_actuator"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_servo_actuator"
+        },
+        {
+          "item": "create:precision_mechanism"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_servo_actuator"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_servo_actuator"
+        },
+        {
+          "item": "reactingreactions:nylon_fiber"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_servo_actuator"
+        }
+      ]
+    },
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_servo_actuator"
+        },
+        {
+          "type": "neoforge:tag",
+          "amount": 250,
+          "tag": "c:mineral_oil"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_servo_actuator"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "reactingreactions:incomplete_servo_actuator"
+        }
+      ],
+      "results": [
+        {
+          "id": "reactingreactions:incomplete_servo_actuator"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "reactingreactions:incomplete_servo_actuator"
+  }
+}

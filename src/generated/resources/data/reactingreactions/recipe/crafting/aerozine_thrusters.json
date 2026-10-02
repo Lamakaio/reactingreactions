@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "reactingreactions:aerozine_bucket"
+    },
+    "H": {
+      "tag": "c:plates/plastic"
+    },
+    "T": {
+      "tag": "c:plates/titanium"
+    }
+  },
+  "pattern": [
+    "HTH",
+    "TAT",
+    "HTH"
+  ],
+  "result": {
+    "id": "reactingreactions:aerozine_thrusters"
+  }
+}

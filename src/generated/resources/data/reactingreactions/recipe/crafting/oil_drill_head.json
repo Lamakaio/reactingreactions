@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:mod_loaded",
+        "modid": "createdieselgenerators"
+      }
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "create:mechanical_drill"
+    },
+    "P": {
+      "item": "reactingreactions:drill_pipe"
+    }
+  },
+  "pattern": [
+    "P",
+    "D"
+  ],
+  "result": {
+    "count": 1,
+    "id": "reactingreactions:oil_drill_head"
+  }
+}

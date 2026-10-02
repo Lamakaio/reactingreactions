@@ -1,0 +1,18 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "tag": "c:sands/red"
+    }
+  ],
+  "results": [
+    {
+      "chance": 0.1,
+      "id": "reactingreactions:borax"
+    },
+    {
+      "chance": 0.05,
+      "id": "minecraft:dead_bush"
+    }
+  ]
+}

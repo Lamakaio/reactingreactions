@@ -1,0 +1,105 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "reactingreactions:block/induction_heater_connector_base"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/induction_heater_connector_coil"
+      },
+      "when": {
+        "coil_north": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/induction_heater_connector_coil",
+        "y": 90
+      },
+      "when": {
+        "coil_east": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/induction_heater_connector_coil",
+        "y": 180
+      },
+      "when": {
+        "coil_south": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/induction_heater_connector_coil",
+        "y": 270
+      },
+      "when": {
+        "coil_west": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/induction_heater_connector_circle"
+      },
+      "when": {
+        "coil_circle": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/induction_heater_connector_terminals",
+        "x": 90
+      },
+      "when": {
+        "facing": "down"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/induction_heater_connector_terminals",
+        "x": 270
+      },
+      "when": {
+        "facing": "up"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/induction_heater_connector_terminals"
+      },
+      "when": {
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/induction_heater_connector_terminals",
+        "y": 180
+      },
+      "when": {
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/induction_heater_connector_terminals",
+        "y": 270
+      },
+      "when": {
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "reactingreactions:block/induction_heater_connector_terminals",
+        "y": 90
+      },
+      "when": {
+        "facing": "east"
+      }
+    }
+  ]
+}

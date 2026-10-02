@@ -1,0 +1,26 @@
+{
+  "type": "reactingreactions:electrolysis_recipe",
+  "electrodes": [
+    "reactingreactions:graphite_electrode",
+    "reactingreactions:gold_steel_electrode"
+  ],
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 1000,
+      "tag": "c:purified_water"
+    }
+  ],
+  "min_voltage": 100.0,
+  "processing_time": 200,
+  "results": [
+    {
+      "amount": 1200,
+      "id": "reactingreactions:hydrogen"
+    },
+    {
+      "amount": 600,
+      "id": "reactingreactions:oxygen"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "reactingreactions:aluminum_ingot",
+    "reactingreactions:lead_ingot",
+    "reactingreactions:lithium_ingot",
+    "reactingreactions:nickel_ingot",
+    "reactingreactions:steel_ingot",
+    "reactingreactions:titanium",
+    "reactingreactions:magnesium",
+    "reactingreactions:manganese"
+  ]
+}
