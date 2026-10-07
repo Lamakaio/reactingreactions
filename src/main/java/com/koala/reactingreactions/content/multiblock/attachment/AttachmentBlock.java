@@ -1,6 +1,6 @@
 package com.koala.reactingreactions.content.multiblock.attachment;
 
-import com.koala.reactingreactions.content.multiblock.MultiblockControllerBlockEntity;
+import com.koala.reactingreactions.content.multiblock.ProcessingMachineBlockEntity;
 import com.mojang.serialization.MapCodec;
 import com.simibubi.create.content.equipment.wrench.IWrenchable;
 import net.createmod.catnip.math.VoxelShaper;
@@ -107,7 +107,7 @@ public class AttachmentBlock extends HorizontalDirectionalBlock implements Machi
 
     @Override
     protected int getAnalogOutputSignal(BlockState state, Level level, BlockPos pos) {
-        MultiblockControllerBlockEntity<?> machine = MachineAttachments.machineFor(level, pos, state);
-        return machine == null ? 0 : machine.gaugeSignal(state.getValue(READING) == Reading.FILL);
+        ProcessingMachineBlockEntity<?> machine = MachineAttachments.machineFor(level, pos, state);
+        return machine == null || !machine.acceptsAttachment(pos, Kind.GAUGE) ? 0 : machine.gaugeSignal(state.getValue(READING) == Reading.FILL);
     }
 }

@@ -39,9 +39,18 @@ public class MultiblockCategory<R extends MultiblockRecipe<?>> extends CreateRec
         this.display = display;
     }
 
+    /** The preview's side items, in a column on the right. */
+    public static void addSideSlots(IRecipeLayoutBuilder builder, MultiblockPreview preview) {
+        int y = 2;
+        for (ItemStack stack : preview.sideItems()) {
+            builder.addSlot(RecipeIngredientRole.CATALYST, 154, y).addItemStack(stack);
+            y += 18;
+        }
+    }
+
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, R recipe, IFocusGroup focuses) {
-        MultiblockPreviewRenderer.addSideSlots(builder, display.preview().apply(recipe));
+        addSideSlots(builder, display.preview().apply(recipe));
         List<Pair<Ingredient, MutableInt>> condensedIngredients = ItemHelper.condenseIngredients(recipe.getIngredients());
         int inputCount = condensedIngredients.size() + recipe.getFluidIngredients().size();
         int inputXOffset = inputCount < 3 ? (3 - inputCount) * 19 / 2 : 0;

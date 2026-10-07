@@ -1,5 +1,6 @@
 package com.koala.reactingreactions.content.multiblock;
 
+import com.koala.reactingreactions.content.multiblock.attachment.OutletValveBlockEntity;
 import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
@@ -13,6 +14,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -30,7 +32,8 @@ public class MultiblockWallBlockEntity extends SmartBlockEntity implements IHave
     public static void registerCapabilities(RegisterCapabilitiesEvent event, BlockEntityType<MultiblockWallBlockEntity> type) {
         event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, type, (be, ctx) -> {
             MultiblockControllerBlockEntity<?> controller = be.getController();
-            return controller == null ? null : controller.getFluidCapabilityAt(be.getBlockPos());
+            IFluidHandler valve = controller == null ? null : OutletValveBlockEntity.sourceFor(be.getLevel(), be.getBlockPos(), ctx);
+            return valve != null ? valve : controller == null ? null : controller.getFluidCapabilityAt(be.getBlockPos());
         });
         event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, type, (be, ctx) -> {
             MultiblockControllerBlockEntity<?> controller = be.getController();

@@ -1,6 +1,9 @@
 package com.koala.reactingreactions.content.multiblock;
 
+import com.koala.reactingreactions.content.multiblock.attachment.MachineAttachment;
+import com.koala.reactingreactions.content.multiblock.attachment.OutletValveBlockEntity;
 import com.koala.reactingreactions.content.toxic.LeakInfo;
+import com.koala.reactingreactions.content.toxic.TankSealing;
 import com.simibubi.create.api.equipment.goggles.IHaveGoggleInformation;
 import com.simibubi.create.content.processing.recipe.ProcessingOutput;
 import com.simibubi.create.content.processing.recipe.ProcessingRecipe;
@@ -11,6 +14,7 @@ import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTank
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -38,6 +42,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * A machine with input and output tanks and item slots that runs one recipe type. Pipes and hoppers fill the inputs and
@@ -59,7 +64,11 @@ public abstract class ProcessingMachineBlockEntity<R extends ProcessingRecipe<Re
     protected int activeFluidOutputs;
     @Nullable
     protected R recipe;
-    protected int timer;
+    /** Ticks' worth of work done on the current recipe: a fraction when power limits it (see {@link #workThisTick}). */
+    protected float timer;
+    /** Why the machine is idle although it holds something (server), or the synced copy (client); null when working or empty. */
+    @Nullable
+    private String blocker;
     private int searchCooldown;
     protected float progressFraction;
     private int lastSyncedProgressStep = -1;
@@ -87,7 +96,11 @@ public abstract class ProcessingMachineBlockEntity<R extends ProcessingRecipe<Re
     }
 
     public static void registerCapabilities(RegisterCapabilitiesEvent event, BlockEntityType<? extends ProcessingMachineBlockEntity<?>> type) {
-        event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, type, (be, ctx) -> be.getFluidCapabilityAt(be.getBlockPos()));
+        event.registerBlockEntity(Capabilities.FluidHandler.BLOCK, type, (be, ctx) -> {
+            // An Outlet Valve on the controller pulls through its own filtered outlet.
+            IFluidHandler valve = be.getLevel() == null ? null : OutletValveBlockEntity.sourceFor(be.getLevel(), be.getBlockPos(), ctx);
+            return valve != null ? valve : be.getFluidCapabilityAt(be.getBlockPos());
+        });
         event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, type, (be, ctx) -> be.getItemCapability());
     }
 
@@ -185,11 +198,137 @@ public abstract class ProcessingMachineBlockEntity<R extends ProcessingRecipe<Re
         return true;
     }
 
+    /** What keeps a recipe whose ingredients are all in from running now: the heat, stirring or power it needs. */
+    protected String whyNotNow(R recipe) {
+        return "Waiting for its heat or power";
+    }
+
+    /** Why a recipe whose ingredients are all in is not one this machine can run (its {@link #matchesExtra} refused it). */
+    protected String whyNotExtra(R recipe) {
+        return "This machine cannot make that";
+    }
+
+    /** What keeps a running recipe from progressing ({@link #workThisTick} gave nothing). */
+    protected String whyNoWork(R recipe) {
+        return "Not enough power";
+    }
+
+    /**
+     * Best effort, for an idle machine holding something: the first recipe its inputs are enough for, and what else that
+     * recipe lacks. Runs only when a recipe search has just failed, so at most twice a second.
+     */
+    @Nullable
+    private String diagnoseIdle() {
+        if (!holdsAnything()) {
+            return null;
+        }
+        for (var holder : level.getRecipeManager().getAllRecipesFor(recipeType())) {
+            R candidate = holder.value();
+            if (!hasIngredients(candidate)) {
+                continue;
+            }
+            if (candidate.getFluidResults().size() > activeFluidOutputs) {
+                return candidate.getFluidResults().size() <= fluidOutputs.length
+                        ? "Needs " + candidate.getFluidResults().size() + " output tanks (has " + activeFluidOutputs + "): add an Outlet Manifold"
+                        : "Makes " + candidate.getFluidResults().size() + " fluids, more than this machine can hold";
+            }
+            if (candidate.getRollableResults().size() > itemOutputs.getSlots()) {
+                return "Makes more items than this machine can hold";
+            }
+            if (!matchesExtra(candidate)) {
+                return whyNotExtra(candidate);
+            }
+        }
+        return "No recipe takes these inputs";
+    }
+
+    private boolean holdsAnything() {
+        for (SmartFluidTankBehaviour input : fluidInputs) {
+            if (!input.getPrimaryHandler().getFluid().isEmpty()) {
+                return true;
+            }
+        }
+        for (int i = 0; i < itemInputs.getSlots(); i++) {
+            if (!itemInputs.getStackInSlot(i).isEmpty()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void setBlocker(@Nullable String reason) {
+        if (!Objects.equals(reason, blocker)) {
+            blocker = reason;
+            sendData();
+        }
+    }
+
+    /** How many ticks of progress this tick brings, at most 1: less when the machine is short of power. */
+    protected float workThisTick(R recipe) {
+        return 1;
+    }
+
     protected int duration(R recipe) {
         return recipe.getProcessingDuration() > 0 ? recipe.getProcessingDuration() : 100;
     }
 
     protected void onServerTick() {
+    }
+
+    // ---- attachments ----
+
+    /**
+     * Whether the attachment at {@code at} works on this machine. A single-block machine has one attachment slot, for a Gauge or
+     * an Outlet Valve: the first one found against it (see {@link #attachmentSlot}).
+     */
+    public boolean acceptsAttachment(BlockPos at, MachineAttachment.Kind kind) {
+        return (kind == MachineAttachment.Kind.GAUGE || kind == MachineAttachment.Kind.OUTLET_VALVE) && at.equals(attachmentSlot());
+    }
+
+    /** The blocks the machine is made of, whose sides attachments mount on. */
+    protected List<BlockPos> bodyBlocks() {
+        return List.of(worldPosition);
+    }
+
+    /** The Gauge or Outlet Valve holding a single-block machine's one attachment slot, or null. */
+    @Nullable
+    protected BlockPos attachmentSlot() {
+        if (level == null) {
+            return null;
+        }
+        for (BlockPos body : bodyBlocks()) {
+            for (Direction side : Direction.Plane.HORIZONTAL) {
+                BlockPos at = body.relative(side);
+                BlockState state = level.getBlockState(at);
+                if (state.getBlock() instanceof MachineAttachment attachment && MachineAttachment.mountedTowards(state) == side.getOpposite()
+                        && (attachment.kind() == MachineAttachment.Kind.GAUGE || attachment.kind() == MachineAttachment.Kind.OUTLET_VALVE)) {
+                    return at;
+                }
+            }
+        }
+        return null;
+    }
+
+    /** A gauge's comparator signal: the progress, or how full the fullest output is. */
+    public int gaugeSignal(boolean fill) {
+        if (!fill) {
+            return Math.round(progressFraction * 15);
+        }
+        float fullest = 0;
+        for (int o = 0; o < activeFluidOutputs; o++) {
+            var tank = fluidOutputs[o].getPrimaryHandler();
+            fullest = Math.max(fullest, tank.getFluidAmount() / (float) Math.max(1, tank.getCapacity()));
+        }
+        return fullest <= 0 ? 0 : 1 + Math.round(fullest * 14);
+    }
+
+    /** What is in the one attachment slot (multiblocks list their own slots). */
+    protected void addAttachmentTooltip(List<Component> tooltip) {
+        BlockPos slot = attachmentSlot();
+        if (slot != null) {
+            tooltip.add(Component.literal(" - Attachment: ").withStyle(ChatFormatting.GRAY)
+                    .append(level.getBlockState(slot).getBlock().getName().copy().withStyle(ChatFormatting.WHITE)).append(" (1/1)"));
+        }
     }
 
     @Override
@@ -209,6 +348,10 @@ public abstract class ProcessingMachineBlockEntity<R extends ProcessingRecipe<Re
         boolean wasRunning = running;
         handleRecipe();
         onServerTick();
+        BlockPos gauge = level.getGameTime() % 20 == 0 ? attachmentSlot() : null;
+        if (gauge != null) {
+            level.updateNeighbourForOutputSignal(gauge, level.getBlockState(gauge).getBlock());
+        }
         // The clips last a little over two seconds, so they overlap slightly instead of leaving gaps.
         if (running && level.getGameTime() % 40 == 0 && workingSound() != null) {
             level.playSound(null, worldPosition, workingSound(), SoundSource.BLOCKS, 0.35F, 0.95F + level.random.nextFloat() * 0.1F);
@@ -243,6 +386,7 @@ public abstract class ProcessingMachineBlockEntity<R extends ProcessingRecipe<Re
         running = false;
         if (!isReady()) {
             recipe = null;
+            setBlocker(null);
             return;
         }
         if (recipe != null && !matchesInputs(recipe)) {
@@ -258,6 +402,8 @@ public abstract class ProcessingMachineBlockEntity<R extends ProcessingRecipe<Re
             timer = 0;
             if (recipe == null) {
                 searchCooldown = SEARCH_COOLDOWN_TICKS;
+                // A recipe whose needs are not met is still picked (and held below), so none here means the inputs fall short.
+                setBlocker(diagnoseIdle());
             }
         }
         if (recipe == null) {
@@ -265,6 +411,7 @@ public abstract class ProcessingMachineBlockEntity<R extends ProcessingRecipe<Re
             return;
         }
         if (!canRunNow(recipe)) {
+            setBlocker(whyNotNow(recipe));
             // Hold, unless another recipe for the same inputs can run now.
             if (searchCooldown > 0) {
                 searchCooldown--;
@@ -279,12 +426,19 @@ public abstract class ProcessingMachineBlockEntity<R extends ProcessingRecipe<Re
             return;
         }
         if (!outputsFit(recipe)) {
+            setBlocker("Its outputs are full: empty them");
             return;
         }
-        timer++;
+        float work = workThisTick(recipe);
+        if (work <= 0) {
+            setBlocker(whyNoWork(recipe));
+            return;
+        }
+        setBlocker(null);
+        timer += work;
         running = true;
         int duration = duration(recipe);
-        progressFraction = Math.min(1, (float) timer / duration);
+        progressFraction = Math.min(1, timer / duration);
         if (timer >= duration) {
             craft(recipe);
             resetRecipe();
@@ -298,8 +452,13 @@ public abstract class ProcessingMachineBlockEntity<R extends ProcessingRecipe<Re
     }
 
     protected boolean matchesInputs(R candidate) {
-        if (candidate.getFluidIngredients().size() > fluidInputs.length || candidate.getFluidResults().size() > activeFluidOutputs
-                || candidate.getRollableResults().size() > itemOutputs.getSlots() || !matchesExtra(candidate)) {
+        return candidate.getFluidResults().size() <= activeFluidOutputs && candidate.getRollableResults().size() <= itemOutputs.getSlots()
+                && matchesExtra(candidate) && hasIngredients(candidate);
+    }
+
+    /** Whether every ingredient of the recipe is in the inputs, in the amounts it needs. */
+    private boolean hasIngredients(R candidate) {
+        if (candidate.getFluidIngredients().size() > fluidInputs.length) {
             return false;
         }
         for (SizedFluidIngredient ingredient : candidate.getFluidIngredients()) {
@@ -414,6 +573,7 @@ public abstract class ProcessingMachineBlockEntity<R extends ProcessingRecipe<Re
         if (clientPacket) {
             progressFraction = compound.getFloat("Progress");
             running = compound.getBoolean("Running");
+            blocker = compound.contains("Blocker") ? compound.getString("Blocker") : null;
         }
     }
 
@@ -424,6 +584,9 @@ public abstract class ProcessingMachineBlockEntity<R extends ProcessingRecipe<Re
         if (clientPacket) {
             compound.putFloat("Progress", recipe == null ? 0 : progressFraction);
             compound.putBoolean("Running", running);
+            if (blocker != null) {
+                compound.putString("Blocker", blocker);
+            }
         }
         super.write(compound, registries, clientPacket);
     }
@@ -447,11 +610,17 @@ public abstract class ProcessingMachineBlockEntity<R extends ProcessingRecipe<Re
 
     /** Goggle info when looking at {@code looked}, this block or a part of its machine. */
     public boolean addToGoggleTooltipAt(List<Component> tooltip, boolean isPlayerSneaking, BlockPos looked) {
-        LeakInfo.append(tooltip, this);
+        if (leakTightness() > 0) {
+            LeakInfo.append(tooltip, this);
+        }
         if (!addHeader(tooltip)) {
             return true;
         }
+        if (blocker != null && !running) {
+            tooltip.add(Component.literal(" - Stopped: " + blocker).withStyle(ChatFormatting.GOLD));
+        }
         addStatusTooltip(tooltip, looked);
+        addAttachmentTooltip(tooltip);
         addTankTooltip(tooltip, looked);
         if (progressFraction > 0) {
             tooltip.add(Component.literal(" - Progress: " + (int) (progressFraction * 100) + "%").withStyle(ChatFormatting.GRAY));
@@ -465,9 +634,9 @@ public abstract class ProcessingMachineBlockEntity<R extends ProcessingRecipe<Re
         return true;
     }
 
-    /** 1 for a plain machine, less for a sealed one: scales the chance its toxic contents leak. */
+    /** 1 for a plain machine, 0 for one sealed with a Gasket: scales the chance its toxic contents leak. */
     public float leakTightness() {
-        return 1;
+        return TankSealing.isSealed(this) ? 0 : 1;
     }
 
     /** Machine-specific lines, such as heat or voltage. */

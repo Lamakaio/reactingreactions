@@ -39,16 +39,16 @@ public final class DrillingRecipes {
         mineral(recipes, CRRBlocks.MINERAL_DRILL_HEAD_STEEL.get(), CRRBlocks.RICH_GRANITE_VEIN.get(), CRRItems.GRANITE_DUST.get());
         mineral(recipes, CRRBlocks.MINERAL_DRILL_HEAD_STEEL.get(), CRRBlocks.RICH_DIORITE_VEIN.get(), CRRItems.DIORITE_DUST.get());
         mineral(recipes, CRRBlocks.MINERAL_DRILL_HEAD_STEEL.get(), CRRBlocks.RICH_SCORIA_VEIN.get(), CRRItems.SCORIA_DUST.get());
-        mineral(recipes, CRRBlocks.MINERAL_DRILL_HEAD_TITANIUM.get(), CRRBlocks.RICH_ASURINE_VEIN.get(), CRRItems.ASURINE_DUST.get());
-        mineral(recipes, CRRBlocks.MINERAL_DRILL_HEAD_TITANIUM.get(), CRRBlocks.RICH_CRIMSITE_VEIN.get(), CRRItems.CRIMSITE_DUST.get());
-        mineral(recipes, CRRBlocks.MINERAL_DRILL_HEAD_TITANIUM.get(), CRRBlocks.RICH_OCHRUM_VEIN.get(), CRRItems.OCHRUM_DUST.get());
-        mineral(recipes, CRRBlocks.MINERAL_DRILL_HEAD_TITANIUM.get(), CRRBlocks.RICH_VERIDIUM_VEIN.get(), CRRItems.VERIDIUM_DUST.get());
-        // The diamond bit drills every vein above; one row per vein so it shows up from any dust.
-        int steelAndTitanium = recipes.size();
-        for (int i = 0; i < steelAndTitanium; i++) {
+        mineral(recipes, CRRBlocks.MINERAL_DRILL_HEAD_DIAMOND.get(), CRRBlocks.RICH_ASURINE_VEIN.get(), CRRItems.ASURINE_DUST.get());
+        mineral(recipes, CRRBlocks.MINERAL_DRILL_HEAD_DIAMOND.get(), CRRBlocks.RICH_CRIMSITE_VEIN.get(), CRRItems.CRIMSITE_DUST.get());
+        mineral(recipes, CRRBlocks.MINERAL_DRILL_HEAD_DIAMOND.get(), CRRBlocks.RICH_OCHRUM_VEIN.get(), CRRItems.OCHRUM_DUST.get());
+        mineral(recipes, CRRBlocks.MINERAL_DRILL_HEAD_DIAMOND.get(), CRRBlocks.RICH_VERIDIUM_VEIN.get(), CRRItems.VERIDIUM_DUST.get());
+        // The titanium bit drills every vein above; one row per vein so it shows up from any dust.
+        int steelAndDiamond = recipes.size();
+        for (int i = 0; i < steelAndDiamond; i++) {
             DrillingRecipe r = recipes.get(i);
             if (!r.outputItem().isEmpty() && r.consumable().getFluid().isSame(CRRFluids.COOLANT.get().getSource())) {
-                mineral(recipes, CRRBlocks.MINERAL_DRILL_HEAD_DIAMOND.get(), ((BlockItem) r.vein().getItem()).getBlock(), r.outputItem().getItem());
+                mineral(recipes, CRRBlocks.MINERAL_DRILL_HEAD_TITANIUM.get(), ((BlockItem) r.vein().getItem()).getBlock(), r.outputItem().getItem());
             }
         }
         return recipes;

@@ -51,6 +51,11 @@ public class FluidTankItem extends Item implements FluidTankHolder {
     }
 
     @Override
+    public Fluid tankFluid() {
+        return fluid;
+    }
+
+    @Override
     public boolean isBarVisible(ItemStack stack) {
         return isTankBarVisible(stack);
     }

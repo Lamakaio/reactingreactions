@@ -21,6 +21,8 @@ MATERIALS = {
     "plate": "reactingreactions:block/machine/reaction_chamber_plate",
     "band": "reactingreactions:block/machine/steel_band",
     "dark": "reactingreactions:block/machine/steel_dark",
+    # The same steel, for pieces drawn whole that the cuts must leave alone (a window's frame).
+    "frame": "reactingreactions:block/machine/steel_dark",
     "brass": "create:block/brass_block",
     "copper": "reactingreactions:block/machine/copper_plate",
     "glass": "reactingreactions:block/machine/sight_glass",
@@ -63,9 +65,10 @@ class Shape:
         self.boxes = []
         self.cuts = []
 
-    def cut(self, f, t):
-        """Opens a hole through everything but glass, such as a window through the wall."""
-        self.cuts.append((list(f), list(t)))
+    def cut(self, f, t, only=None, skip=()):
+        """Opens a hole through everything but glass, such as a window through the wall; {@code only} or {@code skip} limit it to
+        some materials."""
+        self.cuts.append((list(f), list(t), only, tuple(skip)))
 
     def finished(self):
         """The boxes with the cuts taken out (turned boxes are left whole)."""
@@ -73,7 +76,9 @@ class Shape:
         for f, t, material, rot, full in self.boxes:
             pieces = [(f, t)]
             if not rot and material != "glass":
-                for hf, ht in self.cuts:
+                for hf, ht, only, skip in self.cuts:
+                    if (only is not None and material not in only) or material in skip:
+                        continue
                     pieces = [p for a, b in pieces for p in subtract(a, b, hf, ht)]
             out.extend((a, b, material, rot, full) for a, b in pieces)
         return out
@@ -96,10 +101,10 @@ def pipe_riser(s, W, side, along, y0, y1, D=None):
     # A flange where it leaves the ring or the run below.
     if side in "ns":
         z0, z1 = (-2.25, -0.25) if side == "n" else (D + 0.25, D + 2.25)
-        s.box([a - 0.5, y0, z0], [b + 0.5, y0 + 0.75, z1], "brass")
+        s.box([a - 0.5, y0 - 0.25, z0], [b + 0.5, y0 + 0.75, z1], "brass")
     else:
         x0, x1 = (-2.25, -0.25) if side == "w" else (W + 0.25, W + 2.25)
-        s.box([x0, y0, a - 0.5], [x1, y0 + 0.75, b + 0.5], "brass")
+        s.box([x0, y0 - 0.25, a - 0.5], [x1, y0 + 0.75, b + 0.5], "brass")
 
 
 def bolts(s, W, y, out, start, end, D=None, step=6):
@@ -119,22 +124,12 @@ def reaction_chamber(nx, nz, ny):
     top = H - 4
 
     def octagon(y0, y1, out, material, s=s):
-        lo, hi = 0.5 - out, W - 0.5 + out
-        s.box([lo, y0, C], [hi, y1, W - C], material)
-        s.box([C, y0, lo], [W - C, y1, hi], material)
-        half = (C - lo) / 2
-        length = (C - lo) * 0.7071 + 0.6
-        for cx in (lo + half, hi - half):
-            for cz in (lo + half, hi - half):
-                angle = 45 if (cx < mid) == (cz < mid) else -45
-                s.box([cx - length, y0, cz - 1.2], [cx + length, y1, cz + 1.2], material,
-                      {"origin": [cx, (y0 + y1) / 2, cz], "axis": "y", "angle": angle})
+        octagon_column(s, W, C, y0, y1, out, material)
 
-    octagon(8, top, 0, "plate")
-    # Hollow inside, with walls, floor and roof about 1.5px thick: an octagon (two crossed boxes) so the cut corners stay closed.
-    # ReactionChamberRenderer draws the fluid inside it (FLUID_INSET).
-    s.cut([2, 9.5, C + 1.5], [W - 2, top - 1.5, W - C - 1.5])
-    s.cut([C + 1.5, 9.5, 2], [W - C - 1.5, top - 1.5, W - 2])
+    # The body stops under the brass ring, so their tops never share a plane.
+    octagon(8, top - 2, 0, "plate")
+    # Hollow inside, walls, floor and roof about 1.5px thick (ReactionChamberRenderer draws the fluid inside, FLUID_INSET).
+    hollow(s, W, C, 9.5, top - 1.5)
     s.box([0, 0, 0], [W, 6, W], "dark")
     # Ribs every 12px, centred on the side.
     ribs = [mid - 1 + 12 * k for k in range(-4, 5) if 6 <= mid - 1 + 12 * k and mid + 1 + 12 * k <= W - 6]
@@ -159,11 +154,12 @@ def reaction_chamber(nx, nz, ny):
         if side == "s": fr, gl = ([g0, y0, W - 0.5], [g1, y1, W + 0.75]), ([g0 + 2, y0 + 2, W + 0.75], [g1 - 2, y1 - 2, W + 1])
         if side == "w": fr, gl = ([-0.75, y0, g0], [0.5, y1, g1]), ([-1, y0 + 2, g0 + 2], [-0.75, y1 - 2, g1 - 2])
         if side == "e": fr, gl = ([W - 0.5, y0, g0], [W + 0.75, y1, g1]), ([W + 0.75, y0 + 2, g0 + 2], [W + 1, y1 - 2, g1 - 2])
-        s.box(fr[0], fr[1], "dark"); s.box(gl[0], gl[1], "glass")
+        frame(s, fr[0], fr[1], 2)
+        s.box(gl[0], gl[1], "glass")
         # Through the wall behind the glass, so the contents show.
-        if side == "s": s.cut([g0 + 2, y0 + 2, W - 17], [g1 - 2, y1 - 2, W + 0.75])
-        if side == "w": s.cut([-0.75, y0 + 2, g0 + 2], [17, y1 - 2, g1 - 2])
-        if side == "e": s.cut([W - 17, y0 + 2, g0 + 2], [W + 0.75, y1 - 2, g1 - 2])
+        if side == "s": window_cut(s, [g0 + 2, y0 + 2, W - 17], [g1 - 2, y1 - 2, W + 2])
+        if side == "w": window_cut(s, [-2, y0 + 2, g0 + 2], [17, y1 - 2, g1 - 2])
+        if side == "e": window_cut(s, [W - 17, y0 + 2, g0 + 2], [W + 2, y1 - 2, g1 - 2])
 
     # The controller's panel, in its own block (middle of the north side, second row); the renderer draws the dial on it.
     s.box([mid - 8, 17, -1], [mid + 8, 31, 0.5], "dark")
@@ -174,16 +170,21 @@ def reaction_chamber(nx, nz, ny):
     s.box([mid - r, roof_top, mid - r], [mid + r, roof_top + 2, mid + r], "dark")
     body = min(9, room - 4)
     s.box([mid - r + 1, roof_top + 2, mid - r + 1], [mid + r - 1, roof_top + 2 + body, mid + r - 1], "motor")
+    # Cooling fins: rings round the body, clear of the shaft's hole.
     for fy in range(4, body, 3):
-        s.box([mid - r + 0.5, roof_top + fy, mid - r + 0.5], [mid + r - 0.5, roof_top + fy + 1, mid + r - 0.5], "dark")
+        lo, hi, y0 = mid - r + 0.5, mid + r - 0.5, roof_top + fy
+        for f, t in (([lo, y0, lo], [hi, y0 + 1, lo + 1]), ([lo, y0, hi - 1], [hi, y0 + 1, hi]), ([lo, y0, lo + 1], [lo + 1, y0 + 1, hi - 1]),
+                     ([hi - 1, y0, lo + 1], [hi, y0 + 1, hi - 1])):
+            s.box(f, t, "dark")
     # The fan on top turns with the shaft: drawn by ReactionChamberRenderer (moving/stirrer_fan) at roof_top + 2 + body
     # (78 px up for the small tier, 94 for the large; keep FAN_BASE in step).
     s.box([mid + r - 1, roof_top + 3, mid - 2], [mid + r + 2, roof_top + 3 + min(6, body - 1), mid + 2], "dark")
 
     if nx >= 5:
         for rib in (mid - 22, mid + 20):
-            s.box([rib, 8, -0.75], [rib + 2, top, 0.5], "band"); s.box([rib, 8, W - 0.5], [rib + 2, top, W + 0.75], "band")
-            s.box([-0.75, 8, rib], [0.5, top, rib + 2], "band"); s.box([W - 0.5, 8, rib], [W + 0.75, top, rib + 2], "band")
+            # Up to the brass ring, not through its top.
+            s.box([rib, 8, -0.75], [rib + 2, top - 2, 0.5], "band"); s.box([rib, 8, W - 0.5], [rib + 2, top - 2, W + 0.75], "band")
+            s.box([-0.75, 8, rib], [0.5, top - 2, rib + 2], "band"); s.box([W - 0.5, 8, rib], [W + 0.75, top - 2, rib + 2], "band")
         lz = W - C - 14
         for rz in (lz, lz + 7):
             s.box([-4, 8, rz], [-3, top + 10, rz + 1], "dark")
@@ -206,8 +207,9 @@ def reaction_chamber(nx, nz, ny):
     sealed = Shape()
     sealed.cuts = list(s.cuts)
     for y in range(22, top - 4, 16):
-        octagon(y - 0.75, y + 2.75, 1.25, "dark", sealed)
-        bolts(sealed, W, y + 0.5, 1.25, C + 3, W - C - 3)
+        # Just under the window frames and ribs, so they pass in front instead of sharing a face.
+        octagon(y - 0.75, y + 2.75, 1.1, "dark", sealed)
+        bolts(sealed, W, y + 0.5, 1.1, C + 3, W - C - 3)
     octagon(5.5, 8.5, 1.5, "dark", sealed)
     octagon(top - 2.5, top + 0.25, 1.2, "brass", sealed)
     return {"base": s, "piped": piped, "sealed": sealed}
@@ -406,6 +408,147 @@ def derrick(nx, nz, ny):
     return s
 
 
+# ---- Small Reaction Chamber: one block wide, two tall, placed like a door -------------------------------------------------
+
+def octagon_column(s, W, C, y0, y1, out, material):
+    """An octagonal prism W wide with its vertical corners cut back C, `out` px proud, stepped at the corners: three plain boxes
+    (along x, along z, and one between). No turned pieces, so no faces at odd angles to flicker against the flat ones."""
+    lo, hi = 0.5 - out, W - 0.5 + out
+    # A ring standing proud has its corners further out too, so its steps never line up with the body's.
+    C = C - out
+    step = (C - lo) / 2
+    s.box([lo, y0, C], [hi, y1, W - C], material)
+    s.box([C, y0, lo], [W - C, y1, hi], material)
+    s.box([lo + step, y0, lo + step], [hi - step, y1, hi - step], material)
+
+
+def hollow(s, W, C, y0, y1):
+    """The inside of an octagon_column body, its walls about 1.5px thick. The details on the body are cut a little wider, so
+    their cut faces hide inside the wall instead of sharing its planes."""
+    step = (C - 0.5) / 2
+    for g in (0, 0.25):
+        which = {"only": ("plate",)} if g == 0 else {"skip": ("plate", "frame")}
+        s.cut([2 - g, y0, C + 1.5 - g], [W - 2 + g, y1, W - C - 1.5 + g], **which)
+        s.cut([C + 1.5 - g, y0, 2 - g], [W - C - 1.5 + g, y1, W - 2 + g], **which)
+        s.cut([2 + step - g, y0, 2 + step - g], [W - 2 - step + g, y1, W - 2 - step + g], **which)
+
+
+def window_cut(s, f, t):
+    """Through the body behind a window; a little wider for the bands crossing it, so their cut ends hide in the frame."""
+    s.cut(f, t, only=("plate",))
+    s.cut([v - 0.25 for v in f], [v + 0.25 for v in t], skip=("plate", "frame"))
+
+
+def frame(s, f, t, border):
+    """A window frame as four bars round the opening, in the "frame" material that cuts leave alone. The frame is thin along
+    the axis where f and t are closest."""
+    thin = min(range(3), key=lambda i: t[i] - f[i])
+    u, v = [i for i in range(3) if i != thin]
+    for side in range(4):
+        a, b = list(f), list(t)
+        if side == 0: b[u] = f[u] + border
+        if side == 1: a[u] = t[u] - border
+        if side == 2: a[u], b[u], b[v] = f[u] + border, t[u] - border, f[v] + border
+        if side == 3: a[u], b[u], a[v] = f[u] + border, t[u] - border, t[v] - border
+        s.box(a, b, "frame")
+
+
+def small_reaction_chamber():
+    """Window to the north (the front); the shaft comes down into the bearing on top, a Blaze Burner heats the base.
+    SmallReactionChamberRenderer draws the fluid in the hollow and the whisk (keep FLUID_BOX in step)."""
+    W, C = 16, 3.5
+    s = Shape()
+    s.box([0, 0, 0], [16, 3, 16], "dark")
+    for p in (3, 7, 11):
+        s.box([p, 0, -0.5], [p + 2, 3, 0], "band"); s.box([p, 0, 16], [p + 2, 3, 16.5], "band")
+        s.box([-0.5, 0, p], [0, 3, p + 2], "band"); s.box([16, 0, p], [16.5, 3, p + 2], "band")
+    octagon_column(s, W, C, 4.5, 24.5, 0, "plate")
+    hollow(s, W, C, 4.5, 24.5)
+    octagon_column(s, W, C, 3, 4.5, 0.6, "dark")
+    octagon_column(s, W, C, 15, 17, 0.5, "band")
+    octagon_column(s, W, C, 24.5, 26, 0.6, "brass")
+    s.box([2.5, 26, 2.5], [13.5, 28, 13.5], "dark")
+    s.box([4, 28, 4], [12, 30, 12], "plate")
+    s.box([5, 30, 5], [11, 31, 11], "brass")
+    # The bearing: the shaft above comes down into it.
+    s.box([5.5, 31, 5.5], [10.5, 31.75, 10.5], "dark")
+    s.box([6.5, 31.75, 6.5], [9.5, 32, 9.5], "darker")
+    # Sight glass on the front, through the wall so the contents show.
+    frame(s, [5, 6.5, -0.75], [11, 23.5, 0.5], 1)
+    s.box([6, 7.5, -1], [10, 22.5, -0.75], "glass")
+    window_cut(s, [6, 7.5, -2], [10, 22.5, 3])
+    # A port low on the back.
+    s.box([6, 6, 15.5], [10, 10, 17], "copper"); s.box([5.5, 5.5, 16.75], [10.5, 10.5, 17.25], "brass")
+    # Gasket installed: thick bolted flanges at the base, the seam and under the lid.
+    sealed = Shape()
+    sealed.cuts = list(s.cuts)
+    octagon_column(sealed, W, C, 2.75, 5.25, 1.2, "dark")
+    octagon_column(sealed, W, C, 14.25, 17.75, 1.2, "dark")
+    octagon_column(sealed, W, C, 24, 26.5, 1.2, "brass")
+    for y in (3.5, 15.5):
+        bolts(sealed, W, y, 1.2, C + 1, W - C - 1, step=4)
+    return {"base": s, "sealed": sealed}
+
+
+def write_small_reaction_chamber():
+    """Both halves (and their Gasket overlays), the item model and the blockstate (half, facing, sealed)."""
+    name = "small_reaction_chamber"
+    models = os.path.join(ASSETS, "models", "block", name)
+    os.makedirs(models, exist_ok=True)
+    halves = {(0, 0, 0): "lower", (0, 1, 0): "upper"}
+
+    def write(model, elements):
+        used = sorted({face["texture"][1:] for e in elements for face in e["faces"].values()})
+        textures = {m: MATERIALS[m] for m in used}
+        textures["particle"] = MATERIALS["plate"]
+        with open(os.path.join(models, model + ".json"), "w") as fh:
+            json.dump({"parent": "minecraft:block/block", "textures": textures, "elements": elements}, fh, indent=1)
+
+    layers = small_reaction_chamber()
+    for layer, shape in layers.items():
+        for cell, elements in slice_machine(shape, 1, 1, 2, owned=set(halves)).items():
+            write(halves[cell] + ("" if layer == "base" else "_" + layer), elements)
+    def item_box(f, t):
+        """Texture coordinates of a box, taken within the block its lower corner is in."""
+        off = [math.floor(v / 16) * 16 for v in f]
+        return [max(0, min(16, f[i] - off[i])) for i in range(3)], [max(0, min(16, t[i] - off[i])) for i in range(3)]
+
+    # The item: the whole vessel, uncut, shrunk to fit a slot.
+    whole = []
+    for f, t, material, rot, _ in layers["base"].finished():
+        # Item models must stay within -16..32 on every axis.
+        f, t = [max(-16, min(32, v)) for v in f], [max(-16, min(32, v)) for v in t]
+        e = {"from": [r(v) for v in f], "to": [r(v) for v in t],
+             "faces": {face: {"uv": [r(v) for v in uv(face, *item_box(f, t))], "texture": "#" + material} for face in FACES}}
+        if rot:
+            e["rotation"] = rot
+        whole.append(e)
+    write("item", whole)
+    with open(os.path.join(models, "item.json")) as fh:
+        item = json.load(fh)
+    item["display"] = {"gui": {"rotation": [30, 225, 0], "translation": [0, -3.5, 0], "scale": [0.42, 0.42, 0.42]},
+                       "ground": {"translation": [0, 2, 0], "scale": [0.2, 0.2, 0.2]},
+                       "fixed": {"translation": [0, -4, 0], "scale": [0.4, 0.4, 0.4]},
+                       "thirdperson_righthand": {"rotation": [75, 45, 0], "translation": [0, 1.5, 1.5], "scale": [0.25, 0.25, 0.25]},
+                       "firstperson_righthand": {"rotation": [0, 45, 0], "translation": [0, 0, 0], "scale": [0.3, 0.3, 0.3]}}
+    with open(os.path.join(models, "item.json"), "w") as fh:
+        json.dump(item, fh, indent=1)
+    cases = []
+    for half in ("lower", "upper"):
+        for layer in layers:
+            for facing, y in (("north", 0), ("east", 90), ("south", 180), ("west", 270)):
+                when = {"half": half, "facing": facing}
+                if layer != "base":
+                    when[layer] = "true"
+                apply = {"model": f"reactingreactions:block/{name}/{half}" + ("" if layer == "base" else "_" + layer)}
+                if y:
+                    apply["y"] = y
+                cases.append({"when": when, "apply": apply})
+    with open(os.path.join(ASSETS, "blockstates", name + ".json"), "w") as fh:
+        json.dump({"multipart": cases}, fh, indent=1)
+    print(name + ": 2 halves, " + ", ".join(layers))
+
+
 # ---- moving parts: separate models the renderers turn, each centred on its pivot at (8, 8, 8) unless noted ------------------
 
 def stirrer_fan():
@@ -426,7 +569,38 @@ def gauge_needle():
     return s
 
 
-MOVING = {"stirrer_fan": stirrer_fan, "gauge_needle": gauge_needle}
+def whisk_head():
+    """The stirrer's head, scaled by the renderers to each chamber: four wires from a collar at the top out to the rim and back
+    in to a hub at the bottom, 12px across and 9.5px tall, centred on x and z with its base at y 0. Each wire is two-tone, its
+    leading half light and its trailing half dark, so it still reads when spun fast."""
+    s = Shape()
+    s.box([6.5, 6.25, 6.5], [9.5, 9.5, 9.5], "dark")
+    s.box([6.75, -0.25, 6.75], [9.25, 1.75, 9.25], "dark")
+
+    def turned(f, t, quarter):
+        """Box (f, t) turned `quarter` times 90 degrees about the centre."""
+        for _ in range(quarter):
+            f, t = [16 - t[2], f[1], f[0]], [16 - f[2], t[1], t[0]]
+        return [min(f[i], t[i]) for i in range(3)], [max(f[i], t[i]) for i in range(3)]
+
+    # One wire, along -x from the centre: arm into the collar, upright at the rim, foot into the hub; 2px wide across z.
+    wire = (([2, 0, 7], [3.5, 8, 8]), ([3.5, 6.5, 7], [6.75, 8, 8]), ([3.5, 0, 7], [7, 1.5, 8]))
+    for quarter in range(4):
+        for f, t in wire:
+            for half, material in ((0, "band"), (1, "darker")):
+                hf, ht = turned([f[0], f[1], f[2] + half], [t[0], t[1], t[2] + half], quarter)
+                s.box(hf, ht, material)
+    return s
+
+
+def whisk_pole():
+    """The stirrer's pole, one block tall, centred on x and z: the renderers stretch it from the head up to the roof."""
+    s = Shape()
+    s.box([7.25, 0, 7.25], [8.75, 16, 8.75], "dark")
+    return s
+
+
+MOVING = {"stirrer_fan": stirrer_fan, "gauge_needle": gauge_needle, "whisk_head": whisk_head, "whisk_pole": whisk_pole}
 
 
 def write_moving():
@@ -648,6 +822,23 @@ def circulation_pump():
     return s
 
 
+def outlet_valve():
+    """A pipe out of the machine (to the south) through a brass valve body under a red handwheel, ending in an outlet flange."""
+    s = Shape()
+    s.box([3, 3, 14.5], [13, 13, 16], "dark")
+    for x, y in ((3.5, 3.5), (11.5, 3.5), (3.5, 11.5), (11.5, 11.5)):
+        s.box([x, y, 14], [x + 1, y + 1, 14.5], "brass")
+    s.box([5.5, 5.5, 2], [10.5, 10.5, 14.5], "copper")
+    s.box([4.5, 4.5, 6], [11.5, 11.5, 11], "brass")
+    s.box([7.5, 11.5, 8], [8.5, 13, 9], "dark")
+    for f, t in (([5, 13, 5.5], [11, 14, 6.5]), ([5, 13, 10.5], [11, 14, 11.5]), ([5, 13, 6.5], [6, 14, 10.5]), ([10, 13, 6.5], [11, 14, 10.5]),
+                 ([6, 13.25, 8], [10, 13.75, 9])):
+        s.box(f, t, "red")
+    s.box([7.25, 13, 7.75], [8.75, 14.5, 9.25], "dark")
+    s.box([4.5, 4.5, 0], [11.5, 11.5, 2], "brass")
+    return s
+
+
 def derrick_drive():
     """The Derrick's controller, a top drive: a flanged base, a ribbed gearbox, a bearing the input shaft comes down into from
     above, and copper lines for its fluids. Create draws the shaft itself (the full height, hidden inside the drive below the bearing)."""
@@ -685,7 +876,7 @@ def gas_vent_stack():
 # Upgrades used on a machine rather than mounted, and other single models: only the model, no blockstate.
 ITEM_ONLY = {"outlet_manifold", "gasket", "derrick_drive", "gas_vent_stack"}
 ATTACHMENTS = {"gas_vent_stack": gas_vent_stack, "derrick_drive": derrick_drive, "outlet_manifold": outlet_manifold, "expansion_tank": expansion_tank, "machine_gauge": machine_gauge, "gasket": gasket,
-               "circulation_pump": circulation_pump}
+               "circulation_pump": circulation_pump, "outlet_valve": outlet_valve}
 
 
 def write_attachments():
@@ -702,7 +893,10 @@ def write_attachments():
         if name in ITEM_ONLY:
             continue
         variants = {}
-        for facing, y in (("south", 0), ("west", 90), ("north", 180), ("east", 270)):
+        # Attachments face their machine; the Outlet Valve, a pump, faces away from it (and up and down are never placed).
+        turns = (("north", 0), ("east", 90), ("south", 180), ("west", 270), ("up", 0), ("down", 0)) if name == "outlet_valve" \
+            else (("south", 0), ("west", 90), ("north", 180), ("east", 270))
+        for facing, y in turns:
             variant = {"model": f"reactingreactions:block/{name}"}
             if y:
                 variant["y"] = y
@@ -808,3 +1002,4 @@ if __name__ == "__main__":
         write_machine(m)
     write_attachments()
     write_moving()
+    write_small_reaction_chamber()

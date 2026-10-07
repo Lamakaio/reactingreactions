@@ -33,13 +33,15 @@ import java.util.List;
 
 /**
  * Removes contamination around itself and stops gas vents near it while it works. It needs rotation (32+ RPM) and Activated Carbon
- * (one per minute), and works twice as hard with Lye. Out in the open it covers a small radius; in a room (an airtight block above and
+ * (one per four minutes of cleaning, none while the air is clean), and works twice as hard with Lye. Out in the open it covers a small radius; in a room (an airtight block above and
  * below it) it covers a larger one, three times as hard.
  */
 public class AtmosphericScrubberBlockEntity extends KineticBlockEntity {
     public static final float MIN_RPM = 32;
     private static final int INTAKE_HAZE = 0xC8D8A8;
     private static final int LYE_CAPACITY_MB = 1000;
+    /** Passes (half a second each) of actual cleaning per Activated Carbon used: four minutes. */
+    private static final int PASSES_PER_CARBON = 480;
 
     private SmartFluidTankBehaviour lye;
     private final ItemStackHandler carbon = new ItemStackHandler(1) {
@@ -120,9 +122,11 @@ public class AtmosphericScrubberBlockEntity extends KineticBlockEntity {
         boolean withLye = lye.getPrimaryHandler().getFluidAmount() > 0;
         int radius = roomed ? Config.number(Config.SCRUBBER_ROOM_RADIUS, 16) : Config.number(Config.SCRUBBER_OPEN_RADIUS, 6);
         float strength = 1.5F * (roomed ? 3 : 1) * (withLye ? 2 : 1);
-        Contamination.clear(serverLevel, worldPosition, radius, strength);
-        // Ten ticks per pass: a minute of work uses one carbon, and lye goes at 2 mB a second.
-        if (++carbonTimer >= 6) {
+        if (Contamination.clear(serverLevel, worldPosition, radius, strength) <= 0) {
+            return;
+        }
+        // Only passes that cleaned something use carbon and lye (2 mB a second).
+        if (++carbonTimer >= PASSES_PER_CARBON) {
             carbonTimer = 0;
             carbon.extractItem(0, 1, false);
         }

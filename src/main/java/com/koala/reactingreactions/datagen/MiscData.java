@@ -74,6 +74,7 @@ final class MiscData {
         for (String colour : COLORS) {
             tag(c, "item", "dyes/" + colour, "reactingreactions:" + colour + "_paint");
         }
+        tag(c, "item", "fertilizers", "reactingreactions:super_bone_meal");
         // Common (c:) tags, so other mods' recipes and machines recognise this mod's materials. Each item joins its subtag
         // (c:ingots/lead) and the parent (c:ingots), as NeoForge's conventions ask.
         commonItemTags(c);
@@ -247,24 +248,26 @@ final class MiscData {
                  "features": ["reactingreactions:oil_shale_vein_huge"], "step": "underground_ores"}
                 """);
 
-        // Polymetallic nodules: small disks on the ocean floor.
-        data.raw("worldgen/configured_feature", "polymetallic_nodule_disk", """
-                {"type": "minecraft:disk", "config": {
-                  "state_provider": {"fallback": {"type": "minecraft:simple_state_provider", "state": {"Name": "reactingreactions:polymetallic_nodule"}}, "rules": []},
-                  "target": {"type": "minecraft:matching_blocks", "blocks": ["minecraft:sand", "minecraft:gravel", "minecraft:dirt", "minecraft:clay"]},
-                  "radius": {"type": "minecraft:uniform", "min_inclusive": 1, "max_inclusive": 2},
-                  "half_height": 1}}
+        // Polymetallic nodules: scattered patches lying waterlogged on the ocean floor.
+        data.raw("worldgen/configured_feature", "polymetallic_nodules", """
+                {"type": "minecraft:random_patch", "config": {"tries": 24, "xz_spread": 5, "y_spread": 2, "feature": {
+                  "feature": {"type": "minecraft:simple_block", "config": {"to_place": {"type": "minecraft:simple_state_provider",
+                    "state": {"Name": "reactingreactions:polymetallic_nodule", "Properties": {"waterlogged": "true"}}}}},
+                  "placement": [{"type": "minecraft:block_predicate_filter", "predicate": {"type": "minecraft:all_of", "predicates": [
+                    {"type": "minecraft:matching_blocks", "blocks": "minecraft:water"},
+                    {"type": "minecraft:would_survive", "state": {"Name": "reactingreactions:polymetallic_nodule", "Properties": {"waterlogged": "true"}}}]}}]}}}
                 """);
-        data.raw("worldgen/placed_feature", "polymetallic_nodule_disk", """
-                {"feature": "reactingreactions:polymetallic_nodule_disk", "placement": [
+        data.raw("worldgen/placed_feature", "polymetallic_nodules", """
+                {"feature": "reactingreactions:polymetallic_nodules", "placement": [
+                  {"type": "minecraft:rarity_filter", "chance": 2},
                   {"type": "minecraft:in_square"},
                   {"type": "minecraft:heightmap", "heightmap": "OCEAN_FLOOR_WG"},
-                  {"type": "minecraft:block_predicate_filter", "predicate": {"type": "minecraft:matching_fluids", "fluids": ["minecraft:water"]}},
+                  {"type": "minecraft:block_predicate_filter", "predicate": {"type": "minecraft:matching_fluids", "fluids": "minecraft:water"}},
                   {"type": "minecraft:biome"}]}
                 """);
         data.raw("neoforge/biome_modifier", "polymetallic_nodule", """
                 {"type": "neoforge:add_features", "biomes": "#minecraft:is_ocean",
-                 "features": ["reactingreactions:polymetallic_nodule_disk"], "step": "local_modifications"}
+                 "features": ["reactingreactions:polymetallic_nodules"], "step": "vegetal_decoration"}
                 """);
     }
 
@@ -277,7 +280,9 @@ final class MiscData {
         fuelType(cdg, "mineral_oil", "reactingreactions:mineral_oil", 0.6, 0.4, 64, 1536, 64, 2048, 176, 3072);
         fuelType(cdg, "naphtha", "reactingreactions:naphtha", 0.95, 0.55, 96, 5120, 96, 7168, 224, 14336);
         fuelType(cdg, "methane", "reactingreactions:methane", 1.0, 1.2, 96, 7168, 96, 9216, 224, 18432);
-        fuelType(cdg, "hydrogen", "reactingreactions:hydrogen", 1.0, 1.4, 96, 8192, 96, 10240, 224, 20480);
+        // Hydrogen is a lossy store of electrolysis' energy, not a source: it burns 10 times as fast as the others, so a bucket
+        // gives at most ~2 MJ (huge or turbocharged engine, EE alternator), half the 4 MJ electrolysis took (Voltmeter).
+        fuelType(cdg, "hydrogen", "reactingreactions:hydrogen", 1.0, 1.4, 96, 8192, 96, 10240, 224, 20480, 0.5);
         fuelType(cdg, "lpg", "reactingreactions:lpg", 1.0, 1.2, 96, 7168, 96, 9216, 224, 18432);
         fuelType(cdg, "acetylene", "reactingreactions:acetylene", 1.05, 1.5, 96, 8192, 96, 10240, 224, 20480);
     }
@@ -298,13 +303,22 @@ final class MiscData {
 
     private static void fuelType(Data cdg, String path, String fluidId, double soundPitch, double burnerMultiplier,
             double normalSpeed, double normalStrength, double modularSpeed, double modularStrength, double hugeSpeed, double hugeStrength) {
+        fuelType(cdg, path, fluidId, soundPitch, burnerMultiplier, normalSpeed, normalStrength, modularSpeed, modularStrength, hugeSpeed, hugeStrength,
+                0.05);
+    }
+
+    /** {@code burnRate} is in mB a tick, for every engine size (a modular engine burns it per block). */
+    private static void fuelType(Data cdg, String path, String fluidId, double soundPitch, double burnerMultiplier,
+            double normalSpeed, double normalStrength, double modularSpeed, double modularStrength, double hugeSpeed, double hugeStrength,
+            double burnRate) {
         cdg.raw("createdieselgenerators/fuel_type", path, """
                 {"neoforge:conditions": [{"type": "neoforge:mod_loaded", "modid": "createdieselgenerators"}],
                  "fluid": "%s", "sound_pitch": %s, "burner_multiplier": %s,
-                 "normal": {"speed": %s, "strength": %s, "burn_rate": 0.05},
-                 "modular": {"speed": %s, "strength": %s, "burn_rate": 0.05},
-                 "huge": {"speed": %s, "strength": %s, "burn_rate": 0.05}}
-                """.formatted(fluidId, soundPitch, burnerMultiplier, normalSpeed, normalStrength, modularSpeed, modularStrength, hugeSpeed, hugeStrength));
+                 "normal": {"speed": %s, "strength": %s, "burn_rate": %s},
+                 "modular": {"speed": %s, "strength": %s, "burn_rate": %s},
+                 "huge": {"speed": %s, "strength": %s, "burn_rate": %s}}
+                """.formatted(fluidId, soundPitch, burnerMultiplier, normalSpeed, normalStrength, burnRate, modularSpeed, modularStrength, burnRate,
+                hugeSpeed, hugeStrength, burnRate));
     }
 
     /**

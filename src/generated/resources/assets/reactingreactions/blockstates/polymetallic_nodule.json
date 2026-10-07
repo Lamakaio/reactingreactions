@@ -1,7 +1,38 @@
 {
   "variants": {
-    "": {
-      "model": "reactingreactions:block/polymetallic_nodule"
-    }
+    "waterlogged=false": [
+      {
+        "model": "reactingreactions:block/polymetallic_nodule"
+      },
+      {
+        "model": "reactingreactions:block/polymetallic_nodule",
+        "y": 90
+      },
+      {
+        "model": "reactingreactions:block/polymetallic_nodule",
+        "y": 180
+      },
+      {
+        "model": "reactingreactions:block/polymetallic_nodule",
+        "y": 270
+      }
+    ],
+    "waterlogged=true": [
+      {
+        "model": "reactingreactions:block/polymetallic_nodule"
+      },
+      {
+        "model": "reactingreactions:block/polymetallic_nodule",
+        "y": 90
+      },
+      {
+        "model": "reactingreactions:block/polymetallic_nodule",
+        "y": 180
+      },
+      {
+        "model": "reactingreactions:block/polymetallic_nodule",
+        "y": 270
+      }
+    ]
   }
 }

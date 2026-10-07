@@ -154,6 +154,8 @@ final class CRRLang {
         r.addRawLang("reactingreactions.jei.page.can", "Can make: %s.");
         r.addRawLang("reactingreactions.jei.page.small_electrolyser.intro", "One block that splits simple fluids with any electrodes. It needs power: each recipe has a minimum voltage.");
         r.addRawLang("reactingreactions.jei.page.small_electrolyser.cannot", "Cannot make: %s. Those need the Electrolysis Vat with specific electrodes, or more than one fluid or a lot of items.");
+        r.addRawLang("reactingreactions.jei.page.small_reaction_chamber.intro", "Two blocks tall, placed as one. Stirred by a shaft into its top and heated by a Blaze Burner under it, at half the speed of a Reaction Chamber. It takes one attachment, a Gauge or an Outlet Valve.");
+        r.addRawLang("reactingreactions.jei.page.small_reaction_chamber.cannot", "Cannot make: %s. Those need the Reaction Chamber (more than two fluids or items in, or more than one out).");
         r.addRawLang("reactingreactions.jei.page.fermentation_barrel.intro", "One block that needs no power. It is slow, has no stirring and no heat.");
         r.addRawLang("reactingreactions.jei.page.fermentation_barrel.cannot", "Cannot make: %s. Those need the Reaction Chamber (stirring, heat or more slots).");
         r.addRawLang("entity.reactingreactions.leak_pool", "Leak Pool");

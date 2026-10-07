@@ -8,6 +8,8 @@ import dev.engine_room.flywheel.lib.model.baked.PartialModel;
 public final class CRRPartialModels {
     public static final PartialModel STIRRER_FAN = moving("stirrer_fan");
     public static final PartialModel GAUGE_NEEDLE = moving("gauge_needle");
+    public static final PartialModel WHISK_HEAD = moving("whisk_head");
+    public static final PartialModel WHISK_POLE = moving("whisk_pole");
 
     private CRRPartialModels() {
     }

@@ -415,6 +415,18 @@ public final class Data {
             return addResult(itemResult(id, count, chance));
         }
 
+        /** An item with its tank holding {@code amountMb} of {@code fluidId} (the fluid_tank component). */
+        public RecipeJson outWithTank(String id, String fluidId, int amountMb) {
+            JsonObject tank = new JsonObject();
+            tank.addProperty("id", fluidId);
+            tank.addProperty("amount", amountMb);
+            JsonObject components = new JsonObject();
+            components.add("reactingreactions:fluid_tank", tank);
+            JsonObject o = itemResult(id, null, null);
+            o.add("components", components);
+            return addResult(o);
+        }
+
         /** A fluid result of a processing recipe. */
         public RecipeJson fluidOut(String id, int amountMb) {
             JsonObject o = new JsonObject();

@@ -3,6 +3,7 @@ package com.koala.reactingreactions.mixin;
 import com.koala.reactingreactions.Config;
 import com.koala.reactingreactions.content.fluids.PlasticPipeBlock;
 import com.koala.reactingreactions.content.toxic.Leaks;
+import com.koala.reactingreactions.content.toxic.TankSealing;
 import com.simibubi.create.content.fluids.FluidTransportBehaviour;
 import com.simibubi.create.content.fluids.PipeConnection;
 import com.simibubi.create.content.fluids.pipes.EncasedPipeBlock;
@@ -36,8 +37,8 @@ public abstract class FluidTransportBehaviourMixin {
             PipeConnection.Flow flow = self.getFlow(direction);
             if (flow != null && !flow.fluid.isEmpty()) {
                 Block block = level.getBlockState(pos).getBlock();
-                // Encased pipes and Plastic Pipes are sealed; glass pipes are tighter than plain copper.
-                float tightness = block instanceof EncasedPipeBlock || block instanceof PlasticPipeBlock ? 0
+                // Encased pipes, Plastic Pipes and anything with a Gasket are sealed; glass pipes are tighter than plain copper.
+                float tightness = block instanceof EncasedPipeBlock || block instanceof PlasticPipeBlock || TankSealing.isSealed(self.blockEntity) ? 0
                         : block instanceof GlassFluidPipeBlock ? 0.5F : 1.0F;
                 Leaks.check(level, pos, flow.fluid, 0.5F, tightness, null);
                 return;

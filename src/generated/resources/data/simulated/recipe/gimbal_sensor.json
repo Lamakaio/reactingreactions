@@ -22,9 +22,9 @@
     }
   },
   "pattern": [
-    "CT",
-    "G ",
-    "B "
+    " C ",
+    "TGT",
+    " B "
   ],
   "result": {
     "count": 1,

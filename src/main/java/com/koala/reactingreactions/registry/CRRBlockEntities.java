@@ -17,10 +17,13 @@ import com.koala.reactingreactions.content.induction.InductionHeaterPlateBlockEn
 import com.koala.reactingreactions.content.multiblock.MultiblockControllerBlockEntity;
 import com.koala.reactingreactions.content.multiblock.MultiblockWallBlockEntity;
 import com.koala.reactingreactions.content.multiblock.attachment.GaugeBlockEntity;
+import com.koala.reactingreactions.content.multiblock.attachment.OutletValveBlockEntity;
 import com.koala.reactingreactions.content.multiblock.attachment.GaugeRenderer;
 import com.koala.reactingreactions.content.reaction.FermentationBarrelBlockEntity;
 import com.koala.reactingreactions.content.reaction.ReactionChamberControllerBlockEntity;
 import com.koala.reactingreactions.content.reaction.ReactionChamberRenderer;
+import com.koala.reactingreactions.content.reaction.SmallReactionChamberBlockEntity;
+import com.koala.reactingreactions.content.reaction.SmallReactionChamberRenderer;
 import com.koala.reactingreactions.content.steam.SteamTurbineBlockEntity;
 import com.koala.reactingreactions.content.steel.SteelEncasedShaftBlockEntity;
 import com.koala.reactingreactions.content.toxic.AtmosphericScrubberBlockEntity;
@@ -40,6 +43,7 @@ import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 
 public class CRRBlockEntities {
@@ -69,6 +73,9 @@ public class CRRBlockEntities {
             .validBlocks(CRRBlocks.CIRCULATION_PUMP)
             .renderer(() -> ShaftRenderer::new)
             .register();
+
+    public static final BlockEntityEntry<OutletValveBlockEntity> OUTLET_VALVE = blockEntity("outlet_valve", OutletValveBlockEntity::new,
+            CRRBlocks.OUTLET_VALVE).register();
 
     public static final BlockEntityEntry<GaugeBlockEntity> MACHINE_GAUGE = REGISTRATE
             .blockEntity("machine_gauge", GaugeBlockEntity::new)
@@ -113,6 +120,10 @@ public class CRRBlockEntities {
 
     public static final BlockEntityEntry<FermentationBarrelBlockEntity> FERMENTATION_BARREL =
             blockEntity("fermentation_barrel", FermentationBarrelBlockEntity::new, CRRBlocks.FERMENTATION_BARREL).register();
+
+    public static final BlockEntityEntry<SmallReactionChamberBlockEntity> SMALL_REACTION_CHAMBER =
+            blockEntity("small_reaction_chamber", SmallReactionChamberBlockEntity::new, CRRBlocks.SMALL_REACTION_CHAMBER)
+                    .renderer(() -> SmallReactionChamberRenderer::new).register();
 
     public static final BlockEntityEntry<DerrickBlockEntity> DERRICK_BLOCK =
             blockEntity("derrick_block", DerrickBlockEntity::new, CRRBlocks.DERRICK_BLOCK).register();
@@ -161,6 +172,7 @@ public class CRRBlockEntities {
         MultiblockWallBlockEntity.registerCapabilities(event, MULTIBLOCK_WALL.get());
         SmallElectrolyserBlockEntity.registerCapabilities(event, SMALL_ELECTROLYSER.get());
         FermentationBarrelBlockEntity.registerCapabilities(event, FERMENTATION_BARREL.get());
+        SmallReactionChamberBlockEntity.registerCapabilities(event, CRRBlocks.SMALL_REACTION_CHAMBER.get());
         DerrickControllerBlockEntity.registerCapabilities(event, DERRICK_CONTROLLER.get());
         DerrickBlockEntity.registerCapabilities(event, DERRICK_BLOCK.get());
         AtmosphericScrubberBlockEntity.registerCapabilities(event, ATMOSPHERIC_SCRUBBER.get());

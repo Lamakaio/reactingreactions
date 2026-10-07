@@ -23,11 +23,11 @@ Under `src/main/resources/assets/reactingreactions/textures/`:
 
 | Made by | Textures |
 |---|---|
-| `tools/draw_icons.py` | `item/gas_mask`, `item/oxygen_mask`, `item/diving_fins`, `item/racing_anklet`, `item/flame_retardant_cloak`, `item/acetylene_lamp`, `item/acetylene_lamp_model`, `item/spring_boots`, `item/titanium_bow`, `item/titanium_bow_pulling_0..2`, `item/worn_equipment`, `item/worn_equipment_2`, `item/purger`, `block/controller_dial` |
+| `tools/draw_icons.py` | `item/gas_mask`, `item/oxygen_mask`, `item/diving_fins`, `item/racing_anklet`, `item/flame_retardant_cloak`, `item/acetylene_lamp`, `item/acetylene_lamp_model`, `item/spring_boots`, `item/titanium_bow`, `item/titanium_bow_pulling_0..2`, `item/worn_equipment`, `item/worn_equipment_2`, `item/purger`, `item/magnesium_knuckle`, `block/controller_dial`, `block/varnished_planks`, `block/polymetallic_nodule` |
 | one-off scripts (not kept) | `item/ruby`, `item/laser_pointer` |
 | `tools/make_neon_lamp.py` | `block/neon_lamp` |
 | `tools/make_coil.py` | `block/induction_coil`, `block/induction_coil_circle` |
-| `tools/make_machine_materials.py` | `block/machine/` `reaction_chamber_plate`, `steel_band`, `steel_dark`, `steel_darker`, `motor_paint`, `paint_red`, `copper_plate`, `sight_glass`, `hazard`, `vat_paint`; `block/plastic_pipes`, `block/plastic_pipes_connected` |
+| `tools/make_machine_materials.py` | `block/machine/` `reaction_chamber_plate`, `steel_band`, `steel_dark`, `steel_darker`, `motor_paint`, `paint_red`, `copper_plate`, `sight_glass`, `hazard`, `vat_paint`; `block/plastic_pipes`, `block/plastic_pipes_connected`, `block/steel_casing`, `block/steel_casing_connected` |
 | `tools/make_flecks.py` | `block/rich_vein_flecks` |
 | `tools/make_particles.py` | `particle/toxic_haze_0..3`, `misc/toxic_vignette`, `misc/toxic_stain` |
 
@@ -42,7 +42,7 @@ All nine sounds under `src/main/resources/assets/reactingreactions/sounds/` (`bo
 - Everything under `src/main/resources/assets/reactingreactions/models/` and `.../blockstates/`: the formed machine
   pieces of the Reaction Chamber, Airless Oven, Electrolysis Vat and Derrick, their Outlet Manifold and Gasket overlays,
   the attachments (Expansion Tank, Machine Gauge, Circulation Pump), the Outlet Manifold and Gasket items, the Derrick
-  drive, the Gas Vent stack, the Plastic Pipe and the moving parts (stirrer fan, gauge needle). Written by
+  drive, the Gas Vent stack, the Small Reaction Chamber, the Plastic Pipe and the moving parts (stirrer fan, gauge needle). Written by
   `tools/machine_models.py`, with designs worked out and checked in Blockbench over MCP.
 
 ### Text

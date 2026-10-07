@@ -11,8 +11,8 @@
       "fluid": "minecraft:water"
     }
   ],
-  "min_voltage": 120.0,
-  "processing_time": 200,
+  "min_voltage": 1250.0,
+  "processing_time": 800,
   "results": [
     {
       "amount": 1000,

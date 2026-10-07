@@ -4,6 +4,7 @@ import com.koala.reactingreactions.content.equipment.worn.AccessoriesWornRendere
 import com.koala.reactingreactions.content.equipment.worn.CuriosWornRenderer;
 import com.koala.reactingreactions.content.equipment.worn.WornModels;
 import com.koala.reactingreactions.content.render.CRRPartialModels;
+import com.koala.reactingreactions.content.render.UpturnedBucketSprites;
 import com.koala.reactingreactions.content.laser.ClientLaserPointers;
 import com.koala.reactingreactions.content.ponder.CRRPonderPlugin;
 import com.koala.reactingreactions.content.toxic.ClientContamination;
@@ -41,6 +42,7 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
+import net.neoforged.neoforge.client.event.RegisterSpriteSourceTypesEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
@@ -57,6 +59,11 @@ public class ReactingReactionsClient {
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
         NeoForge.EVENT_BUS.addListener(ReactingReactionsClient::onClientTick);
         NeoForge.EVENT_BUS.addListener(ToxicStainRenderer::render);
+    }
+
+    @SubscribeEvent
+    static void onRegisterSpriteSources(RegisterSpriteSourceTypesEvent event) {
+        event.register(UpturnedBucketSprites.ID, UpturnedBucketSprites.TYPE);
     }
 
     @SubscribeEvent

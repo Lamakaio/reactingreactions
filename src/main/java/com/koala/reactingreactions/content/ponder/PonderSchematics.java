@@ -42,10 +42,15 @@ final class PonderSchematics {
                     b.set(2, 2, 1, CRR + "airless_oven_controller");
                 }),
                 new Scene("machine_attachments", 7, 7, 7, PonderSchematics::machineAttachments),
-                new Scene("small_machines", 5, 2, 5, b -> {
+                new Scene("small_machines", 5, 5, 5, b -> {
                     b.floor(5);
                     b.set(1, 1, 2, CRR + "small_electrolyser");
                     b.set(3, 1, 2, CRR + "fermentation_barrel");
+                    // The Small Reaction Chamber at the back: burner, both halves, the shaft into its top.
+                    b.set(2, 1, 4, "create:blaze_burner");
+                    b.set(2, 2, 4, CRR + "small_reaction_chamber", "half=lower", "facing=north");
+                    b.set(2, 3, 4, CRR + "small_reaction_chamber", "half=upper", "facing=north");
+                    b.set(2, 4, 4, "create:shaft", "axis=y");
                 }),
                 new Scene("ore_processing", 7, 7, 7, PonderSchematics::oreProcessing),
                 new Scene("leaks", 7, 3, 7, PonderSchematics::leaks),
@@ -139,7 +144,8 @@ final class PonderSchematics {
 
     /**
      * The small Reaction Chamber from (2,2,2) with the mounted attachments: a gauge north at (4,3,1) beside the controller, an
-     * Expansion Tank west at (1,3,3) and a Circulation Pump south at (2,3,5), driven by a motor behind it. The storyboard installs
+     * Expansion Tank west at (1,3,3), a Circulation Pump south at (2,3,5), driven by a motor behind it, and an Outlet Valve east at
+     * (5,2,3) filling a tank on a casing. The storyboard installs
      * the Outlet Manifold and Gasket.
      */
     private static void machineAttachments(Build b) {
@@ -149,6 +155,9 @@ final class PonderSchematics {
         b.set(1, 3, 3, CRR + "expansion_tank", "facing=east");
         b.set(2, 3, 5, CRR + "circulation_pump", "facing=north");
         b.set(2, 3, 6, "create:creative_motor", "facing=north");
+        b.set(5, 2, 3, CRR + "outlet_valve", "facing=east");
+        b.set(6, 1, 3, "create:andesite_casing");
+        b.set(6, 2, 3, "create:fluid_tank");
     }
 
     /** A 3x3 tower of {@code fluid}, 5 tall, from (1,2,1) over Blaze Burners, the controller in the floor row at (2,2,1). */
@@ -193,11 +202,11 @@ final class PonderSchematics {
             b.fill(5, 1, z, 5, 2, z, "create:fluid_pipe");
             b.set(6, 1, z, "create:fluid_tank");
         }
-        b.fillTank(0, 1, 2, CRR + "naphtha", 8000);
+        b.fillTank(0, 1, 2, CRR + "ethane", 8000);
         b.fillTank(0, 1, 4, CRR + "steam", 8000);
         b.fillTank(6, 1, 2, CRR + "ethylene", 4000);
-        b.fillTank(6, 1, 4, CRR + "propylene", 4000);
-        b.fillTank(3, 3, 2, CRR + "naphtha", 4000);
+        b.fillTank(6, 1, 4, CRR + "hydrogen", 4000);
+        b.fillTank(3, 3, 2, CRR + "ethane", 4000);
         // Two products need a second output tank: an Outlet Manifold goes in once the chamber has formed.
         b.after(3, 3, 2, (level, pos) -> {
             if (level.getBlockEntity(pos) instanceof MultiblockControllerBlockEntity<?> chamber) {
@@ -241,8 +250,9 @@ final class PonderSchematics {
      */
     private static void oreDusts(Build b) {
         b.floor(9);
-        b.set(1, 1, 1, "minecraft:blast_furnace", "facing=north");
-        b.insert(1, 1, 1, CRR + "crimsite_dust", 8);
+        mixer(b, 1, 1);
+        b.insert(1, 2, 1, CRR + "crimsite_dust", 8);
+        b.insert(1, 2, 1, CRR + "coal_coke", 4);
         mixer(b, 2, 6);
         b.insert(2, 2, 6, CRR + "granite_dust", 8);
         shell(b, CRR + "electrolysis_vat_wall", 4, 1, 4, 8, 3, 6);

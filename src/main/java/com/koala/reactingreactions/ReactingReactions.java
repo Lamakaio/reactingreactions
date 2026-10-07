@@ -31,6 +31,8 @@ import com.koala.reactingreactions.registry.CRRDataComponents;
 import com.koala.reactingreactions.registry.CRRElectricalDevices;
 import com.koala.reactingreactions.registry.CRREntities;
 import com.koala.reactingreactions.registry.CRRFeatures;
+import com.koala.reactingreactions.item.ChemicalFlaskItem;
+import com.koala.reactingreactions.item.FluidTankHolder;
 import com.koala.reactingreactions.registry.CRRFluids;
 import com.koala.reactingreactions.registry.CRRItems;
 import com.koala.reactingreactions.registry.CRRParticles;
@@ -49,6 +51,7 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.ItemLike;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.ModList;
@@ -64,6 +67,8 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import org.slf4j.Logger;
+
+import java.util.List;
 
 @Mod(ReactingReactions.MODID)
 public class ReactingReactions {
@@ -131,16 +136,31 @@ public class ReactingReactions {
         NeoForge.EVENT_BUS.register(CRRLaserEntityEvents.class);
 
         modEventBus.addListener(Config::onConfigEvent);
-        modEventBus.addListener(this::addCreative);
+        // After Registrate has filled the tab, so its entries can be swapped.
+        modEventBus.addListener(EventPriority.LOWEST, this::addCreative);
         modEventBus.addListener((RegisterGameTestsEvent event) -> event.register(ToxicityAndDrillTests.class));
         NeoForge.EVENT_BUS.addListener(this::registerBrewing);
         modEventBus.addListener(this::registerPayloads);
         modContainer.registerConfig(ModConfig.Type.SERVER, Config.SPEC);
     }
 
-    /** Create Diesel Generators replaces our oil, distillation and fermentation blocks, so they leave the tab (but stay registered). */
+    /**
+     * Items with a tank are shown full, and the flasks filled with aerozine. Create Diesel Generators replaces our oil,
+     * distillation and fermentation blocks, so they leave the tab (but stay registered).
+     */
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() != MAIN_TAB_KEY || !DieselGeneratorsCompat.isLoaded()) {
+        if (event.getTabKey() != MAIN_TAB_KEY) {
+            return;
+        }
+        for (ItemStack shown : List.copyOf(event.getParentEntries())) {
+            ItemStack full = shown.getItem() instanceof ChemicalFlaskItem ? ChemicalFlaskItem.filled(shown.getItem(), CRRFluids.AEROZINE.get().getSource())
+                    : shown.getItem() instanceof FluidTankHolder ? FluidTankHolder.filled(shown.getItem()) : null;
+            if (full != null) {
+                event.insertAfter(shown, full, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                event.remove(shown, CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            }
+        }
+        if (!DieselGeneratorsCompat.isLoaded()) {
             return;
         }
         for (ItemLike replaced : new ItemLike[] {CRRBlocks.RICH_OIL_VEIN.get(), CRRBlocks.OIL_SHALE.get(), CRRBlocks.OIL_DRILL_HEAD.get(),

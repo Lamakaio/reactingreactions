@@ -9,22 +9,20 @@
   "category": "misc",
   "group": "aeronautics:envelope",
   "key": {
-    "N": {
-      "item": "reactingreactions:nylon_fiber"
+    "D": {
+      "tag": "c:dyes/purple"
     },
-    "S": {
-      "tag": "c:rods/wooden"
-    },
-    "W": {
-      "item": "minecraft:purple_wool"
+    "E": {
+      "tag": "aeronautics:envelope"
     }
   },
   "pattern": [
-    "WSN",
-    "SWN"
+    "EEE",
+    "EDE",
+    "EEE"
   ],
   "result": {
-    "count": 4,
+    "count": 8,
     "id": "aeronautics:purple_envelope"
   }
 }

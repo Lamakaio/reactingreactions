@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "electroenergetics"
+    }
+  ],
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "c:plates/steel"
+  },
+  "result": {
+    "count": 1,
+    "id": "electroenergetics:transformer_core_lamination"
+  }
+}

@@ -36,6 +36,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
@@ -60,6 +61,9 @@ public abstract class MultiblockControllerBlockEntity<R extends ProcessingRecipe
     @Nullable
     protected HollowBoxScanner.Result structure;
     protected MachineAttachments attachments = MachineAttachments.NONE;
+    /** Why the shell around the controller does not form (see {@link #shapeRefusal}), for the goggles; null if none was found. */
+    @Nullable
+    private String formRefusal;
     // Worked out on the server (it depends on attachments) and synced, so the goggles show it.
     private int tankCapacity = CAPACITY_PER_BLOCK_MB;
     // The capability is built in the constructor, before a save's output count is read: the first scan rebuilds it.
@@ -155,9 +159,13 @@ public abstract class MultiblockControllerBlockEntity<R extends ProcessingRecipe
         return fit == null ? null : fit.tier();
     }
 
-    /** Beyond the spec's bounds: a fixed-size machine forms only at one of its sizes, with its controller mid-side. */
-    protected boolean acceptsShape(HollowBoxScanner.Result found) {
-        return tiers() == null || fit(found) != null;
+    /**
+     * Beyond the spec's bounds, why a shell found by the scan cannot form, or null if it can: a fixed-size machine forms only at
+     * one of its sizes, with its controller mid-side. Shown on the goggles.
+     */
+    @Nullable
+    protected String shapeRefusal(HollowBoxScanner.Result found) {
+        return tiers() == null || fit(found) != null ? null : "Not one of its sizes, or the controller is not mid-side, one block up";
     }
 
     /** Gives the shell its formed look straight away: for Ponder, whose level never runs the controller's scan. */
@@ -207,7 +215,7 @@ public abstract class MultiblockControllerBlockEntity<R extends ProcessingRecipe
 
     /** Takes an upgrade if this is a formed fixed-size machine with a free attachment slot. */
     public boolean installUpgrade(MachineAttachment.Kind kind) {
-        if (structure == null || tiers() == null || attachments.mounted() >= attachments.slots()) {
+        if (upgradeRefusal(kind) != null) {
             return false;
         }
         upgrades.add(kind);
@@ -215,6 +223,18 @@ public abstract class MultiblockControllerBlockEntity<R extends ProcessingRecipe
         setChanged();
         sendData();
         return true;
+    }
+
+    /** Why an upgrade cannot go in, or null if it can. A Gasket takes no attachment slot, but one is enough. */
+    @Nullable
+    public String upgradeRefusal(MachineAttachment.Kind kind) {
+        if (structure == null || tiers() == null) {
+            return "The machine is not formed";
+        }
+        if (kind == MachineAttachment.Kind.GASKET) {
+            return installed(MachineAttachment.Kind.GASKET) > 0 ? "Already sealed" : null;
+        }
+        return attachments.mounted() >= attachments.slots() ? "No free attachment slot" : null;
     }
 
     /** Takes the last installed upgrade back out, as its item; empty if there is none. */
@@ -262,16 +282,22 @@ public abstract class MultiblockControllerBlockEntity<R extends ProcessingRecipe
     }
 
     /** A gauge's comparator signal: the progress, or how full the fullest output tank is. */
-    public int gaugeSignal(boolean fill) {
-        if (!fill) {
-            return Math.round(progressFraction * 15);
-        }
-        float fullest = 0;
-        for (int o = 0; o < activeFluidOutputs; o++) {
-            var tank = fluidOutputs[o].getPrimaryHandler();
-            fullest = Math.max(fullest, tank.getFluidAmount() / (float) Math.max(1, tank.getCapacity()));
-        }
-        return fullest <= 0 ? 0 : 1 + Math.round(fullest * 14);
+    /** A gauge or valve works within the machine's attachment slots (counted on each scan). */
+    @Override
+    public boolean acceptsAttachment(BlockPos at, MachineAttachment.Kind kind) {
+        return kind == MachineAttachment.Kind.GAUGE ? attachments.gauges().contains(at)
+                : kind == MachineAttachment.Kind.OUTLET_VALVE && attachments.valves().contains(at);
+    }
+
+    /** Multiblocks have their own slots, listed in the status lines, and notify their gauges on each scan. */
+    @Override
+    protected void addAttachmentTooltip(List<Component> tooltip) {
+    }
+
+    @Nullable
+    @Override
+    protected BlockPos attachmentSlot() {
+        return null;
     }
 
     @Override
@@ -314,8 +340,13 @@ public abstract class MultiblockControllerBlockEntity<R extends ProcessingRecipe
     private void rescanStructure() {
         HollowBoxScanner.Result found = HollowBoxScanner.scan(level, worldPosition, spec.shell(), spec.controller(), spec.interior(),
                 spec.minSide(), spec.maxSide(), spec.minHeight(), spec.maxHeight(), spec.footprint());
-        if (found != null && !acceptsShape(found)) {
+        String refusal = found == null ? null : shapeRefusal(found);
+        if (refusal != null) {
             found = null;
+        }
+        if (!Objects.equals(refusal, formRefusal)) {
+            formRefusal = refusal;
+            sendData();
         }
         MachineAttachments mounted = found == null ? MachineAttachments.NONE
                 : MachineAttachments.scan(level, found, attachmentSlots(found), installed(MachineAttachment.Kind.OUTLET), installed(MachineAttachment.Kind.GASKET));
@@ -440,6 +471,11 @@ public abstract class MultiblockControllerBlockEntity<R extends ProcessingRecipe
         return levels[Math.min(levels.length - 1, (int) Math.floor(averageHeat()))];
     }
 
+    /** The goggles' reason when the burners under the floor are not hot enough. */
+    protected String heatShortfall(HeatCondition required) {
+        return "Needs " + required.name().toLowerCase(Locale.ROOT) + " Blaze Burners under the floor (now " + heatLevel().name().toLowerCase(Locale.ROOT) + ")";
+    }
+
     protected boolean hasHeat(HeatCondition required) {
         return required == HeatCondition.NONE || required.testBlazeBurner(heatLevel());
     }
@@ -517,8 +553,9 @@ public abstract class MultiblockControllerBlockEntity<R extends ProcessingRecipe
             upgrades.add(MachineAttachment.Kind.valueOf(upgrade.getAsString()));
         }
         if (clientPacket) {
+            formRefusal = compound.contains("FormRefusal") ? compound.getString("FormRefusal") : null;
             attachments = new MachineAttachments(compound.getInt("Outlets"), compound.getInt("ExpansionTanks"), compound.getInt("Gaskets"),
-                    compound.getFloat("PumpBonus"), List.of(), compound.getInt("Mounted"), compound.getInt("Slots"));
+                    compound.getFloat("PumpBonus"), List.of(), List.of(), compound.getInt("Mounted"), compound.getInt("Slots"));
             // Capacity is only resized server-side; mirror it so the goggles show the right amount.
             resizeTanks();
         }
@@ -538,6 +575,9 @@ public abstract class MultiblockControllerBlockEntity<R extends ProcessingRecipe
         upgrades.forEach(kind -> installed.add(StringTag.valueOf(kind.name())));
         compound.put("Upgrades", installed);
         if (clientPacket) {
+            if (formRefusal != null) {
+                compound.putString("FormRefusal", formRefusal);
+            }
             compound.putInt("Outlets", attachments.outlets());
             compound.putInt("ExpansionTanks", attachments.expansionTanks());
             compound.putInt("Gaskets", attachments.gaskets());
@@ -552,6 +592,9 @@ public abstract class MultiblockControllerBlockEntity<R extends ProcessingRecipe
     protected boolean addHeader(List<Component> tooltip) {
         if (structure == null) {
             tooltip.add(Component.literal(" - " + spec.name() + " (not formed)").withStyle(ChatFormatting.RED));
+            if (formRefusal != null) {
+                tooltip.add(Component.literal(" - " + formRefusal).withStyle(ChatFormatting.GOLD));
+            }
             return false;
         }
         tooltip.add(Component.literal(" - " + spec.name() + " (" + structure.sizeX() + "x" + structure.sizeZ() + "x" + structure.sizeY() + ")")

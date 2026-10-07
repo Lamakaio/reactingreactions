@@ -9,11 +9,12 @@ import com.george_vi.electroenergetics.simulation.SimulationResults;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
 
-/** A fixed resistor between the two terminals, reporting its voltage to the block entity. */
+/** A resistor between the two terminals, sized by the block entity to its recipe, reporting its voltage and power back. */
 public class SmallElectrolyserDevice extends SimpleElectricalDevice {
-    private static final double RESISTANCE_OHMS = 250.0;
+    private static final double IDLE_RESISTANCE_OHMS = 10_000;
 
     private SmallElectrolyserBlockEntity be;
+    private double resistance = IDLE_RESISTANCE_OHMS;
 
     public SmallElectrolyserDevice(Level level, BlockPos pos, DevicesSavedData deviceSD, SimulatedDeviceType<?> type) {
         super(level, pos, deviceSD, type);
@@ -21,7 +22,8 @@ public class SmallElectrolyserDevice extends SimpleElectricalDevice {
 
     @Override
     public void preTick(BridgeCollector bridges) {
-        bridges.builder(pos).resistor(0, 1, RESISTANCE_OHMS);
+        resistance = be != null && !be.isRemoved() ? be.loadResistance() : IDLE_RESISTANCE_OHMS;
+        bridges.builder(pos).resistor(0, 1, resistance);
     }
 
     @Override
@@ -34,7 +36,7 @@ public class SmallElectrolyserDevice extends SimpleElectricalDevice {
             if (be.isRemoved()) {
                 be = null;
             } else {
-                be.voltmeter().set(voltage);
+                be.voltmeter().set(voltage, resistance);
             }
         }
     }

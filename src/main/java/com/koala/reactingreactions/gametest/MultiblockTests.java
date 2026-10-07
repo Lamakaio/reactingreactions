@@ -8,13 +8,21 @@ import com.koala.reactingreactions.content.multiblock.MachineTiers;
 import com.koala.reactingreactions.content.multiblock.MultiblockControllerBlockEntity;
 import com.koala.reactingreactions.content.multiblock.attachment.AttachmentBlock;
 import com.koala.reactingreactions.content.multiblock.attachment.MachineAttachment;
+import com.koala.reactingreactions.content.multiblock.attachment.OutletValveBlock;
+import com.koala.reactingreactions.content.multiblock.attachment.OutletValveBlockEntity;
 import com.koala.reactingreactions.content.multiblock.MultiblockWallBlockEntity;
 import com.koala.reactingreactions.registry.CRRBlocks;
 import com.koala.reactingreactions.registry.CRRFluids;
 import com.koala.reactingreactions.registry.CRRItems;
+import com.koala.reactingreactions.registry.CRRRecipeTypes;
+import com.koala.reactingreactions.content.reaction.SmallReactionChamberBlock;
+import com.koala.reactingreactions.content.reaction.SmallReactionChamberBlockEntity;
+import com.koala.reactingreactions.content.toxic.TankSealing;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.world.item.ItemStack;
@@ -22,8 +30,11 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
@@ -31,6 +42,9 @@ import net.neoforged.neoforge.gametest.GameTestHolder;
 import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 
 import org.jetbrains.annotations.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @GameTestHolder(ReactingReactions.MODID)
 @PrefixGameTestTemplate(false)
@@ -54,6 +68,41 @@ public class MultiblockTests {
             helper.setBlock(pos, interior ? Blocks.AIR : wall);
         }
         helper.setBlock(CONTROLLER, controller);
+        // A Reaction Chamber forms only with its stirring shaft in the middle of the roof.
+        if (controller == CRRBlocks.REACTION_CHAMBER_CONTROLLER.get()) {
+            helper.setBlock(MIN.offset(length / 2, height - 1, 1), CRRBlocks.STEEL_ENCASED_SHAFT.get().defaultBlockState()
+                    .setValue(BlockStateProperties.AXIS, Direction.Axis.Y));
+        }
+    }
+
+    /** Our steel versions of other mods' engine and electrical recipes replace theirs (we load after them). */
+    @GameTest(template = EMPTY)
+    public static void otherModsRecipesTakeSteel(GameTestHelper helper) {
+        for (String id : new String[] {"createdieselgenerators:crafting/huge_diesel_engine", "electroenergetics:crafting/stator"}) {
+            String mod = id.substring(0, id.indexOf(':'));
+            if (!ModList.get().isLoaded(mod)) {
+                continue;
+            }
+            var recipe = helper.getLevel().getRecipeManager().byKey(ResourceLocation.parse(id));
+            helper.assertTrue(recipe.isPresent() && recipe.get().value().getIngredients().stream()
+                    .anyMatch(ingredient -> ingredient.test(new ItemStack(CRRItems.STEEL_SHEET.get()))), id + " should take a steel sheet");
+        }
+        helper.succeed();
+    }
+
+    /** Without the shaft in its roof, a Reaction Chamber does not form, and says why. */
+    @GameTest(template = EMPTY, timeoutTicks = 100)
+    public static void reactionChamberNeedsItsShaft(GameTestHelper helper) {
+        buildShell(helper, CRRBlocks.REACTION_CHAMBER_WALL.get(), CRRBlocks.REACTION_CHAMBER_CONTROLLER.get(), 3, 4);
+        helper.setBlock(MIN.offset(1, 3, 1), CRRBlocks.REACTION_CHAMBER_WALL.get());
+        helper.runAfterDelay(30, () -> {
+            MultiblockControllerBlockEntity<?> controller = helper.getBlockEntity(CONTROLLER);
+            helper.assertTrue(controller.getStructure() == null, "a chamber without its stirring shaft should not form");
+            List<Component> tooltip = new ArrayList<>();
+            controller.addToGoggleTooltip(tooltip, false);
+            helper.assertTrue(tooltip.stream().anyMatch(line -> line.getString().contains("Steel Encased Shaft")), "the goggles should say what is missing");
+            helper.succeed();
+        });
     }
 
     /**
@@ -160,7 +209,7 @@ public class MultiblockTests {
         });
     }
 
-    /** Upgrades go into the machine and show on it, blocks mount outside; a small chamber takes four in all. */
+    /** Upgrades go into the machine and show on it, blocks mount outside; a small chamber takes four in all, gaskets aside. */
     @GameTest(template = EMPTY, timeoutTicks = 150)
     public static void reactionChamberAttachmentsWork(GameTestHelper helper) {
         buildShell(helper, CRRBlocks.REACTION_CHAMBER_WALL.get(), CRRBlocks.REACTION_CHAMBER_CONTROLLER.get(), 3, 4);
@@ -177,10 +226,41 @@ public class MultiblockTests {
             helper.assertTrue(controller.getAttachments().gauges().size() == 1, "the gauge should be counted");
             BlockState wall = helper.getBlockState(PROBE);
             helper.assertTrue(wall.getValue(MachineTiers.PIPED) && wall.getValue(MachineTiers.SEALED), "the walls should show the pipes and joints");
-            helper.assertFalse(controller.installUpgrade(MachineAttachment.Kind.GASKET), "a fifth attachment should not fit the small chamber's four");
-            helper.assertTrue(controller.removeUpgrade().is(CRRItems.GASKET.get()), "the last upgrade should come back out");
+            helper.assertFalse(controller.installUpgrade(MachineAttachment.Kind.GASKET), "one gasket is enough");
+            helper.assertTrue(controller.installUpgrade(MachineAttachment.Kind.OUTLET), "the gasket takes no slot: a fourth attachment fits");
+            helper.assertFalse(controller.installUpgrade(MachineAttachment.Kind.OUTLET), "a fifth attachment should not fit the small chamber's four");
+            helper.assertTrue(controller.removeUpgrade().is(CRRItems.OUTLET_MANIFOLD.get()), "the last upgrade should come back out");
+            helper.assertTrue(controller.removeUpgrade().is(CRRItems.GASKET.get()), "then the one before it");
             helper.assertFalse(helper.getBlockState(PROBE).getValue(MachineTiers.SEALED), "without its gasket the joints should be plain again");
             helper.succeed();
+        });
+    }
+
+    /** An Outlet Valve filtered to water lets the chamber's water out into a tank in front, and down a pipe into another, unpumped. */
+    @GameTest(template = EMPTY, timeoutTicks = 150)
+    public static void outletValveLetsOutItsFluid(GameTestHelper helper) {
+        buildShell(helper, CRRBlocks.REACTION_CHAMBER_WALL.get(), CRRBlocks.REACTION_CHAMBER_CONTROLLER.get(), 3, 4);
+        BlockPos valve = MIN.offset(3, 1, 1);
+        helper.setBlock(valve, CRRBlocks.OUTLET_VALVE.get().defaultBlockState().setValue(OutletValveBlock.FACING, Direction.EAST));
+        helper.setBlock(valve.east(), com.simibubi.create.AllBlocks.FLUID_TANK.get());
+        BlockPos piped = MIN.offset(1, 1, 3);
+        helper.setBlock(piped, CRRBlocks.OUTLET_VALVE.get().defaultBlockState().setValue(OutletValveBlock.FACING, Direction.SOUTH));
+        helper.setBlock(piped.south(), com.simibubi.create.AllBlocks.FLUID_PIPE.get());
+        helper.setBlock(piped.south(2), com.simibubi.create.AllBlocks.FLUID_PIPE.get());
+        helper.setBlock(piped.south(3), com.simibubi.create.AllBlocks.FLUID_TANK.get());
+        helper.runAfterDelay(30, () -> {
+            MultiblockControllerBlockEntity<?> controller = helper.getBlockEntity(CONTROLLER);
+            controller.getFluidCapability().fill(new FluidStack(Fluids.WATER, 1000), IFluidHandler.FluidAction.EXECUTE);
+            OutletValveBlockEntity outlet = helper.getBlockEntity(valve);
+            outlet.setFilter(Fluids.WATER);
+            OutletValveBlockEntity pipedOutlet = helper.getBlockEntity(piped);
+            pipedOutlet.setFilter(Fluids.WATER);
+            helper.succeedWhen(() -> {
+                IFluidHandler tank = helper.getLevel().getCapability(Capabilities.FluidHandler.BLOCK, helper.absolutePos(valve.east()), Direction.WEST);
+                helper.assertTrue(tank != null && tank.getFluidInTank(0).getAmount() >= 250, "the valve should have let water into the tank");
+                IFluidHandler far = helper.getLevel().getCapability(Capabilities.FluidHandler.BLOCK, helper.absolutePos(piped.south(3)), Direction.NORTH);
+                helper.assertTrue(far != null && far.getFluidInTank(0).getAmount() >= 250, "the valve should push water down the pipes, unpumped");
+            });
         });
     }
 
@@ -218,6 +298,59 @@ public class MultiblockTests {
                 FluidStack naphtha = oven.getFluidCapability().drain(new FluidStack(CRRFluids.NAPHTHA.get().getSource(), 1000), IFluidHandler.FluidAction.SIMULATE);
                 helper.assertTrue(naphtha.getAmount() == 50, "coking should also give 50 mB naphtha, got " + naphtha.getAmount());
             });
+        });
+    }
+
+    /**
+     * The Small Reaction Chamber: pipes reach it through its top half, a Gasket used on the top seals it and shows on both
+     * halves, breaking the top takes the bottom too, and it runs only some reactions.
+     */
+    @GameTest(template = EMPTY)
+    public static void smallReactionChamberWorks(GameTestHelper helper) {
+        BlockPos lower = new BlockPos(2, 1, 2);
+        BlockState state = CRRBlocks.SMALL_REACTION_CHAMBER.get().defaultBlockState();
+        helper.setBlock(lower, state);
+        helper.setBlock(lower.above(), state.setValue(SmallReactionChamberBlock.HALF, DoubleBlockHalf.UPPER));
+        IFluidHandler top = helper.getLevel().getCapability(Capabilities.FluidHandler.BLOCK, helper.absolutePos(lower.above()), Direction.UP);
+        helper.assertTrue(top != null && top.fill(new FluidStack(Fluids.WATER, 500), IFluidHandler.FluidAction.EXECUTE) == 500,
+                "a pipe on the top half should fill the chamber");
+        var player = helper.makeMockPlayer(net.minecraft.world.level.GameType.SURVIVAL);
+        helper.assertTrue(TankSealing.seal(helper.getLevel(), helper.absolutePos(lower.above()), player, new ItemStack(CRRItems.GASKET.get()))
+                == net.minecraft.world.InteractionResult.SUCCESS, "a Gasket used on the top half should go in");
+        var recipes = helper.getLevel().getRecipeManager().getAllRecipesFor(CRRRecipeTypes.REACTION.get());
+        helper.assertTrue(recipes.stream().anyMatch(h -> SmallReactionChamberBlockEntity.canRun(h.value()))
+                && recipes.stream().anyMatch(h -> !SmallReactionChamberBlockEntity.canRun(h.value())), "it should run some reactions, not all");
+        helper.succeedWhen(() -> {
+            helper.assertBlockProperty(lower, MachineTiers.SEALED, true);
+            helper.assertBlockProperty(lower.above(), MachineTiers.SEALED, true);
+            helper.destroyBlock(lower.above());
+            helper.assertBlockNotPresent(CRRBlocks.SMALL_REACTION_CHAMBER.get(), lower);
+        });
+    }
+
+    /** A single-block machine has one attachment slot: of two Outlet Valves, only the first lets its fluid out. */
+    @GameTest(template = EMPTY, timeoutTicks = 150)
+    public static void smallMachinesTakeOneAttachment(GameTestHelper helper) {
+        BlockPos lower = new BlockPos(2, 1, 2);
+        BlockState state = CRRBlocks.SMALL_REACTION_CHAMBER.get().defaultBlockState();
+        helper.setBlock(lower, state);
+        helper.setBlock(lower.above(), state.setValue(SmallReactionChamberBlock.HALF, DoubleBlockHalf.UPPER));
+        BlockPos first = lower.east();
+        BlockPos second = lower.above().west();
+        helper.setBlock(first, CRRBlocks.OUTLET_VALVE.get().defaultBlockState().setValue(OutletValveBlock.FACING, Direction.EAST));
+        helper.setBlock(second, CRRBlocks.OUTLET_VALVE.get().defaultBlockState().setValue(OutletValveBlock.FACING, Direction.WEST));
+        helper.setBlock(first.east(), com.simibubi.create.AllBlocks.FLUID_TANK.get());
+        helper.setBlock(second.west(), com.simibubi.create.AllBlocks.FLUID_TANK.get());
+        helper.getLevel().getCapability(Capabilities.FluidHandler.BLOCK, helper.absolutePos(lower), Direction.NORTH)
+                .fill(new FluidStack(Fluids.WATER, 1000), IFluidHandler.FluidAction.EXECUTE);
+        for (BlockPos valve : new BlockPos[] {first, second}) {
+            ((OutletValveBlockEntity) helper.getBlockEntity(valve)).setFilter(Fluids.WATER);
+        }
+        helper.succeedWhen(() -> {
+            IFluidHandler used = helper.getLevel().getCapability(Capabilities.FluidHandler.BLOCK, helper.absolutePos(first.east()), Direction.WEST);
+            IFluidHandler spare = helper.getLevel().getCapability(Capabilities.FluidHandler.BLOCK, helper.absolutePos(second.west()), Direction.EAST);
+            helper.assertTrue(used != null && used.getFluidInTank(0).getAmount() >= 100, "the first valve should let water out");
+            helper.assertTrue(spare != null && spare.getFluidInTank(0).isEmpty(), "a second attachment should do nothing");
         });
     }
 

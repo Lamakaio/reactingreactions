@@ -1,6 +1,6 @@
 package com.koala.reactingreactions.content.multiblock.attachment;
 
-import com.koala.reactingreactions.content.multiblock.MultiblockControllerBlockEntity;
+import com.koala.reactingreactions.content.multiblock.ProcessingMachineBlockEntity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -24,8 +24,8 @@ public class GaugeBlockEntity extends BlockEntity {
         long tick = level.getGameTime();
         if (tick != lastFrame) {
             lastFrame = tick;
-            MultiblockControllerBlockEntity<?> machine = MachineAttachments.machineFor(level, worldPosition, getBlockState());
-            float target = machine == null ? 0 : machine.gaugeSignal(getBlockState().getValue(AttachmentBlock.READING) == AttachmentBlock.Reading.FILL) / 15F;
+            ProcessingMachineBlockEntity<?> machine = MachineAttachments.machineFor(level, worldPosition, getBlockState());
+            float target = machine == null || !machine.acceptsAttachment(worldPosition, MachineAttachment.Kind.GAUGE) ? 0 : machine.gaugeSignal(getBlockState().getValue(AttachmentBlock.READING) == AttachmentBlock.Reading.FILL) / 15F;
             needle += (target - needle) * 0.3F;
         }
         return needle;

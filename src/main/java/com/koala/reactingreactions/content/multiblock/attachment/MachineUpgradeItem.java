@@ -12,7 +12,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 
 /**
- * An Outlet Manifold or Gasket: used on a formed machine, it goes into the machine (taking an attachment slot) and shows on its
+ * An Outlet Manifold or Gasket: used on a formed machine, it goes into the machine (a manifold takes an attachment slot) and shows on its
  * model. Sneaking with an empty hand on the machine takes the last one back out.
  */
 public class MachineUpgradeItem extends Item {
@@ -26,23 +26,19 @@ public class MachineUpgradeItem extends Item {
     @Override
     public InteractionResult useOn(UseOnContext context) {
         Level level = context.getLevel();
-        // A Gasket also seals a Create Fluid Tank.
-        if (kind == MachineAttachment.Kind.GASKET && context.getPlayer() != null) {
-            InteractionResult tank = TankSealing.seal(level, context.getClickedPos(), context.getPlayer(), context.getItemInHand());
-            if (tank != InteractionResult.PASS) {
-                return tank;
-            }
-        }
         MultiblockControllerBlockEntity<?> machine = MultiblockControllerBlockEntity.of(level, context.getClickedPos());
         if (machine == null || machine.getFit() == null) {
-            return InteractionResult.PASS;
+            // Anything else that leaks takes a Gasket too.
+            return kind == MachineAttachment.Kind.GASKET && context.getPlayer() != null
+                    ? TankSealing.seal(level, context.getClickedPos(), context.getPlayer(), context.getItemInHand()) : InteractionResult.PASS;
         }
         if (level.isClientSide) {
             return InteractionResult.SUCCESS;
         }
-        if (!machine.installUpgrade(kind)) {
+        String refusal = machine.upgradeRefusal(kind);
+        if (refusal != null || !machine.installUpgrade(kind)) {
             if (context.getPlayer() != null) {
-                context.getPlayer().displayClientMessage(Component.literal("No free attachment slot"), true);
+                context.getPlayer().displayClientMessage(Component.literal(refusal != null ? refusal : "No free attachment slot"), true);
             }
             return InteractionResult.FAIL;
         }

@@ -3,6 +3,7 @@ package com.koala.reactingreactions.mixin;
 import com.koala.reactingreactions.Config;
 import com.koala.reactingreactions.content.multiblock.ProcessingMachineBlockEntity;
 import com.koala.reactingreactions.content.toxic.Leaks;
+import com.koala.reactingreactions.content.toxic.TankSealing;
 import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
 import com.simibubi.create.foundation.fluid.SmartFluidTank;
 
@@ -32,7 +33,8 @@ public abstract class SmartFluidTankBehaviourMixin {
         SmartFluidTank tank = self.getPrimaryHandler();
         FluidStack fluid = tank.getFluid();
         if (!fluid.isEmpty()) {
-            float tightness = self.blockEntity instanceof ProcessingMachineBlockEntity<?> machine ? machine.leakTightness() : 1.0F;
+            float tightness = self.blockEntity instanceof ProcessingMachineBlockEntity<?> machine ? machine.leakTightness()
+                    : TankSealing.isSealed(self.blockEntity) ? 0 : 1.0F;
             Leaks.check(level, pos, fluid, tank.getFluidAmount() / (float) Math.max(1, tank.getCapacity()), tightness, tank);
         }
     }

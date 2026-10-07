@@ -9,6 +9,7 @@ import sys
 from PIL import Image
 
 sys.path.insert(0, os.path.dirname(__file__))
+import ct_sheet  # noqa: E402
 import recolor  # noqa: E402
 
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src", "main", "resources", "assets", "reactingreactions",
@@ -51,6 +52,27 @@ def plastic(seams):
     return img
 
 
+def steel_casing_panel():
+    """The Steel Casing's face without its frame (ct_sheet adds the frame on each side not joined to a neighbour): brushed steel
+    round a recessed plate held by four bolts, so a wall of casing reads as bolted plates."""
+    img = recolor.brushed(Image.new("RGBA", (16, 16), recolor._rgb("#939daa") + (255,)), 0.03, 41)
+    px = img.load()
+
+    def shade(x, y, f):
+        r, g, b, a = px[x, y]
+        px[x, y] = (min(255, int(r * f)), min(255, int(g * f)), min(255, int(b * f)), a)
+
+    for i in range(3, 13):
+        shade(i, 3, 0.62); shade(3, i, 0.62)      # the plate's recess, shadowed top and left
+        shade(i, 12, 1.22); shade(12, i, 1.22)    # and lit bottom and right
+    for y in range(4, 12):
+        for x in range(4, 12):
+            shade(x, y, 1.06)
+    for x, y in ((5, 5), (10, 5), (5, 10), (10, 10)):
+        shade(x, y, 1.45); shade(x + 1, y + 1, 0.55)
+    return img
+
+
 def hazard():
     """Yellow and black diagonal stripes, 4px wide, tiling across blocks."""
     img = Image.new("RGBA", (16, 16))
@@ -81,6 +103,10 @@ def main():
     for name, make in MATERIALS.items():
         make().save(os.path.join(OUT, name + ".png"))
     blocks = os.path.dirname(OUT)
+    panel = steel_casing_panel()
+    # The plain texture shows the whole frame; the connected sheet drops it where casings join.
+    ct_sheet.draw_tile(panel, False, False, False, False, False, False, False, False).save(os.path.join(blocks, "steel_casing.png"))
+    ct_sheet.ct_sheet(panel).save(os.path.join(blocks, "steel_casing_connected.png"))
     plastic(False).save(os.path.join(blocks, "plastic_pipes.png"))
     plastic(True).save(os.path.join(blocks, "plastic_pipes_connected.png"))
 

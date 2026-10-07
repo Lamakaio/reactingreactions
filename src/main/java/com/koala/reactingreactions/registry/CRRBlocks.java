@@ -6,6 +6,7 @@ import com.koala.reactingreactions.content.airlessoven.AirlessOvenControllerBloc
 import com.koala.reactingreactions.content.compat.ElectroEnergeticsCompat;
 import com.koala.reactingreactions.content.distillation.DistillationTowerControllerBlockEntity;
 import com.koala.reactingreactions.content.drill.DerrickBlock;
+import com.koala.reactingreactions.content.nodule.PolymetallicNoduleBlock;
 import com.koala.reactingreactions.content.drill.DerrickControllerBlock;
 import com.koala.reactingreactions.content.drill.DerrickTrussBlock;
 import com.koala.reactingreactions.content.drill.DrillPipeBlock;
@@ -35,8 +36,10 @@ import com.koala.reactingreactions.content.multiblock.attachment.AttachmentBlock
 import com.koala.reactingreactions.content.multiblock.attachment.CirculationPumpBlock;
 import com.koala.reactingreactions.content.multiblock.attachment.GaugeBlock;
 import com.koala.reactingreactions.content.multiblock.attachment.MachineAttachment;
+import com.koala.reactingreactions.content.multiblock.attachment.OutletValveBlock;
 import com.koala.reactingreactions.content.reaction.FermentationBarrelBlock;
 import com.koala.reactingreactions.content.reaction.ReactionChamberControllerBlockEntity;
+import com.koala.reactingreactions.content.reaction.SmallReactionChamberBlock;
 import com.koala.reactingreactions.content.steam.SteamTurbineBlock;
 import com.koala.reactingreactions.content.steel.SteelEncasedShaftBlock;
 import com.koala.reactingreactions.content.toxic.AtmosphericScrubberBlock;
@@ -77,9 +80,13 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -113,9 +120,13 @@ public class CRRBlocks {
             .simpleItem()
             .register();
 
-    public static final BlockEntry<Block> POLYMETALLIC_NODULE = REGISTRATE.block("polymetallic_nodule", Block::new)
+    public static final BlockEntry<PolymetallicNoduleBlock> POLYMETALLIC_NODULE = REGISTRATE.block("polymetallic_nodule", PolymetallicNoduleBlock::new)
             .tag(BlockTags.MINEABLE_WITH_SHOVEL)
-            .properties(p -> Properties.of().mapColor(MapColor.STONE).strength(0.6F).sound(SoundType.GRAVEL))
+            .properties(p -> Properties.of().mapColor(MapColor.COLOR_BLACK).strength(0.3F).sound(SoundType.STONE).noOcclusion()
+                    .pushReaction(PushReaction.DESTROY))
+            .blockstate(CRRBlockModels.randomlyTurned(CRRBlockModels.pebbles(modLoc("polymetallic_nodule"), new float[][] {
+                    {4, 4, 6, 4.5F, 2, 22.5F, 1}, {11.5F, 3.5F, 4.5F, 3, 2, -22.5F, 0}, {11.5F, 10.5F, 5, 4, 2, 45, 1}, {4.5F, 11.5F, 5, 3, 2, -45, 0},
+                    {8, 7.5F, 3, 2.5F, 1.5F, 0, 0}, {8.5F, 14, 3.5F, 2, 1.5F, 22.5F, 0}, {14.5F, 7, 2.5F, 2, 1, 0, 0}})))
             .simpleItem()
             .register();
 
@@ -215,7 +226,7 @@ public class CRRBlocks {
                     "electrolysis_vat_controller", () -> ElectrolysisVatControllerBlock::new, ElectrolysisVatControllerBlockBase::new)
             .transform(metal())
             .properties(Properties::noOcclusion)
-            .lang("Electrolysis Vat")
+            .lang("Electrolysis Vat Controller")
             .onRegister(connected(CRRBlocks::electrolysisVat, "electrolysis_vat_wall", "electrolysis_vat_controller"))
             .blockstate(CRRBlockModels.tieredShell("electrolysis_vat_controller", "electrolysis_vat_controller", false))
             .simpleItem()
@@ -275,7 +286,7 @@ public class CRRBlocks {
                     () -> CRRBlockEntities.DISTILLATION_TOWER_CONTROLLER.get(), null))
             .transform(copper())
             .properties(Properties::noOcclusion)
-            .lang("Distillation Tower")
+            .lang("Distillation Tower Controller")
             .blockstate(CRRBlockModels.shellBlock("distillation_tower_controller", "distillation_tower_wall_end"))
             .onRegister(connected(CRRBlocks::distillationTower, "distillation_tower_wall", "distillation_tower_wall_end", "distillation_tower_controller"))
             .simpleItem()
@@ -302,7 +313,7 @@ public class CRRBlocks {
                     () -> CRRBlockEntities.AIRLESS_OVEN_CONTROLLER.get(), null))
             .transform(copper())
             .properties(Properties::noOcclusion)
-            .lang("Airless Oven")
+            .lang("Airless Oven Controller")
             .blockstate(CRRBlockModels.tieredShell("airless_oven_controller", "airless_oven_controller_top", false))
             .onRegister(connected(CRRBlocks::airlessOven, "airless_oven_wall", "airless_oven_controller", "airless_oven_controller_top"))
             .simpleItem()
@@ -330,7 +341,7 @@ public class CRRBlocks {
                     () -> CRRBlockEntities.REACTION_CHAMBER_CONTROLLER.get(), null))
             .transform(copper())
             .properties(Properties::noOcclusion)
-            .lang("Reaction Chamber")
+            .lang("Reaction Chamber Controller")
             .blockstate(CRRBlockModels.tieredShell("reaction_chamber_controller", "reaction_chamber_controller_top", false))
             .onRegister(connected(CRRBlocks::reactionChamber, "reaction_chamber_wall", "reaction_chamber_controller", "reaction_chamber_controller_top"))
             .simpleItem()
@@ -352,6 +363,16 @@ public class CRRBlocks {
             .properties(Properties::noOcclusion)
             .blockstate((ctx, p) -> { })
             .onRegister(block -> BlockStressValues.IMPACTS.register(block, () -> CIRCULATION_PUMP_STRESS_IMPACT))
+            .simpleItem()
+            .register();
+
+    // Lets a chosen fluid out of the machine, for free. Drawn with the machine to the south: a flange, a valve body under a
+    // handwheel, and the outlet to the north.
+    public static final BlockEntry<OutletValveBlock> OUTLET_VALVE = REGISTRATE.block("outlet_valve", p -> new OutletValveBlock(p,
+                    Block.box(3, 3, 0, 13, 14.5, 16)))
+            .transform(copper())
+            .properties(Properties::noOcclusion)
+            .blockstate((ctx, p) -> { })
             .simpleItem()
             .register();
 
@@ -387,6 +408,23 @@ public class CRRBlocks {
             .transform(tinted(CRRBlockModels.tintedCube(vanilla("barrel_side"), vanilla("barrel_top"), vanilla("barrel_bottom"), true), BARREL_TINT))
             .register();
 
+    // One block wide, two tall: placed like a door. Its blockstate and models come from tools/machine_models.py.
+    public static final BlockEntry<SmallReactionChamberBlock> SMALL_REACTION_CHAMBER = REGISTRATE.block("small_reaction_chamber",
+                    SmallReactionChamberBlock::new)
+            .transform(metal())
+            .properties(Properties::noOcclusion)
+            .addLayer(() -> RenderType::cutout)
+            .blockstate((ctx, p) -> { })
+            // Only the lower half drops it.
+            .loot((p, lb) -> p.add(lb, LootTable.lootTable().withPool(LootPool.lootPool()
+                    .add(LootItem.lootTableItem(lb).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(lb)
+                            .setProperties(StatePropertiesPredicate.Builder.properties()
+                                    .hasProperty(SmallReactionChamberBlock.HALF, DoubleBlockHalf.LOWER)))))))
+            .item()
+            .model((ctx, p) -> p.withExistingParent(ctx.getName(), modLoc("small_reaction_chamber/item")))
+            .build()
+            .register();
+
     // ---- derrick ----
 
     private static final double DERRICK_STRESS_IMPACT = 16.0;
@@ -416,7 +454,7 @@ public class CRRBlocks {
     public static final BlockEntry<DerrickControllerBlock> DERRICK_CONTROLLER = REGISTRATE.block("derrick_controller", DerrickControllerBlock::new)
             .transform(metal())
             .properties(Properties::noOcclusion)
-            .lang("Derrick")
+            .lang("Derrick Controller")
             // A top drive, its model from tools/machine_models.py.
             .blockstate((ctx, p) -> p.horizontalBlock(ctx.get(), p.models().getExistingFile(modLoc("derrick_drive"))))
             .onRegister(block -> BlockStressValues.IMPACTS.register(block, () -> DERRICK_STRESS_IMPACT))

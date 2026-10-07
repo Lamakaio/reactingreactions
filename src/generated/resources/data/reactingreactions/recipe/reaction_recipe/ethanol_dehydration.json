@@ -1,6 +1,6 @@
 {
   "type": "reactingreactions:reaction_recipe",
-  "heat_requirement": "heated",
+  "heat_requirement": "superheated",
   "ingredients": [
     {
       "type": "neoforge:tag",
@@ -17,7 +17,7 @@
   "min_rpm": 24,
   "results": [
     {
-      "amount": 500,
+      "amount": 250,
       "id": "reactingreactions:ethylene"
     },
     {

@@ -17,6 +17,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ProjectileItem;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.SimpleFluidContent;
 
@@ -35,6 +36,13 @@ public class ChemicalFlaskItem extends Item implements ProjectileItem {
 
     public boolean isBlast() {
         return blast;
+    }
+
+    /** A flask of {@code item} holding a full measure of {@code fluid}. */
+    public static ItemStack filled(Item item, Fluid fluid) {
+        ItemStack stack = new ItemStack(item);
+        stack.set(CRRDataComponents.FLUID_TANK.get(), SimpleFluidContent.copyOf(new FluidStack(fluid, AMOUNT_MB)));
+        return stack;
     }
 
     public static FluidStack contents(ItemStack stack) {

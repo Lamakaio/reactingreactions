@@ -111,16 +111,17 @@ public class CRRPonderScenes {
             new Entry("distillation_tower_cdg", Category.MACHINES, List.of("createdieselgenerators:distillation_controller",
                     "createdieselgenerators:crude_oil_bucket"), CRRPonderScenes::dieselGeneratorsTower, true),
             new Entry("airless_oven", Category.MACHINES, List.of("airless_oven_controller", "airless_oven_wall"), CRRPonderScenes::airlessOven),
-            new Entry("machine_attachments", Category.MACHINES, List.of("outlet_manifold", "expansion_tank", "machine_gauge", "gasket", "circulation_pump"),
+            new Entry("machine_attachments", Category.MACHINES, List.of("outlet_manifold", "expansion_tank", "machine_gauge", "gasket", "circulation_pump",
+                    "outlet_valve"),
                     CRRPonderScenes::machineAttachments),
-            new Entry("small_machines", Category.MACHINES, List.of("small_electrolyser", "fermentation_barrel"), CRRPonderScenes::smallMachines),
+            new Entry("small_machines", Category.MACHINES, List.of("small_electrolyser", "fermentation_barrel", "small_reaction_chamber"), CRRPonderScenes::smallMachines),
             new Entry("ore_processing", Category.CHEMISTRY, List.of("asurine_dust", "veridium_dust", "tuff_dust", "scoria_dust"),
                     CRRPonderScenes::oreProcessing),
             new Entry("ore_dusts", Category.CHEMISTRY, List.of("ochrum_dust", "crimsite_dust", "granite_dust", "veridium_dust"),
                     CRRPonderScenes::oreDusts),
-            // Cracking then plastics: together, the way from naphtha to a sheet.
-            new Entry("petrochemistry", Category.CHEMISTRY, List.of("naphtha_bucket", "steam_bucket", "ethylene_bucket", "propylene_bucket"),
-                    CRRPonderScenes::petrochemistry),
+            // Cracking then plastics: together, the way from ethane to a sheet.
+            new Entry("petrochemistry", Category.CHEMISTRY, List.of("ethane_bucket", "propane_bucket", "naphtha_bucket", "steam_bucket", "ethylene_bucket",
+                    "propylene_bucket"), CRRPonderScenes::petrochemistry),
             new Entry("plastics", Category.CHEMISTRY, List.of("naphtha_bucket", "ethylene_bucket", "propylene_bucket", "liquid_hdpe_bucket",
                     "liquid_polypropylene_bucket", "hdpe_pellets", "hdpe_sheet"), CRRPonderScenes::plastics),
             new Entry("lithium_brine", Category.CHEMISTRY, List.of("weak_brine_bucket", "strong_brine_bucket", "lithium_brine_bucket", "lithium_nugget", "borax"),
@@ -310,7 +311,7 @@ public class CRRPonderScenes {
         revealPipe(s);
         s.say("Mineral Drill Heads turn Rich Veins of stone into dust", s.face(3, 1, 3, Direction.NORTH));
         s.say("Steel heads can drill Tuff, Scoria, Granite and Diorite", s.face(3, 1, 3, Direction.NORTH));
-        s.say("Titanium heads are needed for Asurine, Crimsite, Ochrum and Veridium", s.face(3, 0, 3, Direction.NORTH));
+        s.say("Diamond heads are needed for Asurine, Crimsite, Ochrum and Veridium. Titanium heads drill every vein, twice as fast", s.face(3, 0, 3, Direction.NORTH));
         s.say("Mineral drilling consumes Coolant, supplied through any Derrick Block", s.face(2, 4, 2, Direction.NORTH));
         s.say("The dust can be extracted from any Derrick Block", s.face(3, 7, 3, Direction.NORTH));
     }
@@ -412,7 +413,10 @@ public class CRRPonderScenes {
         s.show(s.box(2, 3, 5, 2, 3, 6));
         s.spin(s.box(2, 3, 5, 2, 3, 6), 128);
         s.say("A Circulation Pump speeds recipes up with the rotation it gets, by half at 256 RPM", s.face(2, 3, 5, Direction.SOUTH));
-        s.say("Small machines take 4 attachments, large ones 8", s.top(3, 5, 3));
+        s.show(s.box(5, 1, 3, 6, 2, 3));
+        s.say("An Outlet Valve pushes a fluid out into a tank or along pipes, for free, no pump needed. Use a filled bucket on it to pick the fluid",
+                s.face(5, 2, 3, Direction.EAST));
+        s.say("Small sizes take 4 attachments, large ones 8. A Gasket takes no slot", s.top(3, 5, 3));
     }
 
     public static void smallMachines(net.createmod.ponder.api.scene.SceneBuilder builder, SceneBuildingUtil util) {
@@ -421,6 +425,12 @@ public class CRRPonderScenes {
         s.say("Small Electrolysers can process simple electrolysis recipes when powered", s.face(1, 1, 2, Direction.WEST));
         s.show(s.at(3, 1, 2));
         s.say("Fermentation Barrels process small reactions slowly, without any power", s.face(3, 1, 2, Direction.NORTH));
+        s.show(s.box(2, 1, 4, 2, 4, 4));
+        s.spin(s.at(2, 4, 4), 32);
+        s.heat(s.at(2, 1, 4), BlazeBurnerBlock.HeatLevel.KINDLED);
+        s.say("Small Reaction Chambers take two fluids in and give one out, stirred from the top and heated from below, at half speed",
+                s.face(2, 2, 4, Direction.NORTH));
+        s.say("Single-block machines take one attachment: a Gauge or an Outlet Valve", s.face(2, 3, 4, Direction.NORTH));
     }
 
     public static void oreProcessing(net.createmod.ponder.api.scene.SceneBuilder builder, SceneBuildingUtil util) {
@@ -437,11 +447,14 @@ public class CRRPonderScenes {
         s.say("Ochrum, Crimsite and Granite each take their own way", s.top(1, 1, 1));
     }
 
-    /** The build of {@code PonderSchematics.oreDusts}: the blast furnace at (1,1,1), the granite Mixer at (2,_,6), the vat from (4,1,4). */
+    /** The build of {@code PonderSchematics.oreDusts}: the pig iron Mixer at (1,_,1), the granite Mixer at (2,_,6), the vat from (4,1,4). */
     public static void oreDusts(net.createmod.ponder.api.scene.SceneBuilder builder, SceneBuildingUtil util) {
         Story s = Story.start(builder, util, "ore_dusts", "Other Ore Dusts", 9);
-        s.show(s.at(1, 1, 1));
-        s.say("Crimsite Dust smelts into Pig Iron, the start of steel", s.face(1, 1, 1, Direction.NORTH));
+        Selection pigIron = s.box(1, 1, 1, 1, 5, 1);
+        s.show(pigIron);
+        s.heat(pigIron, BlazeBurnerBlock.HeatLevel.KINDLED);
+        s.spin(s.box(1, 4, 1, 1, 5, 1), 64);
+        s.say("Crimsite Dust (or Iron) heated with Coal Coke in a Mixer gives Pig Iron, the start of all steel", s.face(1, 2, 1, Direction.NORTH));
         Selection mixer = s.box(2, 1, 6, 2, 5, 6);
         s.show(mixer);
         s.heat(mixer, BlazeBurnerBlock.HeatLevel.SEETHING);
@@ -455,16 +468,16 @@ public class CRRPonderScenes {
 
     /** The build of {@code PonderSchematics.petrochemistry}: inputs on the left (x 0), the 4-tall chamber, outputs on the right (x 6). */
     public static void petrochemistry(net.createmod.ponder.api.scene.SceneBuilder builder, SceneBuildingUtil util) {
-        Story s = Story.start(builder, util, "petrochemistry", "Cracking Naphtha", 7);
-        buildReactionChamber(s, 2, 2, BlazeBurnerBlock.HeatLevel.KINDLED, false);
+        Story s = Story.start(builder, util, "petrochemistry", "Cracking Gas", 7);
+        buildReactionChamber(s, 2, 2, BlazeBurnerBlock.HeatLevel.SEETHING, false);
         s.show(s.box(0, 1, 2, 1, 2, 4));
-        s.say("Naphtha from a Distillation Tower can be cracked into lighter gases", s.face(0, 1, 2, Direction.WEST));
-        s.say("Pipe it into a heated Reaction Chamber together with Steam", s.face(0, 1, 4, Direction.WEST));
-        s.spin(s.box(3, 5, 3, 3, 7, 3), 32);
-        s.say("The stirring shaft must turn between 24 and 64 RPM", s.top(3, 5, 3));
+        s.say("Ethane, distilled from Hydrocarbon Gas or cracked from Naphtha, is the main way to plastics", s.face(0, 1, 2, Direction.WEST));
+        s.say("Pipe it into a superheated Reaction Chamber together with Steam", s.face(0, 1, 4, Direction.WEST));
+        s.spin(s.box(3, 5, 3, 3, 7, 3), 64);
+        s.say("The stirring shaft must turn between 64 and 128 RPM", s.top(3, 5, 3));
         s.say("Each product needs its own output tank: an Outlet Manifold used on the chamber adds the second one", s.face(3, 4, 2, Direction.NORTH));
         s.show(s.box(5, 1, 2, 6, 2, 4));
-        s.say("Ethylene and Propylene come out together, and can be pumped out of any wall", s.face(6, 1, 2, Direction.NORTH));
+        s.say("Ethylene comes out, with Hydrogen. Propane, cracked the same way without steam, gives Propylene", s.face(6, 1, 2, Direction.NORTH));
         s.say("Both are the base of plastics, and each can be turned into the other", s.top(6, 1, 3));
     }
 
@@ -558,7 +571,7 @@ public class CRRPonderScenes {
     public static void polymetallicNodule(net.createmod.ponder.api.scene.SceneBuilder builder, SceneBuildingUtil util) {
         Story s = Story.start(builder, util, "polymetallic_nodule", "Polymetallic Nodules", 5);
         s.show(s.at(1, 1, 3));
-        s.say("Polymetallic Nodules lie in small patches on the ocean floor. Fishing sometimes brings one up", s.top(1, 1, 3));
+        s.say("Polymetallic Nodules lie scattered on the ocean floor. Fishing sometimes brings one up", s.top(1, 1, 3));
         s.show(s.at(1, 1, 1));
         s.show(s.box(0, 3, 1, 2, 3, 2));
         s.spin(s.box(0, 3, 1, 0, 3, 2), 64);
@@ -698,7 +711,7 @@ public class CRRPonderScenes {
         s.say("Tanks, pipes and machines holding them leak now and then. Liquids drip down and pool on the floor", s.face(3, 2, 1, Direction.NORTH));
         grow(s, oil, 400);
         s.say("The drips lead back to the leak. Glass pipes leak less; Encased and Plastic Pipes never do", s.face(3, 2, 1, Direction.NORTH));
-        s.say("A Gasket used on a Fluid Tank seals it. Sneak with an empty hand to take it back", s.face(1, 1, 1, Direction.NORTH));
+        s.say("A Gasket seals a tank, pipe or pump it is used on. Sneak with an empty hand to take it back", s.face(1, 1, 1, Direction.NORTH));
         effects.emitParticles(s.util().vector().of(4.95, 1.5, 4.5), effects.simpleParticleEmitter(CRRParticles.haze(METHANE, 0.55F),
                 new Vec3(-0.15, 0.01, 0)), 2, 140);
         effects.emitParticles(s.util().vector().of(3.8, 1.6, 4.5), effects.particleEmitterWithinBlockSpace(CRRParticles.haze(METHANE, 0.3F), Vec3.ZERO),
@@ -761,7 +774,8 @@ public class CRRPonderScenes {
         var effects = s.scene().effects();
         effects.emitParticles(s.util().vector().of(5.5, 2.95, 2.5), effects.simpleParticleEmitter(CRRParticles.haze(METHANE, 0.5F),
                 new Vec3(0, 0.15, 0)), 2, 100);
-        s.say("Gas Vents let piped gases out of the way. Toxic ones still pollute, unless a scrubber covers the vent", s.face(5, 2, 2, Direction.NORTH));
+        s.say("Gas Vents let piped gases out of the way. Placed on a tank, they vent what is over a bucket under full", s.face(5, 2, 2, Direction.NORTH));
+        s.say("Toxic gases still pollute, unless a scrubber covers the vent", s.face(5, 2, 2, Direction.NORTH));
         s.scene().idle(20);
     }
 }

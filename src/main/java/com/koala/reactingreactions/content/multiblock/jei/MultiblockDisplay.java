@@ -31,7 +31,7 @@ public record MultiblockDisplay<R extends MultiblockRecipe<?>>(String name, Clas
             new MultiblockDisplay<>("airless_oven", AirlessOvenRecipe.class, CRRRecipeTypes.AIRLESS_OVEN,
                     List.of(CRRBlocks.AIRLESS_OVEN_CONTROLLER), r -> MultiblockPreviews.oven(), r -> null),
             new MultiblockDisplay<>("reaction", ReactionRecipe.class, CRRRecipeTypes.REACTION,
-                    List.of(CRRBlocks.REACTION_CHAMBER_CONTROLLER, CRRBlocks.FERMENTATION_BARREL), r -> MultiblockPreviews.chamber(),
+                    List.of(CRRBlocks.REACTION_CHAMBER_CONTROLLER, CRRBlocks.SMALL_REACTION_CHAMBER, CRRBlocks.FERMENTATION_BARREL), r -> MultiblockPreviews.chamber(),
                     r -> r.needsStirring() ? Component.translatable("reactingreactions.jei.reaction.rpm", (int) r.minRpm, (int) r.maxRpm) : null));
 
     public ItemLike icon() {

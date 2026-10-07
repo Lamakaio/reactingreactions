@@ -1,0 +1,168 @@
+{
+ "multipart": [
+  {
+   "when": {
+    "half": "lower",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/small_reaction_chamber/lower"
+   }
+  },
+  {
+   "when": {
+    "half": "lower",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/small_reaction_chamber/lower",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "half": "lower",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/small_reaction_chamber/lower",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "half": "lower",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/small_reaction_chamber/lower",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "half": "lower",
+    "facing": "north",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/small_reaction_chamber/lower_sealed"
+   }
+  },
+  {
+   "when": {
+    "half": "lower",
+    "facing": "east",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/small_reaction_chamber/lower_sealed",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "half": "lower",
+    "facing": "south",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/small_reaction_chamber/lower_sealed",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "half": "lower",
+    "facing": "west",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/small_reaction_chamber/lower_sealed",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "half": "upper",
+    "facing": "north"
+   },
+   "apply": {
+    "model": "reactingreactions:block/small_reaction_chamber/upper"
+   }
+  },
+  {
+   "when": {
+    "half": "upper",
+    "facing": "east"
+   },
+   "apply": {
+    "model": "reactingreactions:block/small_reaction_chamber/upper",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "half": "upper",
+    "facing": "south"
+   },
+   "apply": {
+    "model": "reactingreactions:block/small_reaction_chamber/upper",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "half": "upper",
+    "facing": "west"
+   },
+   "apply": {
+    "model": "reactingreactions:block/small_reaction_chamber/upper",
+    "y": 270
+   }
+  },
+  {
+   "when": {
+    "half": "upper",
+    "facing": "north",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/small_reaction_chamber/upper_sealed"
+   }
+  },
+  {
+   "when": {
+    "half": "upper",
+    "facing": "east",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/small_reaction_chamber/upper_sealed",
+    "y": 90
+   }
+  },
+  {
+   "when": {
+    "half": "upper",
+    "facing": "south",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/small_reaction_chamber/upper_sealed",
+    "y": 180
+   }
+  },
+  {
+   "when": {
+    "half": "upper",
+    "facing": "west",
+    "sealed": "true"
+   },
+   "apply": {
+    "model": "reactingreactions:block/small_reaction_chamber/upper_sealed",
+    "y": 270
+   }
+  }
+ ]
+}

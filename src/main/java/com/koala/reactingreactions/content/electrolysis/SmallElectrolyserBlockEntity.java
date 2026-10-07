@@ -22,7 +22,8 @@ import java.util.List;
 public class SmallElectrolyserBlockEntity extends ProcessingMachineBlockEntity<ElectrolysisRecipe> {
     private static final int ITEM_SLOTS = 2;
 
-    private final Voltmeter voltmeter = new Voltmeter();
+    /** Draws 10 A at a recipe's minimum voltage: half the vat's pace. */
+    private final Voltmeter voltmeter = new Voltmeter(10);
 
     public SmallElectrolyserBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state, ITEM_SLOTS, ITEM_SLOTS);
@@ -93,6 +94,31 @@ public class SmallElectrolyserBlockEntity extends ProcessingMachineBlockEntity<E
     @Override
     protected int duration(ElectrolysisRecipe recipe) {
         return super.duration(recipe) * 2;
+    }
+
+    @Override
+    protected String whyNotNow(ElectrolysisRecipe recipe) {
+        return voltmeter.shortfall(recipe);
+    }
+
+    @Override
+    protected String whyNoWork(ElectrolysisRecipe recipe) {
+        return "Not enough power: " + voltmeter.shortfall(recipe);
+    }
+
+    @Override
+    protected String whyNotExtra(ElectrolysisRecipe recipe) {
+        return "Too complex for the Small Electrolyser: use an Electrolysis Vat";
+    }
+
+    @Override
+    protected float workThisTick(ElectrolysisRecipe recipe) {
+        return voltmeter.workThisTick(recipe, duration(recipe));
+    }
+
+    /** The resistance across its terminals (SmallElectrolyserDevice). */
+    public double loadResistance() {
+        return voltmeter.loadResistance(recipe);
     }
 
     @Override

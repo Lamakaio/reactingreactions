@@ -68,15 +68,17 @@ final class CRRCraftingRecipes {
                     "N N", " T ")
                     .key('N', "reactingreactions:nylon_fiber")
                     .key('T', "reactingreactions:titanium_sheet");
+            // Like the Reaction Chamber's: on steel casing, the vat's with its window glass, the controller with copper for its leads.
             d.shaped("crafting/electrolysis_vat_controller", "misc", res("reactingreactions:electrolysis_vat_controller", 1),
-                    "G G", "SCS", "SSS")
-                    .key('G', "reactingreactions:reinforced_glass")
-                    .key('C', "minecraft:copper_ingot")
-                    .key('S', "reactingreactions:steel_sheet");
+                    "C", "K", "W")
+                    .key('C', "reactingreactions:steel_casing")
+                    .key('K', "minecraft:copper_block")
+                    .key('W', "reactingreactions:electrolysis_vat_wall");
             d.shaped("crafting/electrolysis_vat_wall", "misc", res("reactingreactions:electrolysis_vat_wall", 4),
-                    "S", "G")
+                    " S ", "GCG", " S ")
                     .key('S', "reactingreactions:steel_sheet")
-                    .key('G', "reactingreactions:reinforced_glass");
+                    .key('G', "reactingreactions:reinforced_glass")
+                    .key('C', "reactingreactions:steel_casing");
             d.shaped("crafting/fermentation_barrel", "misc", res("reactingreactions:fermentation_barrel", 1),
                     "C", "B", "C")
                     .key('C', "minecraft:copper_ingot")
@@ -126,9 +128,6 @@ final class CRRCraftingRecipes {
             d.shaped("crafting/graphite_electrode_from_coke", "misc", res("reactingreactions:graphite_electrode", 1),
                             "K", "K", "K")
                             .key('K', "reactingreactions:coal_coke");
-            d.shaped("crafting/hdpe_bucket", "equipment", res("reactingreactions:hdpe_bucket"),
-                            "X X", " X ")
-                            .key('X', "reactingreactions:hdpe_sheet");
             d.shaped("crafting/hdpe_sheet", "misc", res("reactingreactions:hdpe_sheet", 1),
                     "PPP", "PPP", "PPP")
                     .key('P', "reactingreactions:hdpe_pellets");
@@ -147,13 +146,19 @@ final class CRRCraftingRecipes {
                     " S ", "SCS", " S ")
                     .key('S', "reactingreactions:steel_sheet")
                     .key('C', "reactingreactions:steel_casing");
+            // A whisk over a window over a wall: the small chamber, top to bottom.
+            d.shaped("crafting/small_reaction_chamber", "misc", res("reactingreactions:small_reaction_chamber", 1),
+                    "K", "G", "W")
+                    .key('K', "create:whisk")
+                    .key('G', "create:framed_glass")
+                    .key('W', "reactingreactions:reaction_chamber_wall");
             d.shaped("crafting/reaction_chamber_controller", "misc", res("reactingreactions:reaction_chamber_controller", 1),
                     "C", "K", "W")
                     .key('C', "reactingreactions:steel_casing")
                     .key('K', "create:whisk")
                     .key('W', "reactingreactions:reaction_chamber_wall");
             // Plastic Pipe: a row of HDPE sheets, like Create's pipe from a sheet.
-            d.shaped("crafting/plastic_pipe", "misc", res("reactingreactions:plastic_pipe", 4),
+            d.shaped("crafting/plastic_pipe", "misc", res("reactingreactions:plastic_pipe", 16),
                     "HHH")
                     .key('H', "reactingreactions:hdpe_sheet");
             // Machine attachments, each laid out like the part it is.
@@ -177,6 +182,12 @@ final class CRRCraftingRecipes {
                     "NHN", "H H", "NHN")
                     .key('N', "create:brass_nugget")
                     .key('H', "reactingreactions:hdpe_sheet");
+            // The valve, its filter and the flange that bolts it on.
+            d.shaped("crafting/outlet_valve", "misc", res("reactingreactions:outlet_valve", 1),
+                    "VFS")
+                    .key('V', "create:fluid_valve")
+                    .key('F', "create:smart_fluid_pipe")
+                    .key('S', "reactingreactions:steel_sheet");
             d.shaped("crafting/circulation_pump", "misc", res("reactingreactions:circulation_pump", 1),
                     "SMS", " K ")
                     .key('S', "reactingreactions:steel_sheet")
@@ -225,14 +236,15 @@ final class CRRCraftingRecipes {
                     "S", "P", "S")
                     .key('S', "reactingreactions:steel_ingot")
                     .key('P', "reactingreactions:drill_pipe");
+            // The top head: titanium teeth on a netherite core.
             d.shaped("crafting/mineral_drill_head_titanium", "misc", res("reactingreactions:mineral_drill_head_titanium", 1),
-                    "T", "P", "T")
+                    "TNT", " P ")
                     .key('T', "reactingreactions:titanium")
+                    .key('N', "minecraft:netherite_ingot")
                     .key('P', "reactingreactions:drill_pipe");
             d.shaped("crafting/mineral_drill_head_diamond", "misc", res("reactingreactions:mineral_drill_head_diamond", 1),
-                    "DTD", " P ")
+                    "D", "P", "D")
                     .key('D', "minecraft:diamond")
-                    .key('T', "reactingreactions:titanium")
                     .key('P', "reactingreactions:drill_pipe");
             // Toxic-compound gear: PPE from HDPE and nylon, and the two medicines that lower the toxicity gauge.
             d.shaped("crafting/chemical_gloves", "equipment", res("reactingreactions:chemical_gloves"),
@@ -319,13 +331,9 @@ final class CRRCraftingRecipes {
                             .key('G', "minecraft:copper_ingot")
                             .key('C', "create:copper_casing");
             d.shaped("crafting/spring_boots", "equipment", res("reactingreactions:spring_boots"),
-                            "T T", "N N")
+                            "N N", "T T")
                             .key('T', "reactingreactions:titanium_sheet")
                             .key('N', "reactingreactions:nylon_fiber");
-            d.shaped("crafting/super_bone_meal", "misc", res("reactingreactions:super_bone_meal", 4),
-                            "FBF", "BFB", "FBF")
-                            .key('F', "reactingreactions:fertilizer")
-                            .key('B', "minecraft:bone_meal");
             d.shaped("crafting/titanium_axe", "equipment", res("reactingreactions:titanium_axe"),
                             "XX", "XS", " S")
                             .key('X', "reactingreactions:titanium")
@@ -375,22 +383,6 @@ final class CRRCraftingRecipes {
                             "reactingreactions:yeast", "minecraft:sugar");
             d.shapeless("crafting/yeast", "misc", res("reactingreactions:yeast", 2),
                             x(2, "minecraft:sweet_berries"), "minecraft:sugar");
-            // Drilled crimsite comes out as dust: it can be blasted into pig iron too (or kept for titanium).
-            d.recipe("crimsite_dust_to_pig_iron", "minecraft:blasting")
-                            .ingredient("reactingreactions:crimsite_dust")
-                            .field("result", "{\"id\":\"reactingreactions:pig_iron\",\"count\":1}")
-                            .field("experience", "0.3")
-                            .field("cookingtime", "200");
-            d.recipe("iron_ingot_to_pig_iron", "minecraft:blasting")
-                            .ingredient("minecraft:iron_ingot")
-                            .field("result", "{\"id\":\"reactingreactions:pig_iron\",\"count\":1}")
-                            .field("experience", "0.1")
-                            .field("cookingtime", "200");
-            d.recipe("crimsite_to_pig_iron", "minecraft:blasting")
-                            .ingredient("create:crimsite")
-                            .field("result", "{\"id\":\"reactingreactions:pig_iron\",\"count\":1}")
-                            .field("experience", "0.3")
-                            .field("cookingtime", "200");
         }
     }
 

@@ -6,6 +6,12 @@
   "loops": 1,
   "results": [
     {
+      "components": {
+        "reactingreactions:fluid_tank": {
+          "amount": 1000,
+          "id": "reactingreactions:drill_grease"
+        }
+      },
       "id": "reactingreactions:plasma_multitool"
     }
   ],
@@ -49,7 +55,7 @@
           "item": "reactingreactions:incomplete_plasma_multitool"
         },
         {
-          "item": "reactingreactions:mineral_drill_head_diamond"
+          "item": "reactingreactions:mineral_drill_head_titanium"
         }
       ],
       "results": [

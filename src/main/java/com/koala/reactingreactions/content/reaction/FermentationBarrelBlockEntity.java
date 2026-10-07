@@ -75,6 +75,12 @@ public class FermentationBarrelBlockEntity extends ProcessingMachineBlockEntity<
     }
 
     @Override
+    protected String whyNotExtra(ReactionRecipe recipe) {
+        return recipe.needsStirring() || recipe.getRequiredHeat() != HeatCondition.NONE ? "Needs stirring or heat: use a Reaction Chamber"
+                : "Too many ingredients or products for a barrel";
+    }
+
+    @Override
     protected int duration(ReactionRecipe recipe) {
         return super.duration(recipe) * 2;
     }

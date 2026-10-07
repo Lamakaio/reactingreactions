@@ -6,6 +6,12 @@
   "loops": 1,
   "results": [
     {
+      "components": {
+        "reactingreactions:fluid_tank": {
+          "amount": 1000,
+          "id": "reactingreactions:nitrogen"
+        }
+      },
       "id": "reactingreactions:composite_exo_helmet"
     }
   ],

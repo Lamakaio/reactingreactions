@@ -81,12 +81,6 @@
       "ops": []
     },
     {
-      "out": "item/magnesium_knuckle",
-      "source": "unused-textures",
-      "src": "items/ingot_zinc.png",
-      "ops": []
-    },
-    {
       "out": "item/manganese_steel",
       "source": "unused-textures",
       "src": "items/ingot_wroughtiron.png",
@@ -175,12 +169,6 @@
       "out": "item/ammonium_nitrate",
       "source": "unused-textures",
       "src": "items/material_dust_saltpeter.png",
-      "ops": []
-    },
-    {
-      "out": "item/fertilizer",
-      "source": "unused-textures",
-      "src": "items/material_dust_fertilizer_nitrogenous.png",
       "ops": []
     },
     {
@@ -501,52 +489,6 @@
       "ops": []
     },
     {
-      "out": "item/gas_canister",
-      "source": "unused-textures",
-      "src": "items/container_fuelcan.png",
-      "ops": [
-        [
-          "box",
-          6,
-          8,
-          12,
-          13,
-          false
-        ],
-        [
-          "desaturate",
-          1.0
-        ],
-        [
-          "brighten",
-          1.15
-        ]
-      ]
-    },
-    {
-      "out": "item/gas_canister_band",
-      "source": "unused-textures",
-      "src": "items/container_fuelcan.png",
-      "ops": [
-        [
-          "box",
-          6,
-          8,
-          12,
-          13,
-          true
-        ],
-        [
-          "desaturate",
-          1.0
-        ],
-        [
-          "brighten",
-          1.5
-        ]
-      ]
-    },
-    {
       "out": "item/titanium_axe",
       "source": "foreck-textures",
       "src": "textures/x16items/bronze_axe.png",
@@ -799,18 +741,6 @@
       "out": "block/lead_electrode",
       "source": "unused-textures",
       "src": "blocks/lead_block.png",
-      "ops": []
-    },
-    {
-      "out": "block/varnished_planks",
-      "source": "unused-textures",
-      "src": "blocks/plank_plywood.png",
-      "ops": []
-    },
-    {
-      "out": "block/polymetallic_nodule",
-      "source": "unused-textures",
-      "src": "blocks/ore_stone_big_pentlandite.png",
       "ops": []
     },
     {
@@ -1113,57 +1043,6 @@
       "source": "TextureRepository",
       "src": "futureazoo/blocks/tech/iron_compressor_top.png",
       "ops": [],
-      "ct": true
-    },
-    {
-      "out": "block/steel_casing",
-      "source": "TextureRepository",
-      "src": "futureazoo/blocks/tech/durasteel_frame_side.png",
-      "ops": [
-        [
-          "crop",
-          16,
-          24,
-          32,
-          40
-        ],
-        [
-          "flat"
-        ],
-        [
-          "tint",
-          "#98a4b2"
-        ],
-        [
-          "brushed",
-          0.03
-        ]
-      ]
-    },
-    {
-      "out": "block/steel_casing_connected",
-      "source": "TextureRepository",
-      "src": "futureazoo/blocks/tech/durasteel_frame_side.png",
-      "ops": [
-        [
-          "crop",
-          16,
-          24,
-          32,
-          40
-        ],
-        [
-          "flat"
-        ],
-        [
-          "tint",
-          "#98a4b2"
-        ],
-        [
-          "brushed",
-          0.03
-        ]
-      ],
       "ct": true
     },
     {

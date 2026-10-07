@@ -1,0 +1,28 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 500,
+      "tag": "c:ethane"
+    },
+    {
+      "type": "neoforge:tag",
+      "amount": 250,
+      "tag": "c:steam"
+    }
+  ],
+  "max_rpm": 128,
+  "min_rpm": 64,
+  "results": [
+    {
+      "amount": 400,
+      "id": "reactingreactions:ethylene"
+    },
+    {
+      "amount": 200,
+      "id": "reactingreactions:hydrogen"
+    }
+  ]
+}

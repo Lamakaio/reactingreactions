@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "createdieselgenerators"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "c:plates/steel"
+    },
+    "B": {
+      "item": "minecraft:polished_blackstone_slab"
+    },
+    "D": {
+      "item": "createdieselgenerators:diesel_engine"
+    },
+    "S": {
+      "tag": "c:plates/brass"
+    }
+  },
+  "pattern": [
+    " A ",
+    "SDS",
+    " B "
+  ],
+  "result": {
+    "count": 1,
+    "id": "createdieselgenerators:large_diesel_engine"
+  }
+}

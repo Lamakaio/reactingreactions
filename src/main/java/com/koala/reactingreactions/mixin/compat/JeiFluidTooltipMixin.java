@@ -1,4 +1,4 @@
-package com.koala.reactingreactions.mixin;
+package com.koala.reactingreactions.mixin.compat;
 
 import com.koala.reactingreactions.content.toxic.FluidChemistryTooltip;
 

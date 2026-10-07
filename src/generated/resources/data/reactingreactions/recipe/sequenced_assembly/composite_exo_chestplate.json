@@ -6,6 +6,12 @@
   "loops": 1,
   "results": [
     {
+      "components": {
+        "reactingreactions:fluid_tank": {
+          "amount": 2000,
+          "id": "reactingreactions:aerozine"
+        }
+      },
       "id": "reactingreactions:composite_exo_chestplate"
     }
   ],

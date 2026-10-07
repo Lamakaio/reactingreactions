@@ -3,19 +3,19 @@
   "category": "misc",
   "key": {
     "C": {
-      "tag": "c:ingots/copper"
+      "item": "reactingreactions:steel_casing"
     },
-    "G": {
-      "item": "reactingreactions:reinforced_glass"
+    "K": {
+      "tag": "c:storage_blocks/copper"
     },
-    "S": {
-      "tag": "c:plates/steel"
+    "W": {
+      "item": "reactingreactions:electrolysis_vat_wall"
     }
   },
   "pattern": [
-    "G G",
-    "SCS",
-    "SSS"
+    "C",
+    "K",
+    "W"
   ],
   "result": {
     "count": 1,

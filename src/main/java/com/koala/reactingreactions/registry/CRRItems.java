@@ -21,6 +21,8 @@ import com.koala.reactingreactions.item.PlasmaMultitoolItem;
 import com.koala.reactingreactions.item.PurgerItem;
 import com.koala.reactingreactions.item.SoapItem;
 import com.koala.reactingreactions.item.SuperBoneMealItem;
+import com.koala.reactingreactions.item.TitaniumBowItem;
+import com.koala.reactingreactions.item.VarnishItem;
 import com.koala.reactingreactions.item.ToxinReliefItem;
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem;
 import com.simibubi.create.foundation.data.CreateRegistrate;
@@ -37,7 +39,6 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.BowItem;
-import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.DiggerItem;
 import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
@@ -50,7 +51,6 @@ import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.component.Unbreakable;
 import net.minecraft.world.level.block.DispenserBlock;
-import net.minecraft.world.level.material.Fluids;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.capabilities.Capabilities;
@@ -85,7 +85,6 @@ public class CRRItems {
     public static final ItemEntry<Item> YEAST = ingredient("yeast");
     public static final ItemEntry<Item> SILICON_BOARD = ingredient("silicon_board");
     public static final ItemEntry<SequencedAssemblyItem> INCOMPLETE_CIRCUIT_BOARD = incomplete("incomplete_circuit_board").register();
-    public static final ItemEntry<Item> FERTILIZER = ingredient("fertilizer");
     public static final ItemEntry<Item> SILICA = ingredient("silica");
     public static final ItemEntry<Item> HDPE_PELLETS = REGISTRATE.item("hdpe_pellets", Item::new).lang("HDPE Pellets").register();
     public static final ItemEntry<Item> SALT = ingredient("salt");
@@ -128,7 +127,7 @@ public class CRRItems {
 
     public static final ItemEntry<Item> BORAX = ingredient("borax");
 
-    public static final ItemEntry<Item> VARNISH = ingredient("varnish");
+    public static final ItemEntry<VarnishItem> VARNISH = REGISTRATE.item("varnish", VarnishItem::new).register();
 
     // Polymetallic nodules: a seafloor-generated deposit
     public static final ItemEntry<Item> CRUSHED_POLYMETALLIC_NODULE = ingredient("crushed_polymetallic_nodule");
@@ -150,12 +149,9 @@ public class CRRItems {
     public static final ItemEntry<ShovelItem> TITANIUM_SHOVEL = REGISTRATE.item("titanium_shovel", p -> new ShovelItem(CRRTiers.TITANIUM, p)).properties(pp -> pp.attributes(ShovelItem.createAttributes(CRRTiers.TITANIUM, 1.5F, -3.0F))).register();
     public static final ItemEntry<HoeItem> TITANIUM_HOE = REGISTRATE.item("titanium_hoe", p -> new HoeItem(CRRTiers.TITANIUM, p)).properties(pp -> pp.attributes(HoeItem.createAttributes(CRRTiers.TITANIUM, -3.0F, 0.0F))).register();
 
-    public static final ItemEntry<BowItem> TITANIUM_BOW = REGISTRATE.item("titanium_bow", p -> new BowItem(p)).properties(pp -> pp.durability(500)).model(CRRItems::bowModel).register();
-
-    public static final ItemEntry<BucketItem> HDPE_BUCKET = REGISTRATE.item("hdpe_bucket", p -> new BucketItem(Fluids.EMPTY, p)).properties(pp -> pp.stacksTo(1))
-            // Looks like the vanilla bucket (no texture of its own).
-            .model((ctx, prov) -> prov.withExistingParent(ctx.getName(), "item/generated")
-                    .texture("layer0", ResourceLocation.withDefaultNamespace("item/bucket"))).lang("HDPE Bucket").register();
+    // About four times a bow's durability (384).
+    public static final ItemEntry<TitaniumBowItem> TITANIUM_BOW = REGISTRATE.item("titanium_bow", TitaniumBowItem::new).properties(pp -> pp.durability(1500))
+            .model(CRRItems::bowModel).register();
 
     public static final ItemEntry<SuperBoneMealItem> SUPER_BONE_MEAL = REGISTRATE.item("super_bone_meal", SuperBoneMealItem::new).register();
 
@@ -324,7 +320,7 @@ public class CRRItems {
     }
 
     /** Vanilla's bow model with its three pulling stages. */
-    private static void bowModel(DataGenContext<Item, BowItem> ctx, RegistrateItemModelProvider prov) {
+    private static <T extends BowItem> void bowModel(DataGenContext<Item, T> ctx, RegistrateItemModelProvider prov) {
         ItemModelBuilder bow = prov.withExistingParent(ctx.getName(), "item/bow").texture("layer0", prov.modLoc("item/" + ctx.getName()));
         float[] pulls = {0, 0.65F, 0.9F};
         for (int i = 0; i < pulls.length; i++) {

@@ -12,6 +12,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.fluids.FluidStack;
@@ -92,6 +93,9 @@ public final class Leaks {
      * pools on the floor below otherwise (joining a pool already there).
      */
     public static void spill(ServerLevel level, BlockPos pos, Fluid fluid, int amount) {
+        if (fluid == Fluids.EMPTY) {
+            return;
+        }
         ToxicFluid toxic = Toxicity.of(fluid);
         Contamination.addFrom(level, pos, toxic, contaminationOf(toxic, amount));
         level.gameEvent(null, GameEvent.FLUID_PLACE, pos);

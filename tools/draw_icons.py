@@ -6,6 +6,7 @@ Usage: python tools/draw_icons.py [--out <dir>]   (default: the mod's item textu
 import argparse
 import math
 import os
+import random
 
 from PIL import Image
 
@@ -292,6 +293,69 @@ def controller_dial():
     return img
 
 
+# Brass knuckles in magnesium: four finger rings over a grip, bright silvery metal.
+MAGNESIUM_KNUCKLE = ({
+    "o": OUTLINE, "W": "#eef1f4", "M": "#c9cfd6", "m": "#9aa2ac", "d": "#6c747e",
+}, [
+    "................",
+    "................",
+    "................",
+    "..oooooooooooo..",
+    ".oWMoWMoWMoWMMo.",
+    ".oM.oM.oM.oM.mo.",
+    ".oM.oM.oM.oM.mo.",
+    ".omoomoomoomomo.",
+    ".oMMMMMMMMMMMmo.",
+    ".oWMMMMMMMMMmmo.",
+    "..oddMMMMMMddo..",
+    "....odmmmmdo....",
+    ".....oddddo.....",
+    "......oooo......",
+    "................",
+    "................",
+])
+
+
+def varnished_planks():
+    """Four honey-coloured planks with staggered joints, a little grain, and the varnish's gloss along each one."""
+    img = Image.new("RGBA", (16, 16))
+    base = (176, 104, 44)
+    joints = {0: 5, 1: 12, 2: 2, 3: 9}
+    for plank in range(4):
+        for row in range(4):
+            y = plank * 4 + row
+            for x in range(16):
+                f = 1.0 + 0.06 * math.sin(x * 1.7 + plank * 2.3) + 0.04 * math.sin(x * 0.6 + y * 3.1)
+                if row == 0:
+                    f *= 1.22   # gloss
+                if row == 3:
+                    f *= 0.6    # seam
+                if x == joints[plank] and row < 3:
+                    f *= 0.7
+                img.putpixel((x, y), tuple(min(255, int(c * f)) for c in base) + (255,))
+    return img
+
+
+def polymetallic_nodule():
+    """Speckled charcoal crust with a few bronze patches, in the crushed nodule's colours."""
+    rng = random.Random(7)
+    darks = ["#191616", "#272321", "#322d2d", "#3a342f", "#403b3b", "#534e4e"]
+    bronze = ["#50412e", "#71543b", "#9b7a56", "#cfa870"]
+    patches = [(4, 3, 2.2), (11, 11, 2.6), (12, 3, 1.4), (3, 12, 1.2)]
+    img = Image.new("RGBA", (16, 16))
+    for y in range(16):
+        for x in range(16):
+            # Blotchy shade: smooth waves plus per-pixel grain.
+            v = 2.5 + 1.2 * math.sin(x * 0.9 + 1.3) * math.cos(y * 0.8) + 0.8 * math.sin((x - y) * 1.4) + rng.uniform(-1.3, 1.3)
+            colour = darks[max(0, min(len(darks) - 1, int(v)))]
+            for px, py, r in patches:
+                d = math.hypot(x - px, y - py) + rng.uniform(-0.6, 0.6)
+                if d < r:
+                    colour = bronze[max(0, min(len(bronze) - 1, int((r - d) / r * 4 + rng.uniform(-0.5, 0.5))))]
+            img.putpixel((x, y), hex_rgba(colour))
+    return img
+
+
 def purger():
     """The Purger: a valve wand leaning like a tool, rubber grip at the lower left, red handwheel round the brass valve, nozzle up."""
     colours = {
@@ -333,6 +397,9 @@ def main():
     controller_dial().save(os.path.join(TEXTURES, "block", "controller_dial.png"))
     bow(0).save(os.path.join(out, "titanium_bow.png"))
     purger().save(os.path.join(out, "purger.png"))
+    draw(*MAGNESIUM_KNUCKLE).save(os.path.join(out, "magnesium_knuckle.png"))
+    polymetallic_nodule().save(os.path.join(TEXTURES, "block", "polymetallic_nodule.png"))
+    varnished_planks().save(os.path.join(TEXTURES, "block", "varnished_planks.png"))
     for i, pull in enumerate((1, 2, 3)):
         bow(pull).save(os.path.join(out, f"titanium_bow_pulling_{i}.png"))
 

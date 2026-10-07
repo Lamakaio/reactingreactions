@@ -10,6 +10,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.fluids.FluidStack;
 
@@ -44,6 +45,10 @@ public final class LeakDrips {
 
     /** Drips from the bottom of {@code source} down to {@code landing}, the spot on the floor the pool is at. */
     public static void start(ServerLevel level, BlockPos source, Vec3 landing, Fluid fluid) {
+        // An empty fluid cannot be sent in a particle packet: the client would be disconnected.
+        if (fluid == Fluids.EMPTY) {
+            return;
+        }
         List<Drip> drips = ACTIVE.computeIfAbsent(level.dimension(), key -> new ArrayList<>());
         if (drips.size() < MAX_PER_LEVEL) {
             drips.add(new Drip(source, new Vec3(landing.x, source.getY() - 0.02, landing.z), landing, fluid));

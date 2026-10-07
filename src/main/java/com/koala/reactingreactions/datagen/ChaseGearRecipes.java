@@ -1,5 +1,12 @@
 package com.koala.reactingreactions.datagen;
 
+import com.koala.reactingreactions.item.FluidTankHolder;
+
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+
 import static com.koala.reactingreactions.datagen.Data.*;
 
 /**
@@ -39,7 +46,7 @@ final class ChaseGearRecipes {
         chase(d, "composite_exo_boots", CRR + "titanium_boots", "minecraft:heavy_core", CRR + "mineral_oil",
                 "composite_plating", "servo_actuator", "servo_actuator", "control_unit");
         chase(d, "plasma_multitool", CRR + "titanium_pickaxe", "minecraft:nether_star", CRR + "drill_grease",
-                "titanium_axe", "titanium_shovel", "mineral_drill_head_diamond", "servo_actuator", "control_unit");
+                "titanium_axe", "titanium_shovel", "mineral_drill_head_titanium", "servo_actuator", "control_unit");
         chase(d, "neon_blade", CRR + "titanium_sword", "minecraft:nether_star", CRR + "neon",
                 "ruby_lens", "ruby_lens", "composite_plating", "control_unit");
     }
@@ -62,9 +69,12 @@ final class ChaseGearRecipes {
         steps[parts.length + 2] = deploy(trophy);
         steps[parts.length + 3] = fill(fluid, 250);
         steps[parts.length + 4] = press();
+        // It comes out with its tank full, at the default capacity (the config is not loaded during datagen).
+        FluidTankHolder holder = (FluidTankHolder) BuiltInRegistries.ITEM.get(ResourceLocation.parse(CRR + name));
         d.recipe("sequenced_assembly/" + name, "create:sequenced_assembly")
                 .ingredient(base)
-                .out(CRR + name)
+                .outWithTank(CRR + name, BuiltInRegistries.FLUID.getKey(holder.tankFluid()).toString(),
+                        holder.tankCapacityMb(new ItemStack((Item) holder)))
                 .sequence(CRR + "incomplete_" + name, 1, steps);
     }
 }

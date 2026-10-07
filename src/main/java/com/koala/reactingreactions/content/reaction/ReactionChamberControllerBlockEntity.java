@@ -51,7 +51,20 @@ public class ReactionChamberControllerBlockEntity extends MultiblockControllerBl
     }
 
     private BlockPos shaftPos() {
-        return structure.min().offset(structure.sizeX() / 2, structure.sizeY() - 1, structure.sizeZ() / 2);
+        return shaftPos(structure);
+    }
+
+    private static BlockPos shaftPos(HollowBoxScanner.Result shell) {
+        return shell.min().offset(shell.sizeX() / 2, shell.sizeY() - 1, shell.sizeZ() / 2);
+    }
+
+    /** Also needs its stirring shaft in the middle of the roof, where the formed model leaves it a hole. */
+    @Nullable
+    @Override
+    protected String shapeRefusal(HollowBoxScanner.Result found) {
+        String refusal = super.shapeRefusal(found);
+        return refusal != null || isVerticalShaft(level.getBlockState(shaftPos(found))) ? refusal
+                : "Needs an upright Steel Encased Shaft in the middle of the roof";
     }
 
     @Override
@@ -76,6 +89,11 @@ public class ReactionChamberControllerBlockEntity extends MultiblockControllerBl
     @Override
     protected boolean canRunNow(ReactionRecipe candidate) {
         return candidate.acceptsSpeed(stirSpeed()) && hasHeat(candidate.getRequiredHeat());
+    }
+
+    @Override
+    protected String whyNotNow(ReactionRecipe recipe) {
+        return !recipe.acceptsSpeed(stirSpeed()) ? recipe.stirringShortfall(stirSpeed()) : heatShortfall(recipe.getRequiredHeat());
     }
 
     @Override

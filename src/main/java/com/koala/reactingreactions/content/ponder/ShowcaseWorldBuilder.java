@@ -1,6 +1,7 @@
 package com.koala.reactingreactions.content.ponder;
 
 import com.koala.reactingreactions.content.multiblock.attachment.MachineAttachment;
+import com.koala.reactingreactions.content.multiblock.attachment.OutletValveBlockEntity;
 import com.koala.reactingreactions.content.multiblock.MultiblockControllerBlockEntity;
 import com.koala.reactingreactions.ReactingReactions;
 import com.koala.reactingreactions.content.compat.ElectroEnergeticsCompat;
@@ -14,6 +15,7 @@ import com.simibubi.create.content.processing.burner.BlazeBurnerBlock;
 import com.simibubi.create.content.processing.burner.BlazeBurnerBlockEntity;
 import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
 import com.simibubi.create.foundation.blockEntity.behaviour.filtering.FilteringBehaviour;
+import com.simibubi.create.foundation.blockEntity.behaviour.scrollValue.ScrollValueBehaviour;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -56,7 +58,8 @@ import java.util.Map;
  * <ul>
  *     <li>Derrick (titanium head over a Rich Asurine Vein, coolant fed in) → dust up a belt → superheated Reaction Chamber</li>
  *     <li>Water → Electrolysis Vat (Electro Energetics battery) → oxygen to that chamber, hydrogen to a Gas Diffuser balloon</li>
- *     <li>Crude oil → Diesel Generators' Distillation Tower → naphtha + steam → second chamber → ethylene and propylene tanks</li>
+ *     <li>Crude oil → Diesel Generators' Distillation Tower → naphtha + steam → second chamber → ethane and propane tanks</li>
+ *     <li>Our machines' products leave through Outlet Valves; pumps only feed them and Diesel Generators' tower</li>
  *     <li>An Airless Oven making coke, a leaking corner with a Floor Drain, a Scrubber, and a gallery of the equipment</li>
  * </ul>
  */
@@ -196,23 +199,28 @@ public final class ShowcaseWorldBuilder {
         creativeTank(w, 23, 2, 4, "minecraft:water");
         w.set(23, 1, 4, "create:andesite_casing");
         pump(w, 22, 2, 4, Direction.WEST, Direction.UP);
-        // Oxygen west into the ore chamber, hydrogen south to the Gas Diffuser.
-        smartPipe(w, 16, 2, 4, Direction.WEST, CRR + "oxygen_bucket");
-        pump(w, 15, 2, 4, Direction.WEST, Direction.UP);
-        smartPipe(w, 19, 2, 5, Direction.SOUTH, CRR + "hydrogen_bucket");
-        pump(w, 19, 2, 6, Direction.SOUTH, Direction.WEST);
-        w.fill(19, 2, 7, 19, 2, 10, "create:fluid_pipe");
+        // Oxygen west into the ore chamber, hydrogen south to the Gas Diffuser, each let out by an Outlet Valve.
+        valve(w, 16, 2, 4, Direction.WEST, CRR + "oxygen");
+        w.set(15, 2, 4, "create:fluid_pipe");
+        valve(w, 19, 2, 5, Direction.SOUTH, CRR + "hydrogen");
+        w.fill(19, 2, 6, 19, 2, 10, "create:fluid_pipe");
         // What the balloon does not take, and the oxygen the ore chamber does not, go up Gas Vents, so the vat never backs up.
         // Vents take gas at their back, so each stands on a pipe.
         w.set(18, 2, 7, "create:fluid_pipe");
         w.set(18, 3, 7, CRR + "gas_vent", "facing=up");
-        smartPipe(w, 20, 2, 1, Direction.NORTH, CRR + "oxygen_bucket");
-        pump(w, 20, 2, 0, Direction.NORTH, Direction.EAST);
-        w.set(20, 2, -1, "create:fluid_pipe");
+        valve(w, 20, 2, 1, Direction.NORTH, CRR + "oxygen");
+        w.fill(20, 2, 0, 20, 2, -1, "create:fluid_pipe");
         w.set(20, 3, -1, CRR + "gas_vent", "facing=up");
         sign(w, 22, 1, -1, 8, "Gas Vents", "surplus hydrogen", "and oxygen go up", "into the air");
         if (ElectroEnergeticsCompat.isLoaded()) {
             w.set(19, 1, 0, "electroenergetics:creative_battery");
+            // Water electrolysis needs 1250 V; twice that runs it at full speed. The setting is in millivolts.
+            w.after(19, 1, 0, (level, pos) -> {
+                ScrollValueBehaviour voltage = BlockEntityBehaviour.get(level, pos, ScrollValueBehaviour.TYPE);
+                if (voltage != null) {
+                    voltage.setValue(2_500_000);
+                }
+            });
             BlockPos battery = w.at(19, 1, 0);
             w.after(17, 2, 3, (level, pos) -> ShowcaseElectrics.wire(level, battery, 0, pos, 0));
             w.after(21, 2, 3, (level, pos) -> ShowcaseElectrics.wire(level, battery, 1, pos, 0));
@@ -239,7 +247,7 @@ public final class ShowcaseWorldBuilder {
         REPORT.put("oxygen vent", w.at(20, 3, -1));
     }
 
-    /** Crude oil through Diesel Generators' tower; its naphtha cracked with steam into ethylene and propylene. */
+    /** Crude oil through Diesel Generators' tower; its naphtha cracked with steam into ethane and propane. */
     private static void petrochemistry(Build w) {
         boolean cdg = ModList.get().isLoaded("createdieselgenerators");
         String crude = cdg ? "createdieselgenerators:crude_oil" : CRR + "crude_oil";
@@ -258,7 +266,7 @@ public final class ShowcaseWorldBuilder {
         storage(w, 4, 5, 21, Direction.SOUTH, Direction.WEST, 0, "gasoline", fuels + "gasoline");
         // Over the diesel tank, so piped two blocks further out.
         storage(w, 4, 6, 19, Direction.NORTH, Direction.WEST, 2, "LPG", CRR + "lpg");
-        // Two fluid outputs, for ethylene and propylene: an Outlet Manifold, installed once it has formed, adds the second.
+        // Two fluid outputs, for ethane and propane: an Outlet Manifold, installed once it has formed, adds the second.
         PonderSchematics.reactionChamber(w, 6, 19);
         w.after(7, 3, 19, (level, pos) -> {
             if (level.getBlockEntity(pos) instanceof MultiblockControllerBlockEntity<?> chamber) {
@@ -270,17 +278,17 @@ public final class ShowcaseWorldBuilder {
         w.set(7, 1, 17, "create:andesite_casing");
         creativeTank(w, 7, 2, 17, CRR + "steam");
         pump(w, 7, 2, 18, Direction.SOUTH, Direction.EAST);
-        smartPipe(w, 9, 3, 20, Direction.EAST, CRR + "ethylene_bucket");
-        pump(w, 10, 3, 20, Direction.EAST, Direction.UP);
-        sinkOnPillar(w, 11, 3, 20, CRR + "ethylene");
-        smartPipe(w, 7, 3, 22, Direction.SOUTH, CRR + "propylene_bucket");
-        pump(w, 7, 3, 23, Direction.SOUTH, Direction.WEST);
-        sinkOnPillar(w, 7, 3, 24, CRR + "propylene");
+        valve(w, 9, 3, 20, Direction.EAST, CRR + "ethane");
+        w.set(10, 3, 20, "create:fluid_pipe");
+        sinkOnPillar(w, 11, 3, 20, CRR + "ethane");
+        valve(w, 7, 3, 22, Direction.SOUTH, CRR + "propane");
+        w.set(7, 3, 23, "create:fluid_pipe");
+        sinkOnPillar(w, 7, 3, 24, CRR + "propane");
         sign(w, 3, 1, 16, 8, "Distillation Tower", "crude oil into", "naphtha, diesel,", "gasoline and LPG");
-        sign(w, 9, 1, 16, 8, "Cracking", "naphtha + steam:", "ethylene and", "propylene");
+        sign(w, 9, 1, 16, 8, "Cracking", "naphtha + steam:", "ethane and", "propane");
         REPORT.put("cracking chamber", w.at(7, 3, 19));
-        REPORT.put("ethylene tank", w.at(11, 3, 20));
-        REPORT.put("propylene tank", w.at(7, 3, 24));
+        REPORT.put("ethane tank", w.at(11, 3, 20));
+        REPORT.put("propane tank", w.at(7, 3, 24));
     }
 
     /** A pump drawing from the tower's side at (x, y, z), {@code pipes} pipes on, then a creative tank of {@code fluid} on a pillar. */
@@ -306,8 +314,8 @@ public final class ShowcaseWorldBuilder {
         w.set(x - 1, 0, z, "minecraft:hopper", "facing=south");
         w.set(x - 1, 0, z + 1, "minecraft:hopper", "facing=west");
         w.set(x - 2, 0, z + 1, "minecraft:chest", "facing=east");
-        // Coking also gives off a little naphtha.
-        pump(w, x + 3, 2, z + 1, Direction.EAST, Direction.UP, true);
+        // Coking also gives off a little naphtha, let straight into a tank.
+        valve(w, x + 3, 2, z + 1, Direction.EAST, CRR + "naphtha");
         sinkOnPillar(w, x + 4, 2, z + 1, CRR + "naphtha");
         sign(w, x + 1, 1, z - 2, 8, "Airless Oven", "coal to coke,", "no burner", "needed");
         REPORT.put("oven", w.at(x + 1, 2, z));
@@ -394,17 +402,11 @@ public final class ShowcaseWorldBuilder {
      * small cogwheels) and a creative motor behind that cogwheel.
      */
     private static void pump(Build w, int x, int y, int z, Direction flow, Direction cogSide) {
-        pump(w, x, y, z, flow, cogSide, false);
-    }
-
-    /** As above; {@code motorAhead} puts the motor on the downstream side of the cogwheel, where the upstream one is taken. */
-    private static void pump(Build w, int x, int y, int z, Direction flow, Direction cogSide, boolean motorAhead) {
         w.set(x, y, z, "create:mechanical_pump", "facing=" + flow.getSerializedName());
         BlockPos cog = new BlockPos(x, y, z).relative(cogSide);
         w.set(cog.getX(), cog.getY(), cog.getZ(), "create:cogwheel", "axis=" + flow.getAxis().getSerializedName());
-        Direction motorFacing = motorAhead ? flow.getOpposite() : flow;
-        BlockPos motor = cog.relative(motorFacing.getOpposite());
-        w.set(motor.getX(), motor.getY(), motor.getZ(), "create:creative_motor", "facing=" + motorFacing.getSerializedName());
+        BlockPos motor = cog.relative(flow.getOpposite());
+        w.set(motor.getX(), motor.getY(), motor.getZ(), "create:creative_motor", "facing=" + flow.getSerializedName());
         motor(w, motor.getX(), motor.getY(), motor.getZ(), 128);
     }
 
@@ -480,14 +482,16 @@ public final class ShowcaseWorldBuilder {
         }
     }
 
-    private static void smartPipe(Build w, int x, int y, int z, Direction along, String filterItem) {
-        w.set(x, y, z, "create:smart_fluid_pipe", "face=floor", "facing=" + along.getSerializedName());
+    /** An Outlet Valve on the machine wall behind it, letting {@code fluid} out towards {@code out}, once the machine has formed. */
+    private static void valve(Build w, int x, int y, int z, Direction out, String fluid) {
+        w.set(x, y, z, CRR + "outlet_valve", "facing=" + out.getSerializedName());
         w.after(x, y, z, (level, pos) -> {
-            FilteringBehaviour filter = BlockEntityBehaviour.get(level, pos, FilteringBehaviour.TYPE);
-            if (filter != null) {
-                filter.setFilter(new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.parse(filterItem))));
+            if (level.getBlockEntity(pos) instanceof OutletValveBlockEntity valve) {
+                valve.setFilter(BuiltInRegistries.FLUID.get(ResourceLocation.parse(fluid)));
             }
         });
+        String label = fluid.substring(fluid.indexOf(':') + 1) + " valve";
+        REPORT.put(REPORT.containsKey(label) ? label + " 2" : label, w.at(x, y, z));
     }
 
     private static void creativeTank(Build w, int x, int y, int z, String fluid) {

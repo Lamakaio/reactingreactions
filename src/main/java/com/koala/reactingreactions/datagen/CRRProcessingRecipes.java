@@ -12,6 +12,16 @@ final class CRRProcessingRecipes {
             Data d = data.ns("reactingreactions");
             // Steel without gas, so it stays on Create's mixer: the Reaction Chamber (gas reactions only) needs steel casing,
             // so steel itself must not depend on the chamber. The oxygen route (pig_iron in the chamber) is the faster one.
+            // Pig iron is iron melted down with coke, as in a blast furnace: every steel route starts at the Airless Oven.
+            // Drilled crimsite comes out as dust, which works too (or is kept for titanium).
+            for (String[] ore : new String[][] {{"pig_iron", "minecraft:iron_ingot"}, {"pig_iron_from_crimsite", "create:crimsite"},
+                    {"pig_iron_from_crimsite_dust", "reactingreactions:crimsite_dust"}}) {
+                d.recipe("mixing/" + ore[0], "create:mixing")
+                        .heat("heated")
+                        .time(200)
+                        .in(x(2, ore[1]), "reactingreactions:coal_coke")
+                        .out("reactingreactions:pig_iron", 2);
+            }
             d.recipe("mixing/steel_from_coke", "create:mixing")
                     .heat("superheated")
                     .time(400)
@@ -171,7 +181,7 @@ final class CRRProcessingRecipes {
                 .fluidOut("reactingreactions:coolant", 1000);
             d.recipe("mixing/silica", "create:mixing")
                             .heat("superheated")
-                            .in(x(2, "minecraft:sand"), fluid("reactingreactions:solvent", 250))
+                            .in(x(2, "minecraft:sand"), fluid("reactingreactions:solvent", 50))
                 .out("reactingreactions:silica", 2);
             // Beryllium and chromium by acid digestion of ore dusts, for the gem recipes.
             d.recipe("mixing/beryllium_oxide", "create:mixing")
@@ -235,7 +245,7 @@ final class CRRProcessingRecipes {
             // Superphosphate, the first chemical fertilizer: bone meal digested in sulfuric acid.
             d.recipe("mixing/superphosphate", "create:mixing")
                             .in(x(3, "minecraft:bone_meal"), fluid("reactingreactions:sulfuric_acid", 250))
-                .out("reactingreactions:fertilizer", 2);
+                .out("reactingreactions:super_bone_meal", 2);
             // Amethyst is quartz: milled, it is silica.
             d.recipe("milling/amethyst_shard", "create:milling")
                             .time(100)
@@ -275,14 +285,11 @@ final class CRRProcessingRecipes {
                             .in(x(3, "create:cinder_flour"))
                 .out("reactingreactions:sulfur_dust");
             // Snow and ice melt into near-pure water.
+            // Blue ice, being a chore to gather, keeps this as costly as the alum and bleach routes.
             d.recipe("mixing/purified_water_from_ice", "create:mixing")
                             .heat("heated")
-                            .in("minecraft:ice")
+                            .in("minecraft:blue_ice")
                 .fluidOut("reactingreactions:purified_water", 1000);
-            d.recipe("mixing/purified_water_from_snow", "create:mixing")
-                            .heat("heated")
-                            .in("minecraft:snow_block")
-                .fluidOut("reactingreactions:purified_water", 500);
             // Hydrothermal quartz: silica regrown in hot water, as industrial quartz is.
             d.recipe("mixing/synthetic_quartz", "create:mixing")
                             .heat("superheated")

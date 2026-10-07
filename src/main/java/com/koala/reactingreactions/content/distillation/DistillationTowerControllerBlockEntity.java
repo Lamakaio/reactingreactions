@@ -76,6 +76,11 @@ public class DistillationTowerControllerBlockEntity extends MultiblockController
         return hasHeat(candidate.getRequiredHeat());
     }
 
+    @Override
+    protected String whyNotNow(DistillationRecipe recipe) {
+        return heatShortfall(recipe.getRequiredHeat());
+    }
+
     /** When several recipes can run, the hottest one wins: superheated variants are the faster ones. */
     @Override
     protected int recipeBonus(DistillationRecipe candidate) {

@@ -2,6 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
+    "C": {
+      "item": "reactingreactions:steel_casing"
+    },
     "G": {
       "item": "reactingreactions:reinforced_glass"
     },
@@ -10,8 +13,9 @@
     }
   },
   "pattern": [
-    "S",
-    "G"
+    " S ",
+    "GCG",
+    " S "
   ],
   "result": {
     "count": 4,

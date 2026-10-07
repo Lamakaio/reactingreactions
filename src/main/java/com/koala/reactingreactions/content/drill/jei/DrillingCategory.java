@@ -1,6 +1,7 @@
 package com.koala.reactingreactions.content.drill.jei;
 
 import com.koala.reactingreactions.ReactingReactions;
+import com.koala.reactingreactions.content.multiblock.jei.MultiblockCategory;
 import com.koala.reactingreactions.content.multiblock.jei.MultiblockPreviewRenderer;
 import com.koala.reactingreactions.content.toxic.ToxicityJei;
 import com.koala.reactingreactions.registry.CRRBlocks;
@@ -65,7 +66,7 @@ public class DrillingCategory implements IRecipeCategory<DrillingRecipe> {
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, DrillingRecipe recipe, IFocusGroup focuses) {
-        MultiblockPreviewRenderer.addSideSlots(builder, recipe.preview());
+        MultiblockCategory.addSideSlots(builder, recipe.preview());
         builder.addSlot(RecipeIngredientRole.INPUT, 12, OY + 8).setBackground(slot, -1, -1).addItemStack(recipe.vein());
         builder.addSlot(RecipeIngredientRole.CATALYST, 36, OY + 8).setBackground(slot, -1, -1).addItemStack(recipe.head());
         builder.addSlot(RecipeIngredientRole.INPUT, 60, OY + 8).setBackground(slot, -1, -1)

@@ -6,7 +6,9 @@ import com.simibubi.create.AllEnchantments;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.SimpleFluidContent;
 
@@ -31,6 +33,18 @@ public interface FluidTankHolder {
     }
 
     boolean acceptsFluid(FluidStack stack);
+
+    /** The one fluid its tank takes. */
+    Fluid tankFluid();
+
+    /** A stack of {@code item} with its tank full. */
+    static ItemStack filled(Item item) {
+        ItemStack stack = new ItemStack(item);
+        if (item instanceof FluidTankHolder holder) {
+            setContents(stack, new FluidStack(holder.tankFluid(), holder.tankCapacityMb(stack)));
+        }
+        return stack;
+    }
 
     /** Always shown, even empty */
     default boolean isTankBarVisible(ItemStack stack) {

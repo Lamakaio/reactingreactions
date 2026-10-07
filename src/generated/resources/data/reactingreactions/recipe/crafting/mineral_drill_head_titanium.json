@@ -2,6 +2,9 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
     "P": {
       "item": "reactingreactions:drill_pipe"
     },
@@ -10,9 +13,8 @@
     }
   },
   "pattern": [
-    "T",
-    "P",
-    "T"
+    "TNT",
+    " P "
   ],
   "result": {
     "count": 1,

@@ -4,11 +4,9 @@ import com.koala.reactingreactions.ReactingReactions;
 import com.koala.reactingreactions.content.electrolysis.SmallElectrolyserBlockEntity;
 import com.koala.reactingreactions.content.electrolysis.recipe.ElectrolysisRecipe;
 import com.koala.reactingreactions.content.reaction.FermentationBarrelBlockEntity;
+import com.koala.reactingreactions.content.reaction.SmallReactionChamberBlockEntity;
 import com.koala.reactingreactions.content.reaction.recipe.ReactionRecipe;
 import com.koala.reactingreactions.registry.CRRRecipeTypes;
-
-import mezz.jei.api.constants.VanillaTypes;
-import mezz.jei.api.registration.IRecipeRegistration;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -27,8 +25,8 @@ import java.util.Set;
 /**
  * Information pages: only for Rich Veins (how they spawn and what they do), the multiblocks (how they are built; see
  * {@link InfoPageTexts}) and the single-block machines (what they can and cannot make, read from the live recipes).
- * {@link #build()} produces the pages as plain data, independent of JEI or EMI; {@link #register} attaches them
- * through JEI's own ingredient-info API, and the EMI plugin builds its own {@code EmiInfoRecipe} from the same data.
+ * {@link #build()} produces the pages as plain data, which the JEI and EMI plugins each attach their own way. Nothing here may
+ * touch JEI or EMI: either can be installed without the other.
  */
 public final class InfoPages {
     /** One information page: the item(s) it's attached to, and its text as a list of lines (an empty {@link Component} is a blank line). */
@@ -38,15 +36,6 @@ public final class InfoPages {
     private InfoPages() {
     }
 
-    public static void register(IRecipeRegistration registration) {
-        for (Page page : build()) {
-            if (!page.items().isEmpty()) {
-                registration.addIngredientInfo(page.items(), VanillaTypes.ITEM_STACK, page.lines().toArray(new Component[0]));
-            }
-        }
-    }
-
-    /** The same pages as {@link #register}, as plain data for EMI. */
     public static List<Page> build() {
         List<Page> pages = new ArrayList<>();
         for (InfoPageTexts.Page page : InfoPageTexts.PAGES) {
@@ -78,6 +67,13 @@ public final class InfoPages {
             (FermentationBarrelBlockEntity.canRun(holder.value()) ? barrelCan : barrelCannot).addAll(outputs(holder.value().getFluidResults(), holder.value().getRollableResults().stream().map(o -> o.getStack()).toList()));
         }
         pages.add(new Page(items(List.of("fermentation_barrel")), machinePage("fermentation_barrel", barrelCan, barrelCannot)));
+
+        Set<String> chamberCan = new LinkedHashSet<>();
+        Set<String> chamberCannot = new LinkedHashSet<>();
+        for (RecipeHolder<ReactionRecipe> holder : recipes.getAllRecipesFor(CRRRecipeTypes.REACTION.get())) {
+            (SmallReactionChamberBlockEntity.canRun(holder.value()) ? chamberCan : chamberCannot).addAll(outputs(holder.value().getFluidResults(), holder.value().getRollableResults().stream().map(o -> o.getStack()).toList()));
+        }
+        pages.add(new Page(items(List.of("small_reaction_chamber")), machinePage("small_reaction_chamber", chamberCan, chamberCannot)));
         return pages;
     }
 

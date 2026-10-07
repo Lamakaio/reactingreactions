@@ -19,9 +19,9 @@
     }
   },
   "pattern": [
-    " KH",
+    "HKH",
     "KSK",
-    " K "
+    "HKH"
   ],
   "result": {
     "count": 1,

@@ -21,6 +21,9 @@ import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /** Blockstate and model generators shared by the block registrations. */
 public final class CRRBlockModels {
     private static final ModelFile BLOCK = new ModelFile.UncheckedModelFile(ResourceLocation.withDefaultNamespace("block/block"));
@@ -30,6 +33,14 @@ public final class CRRBlockModels {
 
     public static <T extends Block> NonNullBiConsumer<DataGenContext<Block, T>, RegistrateBlockstateProvider> of(ModelMaker maker) {
         return (ctx, p) -> p.simpleBlock(ctx.get(), maker.make(ctx.getName(), p));
+    }
+
+    /** One model in four random turns, whatever the state. */
+    public static <T extends Block> NonNullBiConsumer<DataGenContext<Block, T>, RegistrateBlockstateProvider> randomlyTurned(ModelMaker maker) {
+        return (ctx, p) -> {
+            ModelFile model = maker.make(ctx.getName(), p);
+            p.getVariantBuilder(ctx.get()).forAllStates(state -> ConfiguredModel.allYRotations(model, 0, false));
+        };
     }
 
     /** Only the block's own (plain) model: its blockstate, with formed pieces, comes from {@code tools/machine_models.py}. */
@@ -190,6 +201,42 @@ public final class CRRBlockModels {
             BlockModelBuilder model = builder(p, name, texture).texture("t", texture);
             for (int[] b : boxes) {
                 model.element().from(b[0], b[1], b[2]).to(b[3], b[4], b[5]).allFaces((d, f) -> f.texture("#t")).end();
+            }
+            return model;
+        };
+    }
+
+    /**
+     * Flat pebbles lying on the floor, each {cx, cz, width, depth, height, y angle, raised}: a slab, with a smaller one on top when
+     * raised is 1. Each pebble takes its own patch of the texture.
+     */
+    public static ModelMaker pebbles(ResourceLocation texture, float[][] pebbles) {
+        return (name, p) -> {
+            BlockModelBuilder model = builder(p, name, texture).texture("t", texture);
+            for (int i = 0; i < pebbles.length; i++) {
+                float[] q = pebbles[i];
+                float x = q[0], z = q[1], w = q[2], d = q[3], h = q[4];
+                List<float[]> slabs = new ArrayList<>();
+                slabs.add(new float[] {x - w / 2, 0, z - d / 2, x + w / 2, h, z + d / 2});
+                if (q[6] > 0) {
+                    slabs.add(new float[] {x - w / 2 + 1, h, z - d / 2 + 1, x + w / 2 - 1.5F, h + 1, z + d / 2 - 0.5F});
+                }
+                float v = (i * 5) % 12;
+                for (float[] b : slabs) {
+                    float sx = b[3] - b[0], sy = b[4] - b[1], sz = b[5] - b[2];
+                    var element = model.element().from(b[0], b[1], b[2]).to(b[3], b[4], b[5]).allFaces((dir, f) -> {
+                        f.texture("#t");
+                        switch (dir) {
+                            case UP, DOWN -> f.uvs(b[0], b[2], b[3], b[5]);
+                            case NORTH, SOUTH -> f.uvs(b[0], v, b[0] + sx, v + sy);
+                            default -> f.uvs(b[2], v, b[2] + sz, v + sy);
+                        }
+                    });
+                    if (q[5] != 0) {
+                        element.rotation().angle(q[5]).axis(Direction.Axis.Y).origin(x, 0, z).end();
+                    }
+                    element.end();
+                }
             }
             return model;
         };

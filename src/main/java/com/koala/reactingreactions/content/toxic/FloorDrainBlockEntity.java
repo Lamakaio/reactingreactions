@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.Half;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.capabilities.Capabilities;
@@ -65,6 +66,10 @@ public class FloorDrainBlockEntity extends SmartBlockEntity implements IHaveGogg
 
     /** The pool runs to the drain and swirls into its grate, with a gurgle. */
     private void drainEffects(ServerLevel level, LeakPoolEntity pool, int taken) {
+        // An empty fluid cannot be sent in a particle packet: the client would be disconnected.
+        if (pool.getFluid() == Fluids.EMPTY) {
+            return;
+        }
         var particle = new FluidParticleData(AllParticleTypes.FLUID_PARTICLE.get(), new FluidStack(pool.getFluid(), 1000));
         Vec3 grate = new Vec3(worldPosition.getX() + 0.5, worldPosition.getY() + (getBlockState().getValue(BlockStateProperties.HALF) == Half.TOP ? 1.02 : 0.2),
                 worldPosition.getZ() + 0.5);

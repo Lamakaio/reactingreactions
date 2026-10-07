@@ -61,9 +61,9 @@ public class DerrickControllerBlockEntity extends KineticBlockEntity {
 
     /** The Rich Vein blocks a steel bit can drill, and the dust each one yields. */
     private static final Map<Block, ItemStack> STEEL_ROCKS = new LinkedHashMap<>();
-    /** The Rich Vein blocks a titanium bit can drill (the richer set), and the dust each one yields. */
-    private static final Map<Block, ItemStack> TITANIUM_ROCKS = new LinkedHashMap<>();
-    /** The diamond bit drills every rock. */
+    /** The Rich Vein blocks a diamond bit can drill (the richer set), and the dust each one yields. */
+    private static final Map<Block, ItemStack> MID_ROCKS = new LinkedHashMap<>();
+    /** The titanium bit drills every rock, faster. */
     private static final Map<Block, ItemStack> ALL_ROCKS = new LinkedHashMap<>();
 
     static {
@@ -71,12 +71,12 @@ public class DerrickControllerBlockEntity extends KineticBlockEntity {
         STEEL_ROCKS.put(CRRBlocks.RICH_GRANITE_VEIN.get(), new ItemStack(CRRItems.GRANITE_DUST.get()));
         STEEL_ROCKS.put(CRRBlocks.RICH_DIORITE_VEIN.get(), new ItemStack(CRRItems.DIORITE_DUST.get()));
         STEEL_ROCKS.put(CRRBlocks.RICH_SCORIA_VEIN.get(), new ItemStack(CRRItems.SCORIA_DUST.get()));
-        TITANIUM_ROCKS.put(CRRBlocks.RICH_ASURINE_VEIN.get(), new ItemStack(CRRItems.ASURINE_DUST.get()));
-        TITANIUM_ROCKS.put(CRRBlocks.RICH_OCHRUM_VEIN.get(), new ItemStack(CRRItems.OCHRUM_DUST.get()));
-        TITANIUM_ROCKS.put(CRRBlocks.RICH_VERIDIUM_VEIN.get(), new ItemStack(CRRItems.VERIDIUM_DUST.get()));
-        TITANIUM_ROCKS.put(CRRBlocks.RICH_CRIMSITE_VEIN.get(), new ItemStack(CRRItems.CRIMSITE_DUST.get()));
+        MID_ROCKS.put(CRRBlocks.RICH_ASURINE_VEIN.get(), new ItemStack(CRRItems.ASURINE_DUST.get()));
+        MID_ROCKS.put(CRRBlocks.RICH_OCHRUM_VEIN.get(), new ItemStack(CRRItems.OCHRUM_DUST.get()));
+        MID_ROCKS.put(CRRBlocks.RICH_VERIDIUM_VEIN.get(), new ItemStack(CRRItems.VERIDIUM_DUST.get()));
+        MID_ROCKS.put(CRRBlocks.RICH_CRIMSITE_VEIN.get(), new ItemStack(CRRItems.CRIMSITE_DUST.get()));
         ALL_ROCKS.putAll(STEEL_ROCKS);
-        ALL_ROCKS.putAll(TITANIUM_ROCKS);
+        ALL_ROCKS.putAll(MID_ROCKS);
     }
 
     private SmartFluidTankBehaviour oil;
@@ -257,7 +257,7 @@ public class DerrickControllerBlockEntity extends KineticBlockEntity {
             BlockPos head = DrillRig.headPos(worldPosition, length);
             var rocks = switch (kind) {
                 case MINERAL_STEEL -> STEEL_ROCKS;
-                case MINERAL_TITANIUM -> TITANIUM_ROCKS;
+                case MINERAL_DIAMOND -> MID_ROCKS;
                 default -> ALL_ROCKS;
             };
             Block found = null;
@@ -356,7 +356,7 @@ public class DerrickControllerBlockEntity extends KineticBlockEntity {
                 lubricant.getPrimaryHandler().drain(1, IFluidHandler.FluidAction.EXECUTE);
             }
         } else {
-            double bitSpeed = headKind == HeadKind.MINERAL_DIAMOND ? DrillRates.DIAMOND_SPEED : 1.0;
+            double bitSpeed = headKind == HeadKind.MINERAL_TITANIUM ? DrillRates.TITANIUM_SPEED : 1.0;
             accumulator += BASE_ITEM_RATE * bitSpeed * (Math.min(rpm, MAX_RPM) / MIN_RPM) * Math.min(1.0, richness / (double) FULL_RICHNESS);
             int whole = (int) accumulator;
             if (whole > 0) {

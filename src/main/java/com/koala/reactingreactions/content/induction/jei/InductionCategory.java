@@ -1,6 +1,7 @@
 package com.koala.reactingreactions.content.induction.jei;
 
 import com.koala.reactingreactions.ReactingReactions;
+import com.koala.reactingreactions.content.multiblock.jei.MultiblockCategory;
 import com.koala.reactingreactions.content.multiblock.jei.MultiblockPreview;
 import com.koala.reactingreactions.content.multiblock.jei.MultiblockPreviewRenderer;
 import com.koala.reactingreactions.registry.CRRBlocks;
@@ -62,7 +63,7 @@ public class InductionCategory implements IRecipeCategory<InductionCategory.Info
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, Info recipe, IFocusGroup focuses) {
-        MultiblockPreviewRenderer.addSideSlots(builder, recipe.preview());
+        MultiblockCategory.addSideSlots(builder, recipe.preview());
     }
 
     @Override

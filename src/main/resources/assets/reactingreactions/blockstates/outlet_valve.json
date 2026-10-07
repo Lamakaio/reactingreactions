@@ -1,0 +1,25 @@
+{
+ "variants": {
+  "facing=north": {
+   "model": "reactingreactions:block/outlet_valve"
+  },
+  "facing=east": {
+   "model": "reactingreactions:block/outlet_valve",
+   "y": 90
+  },
+  "facing=south": {
+   "model": "reactingreactions:block/outlet_valve",
+   "y": 180
+  },
+  "facing=west": {
+   "model": "reactingreactions:block/outlet_valve",
+   "y": 270
+  },
+  "facing=up": {
+   "model": "reactingreactions:block/outlet_valve"
+  },
+  "facing=down": {
+   "model": "reactingreactions:block/outlet_valve"
+  }
+ }
+}

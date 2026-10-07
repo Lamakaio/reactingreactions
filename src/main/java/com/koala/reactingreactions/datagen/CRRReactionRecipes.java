@@ -41,10 +41,11 @@ final class CRRReactionRecipes {
                 .outChance("reactingreactions:rare_earth_dust", 0.35)
                 .rpm(64, 128);
         // Recipes making ethanol or diesel get a twin making Create Diesel Generators' own; inputs accept its fluids through the common tags.
+        // The bio route to plastics: kept about as costly as cracking gas from oil, since sugar is so easy to farm.
         d.recipe("reaction_recipe/ethanol_dehydration", "reactingreactions:reaction_recipe")
-                .heat("heated")
+                .heat("superheated")
                 .in(fluid("reactingreactions:ethanol", 500), fluid("reactingreactions:sulfuric_acid", 250))
-                .fluidOut("reactingreactions:ethylene", 500)
+                .fluidOut("reactingreactions:ethylene", 250)
                 .fluidOut("reactingreactions:carbon_dioxide", 250)
                 .out("reactingreactions:sulfur_dust")
                 .rpm(24, 64);
@@ -62,7 +63,7 @@ final class CRRReactionRecipes {
         d.recipe("reaction_recipe/fertilizer", "reactingreactions:reaction_recipe")
                 .heat("heated")
                 .in(fluid("reactingreactions:ammonia", 500), fluid("reactingreactions:carbon_dioxide", 250))
-                .out("reactingreactions:fertilizer", 2)
+                .out("reactingreactions:super_bone_meal", 2)
                 .rpm(24, 64);
         d.recipe("reaction_recipe/fischer_tropsch", "reactingreactions:reaction_recipe")
                 .heat("heated")
@@ -124,12 +125,38 @@ final class CRRReactionRecipes {
                 .in(fluid("reactingreactions:ethylene", 500), fluid("reactingreactions:ammonia", 250))
                 .fluidOut("reactingreactions:liquid_nylon", 500)
                 .rpm(24, 64);
+        // Naphtha cracks to the light alkanes, not straight to the olefins: plastics go through the gas route's crackers.
         d.recipe("reaction_recipe/naphtha", "reactingreactions:reaction_recipe")
                 .heat("heated")
                 .in(fluid("reactingreactions:naphtha", 500), fluid("reactingreactions:steam", 250))
-                .fluidOut("reactingreactions:ethylene", 250)
-                .fluidOut("reactingreactions:propylene", 250)
+                .fluidOut("reactingreactions:ethane", 150)
+                .fluidOut("reactingreactions:propane", 100)
                 .rpm(24, 64);
+        // The main way to plastics: steam cracking ethane, dehydrogenating propane.
+        d.recipe("reaction_recipe/ethane_cracking", "reactingreactions:reaction_recipe")
+                .heat("superheated")
+                .in(fluid("reactingreactions:ethane", 500), fluid("reactingreactions:steam", 250))
+                .fluidOut("reactingreactions:ethylene", 400)
+                .fluidOut("reactingreactions:hydrogen", 200)
+                .rpm(64, 128);
+        d.recipe("reaction_recipe/propane_dehydrogenation", "reactingreactions:reaction_recipe")
+                .heat("superheated")
+                .in(fluid("reactingreactions:propane", 500))
+                .fluidOut("reactingreactions:propylene", 400)
+                .fluidOut("reactingreactions:hydrogen", 400)
+                .rpm(64, 128);
+        // More ethane: butane split with hydrogen, and methane coupled with oxygen.
+        d.recipe("reaction_recipe/butane_hydrocracking", "reactingreactions:reaction_recipe")
+                .heat("heated")
+                .in(fluid("reactingreactions:butane", 250), fluid("reactingreactions:hydrogen", 250))
+                .fluidOut("reactingreactions:ethane", 500)
+                .rpm(24, 64);
+        d.recipe("reaction_recipe/methane_coupling", "reactingreactions:reaction_recipe")
+                .heat("superheated")
+                .in(fluid("reactingreactions:methane", 500), fluid("reactingreactions:oxygen", 250))
+                .fluidOut("reactingreactions:ethane", 250)
+                .fluidOut("minecraft:water", 250)
+                .rpm(64, 128);
         d.recipe("reaction_recipe/nitric_acid", "reactingreactions:reaction_recipe")
                 .heat("heated")
                 .in(fluid("reactingreactions:ammonia", 500), fluid("reactingreactions:oxygen", 500))
@@ -212,10 +239,12 @@ final class CRRReactionRecipes {
                 .in(fluid("reactingreactions:carbon_monoxide", 500), fluid("reactingreactions:oxygen", 250))
                 .fluidOut("reactingreactions:carbon_dioxide", 500)
                 .rpm(24, 64);
+        // Sabatier: 100 mB of methane (~1.8 MJ in the best engine) from a bucket of hydrogen (4 MJ of electrolysis, ~2 MJ burnt).
+        // Any more would make free energy from free CO2, or, after nickel reforming (2000 hydrogen per 250 methane), more methane.
         d.recipe("reaction_recipe/sabatier", "reactingreactions:reaction_recipe")
                 .heat("heated")
                 .in(fluid("reactingreactions:carbon_dioxide", 250), fluid("reactingreactions:hydrogen", 1000))
-                .fluidOut("reactingreactions:methane", 250)
+                .fluidOut("reactingreactions:methane", 100)
                 .fluidOut("minecraft:water", 500)
                 .rpm(24, 64);
         d.recipe("reaction_recipe/scoria_dust", "reactingreactions:reaction_recipe")
@@ -225,12 +254,12 @@ final class CRRReactionRecipes {
                 .outChance("reactingreactions:sulfur_dust", 0.6)
                 .rpm(64, 128);
         d.recipe("reaction_recipe/scrub_hydrocarbon_gas", "reactingreactions:reaction_recipe")
-                .in(fluid("reactingreactions:contaminated_hydrocarbon_gas", 500), fluid("reactingreactions:solvent", 250))
+                .in(fluid("reactingreactions:contaminated_hydrocarbon_gas", 500), fluid("reactingreactions:solvent", 100))
                 .fluidOut("reactingreactions:hydrocarbon_gas", 500)
                 .fluidOut("reactingreactions:sulfuric_acid", 100)
                 .rpm(8, 24);
         d.recipe("reaction_recipe/scrub_methane", "reactingreactions:reaction_recipe")
-                .in(fluid("reactingreactions:contaminated_methane", 500), fluid("reactingreactions:solvent", 250))
+                .in(fluid("reactingreactions:contaminated_methane", 500), fluid("reactingreactions:solvent", 100))
                 .fluidOut("reactingreactions:methane", 500)
                 .fluidOut("reactingreactions:sulfuric_acid", 100)
                 .rpm(8, 24);
@@ -318,7 +347,7 @@ final class CRRReactionRecipes {
                 .time(1200)
                 .in(x(4, "#reactingreactions:plant_matter"), fluid("minecraft:water", 500))
                 .fluidOut("reactingreactions:methane", 250)
-                .out("reactingreactions:fertilizer")
+                .out("reactingreactions:super_bone_meal")
                 .dieselGeneratorsTwin("createdieselgenerators:bulk_fermenting");
         d.recipe("reaction_recipe/white_vinegar", "reactingreactions:reaction_recipe")
                 .time(1200)

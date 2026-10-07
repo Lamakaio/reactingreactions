@@ -8,17 +8,17 @@
   "burner_multiplier": 1.4,
   "fluid": "reactingreactions:hydrogen",
   "huge": {
-    "burn_rate": 0.05,
+    "burn_rate": 0.5,
     "speed": 224.0,
     "strength": 20480.0
   },
   "modular": {
-    "burn_rate": 0.05,
+    "burn_rate": 0.5,
     "speed": 96.0,
     "strength": 10240.0
   },
   "normal": {
-    "burn_rate": 0.05,
+    "burn_rate": 0.5,
     "speed": 96.0,
     "strength": 8192.0
   },

@@ -17,12 +17,12 @@
   "min_rpm": 24,
   "results": [
     {
-      "amount": 250,
-      "id": "reactingreactions:ethylene"
+      "amount": 150,
+      "id": "reactingreactions:ethane"
     },
     {
-      "amount": 250,
-      "id": "reactingreactions:propylene"
+      "amount": 100,
+      "id": "reactingreactions:propane"
     }
   ]
 }

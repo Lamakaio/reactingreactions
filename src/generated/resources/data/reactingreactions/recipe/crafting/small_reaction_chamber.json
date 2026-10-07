@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "create:framed_glass"
+    },
+    "K": {
+      "item": "create:whisk"
+    },
+    "W": {
+      "item": "reactingreactions:reaction_chamber_wall"
+    }
+  },
+  "pattern": [
+    "K",
+    "G",
+    "W"
+  ],
+  "result": {
+    "count": 1,
+    "id": "reactingreactions:small_reaction_chamber"
+  }
+}

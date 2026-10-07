@@ -19,9 +19,9 @@
     }
   },
   "pattern": [
-    " BH",
+    "HBH",
     "BSB",
-    " B "
+    "HBH"
   ],
   "result": {
     "count": 1,

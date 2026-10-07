@@ -107,9 +107,9 @@ public class CRRFluids {
         return (GASES.contains(name) ? CRRRegistrate.REGISTRATE.gasFluid(name, color) : CRRRegistrate.REGISTRATE.liquidFluid(name, color))
                 .lang(displayName(name))
                 .bucket()
-                .lang(displayName(name) + (GASES.contains(name) ? " Tank" : " Bucket"))
+                .lang(displayName(name) + " Bucket")
                 .model(GASES.contains(name) ? CRRFluids::gasBucketModel : CRRFluids::liquidBucketModel)
-                // Layer 1 of the bucket/canister model (the fluid mask or label band) is tinted with the fluid colour.
+                // Layer 1 of the bucket model (the fluid mask, or a gas bucket's gas) is tinted with the fluid colour.
                 .color(() -> () -> (stack, tintIndex) -> tintIndex == 1 ? 0xFF000000 | color : 0xFFFFFFFF)
                 .tag(ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", "buckets/" + name)))
                 .build()
@@ -128,12 +128,12 @@ public class CRRFluids {
                 .texture("layer1", ResourceLocation.fromNamespaceAndPath("neoforge", "item/mask/bucket_fluid"));
     }
 
-    /** A gas's tank: the canister with its label band tinted with the gas colour. */
+    /** A gas's bucket: the water bucket upside down (UpturnedBucketSprites), its water tinted with the gas colour. */
     private static <T extends Item> void gasBucketModel(DataGenContext<Item, T> ctx,
             RegistrateItemModelProvider prov) {
         prov.withExistingParent(ctx.getName(), "item/generated")
-                .texture("layer0", prov.modLoc("item/gas_canister"))
-                .texture("layer1", prov.modLoc("item/gas_canister_band"));
+                .texture("layer0", prov.modLoc("item/gas_bucket"))
+                .texture("layer1", prov.modLoc("item/gas_bucket_gas"));
     }
 
     private static String capitalize(String name) {

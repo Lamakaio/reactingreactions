@@ -52,6 +52,9 @@ An addon to Create and Create Aeronautics: oil and rock drilling, chemistry mach
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
 [[mixins]]
 config="${mod_id}.mixins.json"
+# Mixins into optional mods (JEI, Electro Energetics): skipped when the mod is absent.
+[[mixins]]
+config="${mod_id}.compat.mixins.json"
 
 # The [[accessTransformers]] block allows you to declare where your AT file is.
 # If this block is omitted, a fallback attempt will be made to load an AT from META-INF/accesstransformer.cfg
@@ -99,6 +102,14 @@ file="META-INF/accesstransformer.cfg"
     # never heats up, and a couple of recipes substitute copper nuggets for its resistor/capacitor
     # (see ElectroEnergeticsCompat, checked via ModList before touching any of its API).
     modId="electroenergetics"
+    type="optional"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    # Optional: we load after it, so our recipes at its ids (crude oil distillation, the steel engine
+    # recipes) replace its own.
+    modId="createdieselgenerators"
     type="optional"
     ordering="AFTER"
     side="BOTH"

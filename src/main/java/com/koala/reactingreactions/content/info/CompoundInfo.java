@@ -44,7 +44,7 @@ public final class CompoundInfo {
             aerozine | N2H4 + (CH3)2N2H2 | Rocket propellant. Toxic, explosive.
             ammonia | NH3 | Base of nitric acid, fertilizer and nylon.
             bleach | NaOCl | From brine. Cleans and whitens.
-            butane | C4H10 | Light petroleum gas.
+            butane | C4H10 | Light petroleum gas. Hydrocracks into ethane.
             carbon_dioxide | CO2 | Byproduct of reforming and fermentation.
             carbon_monoxide | CO | Poisonous gas from the Airless Oven.
             contaminated_hydrocarbon_gas | C1-C4 + H2S | Sour gas. Scrub with solvent.
@@ -52,12 +52,12 @@ public final class CompoundInfo {
             coolant | C2H5OH + H2O (aq) | Cools the drills. Water and ethanol.
             crude_oil | CnH2n+2 (n = 5-40) | Pumped from Rich Oil Veins. Distill it.
             diesel | C12H26 | Heavy fuel.
-            ethane | C2H6 | Light gas. Becomes ethanol.
+            ethane | C2H6 | Light gas. Cracks into ethylene.
             ethanol | C2H5OH | From fermentation or ethane.
             ethylene | C2H4 | Plastic building block.
             helium | He | Lifting noble gas.
             hydrocarbon_gas | C1-C4 mix | Distills into light gases.
-            hydrogen | H2 | Clean fuel. Explosive.
+            hydrogen | H2 | A poor fuel, storing electrolysis' energy at a loss. Explosive.
             liquid_hdpe | (C2H4)n | Molten polyethylene.
             liquid_nylon | [NH(CH2)6NHCO(CH2)4CO]n | Molten nylon 6,6.
             liquid_polypropylene | (C3H6)n | Molten polypropylene.
@@ -68,13 +68,13 @@ public final class CompoundInfo {
             methane | CH4 | Natural gas. Reforms into hydrogen.
             mineral_oil | CnH2n+2 (n = 15-40) | Lubricates the Derrick.
             drill_grease | ~CnH2n+2 + MgO | Mineral oil thickened with magma cream or wax. Drill coolant that lasts four times longer.
-            naphtha | C5H12-C10H22 | Cracks into ethylene and propylene.
+            naphtha | C5H12-C10H22 | Cracks into ethane and propane.
             compressed_air | N2 + O2 | Air from a spinning Create backtank. Distils into nitrogen and oxygen.
             neon | Ne | Noble gas.
             nitric_acid | HNO3 | Corrosive. Makes ammonium nitrate.
             nitrogen | N2 | Inert gas. Feeds ammonia.
             oxygen | O2 | Drives oxidation reactions.
-            propane | C3H8 | Light petroleum gas.
+            propane | C3H8 | Light petroleum gas. Cracks into propylene.
             propylene | C3H6 | Polypropylene building block.
             purified_water | H2O | Mineral-free water.
             resin | C20H30O2 | Plant resin. Base of varnish.
@@ -98,11 +98,10 @@ public final class CompoundInfo {
             borax | Na2B4O7·10H2O | Glass flux.
             bromine | Br2 | Fire retardant. Toxic.
             calcium_carbide | CaC2 | Makes acetylene with water.
-            coal_coke | C | Fuel and reducing agent.
+            coal_coke | C | Reducing agent: makes pig iron, the start of steel.
             crimsite_dust | ~FeTiO3 | Titanium ore.
             crushed_polymetallic_nodule | ~MnO2·(Ni,Cu,Co) | Refines into manganese and nickel.
             diorite_dust | ~CaAl2Si2O8 | For refractory bricks and grey paint.
-            fertilizer | CH4N2O | Feeds crops.
             granite_dust | ~KAlSi3O8·SiO2 | Refines into alumina.
             hdpe_pellets | (C2H4)n | Nine make a sheet.
             hdpe_sheet | (C2H4)n | Tough plastic.
@@ -135,7 +134,7 @@ public final class CompoundInfo {
             titanium_dioxide | TiO2 | White pigment.
             titanium_sheet | Ti | Rolled titanium.
             tuff_dust | ~(Fe,Ni)9S8 | Nickel and iron ore.
-            varnish | | Wood coating.
+            varnish | | Wood coating. Use on planks to varnish them, or on stripped wood to restore its bark.
             veridium_dust | ~CuFeS2 | Copper and iron ore.
             yeast | | Ferments sugar.
             incomplete_diamond | ~C+Ni | Carbon in a diamond-growth press cycle.
@@ -195,7 +194,6 @@ public final class CompoundInfo {
             magnesium_knuckle | | Sets hit targets on fire.
             racing_anklet | | Speed while sprinting.
             spring_boots | | Jump boost.
-            hdpe_bucket | (C2H4)n | Plastic bucket.
             titanium_helmet | Ti | Light, strong armour. Each piece worn adds to a set bonus: Speed, then Regeneration, then Resistance.
             titanium_chestplate | Ti | Light, strong armour. Each piece worn adds to a set bonus: Speed, then Regeneration, then Resistance.
             titanium_leggings | Ti | Light, strong armour. Each piece worn adds to a set bonus: Speed, then Regeneration, then Resistance.
@@ -220,14 +218,14 @@ public final class CompoundInfo {
             electrolysis_vat_wall | | Electrolysis Vat wall.
             fermentation_barrel | | Slow single-block fermenter.
             floor_drain | | Absorbs nearby leak pools into a tank.
-            gas_vent | | Releases piped gases into the air. Toxic ones pollute, flammable ones burn off near a flame.
+            gas_vent | | Releases gases into the air: piped ones, or a tank's over a bucket under full when placed on it. Toxic ones pollute, flammable ones burn off near a flame.
             gas_diffuser | | Fills envelopes with lifting gas.
             gold_steel_electrode | Au + Fe | Gold-plated steel electrode.
             graphite_electrode | C | Graphite electrode.
             lead_electrode | Pb | Electrowins zinc and copper from acid.
             mineral_drill_head_steel | | Drills tuff, scoria, granite and diorite veins. Needs coolant.
-            mineral_drill_head_titanium | | Drills asurine, crimsite, ochrum and veridium veins. Needs coolant.
-            mineral_drill_head_diamond | C | Drills every rock vein, twice as fast. Needs coolant.
+            mineral_drill_head_titanium | Ti | Drills every rock vein, twice as fast. Needs coolant.
+            mineral_drill_head_diamond | C | Drills asurine, crimsite, ochrum and veridium veins. Needs coolant.
             oil_drill_head | | Pumps from a Rich Oil Vein. Needs lubricant.
             anfo_charge | NH4NO3 + CnH2n+2 | Mining charge. Redstone sets it off, fire does not. Breaks blocks, spares creatures.
             oxygen_mask | | Breathes from a worn Create backtank: water breathing, no toxic air.
@@ -246,8 +244,10 @@ public final class CompoundInfo {
             plastic_pipe | (C2H4)n | A fluid pipe of HDPE: it never leaks.
             outlet_manifold | | Use on a formed Reaction Chamber, Electrolysis Vat or Airless Oven: one more output tank, and copper pipes on it.
             expansion_tank | | Mount on a formed Reaction Chamber, Electrolysis Vat or Airless Oven: +4000 mB in every tank.
-            machine_gauge | | Mount on a formed Reaction Chamber, Electrolysis Vat or Airless Oven: comparator signal of progress, or of output fill (wrench to switch).
-            gasket | | Use on a formed Reaction Chamber, Electrolysis Vat, Airless Oven or a Create Fluid Tank: it no longer leaks. Sneak with an empty hand to take it out.
+            machine_gauge | | Mount on a machine of this mod: comparator signal of progress, or of output fill (wrench to switch).
+            small_reaction_chamber | | A two-block Reaction Chamber: two fluids in, one out, at half speed. Takes a Gauge or an Outlet Valve.
+            gasket | | Use on a formed machine, or anything else that can leak (tanks, basins, pipes, pumps): it no longer leaks. Sneak with an empty hand to take it out.
+            outlet_valve | | Mount on a machine of this mod: pushes a chosen fluid out into what is in front of it, or along pipes, for free.
             circulation_pump | | Mount on a formed Reaction Chamber, Electrolysis Vat or Airless Oven and turn it: up to 50% faster recipes at 256 RPM.
             induction_heater_plate | Cu + Fe | A plate of an Induction Heater. Fill a rectangle, at least 3x3, with one connector.
             induction_heater_connector | Cu + Fe | Controls an Induction Heater and holds both wire terminals. Heat rises with voltage.

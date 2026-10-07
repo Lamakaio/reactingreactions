@@ -48,7 +48,8 @@ public class ElectrolysisVatControllerBlockEntity extends MultiblockControllerBl
     private BlockPos electrodeA;
     @Nullable
     private BlockPos electrodeB;
-    private final Voltmeter voltmeter = new Voltmeter();
+    /** Draws 20 A at a recipe's minimum voltage. */
+    private final Voltmeter voltmeter = new Voltmeter(20);
 
     public ElectrolysisVatControllerBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state, SPEC);
@@ -60,19 +61,21 @@ public class ElectrolysisVatControllerBlockEntity extends MultiblockControllerBl
     }
 
     /** Also needs its two terminals where the formed model draws their junction boxes. */
+    @Nullable
     @Override
-    protected boolean acceptsShape(HollowBoxScanner.Result found) {
+    protected String shapeRefusal(HollowBoxScanner.Result found) {
+        String refusal = super.shapeRefusal(found);
         MachineTiers.Fit fit = fit(found);
-        if (fit == null) {
-            return false;
+        if (refusal != null || fit == null) {
+            return refusal;
         }
         for (int[] terminal : TERMINALS[fit.index()]) {
             BlockPos at = MachineTiers.cell(found, fit, terminal[0], terminal[1], terminal[2]);
             if (!level.getBlockState(at).is(CRRBlocks.ELECTROLYSIS_VAT_TERMINAL.get())) {
-                return false;
+                return "Needs a Terminal in each end wall, beside its electrode column";
             }
         }
-        return true;
+        return null;
     }
 
     @Override
@@ -198,9 +201,36 @@ public class ElectrolysisVatControllerBlockEntity extends MultiblockControllerBl
                 && candidate.allowsElectrode(level.getBlockState(electrodeB).getBlock());
     }
 
+    /** Its size does not change the pace, but circulation pumps raise it (given the power to match). */
     @Override
     protected int duration(ElectrolysisRecipe recipe) {
-        return recipe.getProcessingDuration() > 0 ? recipe.getProcessingDuration() : 100;
+        int base = recipe.getProcessingDuration() > 0 ? recipe.getProcessingDuration() : 100;
+        return Math.max(1, Math.round(base / attachments.speedFactor()));
+    }
+
+    @Override
+    protected String whyNotNow(ElectrolysisRecipe recipe) {
+        return voltmeter.shortfall(recipe);
+    }
+
+    @Override
+    protected String whyNoWork(ElectrolysisRecipe recipe) {
+        return "Not enough power: " + voltmeter.shortfall(recipe);
+    }
+
+    @Override
+    protected String whyNotExtra(ElectrolysisRecipe recipe) {
+        return electrodeA == null || electrodeB == null ? "Needs two electrode columns" : "Needs other electrodes for this";
+    }
+
+    @Override
+    protected float workThisTick(ElectrolysisRecipe recipe) {
+        return voltmeter.workThisTick(recipe, duration(recipe));
+    }
+
+    /** The resistance the electrolyte presents to the circuit (ElectrolysisVatDevice). */
+    public double loadResistance() {
+        return voltmeter.loadResistance(recipe);
     }
 
     @Override

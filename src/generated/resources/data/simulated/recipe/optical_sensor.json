@@ -22,8 +22,8 @@
     }
   },
   "pattern": [
-    " AT",
-    " C ",
+    " A ",
+    "TCT",
     " B "
   ],
   "result": {

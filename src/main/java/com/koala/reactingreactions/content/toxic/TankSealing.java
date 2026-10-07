@@ -1,9 +1,17 @@
 package com.koala.reactingreactions.content.toxic;
 
 import com.koala.reactingreactions.registry.CRRItems;
+import com.koala.reactingreactions.content.multiblock.MultiblockControllerBlockEntity;
+import com.koala.reactingreactions.content.reaction.SmallReactionChamberBlock;
+import com.simibubi.create.content.fluids.FluidTransportBehaviour;
 import com.simibubi.create.content.fluids.tank.FluidTankBlockEntity;
+import com.simibubi.create.foundation.blockEntity.SmartBlockEntity;
+import com.simibubi.create.foundation.blockEntity.behaviour.BlockEntityBehaviour;
+import com.simibubi.create.foundation.blockEntity.behaviour.fluid.SmartFluidTankBehaviour;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -11,17 +19,22 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
+
 /**
- * A Gasket on a Create Fluid Tank: the whole tank (its controller holds the flag) stops leaking. Used on the tank it goes in;
- * sneaking with an empty hand takes it back out, and breaking the controller drops it.
+ * A Gasket on anything that leaks (tanks, basins, pipes, pumps, valves, other mods' machines built on Create's fluid behaviours):
+ * it stops leaking. For a Create Fluid Tank, its controller holds the flag for the whole tank. Used on the block it goes in; sneaking with an empty hand takes it
+ * back out, and breaking the block drops it.
  */
 public final class TankSealing {
-    /** Mixed into Create's Fluid Tank block entity (FluidTankBlockEntityMixin). */
+    /** Mixed into every Create smart block entity (SmartBlockEntityMixin). */
     public interface Sealable {
         boolean crr$isSealed();
 
@@ -31,20 +44,44 @@ public final class TankSealing {
     private TankSealing() {
     }
 
+    /**
+     * The block entity holding the flag for the block at {@code pos}, or null if it cannot take a Gasket: anything that can leak
+     * (a tank or a fluid pipe, pump or valve), except this mod's multiblocks, which take one as an upgrade.
+     */
     @Nullable
-    private static FluidTankBlockEntity controllerAt(Level level, BlockPos pos) {
-        return level.getBlockEntity(pos) instanceof FluidTankBlockEntity tank ? tank.getControllerBE() : null;
+    private static SmartBlockEntity holderAt(Level level, BlockPos pos) {
+        BlockState state = level.getBlockState(pos);
+        // Either half of a Small Reaction Chamber: its lower half holds the flag.
+        BlockEntity be = level.getBlockEntity(state.getBlock() instanceof SmallReactionChamberBlock ? SmallReactionChamberBlock.lowerPos(state, pos) : pos);
+        if (be instanceof FluidTankBlockEntity tank) {
+            return tank.getControllerBE();
+        }
+        if (!(be instanceof SmartBlockEntity smart) || be instanceof MultiblockControllerBlockEntity<?>) {
+            return null;
+        }
+        for (BlockEntityBehaviour behaviour : smart.getAllBehaviours()) {
+            if (behaviour instanceof FluidTransportBehaviour || behaviour instanceof SmartFluidTankBehaviour) {
+                return smart;
+            }
+        }
+        return null;
     }
 
-    public static boolean isSealed(FluidTankBlockEntity tank) {
-        FluidTankBlockEntity controller = tank.getControllerBE();
-        return controller instanceof Sealable sealable && sealable.crr$isSealed();
+    public static boolean isSealed(@Nullable BlockEntity be) {
+        BlockEntity holder = be instanceof FluidTankBlockEntity tank ? tank.getControllerBE() : be;
+        return holder instanceof Sealable sealable && sealable.crr$isSealed();
     }
 
-    /** Puts a gasket on the tank at {@code pos}; PASS when there is no tank, FAIL when it is already sealed. */
+    public static void appendTooltip(List<Component> tooltip, BlockEntity be) {
+        if (isSealed(be)) {
+            tooltip.add(Component.literal("    Sealed with a Gasket: no leaks").withStyle(ChatFormatting.GRAY));
+        }
+    }
+
+    /** Puts a gasket on the block at {@code pos}; PASS when it cannot take one, FAIL when it is already sealed. */
     public static InteractionResult seal(Level level, BlockPos pos, Player player, ItemStack gasket) {
-        FluidTankBlockEntity controller = controllerAt(level, pos);
-        if (!(controller instanceof Sealable sealable)) {
+        SmartBlockEntity holder = holderAt(level, pos);
+        if (!(holder instanceof Sealable sealable)) {
             return InteractionResult.PASS;
         }
         if (sealable.crr$isSealed()) {
@@ -52,8 +89,8 @@ public final class TankSealing {
         }
         if (!level.isClientSide) {
             sealable.crr$setSealed(true);
-            controller.setChanged();
-            controller.sendData();
+            holder.setChanged();
+            holder.sendData();
             if (!player.getAbilities().instabuild) {
                 gasket.shrink(1);
             }
@@ -69,14 +106,14 @@ public final class TankSealing {
             return;
         }
         Level level = event.getLevel();
-        FluidTankBlockEntity controller = controllerAt(level, event.getPos());
-        if (!(controller instanceof Sealable sealable) || !sealable.crr$isSealed()) {
+        SmartBlockEntity holder = holderAt(level, event.getPos());
+        if (!(holder instanceof Sealable sealable) || !sealable.crr$isSealed()) {
             return;
         }
         if (!level.isClientSide) {
             sealable.crr$setSealed(false);
-            controller.setChanged();
-            controller.sendData();
+            holder.setChanged();
+            holder.sendData();
             player.getInventory().placeItemBackInInventory(new ItemStack(CRRItems.GASKET.get()));
         }
         event.setCanceled(true);

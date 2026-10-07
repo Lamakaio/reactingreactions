@@ -7,14 +7,12 @@
     },
     "P": {
       "item": "reactingreactions:drill_pipe"
-    },
-    "T": {
-      "tag": "c:ingots/titanium"
     }
   },
   "pattern": [
-    "DTD",
-    " P "
+    "D",
+    "P",
+    "D"
   ],
   "result": {
     "count": 1,

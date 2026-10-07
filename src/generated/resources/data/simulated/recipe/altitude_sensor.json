@@ -22,9 +22,9 @@
     }
   },
   "pattern": [
-    "PT",
-    "S ",
-    "A "
+    " P ",
+    "TST",
+    " A "
   ],
   "result": {
     "count": 1,

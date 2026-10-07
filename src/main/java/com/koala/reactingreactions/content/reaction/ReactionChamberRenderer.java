@@ -4,21 +4,19 @@ import com.koala.reactingreactions.content.multiblock.HollowBoxScanner;
 import com.koala.reactingreactions.content.multiblock.MachineTiers;
 import com.koala.reactingreactions.content.multiblock.MultiblockRenderer;
 import com.koala.reactingreactions.content.render.CRRPartialModels;
+import com.koala.reactingreactions.content.render.Whisk;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.simibubi.create.AllPartialModels;
 
 import net.createmod.catnip.animation.AnimationTickHolder;
 import net.createmod.catnip.render.CachedBuffers;
-import net.createmod.catnip.render.SuperByteBuffer;
 import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.level.block.state.BlockState;
 
-/** Adds Create's mixer whisk, hanging from the roof shaft and turning with it. */
+/** Adds the whisk, hanging from the roof shaft and turning with it, and the stirrer motor's fan. */
 public class ReactionChamberRenderer extends MultiblockRenderer<ReactionChamberControllerBlockEntity> {
     public ReactionChamberRenderer(BlockEntityRendererProvider.Context context) {
         super(context);
@@ -32,8 +30,8 @@ public class ReactionChamberRenderer extends MultiblockRenderer<ReactionChamberC
         super.renderContents(be, structure, ms, buffer, light);
     }
 
-    /** Square, the fluid has to stay clear of the formed model's cut corners: inset per tier (tools/machine_models.py). */
-    private static final float[] FLUID_INSET = {5 / 16F, 7 / 16F};
+    /** Square, the fluid has to stay inside the formed model's stepped corners: inset per tier (tools/machine_models.py). */
+    private static final float[] FLUID_INSET = {5.5F / 16, 7.5F / 16};
 
     /** The formed chamber's walls are thin: the fluid fills its octagonal hollow, from the floor plate to under the roof. */
     @Override
@@ -62,20 +60,21 @@ public class ReactionChamberRenderer extends MultiblockRenderer<ReactionChamberC
         ms.popPose();
     }
 
-    // Create's mixer partials, at the mixer's own lowered-head offset.
+    /** The whisk's size per tier, clear of the walls of each tier's hollow (tools/machine_models.py). */
+    private static final float[] WHISK_SCALE = {2.5F, 4F};
+    // From just above the floor plate up to the roof.
+    private static final float WHISK_BOTTOM = 12 / 16F;
+    private static final float WHISK_ROOF = 5.5F / 16;
+
     private static void renderWhisk(ReactionChamberControllerBlockEntity be, HollowBoxScanner.Result structure, PoseStack ms, MultiBufferSource buffer) {
-        BlockPos shaft = structure.min().offset(structure.sizeX() / 2, structure.sizeY() - 1, structure.sizeZ() / 2);
+        MachineTiers.Fit fit = be.getFit();
         BlockPos controller = be.getBlockPos();
-        int light = LevelRenderer.getLightColor(be.getLevel(), shaft.below());
-        float speed = be.stirSpeed();
-        float angle = AnimationTickHolder.getRenderTime(be.getLevel()) * speed * 6.0F / 10.0F % 360.0F / 180.0F * (float) Math.PI;
-        BlockState state = be.getBlockState();
-        ms.pushPose();
-        ms.translate(shaft.getX() - controller.getX(), shaft.getY() - controller.getY(), shaft.getZ() - controller.getZ());
-        SuperByteBuffer pole = CachedBuffers.partial(AllPartialModels.MECHANICAL_MIXER_POLE, state);
-        pole.translate(0.0F, -0.75F, 0.0F).light(light).renderInto(ms, buffer.getBuffer(RenderType.solid()));
-        SuperByteBuffer head = CachedBuffers.partial(AllPartialModels.MECHANICAL_MIXER_HEAD, state);
-        head.rotateCentered(angle, Direction.UP).translate(0.0F, -0.75F, 0.0F).light(light).renderInto(ms, buffer.getBuffer(RenderType.cutoutMipped()));
-        ms.popPose();
+        BlockPos min = structure.min();
+        double x = min.getX() + structure.sizeX() / 2.0 - controller.getX();
+        double z = min.getZ() + structure.sizeZ() / 2.0 - controller.getZ();
+        double floor = min.getY() - controller.getY();
+        int light = LevelRenderer.getLightColor(be.getLevel(), min.offset(structure.sizeX() / 2, 1, structure.sizeZ() / 2));
+        Whisk.render(be.getLevel(), be.getBlockState(), be.stirSpeed(), x, z, floor + WHISK_BOTTOM, floor + structure.sizeY() - WHISK_ROOF,
+                WHISK_SCALE[fit == null ? 0 : fit.index()], ms, buffer, light);
     }
 }

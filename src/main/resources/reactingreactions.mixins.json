@@ -6,7 +6,7 @@
   "mixins": [
     "FluidTankBlockEntityMixin",
     "FluidTransportBehaviourMixin",
-    "JeiFluidTooltipMixin",
+    "KineticBlockEntityMixin",
     "SmartBlockEntityMixin",
     "SmartFluidTankBehaviourMixin"
   ],

@@ -118,7 +118,7 @@ public class ToxicityAndDrillTests {
         helper.succeed();
     }
 
-    /** A Gasket used on a Create Fluid Tank seals it, and a second one is refused. */
+    /** A Gasket seals a Create Fluid Tank (once), a pump, a pipe and a basin, but not what cannot leak. */
     @GameTest(template = EMPTY)
     public static void gasketSealsCreateTanks(GameTestHelper helper) {
         BlockPos pos = new BlockPos(2, 1, 2);
@@ -129,6 +129,22 @@ public class ToxicityAndDrillTests {
         helper.assertTrue(TankSealing.isSealed(helper.getBlockEntity(pos)), "the tank should be sealed");
         helper.assertTrue(gaskets.getCount() == 1, "the gasket should be used up");
         helper.assertTrue(TankSealing.seal(helper.getLevel(), helper.absolutePos(pos), player, gaskets) == InteractionResult.FAIL, "a sealed tank takes no second gasket");
+        BlockPos pump = new BlockPos(4, 1, 2);
+        helper.setBlock(pump, AllBlocks.MECHANICAL_PUMP.get());
+        helper.assertTrue(TankSealing.seal(helper.getLevel(), helper.absolutePos(pump), player, gaskets) == InteractionResult.SUCCESS, "a pump takes a gasket");
+        helper.assertTrue(TankSealing.isSealed(helper.getBlockEntity(pump)), "the pump should be sealed");
+        // Saved like any block entity, the flag stays.
+        var tag = helper.getBlockEntity(pump).saveWithoutMetadata(helper.getLevel().registryAccess());
+        helper.assertTrue(tag.getBoolean("CrrSealed"), "the pump's gasket should be saved");
+        for (BlockPos other : new BlockPos[] {new BlockPos(2, 1, 4), new BlockPos(4, 1, 4)}) {
+            helper.setBlock(other, other.getX() == 2 ? AllBlocks.FLUID_PIPE.get() : AllBlocks.BASIN.get());
+            gaskets.setCount(1);
+            helper.assertTrue(TankSealing.seal(helper.getLevel(), helper.absolutePos(other), player, gaskets) == InteractionResult.SUCCESS,
+                    "a pipe and a basin take a gasket");
+        }
+        helper.setBlock(new BlockPos(0, 1, 0), AllBlocks.SHAFT.get());
+        helper.assertTrue(TankSealing.seal(helper.getLevel(), helper.absolutePos(new BlockPos(0, 1, 0)), player, gaskets) == InteractionResult.PASS,
+                "what cannot leak takes no gasket");
         helper.succeed();
     }
 
@@ -590,6 +606,19 @@ public class ToxicityAndDrillTests {
             helper.assertTrue(tank.getFluidInTank(0).isEmpty(), "the gas should be let out");
             helper.assertTrue(Contamination.levelAt(helper.getLevel(), helper.absolutePos(vent.above())) > 0, "toxic gas pollutes the air at the outlet");
         });
+    }
+
+    /** A vent sitting on a tank lets out what is over a bucket under full, without a pump, and leaves the rest. */
+    @GameTest(template = EMPTY)
+    public static void gasVentTakesATanksExcess(GameTestHelper helper) {
+        BlockPos tankPos = new BlockPos(2, 1, 2);
+        helper.setBlock(tankPos, AllBlocks.FLUID_TANK.get());
+        helper.setBlock(tankPos.above(), CRRBlocks.GAS_VENT.get());
+        IFluidHandler tank = helper.getLevel().getCapability(Capabilities.FluidHandler.BLOCK, helper.absolutePos(tankPos), Direction.UP);
+        int capacity = tank.getTankCapacity(0);
+        tank.fill(new FluidStack(CRRFluids.HYDROGEN.get().getSource(), capacity), IFluidHandler.FluidAction.EXECUTE);
+        helper.succeedWhen(() -> helper.assertTrue(tank.getFluidInTank(0).getAmount() == capacity - 1000,
+                "the tank should be left a bucket under full, not " + tank.getFluidInTank(0).getAmount()));
     }
 
     @GameTest(template = EMPTY)

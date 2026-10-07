@@ -24,6 +24,7 @@ import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import mezz.jei.api.runtime.IJeiRuntime;
 
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -73,7 +74,11 @@ public class ReactingReactionsJei implements IModPlugin {
         multiblocks.forEach(category -> category.registerRecipes(registration));
         registration.addRecipes(DrillingCategory.TYPE, DrillingRecipes.all());
         registration.addRecipes(InductionCategory.TYPE, List.of(new InductionCategory.Info(MultiblockPreviews.inductionHeater())));
-        InfoPages.register(registration);
+        for (InfoPages.Page page : InfoPages.build()) {
+            if (!page.items().isEmpty()) {
+                registration.addIngredientInfo(page.items(), VanillaTypes.ITEM_STACK, page.lines().toArray(new Component[0]));
+            }
+        }
     }
 
     @Override

@@ -11,8 +11,8 @@
       "tag": "c:purified_water"
     }
   ],
-  "min_voltage": 100.0,
-  "processing_time": 200,
+  "min_voltage": 1100.0,
+  "processing_time": 800,
   "results": [
     {
       "amount": 1200,

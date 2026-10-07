@@ -1,6 +1,10 @@
 {
-  "feature": "reactingreactions:polymetallic_nodule_disk",
+  "feature": "reactingreactions:polymetallic_nodules",
   "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 2
+    },
     {
       "type": "minecraft:in_square"
     },
@@ -12,9 +16,7 @@
       "type": "minecraft:block_predicate_filter",
       "predicate": {
         "type": "minecraft:matching_fluids",
-        "fluids": [
-          "minecraft:water"
-        ]
+        "fluids": "minecraft:water"
       }
     },
     {

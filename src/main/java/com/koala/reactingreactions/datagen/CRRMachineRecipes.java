@@ -62,23 +62,25 @@ final class CRRMachineRecipes {
                             .in("reactingreactions:veridium_dust", fluid("reactingreactions:sulfuric_acid", 250))
                 .out("minecraft:copper_ingot")
                 .fluidOut("reactingreactions:sulfuric_acid", 200);
+            // High voltage: a bucket of hydrogen takes 4 MJ (Voltmeter: charge times voltage), twice what it gives back burnt in the
+            // best engine, so electrolysis then burning its hydrogen never makes energy. Purified water is easier on the cell.
             d.recipe("electrolysis_recipe/water_electrolysis", "reactingreactions:electrolysis_recipe")
-                            .time(200)
-                            .minVoltage(120.0)
+                            .time(800)
+                            .minVoltage(1250.0)
                             .electrodes("reactingreactions:graphite_electrode", "reactingreactions:gold_steel_electrode")
                             .in(fluid("minecraft:water", 1000))
                 .fluidOut("reactingreactions:hydrogen", 1000)
                 .fluidOut("reactingreactions:oxygen", 500);
             d.recipe("electrolysis_recipe/purified_water_electrolysis", "reactingreactions:electrolysis_recipe")
-                            .time(200)
-                            .minVoltage(100.0)
+                            .time(800)
+                            .minVoltage(1100.0)
                             .electrodes("reactingreactions:graphite_electrode", "reactingreactions:gold_steel_electrode")
                             .in(fluid("reactingreactions:purified_water", 1000))
                 .fluidOut("reactingreactions:hydrogen", 1200)
                 .fluidOut("reactingreactions:oxygen", 600);
             d.recipe("electrolysis_recipe/water_to_oxygen", "reactingreactions:electrolysis_recipe")
-                            .time(200)
-                            .minVoltage(80.0)
+                            .time(400)
+                            .minVoltage(160.0)
                             .in(fluid("minecraft:water", 1000))
                 .fluidOut("reactingreactions:oxygen", 500);
             // With Create Diesel Generators, distillation runs on its own tower instead.
@@ -114,17 +116,18 @@ final class CRRMachineRecipes {
                             .heat("superheated")
                             .time(400)
                             .in(fluid("reactingreactions:hydrocarbon_gas", 500))
+                // Mostly ethane and propane: the main way to plastics (cracked in the Reaction Chamber).
                 .fluidOut("reactingreactions:methane", 100)
-                .fluidOut("reactingreactions:ethane", 50)
-                .fluidOut("reactingreactions:propane", 50)
+                .fluidOut("reactingreactions:ethane", 200)
+                .fluidOut("reactingreactions:propane", 100)
                 .fluidOut("reactingreactions:butane", 50)
-                .fluidOut("reactingreactions:solvent", 250)
+                .fluidOut("reactingreactions:solvent", 50)
                 .dieselGeneratorsTwin("createdieselgenerators:distillation");
             d.recipe("distillation_recipe/lpg_separation", "reactingreactions:distillation_recipe")
                             .heat("heated")
                             .time(400)
                             .in(fluid("reactingreactions:lpg", 500))
-                .fluidOut("reactingreactions:contaminated_hydrocarbon_gas", 300)
+                .fluidOut("reactingreactions:contaminated_hydrocarbon_gas", 400)
                 .fluidOut("reactingreactions:nitrogen", 100)
                 .fluidOut("reactingreactions:helium", 50)
                 .fluidOut("reactingreactions:neon", 50)

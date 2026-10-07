@@ -10,102 +10,21 @@ final class CompatRecipes {
     static void register(Data data) {
         {
             Data d = data.ns("aeronautics").requiringMod("aeronautics");
-            d.shaped("black_envelope", "misc", res("aeronautics:black_envelope", 4),
-                            "WSN", "SWN")
-                            .key('S', "minecraft:stick")
-                            .key('W', "minecraft:black_wool")
-                            .key('N', "reactingreactions:nylon_fiber")
-                            .group("aeronautics:envelope");
-            d.shaped("blue_envelope", "misc", res("aeronautics:blue_envelope", 4),
-                            "WSN", "SWN")
-                            .key('S', "minecraft:stick")
-                            .key('W', "minecraft:blue_wool")
-                            .key('N', "reactingreactions:nylon_fiber")
-                            .group("aeronautics:envelope");
-            d.shaped("brown_envelope", "misc", res("aeronautics:brown_envelope", 4),
-                            "WSN", "SWN")
-                            .key('S', "minecraft:stick")
-                            .key('W', "minecraft:brown_wool")
-                            .key('N', "reactingreactions:nylon_fiber")
-                            .group("aeronautics:envelope");
-            d.shaped("cyan_envelope", "misc", res("aeronautics:cyan_envelope", 4),
-                            "WSN", "SWN")
-                            .key('S', "minecraft:stick")
-                            .key('W', "minecraft:cyan_wool")
-                            .key('N', "reactingreactions:nylon_fiber")
-                            .group("aeronautics:envelope");
-            d.shaped("gray_envelope", "misc", res("aeronautics:gray_envelope", 4),
-                            "WSN", "SWN")
-                            .key('S', "minecraft:stick")
-                            .key('W', "minecraft:gray_wool")
-                            .key('N', "reactingreactions:nylon_fiber")
-                            .group("aeronautics:envelope");
-            d.shaped("green_envelope", "misc", res("aeronautics:green_envelope", 4),
-                            "WSN", "SWN")
-                            .key('S', "minecraft:stick")
-                            .key('W', "minecraft:green_wool")
-                            .key('N', "reactingreactions:nylon_fiber")
-                            .group("aeronautics:envelope");
-            d.shaped("light_blue_envelope", "misc", res("aeronautics:light_blue_envelope", 4),
-                            "WSN", "SWN")
-                            .key('S', "minecraft:stick")
-                            .key('W', "minecraft:light_blue_wool")
-                            .key('N', "reactingreactions:nylon_fiber")
-                            .group("aeronautics:envelope");
-            d.shaped("light_gray_envelope", "misc", res("aeronautics:light_gray_envelope", 4),
-                            "WSN", "SWN")
-                            .key('S', "minecraft:stick")
-                            .key('W', "minecraft:light_gray_wool")
-                            .key('N', "reactingreactions:nylon_fiber")
-                            .group("aeronautics:envelope");
-            d.shaped("lime_envelope", "misc", res("aeronautics:lime_envelope", 4),
-                            "WSN", "SWN")
-                            .key('S', "minecraft:stick")
-                            .key('W', "minecraft:lime_wool")
-                            .key('N', "reactingreactions:nylon_fiber")
-                            .group("aeronautics:envelope");
-            d.shaped("magenta_envelope", "misc", res("aeronautics:magenta_envelope", 4),
-                            "WSN", "SWN")
-                            .key('S', "minecraft:stick")
-                            .key('W', "minecraft:magenta_wool")
-                            .key('N', "reactingreactions:nylon_fiber")
-                            .group("aeronautics:envelope");
-            d.shaped("orange_envelope", "misc", res("aeronautics:orange_envelope", 4),
-                            "WSN", "SWN")
-                            .key('S', "minecraft:stick")
-                            .key('W', "minecraft:orange_wool")
-                            .key('N', "reactingreactions:nylon_fiber")
-                            .group("aeronautics:envelope");
-            d.shaped("pink_envelope", "misc", res("aeronautics:pink_envelope", 4),
-                            "WSN", "SWN")
-                            .key('S', "minecraft:stick")
-                            .key('W', "minecraft:pink_wool")
-                            .key('N', "reactingreactions:nylon_fiber")
-                            .group("aeronautics:envelope");
-            d.shaped("purple_envelope", "misc", res("aeronautics:purple_envelope", 4),
-                            "WSN", "SWN")
-                            .key('S', "minecraft:stick")
-                            .key('W', "minecraft:purple_wool")
-                            .key('N', "reactingreactions:nylon_fiber")
-                            .group("aeronautics:envelope");
-            d.shaped("red_envelope", "misc", res("aeronautics:red_envelope", 4),
-                            "WSN", "SWN")
-                            .key('S', "minecraft:stick")
-                            .key('W', "minecraft:red_wool")
-                            .key('N', "reactingreactions:nylon_fiber")
-                            .group("aeronautics:envelope");
+            // Envelopes of nylon instead of wool: two nylon fibres over two sticks make white ones, and eight envelopes round a dye
+            // take its colour (each recipe replaces Aeronautics' own, at the same id).
             d.shaped("white_envelope", "misc", res("aeronautics:white_envelope", 4),
-                            "WSN", "SWN")
-                            .key('S', "minecraft:stick")
-                            .key('W', "minecraft:white_wool")
+                            "NS", "SN")
                             .key('N', "reactingreactions:nylon_fiber")
-                            .group("aeronautics:envelope");
-            d.shaped("yellow_envelope", "misc", res("aeronautics:yellow_envelope", 4),
-                            "WSN", "SWN")
                             .key('S', "minecraft:stick")
-                            .key('W', "minecraft:yellow_wool")
-                            .key('N', "reactingreactions:nylon_fiber")
                             .group("aeronautics:envelope");
+            for (String colour : new String[] {"orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple",
+                    "blue", "brown", "green", "red", "black"}) {
+                d.shaped(colour + "_envelope", "misc", res("aeronautics:" + colour + "_envelope", 8),
+                                "EEE", "EDE", "EEE")
+                                .key('E', "#aeronautics:envelope")
+                                .key('D', "#c:dyes/" + colour)
+                                .group("aeronautics:envelope");
+            }
         }
         {
             Data d = data.ns("create");
@@ -184,12 +103,12 @@ final class CompatRecipes {
         {
             Data d = data.ns("offroad").requiringMod("offroad");
             d.shaped("large_tire", "misc", res("offroad:large_tire", 1),
-                            " BH", "BSB", " B ")
+                            "HBH", "BSB", "HBH")
                             .key('B', "create:belt_connector")
                             .key('S', "create:shaft")
                             .key('H', "reactingreactions:hdpe_sheet");
             d.shaped("monstrous_tire", "misc", res("offroad:monstrous_tire", 1),
-                            " KH", "KSK", " K ")
+                            "HKH", "KSK", "HKH")
                             .key('K', "minecraft:dried_kelp_block")
                             .key('S', "create:shaft")
                             .key('H', "reactingreactions:hdpe_sheet");
@@ -197,7 +116,7 @@ final class CompatRecipes {
         {
             Data d = data.ns("simulated").requiringMod("simulated");
             d.shaped("altitude_sensor", "misc", res("simulated:altitude_sensor", 1),
-                            "PT", "S ", "A ")
+                            " P ", "TST", " A ")
                             .key('A', "create:andesite_casing")
                             .key('P', "minecraft:paper")
                             .key('S', "#c:plates/iron")
@@ -215,7 +134,7 @@ final class CompatRecipes {
                             "simulated:iron_handle", "#c:dyes/cyan")
                             .group("simulated:handle_variants");
             d.shaped("gimbal_sensor", "misc", res("simulated:gimbal_sensor", 1),
-                            "CT", "G ", "B ")
+                            " C ", "TGT", " B ")
                             .key('B', "create:brass_casing")
                             .key('C', "minecraft:compass")
                             .key('G', "simulated:gyroscopic_mechanism")
@@ -227,7 +146,7 @@ final class CompatRecipes {
                             "simulated:iron_handle", "#c:dyes/green")
                             .group("simulated:handle_variants");
             d.shaped("laser_sensor", "misc", res("simulated:laser_sensor", 1),
-                            "GT", "A ", "C ")
+                            " G ", "TAT", " C ")
                             .key('A', "#simulated:laser_point_lens")
                             .key('C', "create:andesite_casing")
                             .key('G', "minecraft:tinted_glass")
@@ -245,7 +164,7 @@ final class CompatRecipes {
                             "simulated:iron_handle", "#c:dyes/magenta")
                             .group("simulated:handle_variants");
             d.shaped("optical_sensor", "misc", res("simulated:optical_sensor", 1),
-                            " AT", " C ", " B ")
+                            " A ", "TCT", " B ")
                             .key('A', "#c:gems/amethyst")
                             .key('B', "create:brass_casing")
                             .key('C', "create:electron_tube")
@@ -281,7 +200,7 @@ final class CompatRecipes {
                 .out("minecraft:compass")
                             .sequence("simulated:incomplete_gyroscopic_mechanism", 5, deploy("create:cogwheel"), deploy("create:shaft"), deploy("#c:nuggets/brass"));
             d.shaped("velocity_sensor", "misc", res("simulated:velocity_sensor", 1),
-                            "PT", "B ", "A ")
+                            " P ", "TBT", " A ")
                             .key('A', "create:andesite_casing")
                             .key('B', "minecraft:barrel")
                             .key('P', "create:propeller")
@@ -292,6 +211,44 @@ final class CompatRecipes {
             d.shapeless("yellow_handle", "misc", res("simulated:yellow_handle", 1),
                             "simulated:iron_handle", "#c:dyes/yellow")
                             .group("simulated:handle_variants");
+        }
+        // A bit of steel in the bigger engines and the electrical parts (the basic ones stay as they are, so neither mod is gated
+        // early). Each replaces the mod's own recipe, at the same id.
+        {
+            Data d = data.ns("createdieselgenerators").requiringMod("createdieselgenerators");
+            d.shaped("crafting/large_diesel_engine", "misc", res("createdieselgenerators:large_diesel_engine", 1),
+                            " A ", "SDS", " B ")
+                            .key('A', "reactingreactions:steel_sheet")
+                            .key('D', "createdieselgenerators:diesel_engine")
+                            .key('B', "minecraft:polished_blackstone_slab")
+                            .key('S', "#c:plates/brass");
+            d.shaped("crafting/huge_diesel_engine", "misc", res("createdieselgenerators:huge_diesel_engine", 1),
+                            "AFA", "SES", "PBP")
+                            .key('E', "create:steam_engine")
+                            .key('B', "#c:storage_blocks/brass")
+                            .key('S', "#c:plates/brass")
+                            .key('F', "minecraft:flint_and_steel")
+                            .key('A', "reactingreactions:steel_sheet")
+                            .key('P', "create:fluid_pipe");
+            d.shaped("crafting/engine_turbocharger", "misc", res("createdieselgenerators:engine_turbocharger", 1),
+                            "AZF", "SPS", "AZA")
+                            .key('A', "create:andesite_alloy")
+                            .key('S', "reactingreactions:steel_sheet")
+                            .key('Z', "#c:ingots/zinc")
+                            .key('P', "create:propeller")
+                            .key('F', "create:fluid_pipe");
+        }
+        {
+            Data d = data.ns("electroenergetics").requiringMod("electroenergetics");
+            d.shaped("crafting/stator", "misc", res("electroenergetics:stator", 1),
+                            "AS", "MS", "AS")
+                            .key('A', "create:andesite_alloy")
+                            .key('M', "electroenergetics:magnet")
+                            .key('S', "reactingreactions:steel_sheet");
+            // Transformer cores are laminated electrical steel.
+            d.recipe("stonecutting/transformer_core_lamination", "minecraft:stonecutting")
+                            .ingredient("reactingreactions:steel_sheet")
+                            .field("result", "{\"id\":\"electroenergetics:transformer_core_lamination\",\"count\":1}");
         }
     }
 }

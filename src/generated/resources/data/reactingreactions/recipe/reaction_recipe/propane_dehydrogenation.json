@@ -1,0 +1,23 @@
+{
+  "type": "reactingreactions:reaction_recipe",
+  "heat_requirement": "superheated",
+  "ingredients": [
+    {
+      "type": "neoforge:tag",
+      "amount": 500,
+      "tag": "c:propane"
+    }
+  ],
+  "max_rpm": 128,
+  "min_rpm": 64,
+  "results": [
+    {
+      "amount": 400,
+      "id": "reactingreactions:propylene"
+    },
+    {
+      "amount": 400,
+      "id": "reactingreactions:hydrogen"
+    }
+  ]
+}

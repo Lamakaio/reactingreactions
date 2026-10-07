@@ -8,8 +8,8 @@ public final class DrillRates {
     public static final double BASE_OIL_RATE = 0.5;
     /** One dust item costs as long as 500 mB of oil at the same RPM and richness. */
     public static final double BASE_ITEM_RATE = 1.0 / 1000;
-    /** The diamond bit drills every rock this much faster than the steel and titanium bits. */
-    public static final double DIAMOND_SPEED = 2.0;
+    /** The titanium bit drills every rock this much faster than the steel and diamond bits. */
+    public static final double TITANIUM_SPEED = 2.0;
 
     private DrillRates() {
     }

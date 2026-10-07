@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "createdieselgenerators"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "c:plates/steel"
+    },
+    "B": {
+      "tag": "c:storage_blocks/brass"
+    },
+    "E": {
+      "item": "create:steam_engine"
+    },
+    "F": {
+      "item": "minecraft:flint_and_steel"
+    },
+    "P": {
+      "item": "create:fluid_pipe"
+    },
+    "S": {
+      "tag": "c:plates/brass"
+    }
+  },
+  "pattern": [
+    "AFA",
+    "SES",
+    "PBP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "createdieselgenerators:huge_diesel_engine"
+  }
+}

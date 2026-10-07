@@ -27,7 +27,7 @@
       16,
       16
      ],
-     "texture": "#plate"
+     "texture": "#brass"
     },
     "down": {
      "uv": [
@@ -36,39 +36,7 @@
       16,
       16
      ],
-     "texture": "#plate"
-    }
-   }
-  },
-  {
-   "from": [
-    0,
-    10.5,
-    0
-   ],
-   "to": [
-    16,
-    12,
-    16
-   ],
-   "faces": {
-    "up": {
-     "uv": [
-      0,
-      0,
-      16,
-      16
-     ],
-     "texture": "#plate"
-    },
-    "down": {
-     "uv": [
-      0,
-      0,
-      16,
-      16
-     ],
-     "texture": "#plate"
+     "texture": "#brass"
     }
    }
   },
@@ -133,6 +101,38 @@
       16
      ],
      "texture": "#brass"
+    }
+   }
+  },
+  {
+   "from": [
+    0,
+    12,
+    0
+   ],
+   "to": [
+    16,
+    14,
+    16
+   ],
+   "faces": {
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#dark"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#dark"
     }
    }
   },

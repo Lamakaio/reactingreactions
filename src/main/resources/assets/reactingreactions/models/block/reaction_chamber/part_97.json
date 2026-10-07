@@ -2,7 +2,7 @@
  "parent": "minecraft:block/block",
  "textures": {
   "band": "reactingreactions:block/machine/steel_band",
-  "dark": "reactingreactions:block/machine/steel_dark",
+  "frame": "reactingreactions:block/machine/steel_dark",
   "glass": "reactingreactions:block/machine/sight_glass",
   "plate": "reactingreactions:block/machine/reaction_chamber_plate",
   "particle": "reactingreactions:block/machine/steel_band"
@@ -97,23 +97,23 @@
     0
    ],
    "to": [
-    2,
+    1.75,
     8,
-    3.0
+    2.75
    ],
    "faces": {
     "south": {
      "uv": [
       0.0,
       8,
-      2,
+      1.75,
       10
      ],
      "texture": "#band"
     },
     "east": {
      "uv": [
-      13.0,
+      13.25,
       8,
       16,
       10
@@ -124,7 +124,7 @@
      "uv": [
       0,
       8,
-      3.0,
+      2.75,
       10
      ],
      "texture": "#band"
@@ -133,16 +133,16 @@
      "uv": [
       0.0,
       0,
-      2,
-      3.0
+      1.75,
+      2.75
      ],
      "texture": "#band"
     },
     "down": {
      "uv": [
       0.0,
-      13.0,
-      2,
+      13.25,
+      1.75,
       16
      ],
      "texture": "#band"
@@ -153,17 +153,17 @@
    "from": [
     0.0,
     6,
-    13.0
+    13.25
    ],
    "to": [
-    2,
+    1.75,
     8,
     16
    ],
    "faces": {
     "north": {
      "uv": [
-      14,
+      14.25,
       8,
       16.0,
       10
@@ -174,14 +174,14 @@
      "uv": [
       0,
       8,
-      3.0,
+      2.75,
       10
      ],
      "texture": "#band"
     },
     "west": {
      "uv": [
-      13.0,
+      13.25,
       8,
       16,
       10
@@ -191,8 +191,8 @@
     "up": {
      "uv": [
       0.0,
-      13.0,
-      2,
+      13.25,
+      1.75,
       16
      ],
      "texture": "#band"
@@ -201,8 +201,8 @@
      "uv": [
       0.0,
       0,
-      2,
-      3.0
+      1.75,
+      2.75
      ],
      "texture": "#band"
     }
@@ -227,7 +227,7 @@
       0.75,
       16
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "south": {
      "uv": [
@@ -236,7 +236,7 @@
       16,
       16
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "west": {
      "uv": [
@@ -245,7 +245,7 @@
       3.0,
       16
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     }
    }
   },
@@ -268,7 +268,7 @@
       16,
       16
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "south": {
      "uv": [
@@ -277,7 +277,7 @@
       0.5,
       16
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "east": {
      "uv": [
@@ -286,7 +286,7 @@
       15.0,
       16
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     }
    }
   },
@@ -309,7 +309,7 @@
       0.75,
       16
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "south": {
      "uv": [
@@ -318,7 +318,7 @@
       16,
       16
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "west": {
      "uv": [
@@ -327,7 +327,7 @@
       15.0,
       16
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     }
    }
   },
@@ -350,7 +350,7 @@
       16,
       16
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "south": {
      "uv": [
@@ -359,7 +359,7 @@
       0.5,
       16
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "east": {
      "uv": [
@@ -368,7 +368,7 @@
       3.0,
       16
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     }
    }
   },

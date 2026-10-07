@@ -24,7 +24,7 @@ public final class InfoPageTexts {
                     "rich_scoria_vein", "rich_tuff_vein", "rich_granite_vein", "rich_diorite_vein"), List.of(
                     "Rich Veins generate inside natural veins, after everything else: about 9 in 10 veins of Create's rocks (asurine, crimsite, ochrum, veridium, scoria), 3 in 10 tuff, granite and diorite blobs, and every oil vein.",
                     "Each has a richness from 1 to 5, rolled when it generates. Level 4 and 5 drill at full speed.",
-                    "A drill head touching one drills it: the oil head for oil, the steel head for tuff, scoria, granite and diorite, the titanium head for asurine, crimsite, ochrum and veridium. Plain rock or plain oil shale does nothing.",
+                    "A drill head touching one drills it: the oil head for oil, the steel head for tuff, scoria, granite and diorite, the diamond head for asurine, crimsite, ochrum and veridium. Plain rock or plain oil shale does nothing.",
                     "They glow faintly. Mining one is very slow and it survives explosions. It drops a stack of the plain rock, never itself, so it cannot be moved.",
                     "Operators can find the nearest one with /richvein.")),
             new Page("reaction_chamber", List.of("reaction_chamber_controller", "reaction_chamber_wall", "steel_encased_shaft"), List.of(
@@ -34,12 +34,13 @@ public final class InfoPageTexts {
                     "Heated recipes need Blaze Burners or an Induction Heater under the floor, in an X shape.",
                     "Fluids and items go in and out through the walls.",
                     "The small one has one output tank and takes 4 attachments; the large one has two and takes 8.")),
-            new Page("machine_attachments", List.of("outlet_manifold", "expansion_tank", "machine_gauge", "gasket", "circulation_pump"), List.of(
+            new Page("machine_attachments", List.of("outlet_manifold", "expansion_tank", "machine_gauge", "gasket", "circulation_pump", "outlet_valve"), List.of(
                     "For a formed Reaction Chamber, Electrolysis Vat or Airless Oven. Outlet Manifolds and Gaskets are used on the machine and go into it; sneak with an empty hand to take the last one out. The others mount against the outside of a wall.",
-                    "Small machines take 4, large ones 8; any more do nothing. The goggles show how many are used.",
+                    "Small sizes take 4, large ones 8; single-block machines take 1, a Gauge or an Outlet Valve. Any more do nothing. A Gasket takes no slot.",
                     "Outlet Manifold: one more output tank. Expansion Tank: +4000 mB in every tank.",
                     "Machine Gauge: a comparator signal of the progress, or of how full the fullest output is. A Wrench switches it.",
-                    "Gasket: toxic contents no longer leak; it also seals a Create Fluid Tank. Circulation Pump: faster recipes, by half at 256 RPM.",
+                    "Gasket: toxic contents no longer leak; it also seals anything else that can leak, from tanks to pipes. Circulation Pump: faster recipes, by half at 256 RPM.",
+                    "Outlet Valve: lets a fluid out into a tank or machine in front of it, or along the pipes in front like a pump, for free. A filled container used on it picks the fluid, an empty hand cycles through the machine's, sneaking resets it to any output.",
                     "Encased pipes and Plastic Pipes never leak; glass pipes leak half as much as plain ones.")),
             new Page("electrolysis_vat", List.of("electrolysis_vat_controller", "electrolysis_vat_wall", "electrolysis_vat_terminal", "graphite_electrode",
                     "gold_steel_electrode", "lead_electrode"), List.of(
@@ -65,7 +66,7 @@ public final class InfoPageTexts {
                     String.format("Full-richness vein: oil %.0f mB/s at %.0f RPM up to %.0f mB/s at %.0f RPM; dust 1 per %.0f s at %.0f RPM down to 1 per %.1f s at %.0f RPM. A poorer vein is slower.",
                             DrillRates.oilMbPerSecond(32), 32.0, DrillRates.oilMbPerSecond(128), 128.0,
                             DrillRates.secondsPerItem(32), 32.0, DrillRates.secondsPerItem(128), 128.0),
-                    String.format("The diamond head drills every vein, %.0fx as fast.", DrillRates.DIAMOND_SPEED),
+                    String.format("The titanium head drills every vein, %.0fx as fast.", DrillRates.TITANIUM_SPEED),
                     "Fluids and items go through the controller and any Derrick Block, never the trusses.")),
             new Page("induction_heater", List.of("induction_heater_plate", "induction_heater_connector"), List.of(
                     "A filled rectangle of Induction Heater Plates on one level, at least 3x3 and at most 16x16, with exactly one Connector anywhere in it.",

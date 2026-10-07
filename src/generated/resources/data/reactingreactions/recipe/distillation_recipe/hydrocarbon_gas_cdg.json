@@ -21,11 +21,11 @@
       "id": "reactingreactions:methane"
     },
     {
-      "amount": 50,
+      "amount": 200,
       "id": "reactingreactions:ethane"
     },
     {
-      "amount": 50,
+      "amount": 100,
       "id": "reactingreactions:propane"
     },
     {
@@ -33,7 +33,7 @@
       "id": "reactingreactions:butane"
     },
     {
-      "amount": 250,
+      "amount": 50,
       "id": "reactingreactions:solvent"
     }
   ]

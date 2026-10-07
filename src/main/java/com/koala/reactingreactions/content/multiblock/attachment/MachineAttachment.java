@@ -16,13 +16,16 @@ public interface MachineAttachment {
         /** No slow leaks of toxic contents. */
         GASKET,
         /** Faster recipes, with the rotation it is given. */
-        CIRCULATION_PUMP
+        CIRCULATION_PUMP,
+        /** Lets a chosen fluid (or any) out into whatever is in front of it. */
+        OUTLET_VALVE
     }
 
     Kind kind();
 
-    /** The side the machine is on. */
+    /** The side the machine is on: attachments face it, except the Outlet Valve, a pump facing away from it. */
     static Direction mountedTowards(BlockState state) {
-        return state.getValue(BlockStateProperties.HORIZONTAL_FACING);
+        return state.hasProperty(BlockStateProperties.HORIZONTAL_FACING) ? state.getValue(BlockStateProperties.HORIZONTAL_FACING)
+                : state.getValue(BlockStateProperties.FACING).getOpposite();
     }
 }

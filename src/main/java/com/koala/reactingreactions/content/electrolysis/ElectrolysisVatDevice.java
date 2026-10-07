@@ -19,13 +19,15 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 /**
- * Joins the vat's two electrode columns through the electrolyte's resistance. Each column is first bridged into one node,
+ * Joins the vat's two electrode columns through the electrolyte's resistance (sized to the running recipe, see Voltmeter). Each column is first bridged into one node,
  * since every electrode block is its own node, and so is the terminal in the end wall beside it, where the wire attaches.
  */
 public class ElectrolysisVatDevice extends SimpleElectricalDevice {
-    private static final double RESISTANCE_OHMS = 200.0;
     // Not zero: an ideal short would make the circuit solver's matrix singular.
     private static final double COLUMN_LINK_RESISTANCE_OHMS = 0.001;
+
+    /** The electrolyte's resistance this tick, sized by the vat to its recipe (Voltmeter). */
+    private double resistance = 10_000;
 
     public ElectrolysisVatDevice(Level level, BlockPos pos, DevicesSavedData deviceSD, SimulatedDeviceType<?> type) {
         super(level, pos, deviceSD, type);
@@ -43,7 +45,8 @@ public class ElectrolysisVatDevice extends SimpleElectricalDevice {
         bridgeColumn(bridges, vat.getElectrodeColumn(b));
         bridgeToTerminal(bridges, vat, a);
         bridgeToTerminal(bridges, vat, b);
-        bridges.bridge(new InWorldNode(0, a), new InWorldNode(0, b), RESISTANCE_OHMS);
+        resistance = vat.loadResistance();
+        bridges.bridge(new InWorldNode(0, a), new InWorldNode(0, b), resistance);
     }
 
     private void bridgeToTerminal(BridgeCollector bridges, ElectrolysisVatControllerBlockEntity vat, BlockPos top) {
@@ -81,7 +84,7 @@ public class ElectrolysisVatDevice extends SimpleElectricalDevice {
         }
         BlockPos a = vat.getElectrodeA();
         BlockPos b = vat.getElectrodeB();
-        vat.voltmeter().set(a != null && b != null ? Math.abs(results.getVoltageAt(new InWorldNode(0, a), new InWorldNode(0, b))) : 0);
+        vat.voltmeter().set(a != null && b != null ? Math.abs(results.getVoltageAt(new InWorldNode(0, a), new InWorldNode(0, b))) : 0, resistance);
     }
 
     @Nullable

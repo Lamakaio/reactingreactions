@@ -2,12 +2,8 @@ package com.koala.reactingreactions.content.multiblock.jei;
 
 import com.koala.reactingreactions.content.multiblock.jei.MultiblockPreview.Cell;
 
-import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
-import mezz.jei.api.recipe.RecipeIngredientRole;
-
 import net.createmod.catnip.gui.element.GuiGameElement;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.world.item.ItemStack;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -15,7 +11,7 @@ import java.util.List;
 
 /**
  * Draws a machine's smallest valid build as a cut-away isometric view above its recipes, with the side items in a column on
- * the right. Each block is projected by hand at the GUI's block-item angle, with its true depth so overlaps sort correctly.
+ * the right. Shared by the JEI and EMI pages, so it must not touch either. Each block is projected by hand at the GUI's block-item angle, with its true depth so overlaps sort correctly.
  */
 public final class MultiblockPreviewRenderer {
     /** How far the recipe grid of the machine pages is pushed down to make room for the preview (Create's layout already leaves space above its slots). */
@@ -32,14 +28,6 @@ public final class MultiblockPreviewRenderer {
     private static final int MODEL_CENTER_Y = 52;
 
     private MultiblockPreviewRenderer() {
-    }
-
-    public static void addSideSlots(IRecipeLayoutBuilder builder, MultiblockPreview preview) {
-        int y = 2;
-        for (ItemStack stack : preview.sideItems()) {
-            builder.addSlot(RecipeIngredientRole.CATALYST, 154, y).addItemStack(stack);
-            y += 18;
-        }
     }
 
     /** Draws the structure only: the build rules are on the machine's information page, not here. */

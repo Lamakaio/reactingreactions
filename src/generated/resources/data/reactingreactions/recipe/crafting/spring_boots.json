@@ -10,8 +10,8 @@
     }
   },
   "pattern": [
-    "T T",
-    "N N"
+    "N N",
+    "T T"
   ],
   "result": {
     "id": "reactingreactions:spring_boots"

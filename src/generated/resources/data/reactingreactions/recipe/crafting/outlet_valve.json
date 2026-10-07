@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "create:smart_fluid_pipe"
+    },
+    "S": {
+      "tag": "c:plates/steel"
+    },
+    "V": {
+      "item": "create:fluid_valve"
+    }
+  },
+  "pattern": [
+    "VFS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "reactingreactions:outlet_valve"
+  }
+}

@@ -14,14 +14,11 @@
     },
     "S": {
       "tag": "c:rods/wooden"
-    },
-    "W": {
-      "item": "minecraft:white_wool"
     }
   },
   "pattern": [
-    "WSN",
-    "SWN"
+    "NS",
+    "SN"
   ],
   "result": {
     "count": 4,

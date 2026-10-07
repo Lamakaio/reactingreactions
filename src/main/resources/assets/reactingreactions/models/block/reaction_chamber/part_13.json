@@ -2,7 +2,7 @@
  "parent": "minecraft:block/block",
  "textures": {
   "band": "reactingreactions:block/machine/steel_band",
-  "dark": "reactingreactions:block/machine/steel_dark",
+  "frame": "reactingreactions:block/machine/steel_dark",
   "glass": "reactingreactions:block/machine/sight_glass",
   "plate": "reactingreactions:block/machine/reaction_chamber_plate",
   "particle": "reactingreactions:block/machine/steel_band"
@@ -156,7 +156,7 @@
     0
    ],
    "to": [
-    2,
+    1.75,
     8,
     16
    ],
@@ -183,7 +183,7 @@
      "uv": [
       0.0,
       0,
-      2,
+      1.75,
       16
      ],
      "texture": "#band"
@@ -192,7 +192,7 @@
      "uv": [
       0.0,
       0,
-      2,
+      1.75,
       16
      ],
      "texture": "#band"
@@ -218,7 +218,7 @@
       0.75,
       9
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "south": {
      "uv": [
@@ -227,7 +227,7 @@
       16,
       9
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "west": {
      "uv": [
@@ -236,7 +236,7 @@
       15.0,
       9
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "up": {
      "uv": [
@@ -245,7 +245,7 @@
       16,
       15.0
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "down": {
      "uv": [
@@ -254,7 +254,7 @@
       16,
       15.0
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     }
    }
   },
@@ -277,7 +277,7 @@
       16,
       9
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "south": {
      "uv": [
@@ -286,7 +286,7 @@
       0.5,
       9
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "east": {
      "uv": [
@@ -295,7 +295,7 @@
       15.0,
       9
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "up": {
      "uv": [
@@ -304,7 +304,7 @@
       0.5,
       15.0
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "down": {
      "uv": [
@@ -313,7 +313,7 @@
       0.5,
       15.0
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     }
    }
   },
@@ -336,7 +336,7 @@
       0.75,
       7
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "south": {
      "uv": [
@@ -345,7 +345,7 @@
       16,
       7
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "west": {
      "uv": [
@@ -354,7 +354,7 @@
       3.0,
       7
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "down": {
      "uv": [
@@ -363,7 +363,7 @@
       16,
       15.0
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     }
    }
   },
@@ -386,7 +386,7 @@
       16,
       7
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "south": {
      "uv": [
@@ -395,7 +395,7 @@
       0.5,
       7
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "east": {
      "uv": [
@@ -404,7 +404,7 @@
       15.0,
       7
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "down": {
      "uv": [
@@ -413,7 +413,7 @@
       0.5,
       15.0
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     }
    }
   },
@@ -436,7 +436,7 @@
       0.75,
       7
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "south": {
      "uv": [
@@ -445,7 +445,7 @@
       16,
       7
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "west": {
      "uv": [
@@ -454,7 +454,7 @@
       15.0,
       7
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "down": {
      "uv": [
@@ -463,7 +463,7 @@
       16,
       3.0
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     }
    }
   },
@@ -486,7 +486,7 @@
       16,
       7
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "south": {
      "uv": [
@@ -495,7 +495,7 @@
       0.5,
       7
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "east": {
      "uv": [
@@ -504,7 +504,7 @@
       3.0,
       7
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     },
     "down": {
      "uv": [
@@ -513,7 +513,7 @@
       0.5,
       3.0
      ],
-     "texture": "#dark"
+     "texture": "#frame"
     }
    }
   },

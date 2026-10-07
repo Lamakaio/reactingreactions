@@ -42,6 +42,16 @@ public class InputFillOutputDrainWrapper extends CombinedTankWrapper {
      * whole machine is empty. Used by right-click filling of buckets and tanks.
      */
     @Nullable
+    /** Up to {@code maxDrain} from the first output tank holding anything; the inputs are left alone. */
+    public FluidStack drainOutputs(int maxDrain, FluidAction action) {
+        for (IFluidHandler output : outputs) {
+            if (!output.getFluidInTank(0).isEmpty()) {
+                return output.drain(maxDrain, action);
+            }
+        }
+        return FluidStack.EMPTY;
+    }
+
     public IFluidHandler drainSource() {
         for (IFluidHandler output : outputs) {
             if (!output.getFluidInTank(0).isEmpty()) return output;
