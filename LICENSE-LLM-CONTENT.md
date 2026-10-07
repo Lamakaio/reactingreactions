@@ -61,6 +61,9 @@ The scene schematics under `src/main/resources/assets/reactingreactions/ponder/`
 - `src/main/resources/logo.png` (`tools/make_logo.py`) is an arrangement made by the LLM, but it reuses item textures
   from the sources in `credits.md` (bromine, iodine, circuit board, bleach bottle) beside its own ruby. Those parts keep
   their original licences.
+- `project_icon.png` (`tools/make_project_icon.py`), the square project icon, is the formed Reaction Chamber rendered by
+  the LLM from its model shape and the LLM-made machine textures; the liquid behind its window is `block/fluid_liquid_still`,
+  from the sources in `credits.md`, and keeps its original licence.
 
 ## Not LLM-made, or not only
 
