@@ -6,6 +6,7 @@ import com.george_vi.electroenergetics.foundation.device.SimpleElectricalDevice;
 import com.george_vi.electroenergetics.foundation.nodes.InWorldNode;
 import com.george_vi.electroenergetics.simulation.BridgeCollector;
 import com.george_vi.electroenergetics.simulation.SimulationResults;
+import com.george_vi.electroenergetics.simulation.electrical_properties.ElectricalProperties;
 import com.george_vi.electroenergetics.simulation.infrastructure.InWorldNodeData;
 import com.george_vi.electroenergetics.simulation.infrastructure.InfrastructureSavedData;
 
@@ -46,7 +47,7 @@ public class ElectrolysisVatDevice extends SimpleElectricalDevice {
         bridgeToTerminal(bridges, vat, a);
         bridgeToTerminal(bridges, vat, b);
         resistance = vat.loadResistance();
-        bridges.bridge(new InWorldNode(0, a), new InWorldNode(0, b), resistance);
+        bridges.bridge(new InWorldNode(0, a), new InWorldNode(0, b), resistor(resistance));
     }
 
     private void bridgeToTerminal(BridgeCollector bridges, ElectrolysisVatControllerBlockEntity vat, BlockPos top) {
@@ -62,18 +63,23 @@ public class ElectrolysisVatDevice extends SimpleElectricalDevice {
         }
         List<InWorldNodeData> registered = InfrastructureSavedData.load(serverLevel).getNodesAt(at);
         if (registered.isEmpty()) {
-            bridges.bridge(from, new InWorldNode(0, at), COLUMN_LINK_RESISTANCE_OHMS);
+            bridges.bridge(from, new InWorldNode(0, at), resistor(COLUMN_LINK_RESISTANCE_OHMS));
             return;
         }
         for (InWorldNodeData data : registered) {
-            bridges.bridge(from, data.node, COLUMN_LINK_RESISTANCE_OHMS);
+            bridges.bridge(from, data.node, resistor(COLUMN_LINK_RESISTANCE_OHMS));
         }
     }
 
     private void bridgeColumn(BridgeCollector bridges, List<BlockPos> column) {
         for (int i = 0; i + 1 < column.size(); i++) {
-            bridges.bridge(new InWorldNode(0, column.get(i)), new InWorldNode(0, column.get(i + 1)), COLUMN_LINK_RESISTANCE_OHMS);
+            bridges.bridge(new InWorldNode(0, column.get(i)), new InWorldNode(0, column.get(i + 1)), resistor(COLUMN_LINK_RESISTANCE_OHMS));
         }
+    }
+
+    /** Bridged as properties: EE 1.1 and 1.2 differ in their plain-resistance bridge, but both have this one. */
+    private static ElectricalProperties resistor(double ohms) {
+        return ElectricalProperties.resistor(ohms);
     }
 
     @Override
